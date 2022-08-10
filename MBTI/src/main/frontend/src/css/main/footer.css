@@ -1,0 +1,64 @@
+.Footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 150px 15px 80px;
+}
+
+.FooterContents {
+   display: contents;
+}
+
+.FooterTitle {
+    font-size: 1em;
+    color: #b5b5b5;
+    margin-bottom: 20px;
+}
+
+.FooterLinks ul {
+    display: flex;
+    align-self: stretch;
+}
+
+.FooterLinks ul li {
+    margin-left: 40px;
+}
+
+.FooterLinks ul li:hover {
+    border-bottom: 1px solid black;
+}
+
+.FooterSocial {
+    margin-top: 18px;
+}
+
+.FooterSocial .FaceBook, .Insta, .Twitter {
+    margin-left : 10px;
+}
+
+.FooterSocial .FacebookImg, .InstaImg, .TwitterImg {
+    width: 25px;
+    height: 25px;
+
+}
+
+
+.FooterAlert {
+    color: #7f7f7f;
+    font-size: .7em;
+    line-height: 1.7;
+    margin-top: 20px;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.FooterAlert strong {
+    font-weight: 600;
+}
+
+.FooterAlert .FooterEmail {
+    color: #7f7f7f;
+    font-size: .7em;
+    font-weight: 600;
+}
