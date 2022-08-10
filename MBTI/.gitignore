@@ -1,3 +1,6 @@
+application.yml
+node_modules/
+
 HELP.md
 .gradle
 build/
@@ -5,7 +8,23 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.classpath
+.project
+
 ### STS ###
+.metadata
 .apt_generated
 .classpath
 .factorypath
@@ -35,3 +54,5 @@ out/
 
 ### VS Code ###
 .vscode/
+/.metadata/
+.DS_Store
