@@ -1,0 +1,80 @@
+.ContentsMain {
+    min-height: calc(100vh - 180px);
+}
+
+.ContentsMainTitle {
+    padding: 0 90px 0;
+    align-items: center;
+    background-color: #4298b4;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ContentsMainTitleText {
+    padding: 80px 80px 0px 80px;
+    max-width: 1100px;
+    text-align: center;
+    width: 100%;
+}
+
+.ContentsMainTitleText h1 {
+    font-size: 2.6em;
+    font-weight: 500;
+    margin: 15px 0 40px;
+    line-height: 1.3;
+
+}
+
+.subtitle {
+    font-size: 1.65em;
+    display: block;
+    margin: 0 auto;
+    max-width: 790px;
+    line-height: 1.8;
+}
+
+.TestStart {
+    margin-top:40px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.TestStartBtn {
+    background-color: #88619a;
+    color: #fff;
+    font-size: 1.3em;
+    height: 62px;
+    min-width: 215px;
+    padding: 10px 25px;
+    align-items: center;
+    border: none;
+    border-radius: 60px;
+    display: inline-flex;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: .05em;
+    outline: 0;
+    text-decoration: none;
+}
+
+.ArrowRightBtn {
+    margin-left: 10px;
+}
+
+.TestStartBtn:hover .ArrowRightBtn{
+    transform: translateX( 10px );
+    transition: all 0.3s linear;
+}
+
+.BackgroundImg {
+    width: 100%;
+    height: 570px;
+}
+
+ 
