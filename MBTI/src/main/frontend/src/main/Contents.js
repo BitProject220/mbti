@@ -15,12 +15,12 @@ const Contents = () => {
                     <p class="subtitle">쉽고 간단하면서도 정확한 성격 유형 검사를 통해 당신이 누구이며, 왜 그러한 특정 행동 성향을 보이는지 확인하십시오.</p>
                 </div>
                 <div className='TestStart'>
-                    <Link to='/' className='TestStartBtn'>검사 실시 
+                    <Link to='/TestStart' className='TestStartBtn'>검사 실시 
                     <span><FontAwesomeIcon icon={faArrowRight} className='ArrowRightBtn'/></span>
                     </Link>
                 </div>
             </div>
-            <img src={background} className='BackgroundImg'/>
+            <img src={background} alt='fail' className='BackgroundImg'/>
         </main>
     );
 };
