@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
+import Test from './test/Test';
 
 const App = () => {
   return (
@@ -14,10 +15,9 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Main/>} />
+        <Route path="/test" element={<Test/>} />
         <Route path="/Main">
-          <Route index element={<Main/>} />
-          <Route index element={<Main/>} />
-          <Route index element={<Main/>} />
+          
         </Route>
       </Routes>
       </>

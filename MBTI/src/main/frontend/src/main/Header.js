@@ -15,13 +15,13 @@ const Header = () => {
                 <nav className='Navigation'>
                     <ul>
                         <li>
-                            <Link to='/'>성격 유형 검사</Link>
+                            <Link to='/test' className='MenuBarSub'>성격 유형 검사</Link>
                         </li>
                         <li>
-                            <Link to='/'>성격 유형</Link>
+                            <Link to='/' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li>
-                            <Link to='/'>연락처</Link>
+                            <Link to='/' className='MenuBarSub'>연락처</Link>
                         </li>
                     </ul>
                 </nav>
