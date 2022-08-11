@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../css/main/header.css';
 import '../css/reset.css';
 
-
 const Header = () => {
     return (
         <header className='Header'>
@@ -18,7 +17,7 @@ const Header = () => {
                             <Link to='/'>성격 유형 검사</Link>
                         </li>
                         <li>
-                            <Link to='/'>성격 유형</Link>
+                            <Link to='/Profiles'>성격 유형</Link>
                         </li>
                         <li>
                             <Link to='/'>연락처</Link>
