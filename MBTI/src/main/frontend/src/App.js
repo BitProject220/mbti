@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
+
+import Profiles from './profile/Profiles';
 import Test from './test/Test';
+
 
 const App = () => {
   return (
@@ -17,8 +20,9 @@ const App = () => {
         <Route path="/" element={<Main/>} />
         <Route path="/test" element={<Test/>} />
         <Route path="/Main">
-          
+          <Route index element={<Main/>} />         
         </Route>
+        <Route path="/Profiles" element={<Profiles />} />
       </Routes>
       </>
     </BrowserRouter>
