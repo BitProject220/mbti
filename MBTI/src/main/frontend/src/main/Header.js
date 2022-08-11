@@ -15,7 +15,7 @@ const Header = () => {
                 <nav className='Navigation'>
                     <ul>
                         <li>
-                            <Link to='/' className='MenuBarSub'>성격 유형 검사</Link>
+                            <Link to='/test' className='MenuBarSub'>성격 유형 검사</Link>
                         </li>
                         <li>
                             <Link to='/' className='MenuBarSub'>성격 유형</Link>
