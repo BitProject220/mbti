@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
-
-import Profiles from './profile/Profiles';
 import Test from './test/Test';
-
+import ProfilesMain from './profiles/ProfilesMain'
 
 const App = () => {
   return (
@@ -22,7 +20,7 @@ const App = () => {
         <Route path="/Main">
           <Route index element={<Main/>} />         
         </Route>
-        <Route path="/Profiles" element={<Profiles />} />
+        <Route path="/ProfilesMain" element={<ProfilesMain />} />
       </Routes>
       </>
     </BrowserRouter>
