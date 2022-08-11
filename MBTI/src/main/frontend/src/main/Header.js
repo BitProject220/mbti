@@ -17,7 +17,7 @@ const Header = () => {
                             <Link to='/test' className='MenuBarSub'>성격 유형 검사</Link>
                         </li>
                         <li>
-                            <Link to='/Profiles' className='MenuBarSub'>성격 유형</Link>
+                            <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li>
                             <Link to='/' className='MenuBarSub'>연락처</Link>
