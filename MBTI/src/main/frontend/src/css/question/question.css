@@ -1,0 +1,22 @@
+.question {
+    width: 100%;
+}
+.question {
+    padding: 60px 0 45px;
+}
+.question {
+    padding: 35px 0 20px;
+}
+.question {
+    max-width: none;
+}
+.question {
+    border-bottom: 1px solid #dddfe2;
+    /* max-width: 400px; */
+    padding: 35px 0 20px;
+    transition: opacity .5s ease-in-out;
+    width: 100%;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}

@@ -16,11 +16,11 @@ const Contents = () => {
                 </div>
                 <div className='TestStart'>
                     <Link to='/' className='TestStartBtn'>Take the Test 
+                    <Link to='/TestStart' className='TestStartBtn'>검사 실시 
                     <span><FontAwesomeIcon icon={faArrowRight} className='ArrowRightBtn'/></span>
                     </Link>
                 </div>
             </div>
-           
         </main>
     );
 };
