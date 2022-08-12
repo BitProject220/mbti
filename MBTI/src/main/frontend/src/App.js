@@ -1,36 +1,37 @@
-import logo from './logo.svg';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Main from './main/Main';
+import TestStart from './startTest/TestStart';
+import Profiles from './profile/Profiles';
+import Test from './test/Test';
+import ProfilesMain from './profiles/ProfilesMain'
 
-function App() {
-  const [hello, setHello] = useState('');
-
-  useEffect(() => {
-    axios.get('/hello')
-    .then(res => setHello(res.data))
-    .catch(err => console.log(err));
-  }, []);
-
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>{ hello }</div>  
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <BrowserRouter>
+      <>
+      <head>
+        <ul>
+          <li><Link to="/">Main</Link></li>
+        </ul>
+      </head> 
+      
+      <Routes>
+        <Route path="/" element={<Main/>} />
+        <Route index element={<Main/>} />         
+        <Route path="/test" element={<Test/>} />
+        <Route path="/Main">
+        <Route index element={<Main/>} />
+        <Route path="/ProfilesMain" element={<ProfilesMain />} />
+        <Route path="/TestStart" element={<TestStart/>} />
+        <Route path="/Profiles" element={<Profiles />} />
+        </Route>
+      </Routes>
+      </>
+    </BrowserRouter>
+
+  )
+  
+};
 
 export default App;

@@ -1,0 +1,195 @@
+main.q-pt header h1 {
+  color: #fff;
+  font-size: 2.5em;
+  line-height: 1.4;
+  margin: 20px 0 10px;
+  text-align: center;
+}
+
+main.q-pt header {
+  background-color: #44AF69;
+  padding: 15px;
+  position: relative;
+}
+main.q-pt header .trademark {
+    font-size: 1.5em;
+}
+
+main.q-pt header .trademark {
+    font-size: 1em;
+    font-size: 1.1em;
+}
+main.q-pt header .trademark {
+    color: #f5f5f5;
+    font-size: .9em;
+    text-align: center;
+}
+
+media="screen and (min-width: 768px)"
+@media (min-width: 992px) and (min-height: 900px)
+main.q-pt .tips {
+    padding: 20px 0 30px;
+}
+media="screen and (min-width: 768px)"
+@media (min-width: 992px)
+main.q-pt .tips {
+    background-color: #fff;
+    -webkit-clip-path: none;
+    clip-path: none;
+    overflow: unset;
+    padding: 0 0 30px;
+}
+media="screen and (min-width: 768px)"
+@media (min-width: 768px)
+main.q-pt .tips {
+    align-items: stretch;
+    -webkit-clip-path: polygon(0 0,100% 0,100% 100%,70% calc(100% - 15px),25% 100%,0 calc(100% - 10px));
+    clip-path: polygon(0 0,100% 0,100% 100%,70% calc(100% - 15px),25% 100%,0 calc(100% - 10px));
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -1px;
+    padding: 20px 10px 30px;
+}
+@media (min-width: 460px)
+main.q-pt .tips {
+    padding-top: 20px;
+}
+main.q-pt .tips {
+    align-items: center;
+    background-color: #44AF69;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+}
+
+main.q-pt .tips .tip img  {
+  height: 90px;
+  margin-bottom: 35px;
+  width: 90px;
+  
+}
+main.q-pt .tips .tip svg  {
+  height: 90px;
+  margin-bottom: 35px;
+  width: 90px;
+  
+}
+
+main.q-pt .tips {
+  align-items: stretch;
+  -webkit-clip-path: polygon(0 0,100% 0,100% 100%,70% calc(100% - 15px),25% 100%,0 calc(100% - 10px));
+  clip-path: polygon(0 0,100% 0,100% 100%,70% calc(100% - 15px),25% 100%,0 calc(100% - 10px));
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -1px;
+  padding: 20px 10px 30px;
+}
+
+main.q-pt .tips .tip {
+  flex: 0 0 calc(33.33333% - 40px);
+  flex-direction: column;
+  margin: 10px 10px 0;
+  max-width: unset;
+  padding: 25px 0;
+  width: calc(33.33333% - 0px);
+}
+div .title {
+  color : black;
+}
+section {
+    display: block;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+* {
+    scrollbar-color: #f9f9f9;
+    scrollbar-width: thin;
+}
+.main-wrapper.int main.q-pt section.tips .tip-highlight {
+  height: 160px;
+}
+media="screen and (min-width: 768px)"
+@media (min-width: 1200px)
+main.q-pt .tips .tip-highlight.first {
+  left: calc(50% - 545px);
+}
+main.q-pt .tips .tip-highlight.first {
+  background-color: #4298b4;
+  left: calc(50% - 470px);
+}
+media="screen and (min-width: 768px)"
+@media (min-width: 1200px)
+main.q-pt .tips .tip-highlight {
+  width: 350px;
+}
+media="screen and (min-width: 768px)"
+@media (min-width: 992px) and (min-height: 900px)
+main.q-pt .tips .tip-highlight {
+  height: 260px;
+  top: 30px;
+}
+media="screen and (min-width: 768px)"
+@media (min-width: 992px)
+main.q-pt .tips .tip-highlight {
+  display: block;
+  top: 10px;
+  width: 300px;
+}
+
+
+main.q-pt .tips .tip-highlight {
+  border-radius: 10px;
+  display: none;
+  height: 240px;
+  mix-blend-mode: hue;
+  position: absolute;
+  top: 70px;
+  width: 370px;
+  z-index: 3;
+}
+div {
+    display: block;
+}
+
+div .tip {
+    background: #F19904;
+    opacity:0.8;
+    text-align: center;
+    border-radius: 35px;
+}
+
+body {
+    color: #51596a;
+    font-family: Open Sans,Helvetica Neue,Arial;
+    font-size: 1.125em;
+    margin: 0;
+    transition: padding-top .2s ease-in-out;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #b5b5b5;
+    border-radius: 5px;
+}
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+}
+
