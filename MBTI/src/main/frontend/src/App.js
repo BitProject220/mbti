@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
 import Test from './test/Test';
+import SignupMain from './sign/SignupMain';
+import './css/reset.css';
 import ProfilesMain from './profiles/ProfilesMain';
 import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
 import Test from './test/Test';
@@ -19,6 +21,7 @@ const App = () => {
       </nav> 
       
       <Routes>
+        <Route path="/signUp" element={<SignupMain /> } />
         <Route path="/" element={<Main/>} />
         <Route index element={<Main/>} />         
         <Route path="/test" element={<Test/>} />

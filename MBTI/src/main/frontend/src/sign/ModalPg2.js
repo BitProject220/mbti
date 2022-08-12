@@ -340,7 +340,7 @@ function MyVerticallyCenteredModal(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide} style={{background:'#F19904', border:'none'}}>Close</Button>
+        <Button onClick={props.onHide} style={{background:'#F19904', border:'none'}}>닫기</Button>
       </Modal.Footer>
     </Modal>
   );
