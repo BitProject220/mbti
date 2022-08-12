@@ -1,5 +1,5 @@
 import React from 'react';
-import './modal.css';
+import '../css/signup/modal.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
