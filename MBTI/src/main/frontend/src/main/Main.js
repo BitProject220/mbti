@@ -1,5 +1,5 @@
 import React from 'react';
-import Contents from '../main/Contents';
+import LoginPage from '../Login/LoginPage';
 import Footer from '../main/Footer';
 import Header from '../main/Header';
 
@@ -8,8 +8,8 @@ const Main = () => {
         <div className='Main'>
             <Header/>
         
-            <Contents/>
-            
+            <LoginPage/>
+          
             <Footer/>
 
       </div>

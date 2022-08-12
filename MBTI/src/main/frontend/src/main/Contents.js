@@ -16,7 +16,6 @@ const Contents = () => {
                 </div>
                 <div className='TestStart'>
                     <Link to='/test' className='TestStartBtn'>Take the Test <span><FontAwesomeIcon icon={faArrowRight} className='ArrowRightBtn'/></span> </Link>
-                    
                 </div>
             </div>
         </main>
