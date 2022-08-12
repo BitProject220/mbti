@@ -11,5 +11,6 @@ public class testController {
 
 		return "Hello MBTI PROJECT! ";
 
+
 	}
 }
