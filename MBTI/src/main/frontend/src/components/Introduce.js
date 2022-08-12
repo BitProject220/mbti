@@ -12,7 +12,7 @@ const Introduce = () => {
              height :  300,
              }}>이미지영역
              </div>
-            <div class='sticky'>           
+            <div className='sticky'>           
                 <div className='sidediv-left' style={{
                     height :  'auto' ,
                     width: 16+'%',
