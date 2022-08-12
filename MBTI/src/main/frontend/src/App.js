@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
-import TestStart from './startTest/TestStart';
-import Profiles from './profile/Profiles';
 import Test from './test/Test';
-import ProfilesMain from './profiles/ProfilesMain'
+import ProfilesMain from './profiles/ProfilesMain';
+import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
 
 const App = () => {
   return (
@@ -21,11 +20,10 @@ const App = () => {
         <Route index element={<Main/>} />         
         <Route path="/test" element={<Test/>} />
         <Route path="/Main">
-        <Route index element={<Main/>} />
-        <Route path="/ProfilesMain" element={<ProfilesMain />} />
-        <Route path="/TestStart" element={<TestStart/>} />
-        <Route path="/Profiles" element={<Profiles />} />
+          <Route index element={<Main/>} />
         </Route>
+        <Route path="/ProfilesMain" element={<ProfilesMain />} />
+        <Route path="/MBTIDetail" element={<MBTIDetail /> } />
       </Routes>
       </>
     </BrowserRouter>

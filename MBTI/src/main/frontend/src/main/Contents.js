@@ -15,7 +15,7 @@ const Contents = () => {
                     <p class="subtitle">Check it out!</p>
                 </div>
                 <div className='TestStart'>
-                    <Link to='/' className='TestStartBtn'>Take the Test 
+                    <Link to='/' className='TestStartBtn'>Take the Test </Link>
                     <Link to='/TestStart' className='TestStartBtn'>검사 실시 
                     <span><FontAwesomeIcon icon={faArrowRight} className='ArrowRightBtn'/></span>
                     </Link>
