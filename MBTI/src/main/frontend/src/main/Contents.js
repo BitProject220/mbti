@@ -15,8 +15,8 @@ const Contents = () => {
                     <p className="subtitle">Check it out!</p>
                 </div>
                 <div className='TestStart'>
-                    <Link to='/' className='TestStartBtn'>Take the Test <span><FontAwesomeIcon icon={faArrowRight} className='ArrowRightBtn'/></span> </Link>
-                    
+                    <Link to='/' className='TestStartBtn'>Take the Test </Link>
+                    <Link to='/test' className='TestStartBtn'>Take the Test <span><FontAwesomeIcon icon={faArrowRight} className='ArrowRightBtn'/></span> </Link>
                 </div>
             </div>
         </main>
