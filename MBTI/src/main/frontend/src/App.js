@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
 import Signup from './sign/Signup';
+import ContactMain from './Contact/ContactMain';
+import LoginPage from './Login/LoginPage';
+import Profiles from './profile/Profiles';
 import Test from './test/Test';
 
 
@@ -18,7 +21,9 @@ const App = () => {
       
       <Routes>
         <Route path="/signUp" element={<Signup /> } />
-        <Route index element={<Main/>} />         
+        <Route path="/ContactMain" element={<ContactMain/>}/> 
+        <Route path="/LoginPage" element={<LoginPage/>}/> 
+        <Route path="/Profiles" element={<Profiles />} />
         <Route path="/test" element={<Test/>} />
       </Routes>
       </>
