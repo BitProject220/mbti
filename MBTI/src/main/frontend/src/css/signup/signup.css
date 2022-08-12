@@ -252,7 +252,7 @@ position: relative;
 .toggleDiv {
 position: relative; 
 display: inline-block;
-margin-left: 6%;
+margin-left: 7%;
 }
 .toggleDiv input {
 display: none;
@@ -261,7 +261,7 @@ display: none;
 display: block;
 width: 48px;
 height: 60px;
-text-indent: -100%; /* 라벨 텍스트 왼쪽으로 이동*/
+text-indent: -150%; /* 라벨 텍스트 왼쪽으로 이동*/
 user-select: none;  /*라벨 텍스트 선택 차단 */
 font-size: 1.125rem;
 cursor: default;
@@ -295,7 +295,7 @@ border-radius: 20px;
 transition: background-color 0.25s ease;/* 배경색 애니메이션*/
 }
 .toggleDiv label::after { /* 스위치 */
-top: 3%;
+top: 4%;
 left: 0;
 width: 24px;
 height: 24px;
@@ -431,9 +431,11 @@ color: #777;}
                              color: #fff;} */
 
 
-.policy {margin-bottom: 10%;
+.policy {
 margin-top: 5%;
-line-height: 2;}
+line-height: 2;
+width: 100%;
+font-size: 1rem;}
 
 
             

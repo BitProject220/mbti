@@ -51,7 +51,7 @@
 
 .TestStartBtn {
     background-color: black;
-    color: #fff;
+    color: #fff !important; 
     font-size: 1.3em;
     height: 62px;
     min-width: 215px;
