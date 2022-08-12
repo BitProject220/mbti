@@ -1,3 +1,6 @@
+.question.inactive {
+    opacity: .3;
+}
 .question {
     width: 100%;
 }
@@ -12,11 +15,133 @@
 }
 .question {
     border-bottom: 1px solid #dddfe2;
-    /* max-width: 400px; */
+    
     padding: 35px 0 20px;
     transition: opacity .5s ease-in-out;
     width: 100%;
 }
 *, :after, :before {
     box-sizing: border-box;
+}
+.question .statement {
+    font-size: 1.4em;
+}
+.question .statement {
+    color: #576071;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.question .decision {
+    margin: 50px 0 30px;
+}
+.question .decision {
+    margin-top: 40px;
+}
+.question .decision {
+    margin: 30px 0 20px;
+}
+.question .decision {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 15px;
+}
+.question .caption.agree {
+    text-align: right;
+}
+.question .caption {
+    display: block;
+}
+.question .decision .caption.agree {
+    color: #33a474;
+}
+.question .decision .caption {
+    font-size: 1.3em;
+}
+.question .decision .caption {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.question .decision .options {
+    flex: 0 0 600px;
+    margin: 0 60px;
+}
+.question .decision .options {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.question .decision .options .option.max {
+    flex: 0 0 70px;
+    height: 70px;
+    max-width: 70px;
+}
+.option.agree{
+    border-width: 3px;
+}
+.question .decision .options .option.agree {
+    border: 3px solid #33a474;
+}
+.question .decision .options .option {
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    transition: all .1s ease-in-out;
+}
+.question .decision .options .option.med {
+    flex: 0 0 55px;
+    height: 55px;
+    max-width: 55px;
+}
+.question .decision .options .option.min {
+    flex: 0 0 45px;
+    height: 45px;
+    max-width: 45px;
+}
+.question .decision .options .option.neutral {
+    flex: 0 0 35px;
+    height: 35px;
+    max-width: 35px;
+}
+.options .option.neutral {
+    border-width: 3px;
+}
+.decision .options .option.neutral {
+    border: 3px solid #9b9faa;
+    flex: 0 0 25px;
+    height: 25px;
+    max-width: 25px;
+}
+.decision .options .option.min {
+    flex: 0 0 45px;
+    height: 45px;
+    max-width: 45px;
+}
+.option.disagree{
+    border-width: 3px;
+}
+.options .option.disagree {
+    border: 3px solid #88619a;
+}
+a.no-formatting:active,
+a.no-formatting:focus,
+a.no-formatting:hover {
+    color: inherit;
+    outline: 0;
+    text-decoration: none;
+}
+a.no-color,
+a.no-color:active,
+a.no-color:focus,
+a.no-color:hover {
+    color: inherit;
+}
+a.no-color.with-border:active,
+a.no-color.with-border:focus,
+a.no-color.with-border:hover {
+    border-color: inherit;
 }

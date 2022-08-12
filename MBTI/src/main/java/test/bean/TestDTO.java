@@ -21,5 +21,5 @@ public class TestDTO {
 	
 	@Column(name = "name", length = 30)
 	String name;
-	
+	 
 }

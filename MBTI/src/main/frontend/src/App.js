@@ -4,16 +4,19 @@ import Main from './main/Main';
 import Test from './test/Test';
 import ProfilesMain from './profiles/ProfilesMain';
 import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
+import Test from './test/Test';
+
 
 const App = () => {
   return (
     <BrowserRouter>
       <>
-      <head>
+      <nav>
         <ul>
           <li><Link to="/">Main</Link></li>
+          <li><Link to="/signUp">Signup</Link></li>
         </ul>
-      </head> 
+      </nav> 
       
       <Routes>
         <Route path="/" element={<Main/>} />
@@ -24,6 +27,10 @@ const App = () => {
         </Route>
         <Route path="/ProfilesMain" element={<ProfilesMain />} />
         <Route path="/MBTIDetail" element={<MBTIDetail /> } />
+        <Route path="/signUp" element={<Signup /> } />
+        <Route path="/ContactMain" element={<ContactMain/>}/> 
+        <Route path="/LoginPage" element={<LoginPage/>}/> 
+        <Route path="/Profiles" element={<Profiles />} />
       </Routes>
       </>
     </BrowserRouter>
