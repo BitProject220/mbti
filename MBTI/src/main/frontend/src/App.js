@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
-import Signup from './sign/Signup';
-import ContactMain from './Contact/ContactMain';
-import LoginPage from './Login/LoginPage';
-import Profiles from './profile/Profiles';
+import Test from './test/Test';
+import ProfilesMain from './profiles/ProfilesMain';
+import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
 import Test from './test/Test';
 
 
@@ -20,11 +19,18 @@ const App = () => {
       </nav> 
       
       <Routes>
+        <Route path="/" element={<Main/>} />
+        <Route index element={<Main/>} />         
+        <Route path="/test" element={<Test/>} />
+        <Route path="/Main">
+          <Route index element={<Main/>} />
+        </Route>
+        <Route path="/ProfilesMain" element={<ProfilesMain />} />
+        <Route path="/MBTIDetail" element={<MBTIDetail /> } />
         <Route path="/signUp" element={<Signup /> } />
         <Route path="/ContactMain" element={<ContactMain/>}/> 
         <Route path="/LoginPage" element={<LoginPage/>}/> 
         <Route path="/Profiles" element={<Profiles />} />
-        <Route path="/test" element={<Test/>} />
       </Routes>
       </>
     </BrowserRouter>
