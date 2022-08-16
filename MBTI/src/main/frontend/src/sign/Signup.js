@@ -149,7 +149,7 @@ const Signup = (props) => {
                 name: name,
                 age: age
             }
-            dispatch(registerUser(body))
+            dispatch((body))
                 .then(response =>{
                     if(response.payload.success){
                         alert('회원가입이 완료되었습니다!');
