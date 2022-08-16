@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/main/footer.css';
 import '../css/reset.css';
-import facebook from '../img/facebook.png';
-import insta from '../img/instagram.png';
-import twitter from '../img/twitter.png';
+import facebook from '../img/sns/facebook.png';
+import insta from '../img/sns/instagram.png';
+import twitter from '../img/sns/twitter.png';
 
 const Footer = () => {
     return (
