@@ -5,6 +5,9 @@ import Test from './test/Test';
 import SignupMain from './sign/SignupMain';
 import './css/reset.css';
 import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
+import ContactMain from './Contact/ContactMain';
+import KakaoRedirectHandler from './Login/KakaoRedirectHandler';
+import LoginPage from './Login/LoginPage';
 
 
 const App = () => {
@@ -21,6 +24,9 @@ const App = () => {
       <Routes>
         <Route path="/signUp" element={<SignupMain /> } />
         <Route path="/" element={<Main/>} />
+        <Route path="/ContactMain" element={<ContactMain/>}/>
+        <Route path="/LoginPage" element={<LoginPage />}/>
+        <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
         <Route index element={<Main/>} />         
         <Route path="/test" element={<Test/>} />
         <Route path="/Main">
