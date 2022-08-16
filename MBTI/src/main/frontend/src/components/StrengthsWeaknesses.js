@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/detail/detatil.css';
-import '../../css/reset.css';
-import Footer from '../../main/Footer';
-import Header from '../../main/Header';
+
 const StrengthsWeaknesses = () => {
     const [count, setCount] = useState(0);
 
@@ -13,7 +10,6 @@ const StrengthsWeaknesses = () => {
 
     return (
         <div>
-            <Header />
            <div style={{
              backgroundColor : 'red',
              height :  300,
@@ -85,14 +81,18 @@ const StrengthsWeaknesses = () => {
                 <div className='wrapper'>
                     <div className='social'>
                         <div className='social-count'>
-                            <div id="snsCount" className='social-number'>{count}</div>
+                            <div id="snsCount" className='social-number'>{count}k</div>
                             <div className='social-p'>SHARES</div>
                         </div>
-                        <socialIcons />
+                        <div className='social-icons'>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_facebook_share.png') } alt='페이스북 공유하기'/></button></a>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_twitter_share.png') } alt='트위터 공유하기'/></button></a>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_pinterest_share.png') } alt='핀터레스트 공유하기'/></button></a>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_discode_share.png') } alt='디스코드 공유하기'/></button></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };

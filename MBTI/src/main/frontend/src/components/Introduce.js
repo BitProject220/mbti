@@ -1,24 +1,45 @@
-import React from 'react';
-import {  useParams } from 'react-router-dom';
-import sidevarData from './sidevarData';
+import React, { useState } from 'react';
+const Introduce = () => {
+    const [count, setCount] = useState(0);
 
-const MainContent = () => {
-    const { productId } = useParams()
-    
-    const item = sidevarData.find(item => item.id === productId)
-
+    const onCount = ()=>{
+        setCount(count=> count+1);
+    }
     return (
-        <>
-            <div className='main_description' style={{
+        <div>
+            <div style={{
+             backgroundColor : 'red',
+             height :  300,
+             }}>이미지영역
+             </div>
+            <div className='sticky'>           
+                <div className='sidediv-left' style={{
                     height :  'auto' ,
+                    width: 16+'%',
+                    float: 'left',
+                    color: 'black',
+                    }}>
+                    <h2>인적성 보고서</h2>
+                    <ul>
+                    <a href='/Introduce' className='thispage'><li>소개</li></a>
+                    <a href='/StrengthsWeaknesses' className='atherside'><li >강점과 약점</li></a>
+                    <a href='/' className='atherside'><li >로맨틱한 관계</li></a>
+                    <a href='/' className='atherside'><li >우정</li></a>
+                    <a href='/' className='atherside'><li >육아</li></a>
+                    <a href='/' className='atherside'><li >직업</li></a>
+                    <a href='/' className='atherside'><li >직장 습관</li></a>
+                    <a href='/' className='atherside'><li >전체 프로필</li></a>
+                    </ul>
+                </div>
+                <div className='main_description' style={{height :  'auto' ,
                     width: 48+'%',
                     float: 'left',
                     color: 'black',
                     }}>
-                    <h1>{item.description}</h1>
-                    <div className='Greatperson'>
-                        <p>{item.Greatperson}</p>
-                        <footer>{item.footer}</footer>
+                    <h1>성격유형: "전략가"</h1>
+                    <div className='Blaise_Pascal'>
+                        <p> 사고 능력은 인간의 위대한 점 중 하나이다. 인간은 갈대처럼 연약하지만 생각하는 갈대이다.</p>
+                        <footer>블레즈 파스칼</footer>
                     </div>
 
                     <p> 최고가 되는 것은 외로운 일입니다. 매우 희귀한 성격이면서도 뛰어난 능력을 지닌 전략가(INTJ)는 이러한 말의 의미를 잘 알고 있습니다. 
@@ -51,8 +72,71 @@ const MainContent = () => {
                         <p> 전략가는 모순이 가득한 성격입니다. 상상력이 넘치면서도 결단력이 강하고, 야망이 넘치면서도 차분하고, 호기심이 많으면서도 집중력이 높은 성격이기 때문입니다. 다른 사람은 모순적인 전략가의 성격을 이해하기 힘들다고 생각할 수도 있지만, 전략가의 사고방식을 생각하면 이러한 모순도 이해할 수 있습니다.</p>
                         <p> 전략가에게 삶은 거대한 체스 경기와 같습니다. 이들은 운보다는 전략에 의존하며 결정을 내릴 때마다 결정으로 인한 장단점을 심사숙고합니다. 또한 아무리 힘든 일이 생기더라도 지적 능력과 통찰력을 이용하면 승리할 방법을 찾을 수 있다고 믿습니다.</p>
                     </div>
-        </>
+                    <div className='sidediv-right' style={{
+                        width: 22+'%',
+                        float: 'left',
+                        height :  'auto' ,
+                        marginLeft: 40, }}>
+
+                        <div className="MBTI-info" style={{
+                        color: 'black',
+                        height: 200,
+                        textAlign: 'center',
+                        border: '1px solid gray',
+                        borderRadius: 10,
+                        padding: 30,
+                        }}>
+                        <div className='title'>MBTI 알아보기</div>
+                                <a href=""><div className='MBTI-test'>테스트하기</div></a>
+                            <div className='text-box'>
+                                <div className='coment' style={ { float:'left',}}>이미 결과가 있습니까?</div>
+                                <div className='login-link' style={ { float:'left', marginLeft: 5, textDecoration: 'underline'}}>로그인.</div>
+                            </div>
+                        </div>
+                        <div className='Day-news'style={{
+                        color: 'black',
+                        height: 200,
+                        textAlign: 'center',
+                        border: '1px solid gray',
+                        borderRadius: 10,
+                        paddingLeft: 30,
+                        paddingRight: 30,
+                        paddingTop: 30,
+                        paddingBottom: 30,
+                        marginTop:120,
+                        }}>
+                            <div className='title'>오늘의 통찰력</div>
+                            <div className='coment-p'>건축가는 종종 최악의 상황을 예상할 가능성이 가장 높은 성격 유형입니다.</div>
+                            <div className='source'>
+                                <div className='coment-p' style={{color: '#bcbfc5',}}>출처:<a href=''> 낙관주의자인가 비관주의자인가?</a> 설문조사, 4567897명의 응답</div>
+                            </div>
+                        </div>
+                    </div>   
+            </div>
+            <div className='BtnComponent'>
+                <div className='nextBtn'>
+                    <a href='/StrengthsWeaknesses'>
+                        <div className='title'>강점과 약점</div>
+                        <div className='BtnCircle'>&#8594;</div>
+                    </a>
+                </div>
+                <div className='wrapper'>
+                    <div className='social'>
+                        <div className='social-count'>
+                            <div className='social-number'>{count}</div>
+                            <div className='social-p'>SHARES</div>
+                        </div>
+                        <div className='social-icons'>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_facebook_share.png') } alt='페이스북 공유하기'/></button></a>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_twitter_share.png') } alt='트위터 공유하기'/></button></a>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_pinterest_share.png') } alt='핀터레스트 공유하기'/></button></a>
+                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } class="btn_comm"><img src={require('../img/detail_discode_share.png') } alt='디스코드 공유하기'/></button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 
-export default MainContent;
+export default Introduce;

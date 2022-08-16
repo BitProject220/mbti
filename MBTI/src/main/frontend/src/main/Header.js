@@ -4,6 +4,9 @@ import '../css/main/header.css';
 import '../css/reset.css';
 import ContactMain from '../Contact/ContactMain';
 import logo from '../img/logo/BWTH_logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+
 const Header = () => {
     return (
         <header className='Header'>
@@ -18,21 +21,28 @@ const Header = () => {
                             <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li>
-                            <Link to='/ContactMain' className='MenuBarSub'>연락처</Link>
+
+                            <Link to='/' className='MenuBarSub'>커뮤니티</Link>
+                        </li>
+                        <li>
+                            <Link to='/' className='MenuBarSub'>매치하기</Link>
+
                         </li>
                     </ul>
                 </nav>
                 
                 <div className='LogoImage'>
-                    <img src={logo} className='LogoImg' />
+                    <Link to='/'><img src={logo} className='LogoImg' /></Link>
                 </div>
 
                 <div className='Login'>
                     <div>
-                        <button className='LoginBtn'><Link to='/LoginPage'>Log In</Link></button>
+
+                        <button className='LoginBtn'>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
+
                     </div>
-                    <div className='TestBtn'>
-                        <Link to='/test'>Take the Test</Link>
+                    <div className='UserBtn'>
+                        <Link to='/test'><FontAwesomeIcon icon={faCircleUser} size="lg" className='UserImg'/></Link>
                     </div>
                 </div>
 
