@@ -15,10 +15,9 @@ import Mbticareerpaths from './DetailApp/Mbticareerpaths';
 import Mbtiparenthood from './DetailApp/Mbtiparenthood';
 import Mbtiworkplacehabits from './DetailApp/Mbtiworkplacehabits';
 
-import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
 import ContactMain from './Contact/ContactMain';
-import KakaoRedirectHandler from './Login/KakaoRedirectHandler';
 import LoginPage from './Login/LoginPage';
+import Signup from './sign/Signup';
 
 
 const App = () => {
@@ -52,7 +51,6 @@ const App = () => {
         <Route path="/ContactMain" element={<ContactMain/>}/> 
         <Route path="/LoginPage" element={<LoginPage/>}/> 
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
-        <Route path="/Profiles" element={<Profiles />} />
 
         <Route path="/signUp" element={<SignupMain /> } />
         <Route path="/" element={<Main/>} />
