@@ -4,9 +4,7 @@ import Main from './main/Main';
 import Test from './test/Test';
 import SignupMain from './sign/SignupMain';
 import './css/reset.css';
-import ProfilesMain from './profiles/ProfilesMain';
 import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
-import Test from './test/Test';
 
 
 const App = () => {
@@ -28,12 +26,8 @@ const App = () => {
         <Route path="/Main">
           <Route index element={<Main/>} />
         </Route>
-        <Route path="/ProfilesMain" element={<ProfilesMain />} />
+
         <Route path="/MBTIDetail" element={<MBTIDetail /> } />
-        <Route path="/signUp" element={<Signup /> } />
-        <Route path="/ContactMain" element={<ContactMain/>}/> 
-        <Route path="/LoginPage" element={<LoginPage/>}/> 
-        <Route path="/Profiles" element={<Profiles />} />
       </Routes>
       </>
     </BrowserRouter>
