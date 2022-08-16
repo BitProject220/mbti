@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { useRouter } from 'use-react-router';
-import { useDispatch } from 'react-redux'
-;import '../css/signup/signup.css';
+import '../css/signup/signup.css';
 import '../css/reset.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -138,31 +136,6 @@ const Signup = (props) => {
             else setNameError(true);
             setName(e.target.value);
         }
-
-        const dispatch = useDispatch();
-
-        const onSubmitHandler = (e) => {
-            e.preventDefault(); // 아무 동작 안하고 버튼만 눌러도 리프레쉬 되는 것을 막는다
-    
-            let body = {
-                email: email,
-                name: name,
-                age: age
-            }
-            dispatch((body))
-                .then(response =>{
-                    if(response.payload.success){
-                        alert('회원가입이 완료되었습니다!');
-                        props.history.push('/Main') // react 에서의 페이지 이동 코드
-                    } else{
-                        alert('Error!!');
-                    }
-                })
-            // 완료가 잘 되었을 경우 이동
-        }
-
-       
-        
     
     return (
         <div className='container'>
@@ -330,7 +303,7 @@ const Signup = (props) => {
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <button id='conBtn' type='submit' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt">
-                            <span className='buttonText' type='submit' onClick={ onSubmitHandler }>회원가입</span>
+                            <span className='buttonText' type='submit' onClick={ this.handleSubmit }>회원가입</span>
                             <FontAwesomeIcon icon={ faArrowRight } className='rightIcon' />
                         </button>
                         

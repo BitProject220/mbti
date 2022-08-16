@@ -47,7 +47,7 @@ const App = () => {
 
 
 
-        <Route path="/signUp" element={<Signup /> } />
+  
         <Route path="/ContactMain" element={<ContactMain/>}/> 
         <Route path="/LoginPage" element={<LoginPage/>}/> 
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
