@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../css/signup/signup.css';
+import { useRouter } from 'use-react-router';
+import { useDispatch } from 'react-redux'
+;import '../css/signup/signup.css';
 import '../css/reset.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -11,19 +13,19 @@ import Button from 'react-bootstrap/Button';
 import ModalPg2 from './ModalPg2';
 
 
-const Signup = () => {
+const Signup = (props) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
-    const onInputName = (e) => {
+    /* const onInputName = (e) => {
         const {value} = e.target
         setName(value)
-    }
+    } */
 
-    const onInputEmail = (e) => {
+    /* const onInputEmail = (e) => {
         const {value} = e.target
         setEmail(value)
-    }
+    } */
 
     const [age, setAge] = useState({
         default: "나이를 입력해주세요."
@@ -118,10 +120,50 @@ const Signup = () => {
         display: none;
         `;
 
+
         const [modalShow, setModalShow] = React.useState(false);
+
+
+          const [emailError, setEmailError] = useState(false);
+          const onChangeEmail = (e) => {
+            const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+            if (!e.target.value || emailRegex.test(e.target.value)) setEmailError(false);
+            else setEmailError(true);
+            setEmail(e.target.value);
+        };
+
+        const [nameError, setNameError] = useState(false);
+        const onChangeName = (e) => {
+            if(e.target.value.length >= 1) setNameError(false);
+            else setNameError(true);
+            setName(e.target.value);
+        }
+
+        const dispatch = useDispatch();
+
+        const onSubmitHandler = (e) => {
+            e.preventDefault(); // 아무 동작 안하고 버튼만 눌러도 리프레쉬 되는 것을 막는다
+    
+            let body = {
+                email: email,
+                name: name,
+                age: age
+            }
+            dispatch(registerUser(body))
+                .then(response =>{
+                    if(response.payload.success){
+                        alert('회원가입이 완료되었습니다!');
+                        props.history.push('/Main') // react 에서의 페이지 이동 코드
+                    } else{
+                        alert('Error!!');
+                    }
+                })
+            // 완료가 잘 되었을 경우 이동
+        }
+
+       
         
-
-
+    
     return (
         <div className='container'>
             <h1 className='underlined'>회원가입</h1>
@@ -130,29 +172,34 @@ const Signup = () => {
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">이름 : </label>
                         <div className='input__row' data-v-4d142efa="">
-                            <input type='text' id='signName' value={ name } onChange={ onInputName } placeholder='Your Name' />
+                            <input type='text' id='signName' name='name' value={ name } onChange={ onChangeName } placeholder='Your Name' />
                         </div>
                         <p className='input__note' data-v-4d142efa="">
                             어떻게 불러야 할지 알기 위함입니다. 당신이 원한다면 별명을 입력하셔도 됩니다.
                         </p>
+                        {nameError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이름 또는 별명을 입력하세요.</p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">이메일 : </label>
                         <div className='input__row inputEmail' data-v-4d142efa="">
-                            <input id='emailInputBox' type='email' value={ email } onChange={ onInputEmail } placeholder='Your E-mail'></input>
+                            {/* <input id='emailInputBox' type='email' value={ email } onChange={ onInputEmail } placeholder='Your E-mail'></input> */}
+                            <input id='emailInputBox' name='email' type='email' value={ email }  onChange={ onChangeEmail } placeholder='Your E-mail' />
                             
                             <FontAwesomeIcon icon={ faEnvelope } data-v-4d142efa="" className="sp-icon input__icon icon--md icon--inherit icon--envelope" id='icon' />
                         </div>
                         <p className='input__note' data-v-4d142efa="">
                             이메일 주소를 올바르게 입력했는지 다시 확인하세요. 입력한 이메일로 임시 비밀번호를 보낼 것입니다.
                         </p>
+                       
+                        {emailError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이메일 형식이 맞지 않습니다.</p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">나이 : </label>
                         <div className='ageSelect'>
                            <select id='ageBox'
+                                name='age'
                                 value={age.default}
                                 onChange={(e) =>
                                     setAge({ ...age, default: e.target.value })
@@ -163,6 +210,8 @@ const Signup = () => {
                                         {item}
                                     </option>
                                 ))}
+
+                                
                             </select>
                             <span id='arrowImg'><img src={ arrow } alt="" /></span>
                         </div>
@@ -174,7 +223,7 @@ const Signup = () => {
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">성격유형 : </label>
                         <div className='select'>
-                            <select onChange={handleSelect} value={Selected} id='selectBox'>
+                            <select onChange={handleSelect} value={Selected} id='selectBox' name='mbtiType'>
                                 <option value="0">MBTI검사를 먼저 진행하세요.</option>
                                 <option value="1">분석가    (INTJ)</option>
                                 <option value="2">논리술사  (INTP)</option>
@@ -280,8 +329,8 @@ const Signup = () => {
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
-                        <button id='conBtn' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt">
-                            <span className='buttonText'>회원가입</span>
+                        <button id='conBtn' type='submit' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt">
+                            <span className='buttonText' type='submit' onClick={ onSubmitHandler }>회원가입</span>
                             <FontAwesomeIcon icon={ faArrowRight } className='rightIcon' />
                         </button>
                         
