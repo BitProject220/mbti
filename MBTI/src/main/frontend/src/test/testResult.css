@@ -1,0 +1,13 @@
+section {
+  background-color : #44AF69;
+}
+section div.resultMain {
+  color : white;
+  margin : 0 30px;
+  display : inline-block;
+  padding-top : 50px;
+}
+
+section div.resultMain div {
+  margin : auto;
+}

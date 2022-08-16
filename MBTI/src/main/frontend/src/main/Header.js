@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/main/header.css';
 import '../css/reset.css';
-
+import ContactMain from '../Contact/ContactMain';
+import logo from '../img/logo/BWTH_logo.png';
 const Header = () => {
     return (
         <header className='Header'>
             <div className='Menubar'>
-                <div className='LogoImage'>
-                    <Link to='/'>로고크기맞추는중로크기맞추는중</Link>
-                </div>
-                
+
                 <nav className='Navigation'>
                     <ul>
                         <li>
@@ -20,14 +18,18 @@ const Header = () => {
                             <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li>
-                            <Link to='/' className='MenuBarSub'>연락처</Link>
+                            <Link to='/ContactMain' className='MenuBarSub'>연락처</Link>
                         </li>
                     </ul>
                 </nav>
+                
+                <div className='LogoImage'>
+                    <img src={logo} className='LogoImg' />
+                </div>
 
                 <div className='Login'>
                     <div>
-                        <button className='LoginBtn'>Log In</button>
+                        <button className='LoginBtn'><Link to='/LoginPage'>Log In</Link></button>
                     </div>
                     <div className='TestBtn'>
                         <Link to='/test'>Take the Test</Link>
