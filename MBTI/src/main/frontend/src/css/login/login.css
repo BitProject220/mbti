@@ -62,7 +62,7 @@
     
 }
 .login_input_tag{
-    padding-left: 41px;
+    padding-left: 53px;
     flex-grow: 1;
     font-size: 1.125rem;
     line-height: 1.556;
@@ -72,13 +72,14 @@
     border-radius: 5px;
     box-shadow: inset 0 1px 0 0 rgb(81 89 106 / 5%);
     color: #51596a;
-    height: 50px;
+    height: 60px;
     max-width: 100%;
     outline: 0;
-    padding: 10px 15px;
+    padding: 15px 25px;
     height: 33px;
     padding: 15px 25px 15px 53px;
     /*transition: border-color .2s*/
+    
 }
 .login_input_tag:focus{
     border-color: #4298b4;
@@ -189,3 +190,14 @@ input::placeholder{
     justify-content: center;
     align-items: center;
 }
+.kakao_btn{
+    background-image: url("/src/image/kakao_login_button.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 17px auto;
+    color:transparent;
+    width: 250px;
+    height: 60px;
+    border-radius: 40px;
+}
+
