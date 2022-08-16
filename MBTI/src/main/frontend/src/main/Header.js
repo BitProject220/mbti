@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/main/header.css';
 import '../css/reset.css';
-
+import ContactMain from '../Contact/ContactMain';
 const Header = () => {
     return (
         <header className='Header'>
@@ -20,14 +20,14 @@ const Header = () => {
                             <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li>
-                            <Link to='/' className='MenuBarSub'>연락처</Link>
+                            <Link to='/ContactMain' className='MenuBarSub'>연락처</Link>
                         </li>
                     </ul>
                 </nav>
 
                 <div className='Login'>
                     <div>
-                        <button className='LoginBtn'>Log In</button>
+                        <button className='LoginBtn'><Link to='/LoginPage'>Log In</Link></button>
                     </div>
                     <div className='TestBtn'>
                         <Link to='/'>Take the Test</Link>

@@ -7,7 +7,7 @@ import ContactMain from './Contact/ContactMain';
 import LoginPage from './Login/LoginPage';
 import Profiles from './profile/Profiles';
 import Test from './test/Test';
-
+import KakaoRedirectHandler from './Login/KakaoRedirectHandler';
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,6 +23,7 @@ const App = () => {
         <Route path="/signUp" element={<Signup /> } />
         <Route path="/ContactMain" element={<ContactMain/>}/> 
         <Route path="/LoginPage" element={<LoginPage/>}/> 
+        <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
         <Route path="/Profiles" element={<Profiles />} />
         <Route path="/" element={<Main/>} />
         <Route index element={<Main/>} />         
