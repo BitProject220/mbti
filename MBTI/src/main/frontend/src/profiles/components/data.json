@@ -1,0 +1,16 @@
+{
+    "TypeGroup" : [
+        {"id": 1, "groupName": "분석가형"},
+        {"id": 2, "groupName": "외교관형"},
+        {"id": 3, "groupName": "관리자형"},
+        {"id": 4, "groupName": "탐험가형"}
+    ],
+    "TypeDetail" : [
+        {
+            "typeName" : "전략가",
+            "mbtiType" : "INTJ-A / INTJ-T",
+            "content" : "모든 일에 대해 계획을 세우며 상상력이 풍부한 전략가입니다.",
+            "Path" : "#"
+        }
+    ]
+}
