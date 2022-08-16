@@ -13,7 +13,11 @@
 .FooterTitle {
     font-size: 1em;
     color: #b5b5b5;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.FooterLinks {
+    height: 40px;
 }
 
 .FooterLinks ul {
