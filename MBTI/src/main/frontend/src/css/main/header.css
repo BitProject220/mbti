@@ -1,6 +1,4 @@
-.Main {
-    padding-top: 90px;
-}
+
 
 .Header {
     position: fixed;
@@ -44,9 +42,9 @@
 }
 
 .Navigation .MenuBarSub:hover {
-    border-top: 4px solid #4298b4;
+    border-top: 4px solid #F19904;
     transition: opacity .2s ease-in-out .1s;
-    padding-top:30px;
+    padding-top:23px;
     
 }
 

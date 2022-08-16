@@ -31,7 +31,7 @@ const Header = () => {
                         <button className='LoginBtn'>Log In</button>
                     </div>
                     <div className='TestBtn'>
-                        <Link to='/'>Take the Test</Link>
+                        <Link to='/test'>Take the Test</Link>
                     </div>
                 </div>
 

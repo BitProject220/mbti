@@ -1,3 +1,25 @@
+.test-questions.comp {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 15px;
+    width: 100%;
+}
+.test-questions {
+    padding: 15px;
+}
+.test-questions.comp .question {
+    max-width: none;
+}
+.test-questions.comp .question {
+    padding: 60px 0 45px;
+}
+.test-questions.comp .question .statement {
+    font-size: 1.7em;
+}
 .question.inactive {
     opacity: .3;
 }
@@ -127,6 +149,11 @@
 .options .option.disagree {
     border: 3px solid #88619a;
 }
+a:active,
+a:focus,
+a:hover {
+    color: #388199;
+}
 a.no-formatting:active,
 a.no-formatting:focus,
 a.no-formatting:hover {
@@ -144,4 +171,139 @@ a.no-color.with-border:active,
 a.no-color.with-border:focus,
 a.no-color.with-border:hover {
     border-color: inherit;
+}
+.btn-academy-nav:active,
+.btn-academy-nav:focus,
+.btn-academy-nav:hover {
+    -webkit-animation: none;
+    animation: none;
+    background-position: 50%;
+}
+.test-questions.comp .question .decision .options .option.agree {
+    border: 3px solid #33a474;
+}
+.test-questions.comp .question .decision .options .option.agree.active,
+.test-questions.comp .question .decision .options .option.agree:hover {
+    background-color: #33a474;
+}
+.test-questions.comp .question .decision .options .option.neutral {
+    border: 3px solid #9b9faa;
+}
+.test-questions.comp .question .decision .options .option.neutral.active,
+.test-questions.comp .question .decision .options .option.neutral:hover {
+    background-color: #9b9faa;
+}
+.test-questions.comp .question .decision .options .option.neutral span {
+    font-size: 0.7em;
+}
+.test-questions.comp .question .decision .options .option.disagree {
+    border: 3px solid #88619a;
+}
+.test-questions.comp .question .decision .options .option.disagree.active,
+.test-questions.comp .question .decision .options .option.disagree:hover {
+    background-color: #88619a;
+}
+.test-questions.comp .question .decision .options .option.max span {
+    font-size: 1.1em;
+    margin-top: 3px;
+}
+.test-questions.comp .question .decision .options .option.med span {
+    font-size: 1em;
+    margin-top: 2px;
+}
+.test-questions.comp .question .decision .options .option.min span {
+    font-size: 0.8em;
+    margin-top: 1px;
+}
+.test-questions.comp .question .decision .options .option.active span {
+    color: #fff;
+}
+.test-questions.comp .question .decision .options .option span {
+    color: transparent;
+}
+.question .decision .caption {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.test-questions.comp .question .decision .caption.disagree {
+    color: #88619a;
+}
+.action-row {
+    padding-bottom: 160px;
+}
+.action-row {
+    max-width: 870px;
+    padding: 15px 0 160px;
+}
+.action-row {
+    align-items: center;
+    border-bottom: 1px solid #dddfe2;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 15px 0 160px;
+    width: 100%;
+}
+.button--lg.button--fixed {
+    min-width: 280px;
+}
+.button--lg {
+    font-size: 20px;
+    height: 80px;
+    line-height: 2;
+    padding: 20px 50px;
+}
+.button--purple {
+    background-color: #88619a;
+    border-color: #88619a;
+    color: #fff;
+}
+.button--pill {
+    border-radius: 40px;
+}
+.sp-button {
+    align-items: center;
+    border: 1px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Open Sans,Helvetica Neue,Arial,sans-serif;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 2;
+    outline: 0;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    vertical-align: middle;
+    width: auto;
+}
+.button--lg {
+    font-size: 23px;
+    height: 80px;
+    line-height: 2;
+    padding: 20px 50px;
+}
+.sp-icon {
+    margin-left: 12px;
+}
+.icon--rotatable{
+    transform-origin: center;
+}
+.button--lg .sp-icon {
+    height: 22px;
+    width: 22px;
+}
+.sp-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    height: 48px;
+    width: 48px;
+}
+.sp-icon>svg {
+    height: 100%;
+    width: 100%;
+}
+.button--purple .sp-icon.icon--inherit path, .button--purple .sp-icon.icon--inherit polygon {
+    fill: #fff;
 }
