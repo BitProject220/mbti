@@ -1,6 +1,4 @@
-.Main {
-    padding-top: 90px;
-}
+
 
 .Header {
     position: fixed;
@@ -9,13 +7,13 @@
     width: 100%;
     height: 90px;
     background-color: white;
+    z-index: 99;
 }
 
 .LogoImg {
-    width: 60%;
+    width: 45%;
     height: 100%;
     padding-top : 9px;
-    padding-left: 140px;
 
 }
 
@@ -28,25 +26,31 @@
     padding: 0px 20px;
     align-items: center;
     justify-content: space-between;
-    z-index: 99;
+}
+
+.Navigation {
+    font-size: 1rem !important;
 }
 
 .Navigation ul {
    display: flex;
    list-style: none;
    height: 100%;
+   margin-bottom: 0px !important;
+   padding-left: 0px !important;
 }
 
 .Navigation ul li {
     margin-left: 20px;
     height: 100%;
+    
 
 }
 
 .Navigation .MenuBarSub:hover {
-    border-top: 4px solid #4298b4;
+    border-top: 4px solid #F19904;
     transition: opacity .2s ease-in-out .1s;
-    padding-top:30px;
+    padding-top: 33px;
     
 }
 
@@ -62,12 +66,9 @@
     background-color: white;
 }
 
-.TestBtn {
+.UserBtn {
     font-size: 16px;
-    padding: 11px 30px;
-    border-radius: 40px;
+    padding: 13px 30px;
     margin-left : 5px;
-    border : none;
-    outline: none;
-    background-color :bisque;
+
 }

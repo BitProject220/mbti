@@ -19,7 +19,7 @@ const MBTIDetail = () => {
              height :  300,
              }}>이미지영역
              </div>
-            <div class='sticky'>           
+            <div className='sticky'>           
                 <SidevarLeft />
                 <MainContent />    
             </div>
