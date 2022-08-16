@@ -1,6 +1,4 @@
-.Main {
-    padding-top: 90px;
-}
+
 
 .Header {
     position: fixed;
@@ -10,15 +8,19 @@
     height: 90px;
     background-color: white;
 }
-.LogoImage {
-    width: 210px;
-    height: 43px;
-    display: contents;
+
+.LogoImg {
+    width: 60%;
+    height: 100%;
+    padding-top : 9px;
+    padding-left: 140px;
+
 }
+
 .Menubar {
     display: inline-flex;
     width: 100%;
-    max-width: 97.2%;
+    max-width: 100%;
     height: 100%;
     margin : 0px auto;
     padding: 0px 20px;
@@ -34,15 +36,15 @@
 }
 
 .Navigation ul li {
-    margin-left: 40px;
+    margin-left: 20px;
     height: 100%;
 
 }
 
 .Navigation .MenuBarSub:hover {
-    border-top: 4px solid #4298b4;
+    border-top: 4px solid #F19904;
     transition: opacity .2s ease-in-out .1s;
-    padding-top:30px;
+    padding-top:23px;
     
 }
 

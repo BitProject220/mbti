@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginPage from '../Login/LoginPage';
+import Contents from '../main/Contents'
 import Footer from '../main/Footer';
 import Header from '../main/Header';
 import Content from '../profile/components/Content';
@@ -10,13 +10,10 @@ const Main = () => {
         <div className='Main'>
             <Header/>
         
-<<<<<<< Updated upstream
-            <LoginPage/>
             
-=======
             <Contents/>
           
->>>>>>> Stashed changes
+          
             <Footer/>
 
       </div>

@@ -24,14 +24,9 @@ main.q-pt header .trademark {
     font-size: .9em;
     text-align: center;
 }
-
-media="screen and (min-width: 768px)"
-@media (min-width: 992px) and (min-height: 900px)
 main.q-pt .tips {
     padding: 20px 0 30px;
 }
-media="screen and (min-width: 768px)"
-@media (min-width: 992px)
 main.q-pt .tips {
     background-color: #fff;
     -webkit-clip-path: none;
@@ -39,8 +34,6 @@ main.q-pt .tips {
     overflow: unset;
     padding: 0 0 30px;
 }
-media="screen and (min-width: 768px)"
-@media (min-width: 768px)
 main.q-pt .tips {
     align-items: stretch;
     -webkit-clip-path: polygon(0 0,100% 0,100% 100%,70% calc(100% - 15px),25% 100%,0 calc(100% - 10px));
@@ -50,7 +43,6 @@ main.q-pt .tips {
     margin-top: -1px;
     padding: 20px 10px 30px;
 }
-@media (min-width: 460px)
 main.q-pt .tips {
     padding-top: 20px;
 }
@@ -112,8 +104,6 @@ section {
 .main-wrapper.int main.q-pt section.tips .tip-highlight {
   height: 160px;
 }
-media="screen and (min-width: 768px)"
-@media (min-width: 1200px)
 main.q-pt .tips .tip-highlight.first {
   left: calc(50% - 545px);
 }
@@ -121,19 +111,13 @@ main.q-pt .tips .tip-highlight.first {
   background-color: #4298b4;
   left: calc(50% - 470px);
 }
-media="screen and (min-width: 768px)"
-@media (min-width: 1200px)
 main.q-pt .tips .tip-highlight {
   width: 350px;
 }
-media="screen and (min-width: 768px)"
-@media (min-width: 992px) and (min-height: 900px)
 main.q-pt .tips .tip-highlight {
   height: 260px;
   top: 30px;
 }
-media="screen and (min-width: 768px)"
-@media (min-width: 992px)
 main.q-pt .tips .tip-highlight {
   display: block;
   top: 10px;

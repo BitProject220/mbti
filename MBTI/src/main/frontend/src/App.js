@@ -1,23 +1,23 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
-import TestStart from './startTest/TestStart';
-import Signup from './sign/Signup';
-import ContactMain from './Contact/ContactMain';
-import LoginPage from './Login/LoginPage';
-import Profiles from './profile/Profiles';
 import Test from './test/Test';
 import KakaoRedirectHandler from './Login/KakaoRedirectHandler';
+import SignupMain from './sign/SignupMain';
+import './css/reset.css';
+import MBTIDetail from './DetailApp/Detailpage/MBTIDetail';
+
+
 const App = () => {
   return (
     <BrowserRouter>
       <>
-      <head>
+      <nav>
         <ul>
           <li><Link to="/">Main</Link></li>
           <li><Link to="/signUp">Signup</Link></li>
         </ul>
-      </head> 
+      </nav> 
       
       <Routes>
         <Route path="/signUp" element={<Signup /> } />
@@ -25,14 +25,15 @@ const App = () => {
         <Route path="/LoginPage" element={<LoginPage/>}/> 
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
         <Route path="/Profiles" element={<Profiles />} />
+        <Route path="/signUp" element={<SignupMain /> } />
         <Route path="/" element={<Main/>} />
         <Route index element={<Main/>} />         
         <Route path="/test" element={<Test/>} />
-
         <Route path="/Main">
           <Route index element={<Main/>} />
-        <Route index element={<Main/>} />
         </Route>
+
+        <Route path="/MBTIDetail" element={<MBTIDetail /> } />
       </Routes>
       </>
     </BrowserRouter>

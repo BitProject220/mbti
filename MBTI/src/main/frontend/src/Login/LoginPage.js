@@ -47,7 +47,7 @@ const LoginPage = () => {
                     아직 회원이 아니십니까? 다음을 수행하여 회원가입을 해주세요 &nbsp;
                     <Link to='/' className='link_login' >성격 테스트 검사</Link>&nbsp;
                     또는&nbsp;
-                    <Link to='/' className='link_login'>회원가입</Link>
+                    <Link to='/signUp' className='link_login'>회원가입</Link>
                     .
                     </p>
                     <div className='login_email_input'>
