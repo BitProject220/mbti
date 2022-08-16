@@ -352,7 +352,7 @@ const ModalPg2 = (props) => {
       
     return (
       <>
-      <Button variant="primary" onClick={() => setModalShow(true)} style={{background:'none', color:'#000', border:'none', fontSize:'1.125rem', display:'inline', padding:'0', margin:'0'}}>
+      <Button variant="primary" onClick={() => setModalShow(true)} style={{background:'none', color:'#000', border:'none', fontSize:'1.125rem', display:'inline', padding:0, margin:0}}>
       개인정보 보호정책
       </Button>
 

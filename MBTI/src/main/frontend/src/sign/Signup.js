@@ -3,7 +3,7 @@ import '../css/signup/signup.css';
 import '../css/reset.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import arrow from '../img/downArrow.png';
+import arrow from '../img/signup/downArrow.png';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
 import ModalPg from './ModalPg';
@@ -130,7 +130,7 @@ const Signup = () => {
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">이름 : </label>
                         <div className='input__row' data-v-4d142efa="">
-                            <input type='text' value={ name } onChange={ onInputName } placeholder='Your Name' />
+                            <input type='text' id='signName' value={ name } onChange={ onInputName } placeholder='Your Name' />
                         </div>
                         <p className='input__note' data-v-4d142efa="">
                             어떻게 불러야 할지 알기 위함입니다. 당신이 원한다면 별명을 입력하셔도 됩니다.
@@ -289,7 +289,7 @@ const Signup = () => {
 
                     <div className='policy'>
                         <p>당사는 귀하의 개인 데이터를 판매하거나 부적절하게 공유하지 않습니다. <br />
-                        계속하면 당사의 <ModalPg />과 귀하가 당사의 <ModalPg2 />  을 읽었다는 것에 동의합니다.
+                        계속하면 당사의 <ModalPg /> 과 귀하가 당사의 <ModalPg2 />  을 읽었다는 것에 동의합니다.
                         </p>
                     </div>
                     {/* <ModalPg />
