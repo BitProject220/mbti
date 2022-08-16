@@ -549,7 +549,7 @@ const ModalPg = (props) => {
       
     return (
       <>
-      <Button variant="primary" onClick={() => setModalShow(true) } style={{background:'none', color:'#000', border:'none', fontSize:'1.125rem', display:'inline', padding:'0', margin:'0'}}>
+      <Button variant="primary" onClick={() => setModalShow(true) } style={{background:'none', color:'#000', border:'none', fontSize:'1.125rem', display:'inline', padding:0, margin:0}}>
           이용약관
       </Button>
 
