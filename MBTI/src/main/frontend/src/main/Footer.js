@@ -14,7 +14,7 @@ const Footer = () => {
                 <nav className='FooterLinks'>
                     <ul>
                         <li>
-                            <Link to='/'>Contact</Link>
+                            <Link to='/ContactMain'>Contact</Link>
                         </li>
                         <li>
                             <Link to='/'>Testimonials</Link>
