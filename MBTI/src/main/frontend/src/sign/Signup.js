@@ -167,20 +167,6 @@ const Signup = (props) => {
             else if(gender === '') {
                 alert('성별을 선택하세요.');
             }
-<<<<<<< HEAD
-            dispatch((body))
-                .then(response =>{
-                    if(response.payload.success){
-                        alert('회원가입이 완료되었습니다!');
-                        props.history.push('/Main') // react 에서의 페이지 이동 코드
-                    } else{
-                        alert('Error!!');
-                    }
-                })
-            // 완료가 잘 되었을 경우 이동
-        }
-=======
->>>>>>> main
 
             else {
                 navigate("/SignupSuccess", { state: { name: name , email: email }});
