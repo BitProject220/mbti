@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
-import { useRouter } from 'use-react-router';
-import { useDispatch } from 'react-redux'
-;import '../css/signup/signup.css';
+import '../css/signup/signup.css';
 import '../css/reset.css';
+import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import arrow from '../img/signup/downArrow.png';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
 import ModalPg from './ModalPg';
-import Button from 'react-bootstrap/Button';
 import ModalPg2 from './ModalPg2';
+import axios from 'axios';
 
 
 const Signup = (props) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [gender, setGender] = useState('');
+    const navigate = useNavigate();
 
     /* const onInputName = (e) => {
         const {value} = e.target
@@ -53,10 +54,10 @@ const Signup = (props) => {
         setSelected2(e.target.value);
     };
 
-    const [selected3, setSelected3] = useState('');
+   /*  const [selected3, setSelected3] = useState(''); */
 
     const handleSelect3 = (e) => {
-        setSelected3(e.target.value);
+        setGender(e.target.value);
         console.log(e.target.value);
     };
 
@@ -139,17 +140,35 @@ const Signup = (props) => {
             setName(e.target.value);
         }
 
-        const dispatch = useDispatch();
 
-        const onSubmitHandler = (e) => {
-            e.preventDefault(); // 아무 동작 안하고 버튼만 눌러도 리프레쉬 되는 것을 막는다
-    
-            let body = {
-                email: email,
-                name: name,
-                age: age
+        /* const isValidInput = name.length >= 1 && email.length >= 1 && gender.value.length >= 1; */
+        const nameCh = name.length >= 1;
+        const emailCh = email.length >= 1;
+        const genderCh = gender.length >= 1;
+
+        const getIsActive = 
+        setEmailError && setNameError && nameCh && emailCh && genderCh === true;
+
+         const handleButtonValid = (e) => {
+            
+            e.preventDefault();
+            if (!nameCh) {
+                alert('이름 또는 별명을 입력하세요.');
             }
-            dispatch(registerUser(body))
+            else if (!emailCh) {
+                alert('이메일을 입력하세요.');
+            }
+            else if (emailError) {
+                alert('이메일 형식이 맞지 않습니다.');
+            }
+            else if (nameError) {
+                alert('이름 또는 별명을 입력하세요.');
+            }
+            else if(gender === '') {
+                alert('성별을 선택하세요.');
+            }
+<<<<<<< HEAD
+            dispatch((body))
                 .then(response =>{
                     if(response.payload.success){
                         alert('회원가입이 완료되었습니다!');
@@ -160,9 +179,37 @@ const Signup = (props) => {
                 })
             // 완료가 잘 되었을 경우 이동
         }
+=======
+>>>>>>> main
 
-       
+            else {
+                navigate("/SignupSuccess", { state: { name: name , email: email }});
+                console.log(email);
+            };
+        } 
+
+        /* const handleButtonValid = async (values) => {
+            const {email, name, age, gender} = values;
+            try {
+              await axios.post("/api/auth/signup", {
+                email,
+                name,
+                age,
+                gender
+              });
+              
+              
+                navigate("/SignupSuccess");
         
+            } catch (e) {
+              
+              toast.error(e.response.data.message + "😭", {
+                position: "top-center",
+              });
+            }
+          }; */
+
+    
     
     return (
         <div className='container'>
@@ -286,9 +333,9 @@ const Signup = (props) => {
                             <label>
                                 <FormCheckLeft
                                     type="radio"
-                                    name="radioButton"
+                                    name="gender"
                                     value="male"
-                                    checked={selected3 === 'male'}
+                                    checked={gender === 'male'}
                                     onChange={handleSelect3}
                                 />
                                 <FormCheckText htmlFor="male" style={{textAlign:'center', lineHeight:2}}>남</FormCheckText>
@@ -297,10 +344,10 @@ const Signup = (props) => {
                             <label>
                                 <FormCheckLeft
                                     type="radio"
-                                    name="radioButton"
+                                    name="gender"
                                     value="female"
                                     onChange={handleSelect3}
-                                    checked={selected3 === 'female'}
+                                    checked={gender === 'female'}
                                 />
                                 <FormCheckText2 htmlFor="female" style={{textAlign:'center', lineHeight:2}}>여</FormCheckText2>
                             </label>
@@ -329,8 +376,8 @@ const Signup = (props) => {
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
-                        <button id='conBtn' type='submit' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt">
-                            <span className='buttonText' type='submit' onClick={ onSubmitHandler }>회원가입</span>
+                        <button id='conBtn' type='submit' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ handleButtonValid }>
+                            <span className='buttonText' type='submit'>회원가입</span>
                             <FontAwesomeIcon icon={ faArrowRight } className='rightIcon' />
                         </button>
                         
