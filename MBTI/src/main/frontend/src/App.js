@@ -25,14 +25,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <>
-<<<<<<< HEAD
-=======
-      <nav>
-        <ul>
-          <li><Link to="/">Main</Link></li>
-        </ul>
-      </nav> 
->>>>>>> main
       
       <Routes>
 
@@ -53,13 +45,6 @@ const App = () => {
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
 
         <Route path="/signUp" element={<SignupMain /> } />
-<<<<<<< HEAD
-=======
-        <Route path="/myPage" element={<MyPageMain /> } />
-        
-        <Route path="/signUpSuccess" element={<SignupSuccessMain /> } />
-        <Route path="/" element={<Main/>} />
->>>>>>> main
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPage" element={<LoginPage />}/>
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>         
