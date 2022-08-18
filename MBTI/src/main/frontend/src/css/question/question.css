@@ -55,7 +55,8 @@
     text-align: center;
 }
 
-.question .decision {
+/*
+ .question .decision {
     margin: 50px 0 30px;
 }
 .question .decision {
@@ -64,25 +65,30 @@
 .question .decision {
     margin: 30px 0 20px;
 }
+*/
 .question .decision {
     align-items: center;
     display: flex;
     justify-content: center;
     margin: 30px 0 15px;
+
 }
-.question .caption.agree {
-    text-align: right;
+.question .captionTest.agree {
+    text-align: center;
 }
-.question .caption {
+.question .captionTest.disagree {
+    text-align: center;
+}
+.question .captionTest {
     display: block;
 }
-.question .decision .caption.agree {
+.question .decision .captionTest.agree {
     color: #33a474;
 }
-.question .decision .caption {
+.question .decision .captionTest {
     font-size: 1.3em;
 }
-.question .decision .caption {
+.question .decision .captionTest {
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -221,11 +227,11 @@ a.no-color.with-border:hover {
 .test-questions.comp .question .decision .options .option span {
     color: transparent;
 }
-.question .decision .caption {
+.question .decision .captionTest {
     font-size: 1.5em;
     font-weight: 700;
 }
-.test-questions.comp .question .decision .caption.disagree {
+.test-questions.comp .question .decision .captionTest.disagree {
     color: #88619a;
 }
 .action-row {
@@ -306,4 +312,8 @@ a.no-color.with-border:hover {
 }
 .button--purple .sp-icon.icon--inherit path, .button--purple .sp-icon.icon--inherit polygon {
     fill: #fff;
+}
+
+.fa-check:before {
+    content: "\f00c";
 }

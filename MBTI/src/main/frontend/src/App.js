@@ -17,12 +17,22 @@ import Mbtiworkplacehabits from './DetailApp/Mbtiworkplacehabits';
 
 import ContactMain from './Contact/ContactMain';
 import LoginPage from './Login/LoginPage';
-import Signup from './sign/Signup';
+
+import SignupSuccessMain from './sign/SignupSuccessMain'; 
+import MyPageMain from './myPage/MyPageMain';
 
 const App = () => {
   return (
     <BrowserRouter>
       <>
+<<<<<<< HEAD
+=======
+      <nav>
+        <ul>
+          <li><Link to="/">Main</Link></li>
+        </ul>
+      </nav> 
+>>>>>>> main
       
       <Routes>
 
@@ -37,16 +47,19 @@ const App = () => {
       <Route path="/Mbtiworkplacehabits" element={<Mbtiworkplacehabits id="1" /> } />
       <Route path="/Mbticonclusion" element={<Mbticonclusion id="1" /> } />
 
-
-
-
-
-        <Route path="/signUp" element={<Signup /> } />
+  
         <Route path="/ContactMain" element={<ContactMain/>}/> 
         <Route path="/LoginPage" element={<LoginPage/>}/> 
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
 
         <Route path="/signUp" element={<SignupMain /> } />
+<<<<<<< HEAD
+=======
+        <Route path="/myPage" element={<MyPageMain /> } />
+        
+        <Route path="/signUpSuccess" element={<SignupSuccessMain /> } />
+        <Route path="/" element={<Main/>} />
+>>>>>>> main
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPage" element={<LoginPage />}/>
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>         
