@@ -1,12 +1,13 @@
 import React from 'react';
-import parenthood from '../db/parenthood';
+import workplacehabits from '../db/workplacehabits';
 
-const Parenthood = ({ id }) => {
+const Workplacehabits = ({id, title}) => {
 
-    const data = parenthood.find(data => data.id === id)
- 
+    const data = workplacehabits.find(data => data.id === id)
+    
     return (
-        <>
+        <div>
+            
             <div className='main_description' style={{
                     height :  'auto' ,
                     width: 48+'%',
@@ -45,8 +46,8 @@ const Parenthood = ({ id }) => {
                         <p>{data.Chdescriptsion4_1}</p>
                         <p>{data.Chdescriptsion4_2}</p>
                     </div>
-        </>
+        </div>
     );
 };
 
-export default Parenthood;
+export default Workplacehabits;

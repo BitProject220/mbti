@@ -1,7 +1,7 @@
 export default [
     {
         id: '1',
-        url: '/intj.svg',
+        url: '/img/1-INTJ.png',
         title: '로맨틱한 관계',
         Greatperson: '"모든 형태의 주의 중에서 사랑에 대한 주의는 아마도 진정한 행복에 가장 치명적일 것입니다."',
         footer: '버트런드 러셀',
@@ -31,7 +31,7 @@ export default [
     },
     {
         id: '2',
-        url: '/intj.svg',
+        url: '/img/2-INTP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -61,7 +61,7 @@ export default [
     },
     {
         id: '3',
-        url: '/intj.svg',
+        url: '/img/3-ENTJ.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -88,7 +88,7 @@ export default [
     
     }, {
         id: '4',
-        url: '/intj.svg',
+        url: '/img/4-ENTP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -115,7 +115,7 @@ export default [
     
     }, {
         id: '5',
-        url: '/intj.svg',
+        url: '/img/5-INFJ.png',
         title: '로맨틱한 관계',
         Greatperson: '"사랑은 그 반대보다 인간의 마음에 더 자연스럽게 온다."',
         footer: '넬슨 만델라',
@@ -142,7 +142,7 @@ export default [
     
     }, {
         id: '6',
-        url: '/intj.svg',
+        url: '/img/6-INFP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -169,7 +169,7 @@ export default [
     
     }, {
         id: '7',
-        url: '/intj.svg',
+        url: '/img/7-ENFJ.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -196,7 +196,7 @@ export default [
     
     }, {
         id: '8',
-        url: '/intj.svg',
+        url: '/img/8-ENFP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -223,7 +223,7 @@ export default [
     
     }, {
         id: '9',
-        url: '/intj.svg',
+        url: '/img/9-ISTJ.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -250,7 +250,7 @@ export default [
     
     }, {
         id: '10',
-        url: '/intj.svg',
+        url: '/img/10-ISFJ.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -277,7 +277,7 @@ export default [
     
     }, {
         id: '11',
-        url: '/intj.svg',
+        url: '/img/11-ESTJ.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -304,7 +304,7 @@ export default [
     
     }, {
         id: '12',
-        url: '/intj.svg',
+        url: '/img/12-ESFJ.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -331,7 +331,7 @@ export default [
     
     }, {
         id: '13',
-        url: '/intj.svg',
+        url: '/img/13-ESFJ.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -358,7 +358,7 @@ export default [
     
     }, {
         id: '14',
-        url: '/intj.svg',
+        url: '/img/14-ISTP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -385,7 +385,7 @@ export default [
     
     },{
         id: '15',
-        url: '/intj.svg',
+        url: '/img/15-ESTP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -412,7 +412,7 @@ export default [
     
     },{
         id: '16',
-        url: '/intj.svg',
+        url: '/img/16-ESFP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
