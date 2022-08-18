@@ -1,14 +1,15 @@
-.image {
-    width: 200px;
+.typeImage {
+    width: 150px;
     justify-content: center;
+
 }
 
 .typeGroupComponent{
     justify-content: center;
-    width: 220px;
-    /* background-color: aqua; */
-    margin: 20px;
+    /* width: 220px; */
+    /* background-color: lightgray; */
     padding: 5px;
+    margin:10px;
 }
 
 .types{
@@ -24,15 +25,16 @@
     margin-top: -140px;
     font-family: Open Sans,Helvetica Neue,Arial,sans-serif!important;
     word-break: keep-all;
+    color: #51596a;
 }
-h2{
+h2, h4, h5{
+    justify-content: center;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     line-height: 1.3;
     display: block;
-    font-size: 200px;
     letter-spacing: unset;
     margin: 0;
     pointer-events: none;
@@ -40,10 +42,30 @@ h2{
     text-align: center;
     z-index: 2;
     overflow-wrap: anywhere;
-    font-size: 13em;
-    color: bisque;
+    font-size: 100px;
+    color: black;
 }
 
 .profilesMain{
-    background-color: aquamarine;
+    /* background-color: lightgray; */
+    padding-top: 100px;
+}
+
+.typeDetail{
+    display: flex;
+    justify-content: center;
+
+}
+
+.contentDiv{
+    width: 200px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.typeGroupDiv{
+    width: auto;
+    justify-content: center;
+    margin: 50px;
+    /* background-color: bisque; */
 }

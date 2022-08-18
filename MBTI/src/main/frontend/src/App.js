@@ -25,6 +25,10 @@ import ResultMain from './resultpage/ResultMain';
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
 
+//기진
+import Profiletypes from './Profiles/Profiletypes'
+//기진 끝
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -56,11 +60,17 @@ const App = () => {
         <Route index element={<Main/>} />
         <Route path="/test" element={<Test/>} />
 
+
+      {/* 기진 시작 */}
+        <Route path="/Profiletypes" element={<Profiletypes/>}/>
+      {/* 기진 끝 */}
+
         <Route path="/Main">
         <Route index element={<Main/>} />
         
         </Route>
         <Route path='/resultmain' element={<ResultMain/>}/>
+
 
 
       </Routes>
