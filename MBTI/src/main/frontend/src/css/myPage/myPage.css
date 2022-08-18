@@ -1,0 +1,34 @@
+.myPage{margin:0 auto;
+    max-width:1200px;
+    width:100%}
+.myPage{margin:0 auto;  
+    max-width:1200px;
+    padding:0 15px;
+    width:100%}
+.myPage h1{padding-left:0;
+        padding-right:0}
+.myPage{margin:0 auto;
+    max-width:1200px;
+    width:100%}
+
+.myPageTop {
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: 908px;
+    background-position: 0%;
+    position: relative;
+}
+
+.myPageTop h1 {color: #51596a;
+                font-size:2.9em;
+                font-weight:600;
+                position: absolute;
+                top: 12%;
+                left: -30px;}
+
