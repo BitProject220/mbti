@@ -8,6 +8,7 @@
     height: 90px;
     background-color: white;
     z-index: 99;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.12);
 }
 
 .LogoImg {
@@ -41,10 +42,12 @@
 }
 
 .Navigation ul li {
-    margin-left: 20px;
     height: 100%;
-    
 
+}
+
+.MenuBarList2, .MenuBarList3, .MenuBarList4 {
+    margin-left: 20px;
 }
 
 .Navigation .MenuBarSub:hover {
