@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import '../css/reset.css';
 import '../css/question/question.css';
 import $ from 'jquery';
@@ -9,24 +9,56 @@ import TestList from './TestList';
 
 const TestStart = () => {
 
-    const [selected, setSelected] = useState(false);
-    const selectButton = (e) => {
-        e.target.value = true
-        this.setSelected(true)
-    }
+    
+    const [page, setPage] = useState(0);
+    const [list, setList] = useState([]);
+    const [answer, setAnswer] = useState(
+        {id : '',
+         num : ''   
+        }
 
-    
-        $('.options').on('click', () => {
-            console.log('div 클릭');
-        })
-    
+    );
+
+    const nextButton = () => {
+        setPage(page + 1);
+ 
+    }
+    const data1 = useMemo(() => {
+        return setList(data.filter(item => parseInt((item.id-1) / 6) === page))
+      } , [page])
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [page]);
+
+    const answerClick = (e) => {
+       
+        if(e.target.className.search('options') == -1) {
+
+            if(e.target.className.search('active') == -1){
+                $(e.target).parent().children().addClass(' active');
+                $(e.target).parent().children().not(e.target).removeClass(' active');
+                $(e.target).parent().children().attr('tabindex', 0);
+                $(e.target).parent().children().not(e.target).attr('tabindex', -1);
+                $(e.target).closest('.question').addClass(' inactive');
+                //console.log($(e.target).parent().children('div').hasClass('active'));
+        }
+
+            
+        }
+        
+        //console.log(e.target.className);
+    }
 
     return (
         <>
-        {data.map((item) => <TestList key={item.id} item={item.title}/> )}
+        
+         {list.map((item) =>  <TestList key={item.id} item={item.title} answerClick={answerClick} /> )}
+        
+        
 
         <div className='action-row'>
-            <button type='button' className='sp-action sp-button button--action button--purple button--lg button--pill button--fixed button--icon-rt'>
+            <button type='button' onClick={nextButton} className='sp-action sp-button button--action button--purple button--lg button--pill button--fixed button--icon-rt'>
                 <span className='button__text'>다음</span>
                 <span className='sp-icon icon--inherit icon--rotatable icon--dir-rt icon--arrow'>
                 <svg xmlns='http://www.w3.org/2000/svg' role='img' viewBox='0 0 48 48' aria-labelledby='i_wluntfkkmr'>
