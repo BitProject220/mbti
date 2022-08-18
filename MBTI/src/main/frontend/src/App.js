@@ -21,19 +21,17 @@ import Signup from './sign/Signup';
 import ResultMain from './resultpage/ResultMain';
 
 
+import SignupSuccessMain from './sign/SignupSuccessMain'; 
+import MyPageMain from './myPage/MyPageMain';
+
 const App = () => {
   return (
     <BrowserRouter>
       <>
-      <nav>
-        <ul>
-          <li><Link to="/">Main</Link></li>
-          <li><Link to="/signUp">Signup</Link></li>
-        </ul>
-      </nav> 
       
       <Routes>
 
+      <Route path="/" element={<Main/>} />
 
       <Route path="/Mbtiintrodusion" element={<Mbtiintrodusion id="1" /> } />
       <Route path="/MbtiSW" element={<MbtiSW id="1" /> } />
@@ -44,32 +42,29 @@ const App = () => {
       <Route path="/Mbtiworkplacehabits" element={<Mbtiworkplacehabits id="1" /> } />
       <Route path="/Mbticonclusion" element={<Mbticonclusion id="1" /> } />
 
-
-
-
-
   
         <Route path="/ContactMain" element={<ContactMain/>}/> 
         <Route path="/LoginPage" element={<LoginPage/>}/> 
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
 
         <Route path="/signUp" element={<SignupMain /> } />
-        <Route path="/" element={<Main/>} />
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPage" element={<LoginPage />}/>
-        <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
-        <Route index element={<Main/>} />         
+        <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>         
         <Route path="/test" element={<Test/>} />
+
         <Route path="/Main">
         <Route index element={<Main/>} />
         
         </Route>
         <Route path='/resultmain' element={<ResultMain/>}/>
 
+
       </Routes>
       </>
     </BrowserRouter>
 
+    
   )
   
 };

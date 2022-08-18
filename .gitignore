@@ -56,3 +56,4 @@ out/
 .vscode/
 /.metadata/
 .DS_Store
+.env
