@@ -18,6 +18,7 @@ import Mbtiworkplacehabits from './DetailApp/Mbtiworkplacehabits';
 import ContactMain from './Contact/ContactMain';
 import LoginPage from './Login/LoginPage';
 import Signup from './sign/Signup';
+import ResultMain from './resultpage/ResultMain';
 
 
 const App = () => {
@@ -60,8 +61,10 @@ const App = () => {
         <Route index element={<Main/>} />         
         <Route path="/test" element={<Test/>} />
         <Route path="/Main">
-          <Route index element={<Main/>} />
+        <Route index element={<Main/>} />
+        
         </Route>
+        <Route path='/resultmain' element={<ResultMain/>}/>
 
       </Routes>
       </>
