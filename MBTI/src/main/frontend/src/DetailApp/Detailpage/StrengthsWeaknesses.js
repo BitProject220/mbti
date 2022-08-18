@@ -17,9 +17,6 @@ const StrengthsWeaknesses = ({ id }) => {
                 }}>
                 <h1>{data.h1}</h1>
                 <h2>{data.titles}</h2>
-                <div className='imgDiv'>
-                    <img src={data.urls} />
-                </div>
                     <p><strong>{data.strongtitle1}</strong>{data.strongsubject1}</p>
                     <p><strong>{data.strongtitle2}</strong>{data.strongsubject2}</p>
                     <p><strong>{data.strongtitle3}</strong>{data.strongsubject3}</p>
@@ -28,9 +25,6 @@ const StrengthsWeaknesses = ({ id }) => {
                     <p><strong>{data.strongtitle5}</strong>{data.strongsubject6}</p>   
                     
                 <h2>{data.titlew}</h2>
-                <div className='imgDiv'>
-                    <img src={data.urlw} />
-                </div>
                     <p><strong>{data.Weaknessestitle1}</strong>{data.Weaknessessubject1}</p>
                     <p><strong>{data.Weaknessestitle2}</strong>{data.Weaknessessubject2}</p>
                     <p><strong>{data.Weaknessestitle3}</strong>{data.Weaknessessubject3}</p>

@@ -6,9 +6,10 @@ import img from '../../image/facebook.png';
 const Relationships = ({ id }) => {
 
     const data = relationshipsdata.find(data => data.id === id)
-
+    
     return (
         <>
+           
             <div className='main_description' style={{
                     height :  'auto' ,
                     width: 48+'%',
@@ -21,9 +22,6 @@ const Relationships = ({ id }) => {
                         <footer>{data.footer}</footer>
                     </div>
                     <p >{data.description}</p>
-                    <div className='imgDiv'>
-                        <img src={data.url} />
-                    </div>
                     <h2 >{data.Characteristic1}</h2>
                         <p>{data.Chdescriptsion1_1}</p>
                         <p>{data.Chdescriptsion1_2}</p>

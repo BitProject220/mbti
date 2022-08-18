@@ -1,24 +1,25 @@
 import React from 'react';
-import parenthood from '../db/parenthood';
+import careerpaths from '../db/careerpaths';
 
-const Parenthood = ({ id }) => {
+const Careerpaths = ({ id }) => {
+    
+    const data = careerpaths.find(data => data.id === id)
 
-    const data = parenthood.find(data => data.id === id)
- 
     return (
-        <>
+        <div>
             <div className='main_description' style={{
                     height :  'auto' ,
                     width: 48+'%',
                     float: 'left',
                     color: 'black',
                     }}>
+                        
                     <h1 >{data.title}</h1>
                     <div className='Greatperson'>
                         <p>{data.Greatperson}</p>
                         <footer>{data.footer}</footer>
                     </div>
-                    <p >{data.description}</p>
+                    <p>{data.description}</p>
                     <h2 >{data.Characteristic1}</h2>
                         <p>{data.Chdescriptsion1_1}</p>
                         <p>{data.Chdescriptsion1_2}</p>
@@ -44,9 +45,9 @@ const Parenthood = ({ id }) => {
                     <h2>{data.Characteristic4}</h2>
                         <p>{data.Chdescriptsion4_1}</p>
                         <p>{data.Chdescriptsion4_2}</p>
-                    </div>
-        </>
+            </div>
+        </div>
     );
 };
 
-export default Parenthood;
+export default Careerpaths;
