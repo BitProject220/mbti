@@ -16,7 +16,11 @@ import Mbtiparenthood from './DetailApp/Mbtiparenthood';
 import Mbtiworkplacehabits from './DetailApp/Mbtiworkplacehabits';
 
 import ContactMain from './Contact/ContactMain';
-import LoginPage from './Login/LoginPage';
+import LoginPageMain from './Login/LoginPageMain';
+import FindPasswordMain from './Login/FindPasswordMain';
+import Signup from './sign/Signup';
+import ResultMain from './resultpage/ResultMain';
+
 
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
@@ -45,18 +49,29 @@ const App = () => {
 
   
         <Route path="/ContactMain" element={<ContactMain/>}/> 
-        <Route path="/LoginPage" element={<LoginPage/>}/> 
-        <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
-
+        <Route path="/LoginPageMain" element={<LoginPageMain/>}/> 
+        <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/>  
+    
         <Route path="/signUp" element={<SignupMain /> } />
         <Route path="/ContactMain" element={<ContactMain/>}/>
-        <Route path="/LoginPage" element={<LoginPage />}/>
-        <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>         
+        <Route path="/LoginPageMain" element={<LoginPageMain />}/>
+        <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
+        <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
+        <Route index element={<Main/>} />
         <Route path="/test" element={<Test/>} />
+
 
       {/* 기진 시작 */}
         <Route path="/Profiletypes" element={<Profiletypes/>}/>
       {/* 기진 끝 */}
+
+        <Route path="/Main">
+        <Route index element={<Main/>} />
+        
+        </Route>
+        <Route path='/resultmain' element={<ResultMain/>}/>
+
+
 
       </Routes>
       </>

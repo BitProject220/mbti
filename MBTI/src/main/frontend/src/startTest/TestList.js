@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const TestList = ({item}) => {
+const TestList = ({item, answerClick}) => {
 
   return (
     <>
@@ -12,7 +12,7 @@ const TestList = ({item}) => {
             </div>
             <div role='radiogroup' aria-labelledby='stmt_hjz8r3gh45' className='decision'>
                 <div className='captionTest agree'>동의</div>
-                <div className='options'>
+                <div className='options' onClick={answerClick} >
                     <div role='radio' aria-label='agree-max' data-index='0' aria-checked='false' tabindex='-1' className='option agree max'>
                         <span aria-hidden='true' className='far fa-cheak'></span>
                     </div>

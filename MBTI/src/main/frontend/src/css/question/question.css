@@ -314,6 +314,6 @@ a.no-color.with-border:hover {
     fill: #fff;
 }
 
-.fa-check:before {
+.fa-check {
     content: "\f00c";
 }
