@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/main/header.css';
 import '../css/reset.css';
@@ -8,23 +8,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import LoginPage from '../Login/LoginPage';
 const Header = () => {
+
+
     return (
         <header className='Header'>
             <div className='Menubar'>
 
                 <nav className='Navigation'>
                     <ul>
-                        <li>
+                        <li className='MenuBarList1'>
                             <Link to='/test' className='MenuBarSub'>성격 유형 검사</Link>
                         </li>
-                        <li>
+                        <li className='MenuBarList2'>
                             <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
                         </li>
-                        <li>
-
+                        <li className='MenuBarList3'>
                             <Link to='/' className='MenuBarSub'>커뮤니티</Link>
                         </li>
-                        <li>
+                        <li className='MenuBarList4'>
                             <Link to='/' className='MenuBarSub'>매치하기</Link>
 
                         </li>
