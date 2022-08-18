@@ -20,7 +20,7 @@ const Header = () => {
                             <Link to='/test' className='MenuBarSub'>성격 유형 검사</Link>
                         </li>
                         <li className='MenuBarList2'>
-                            <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
+                            <Link to='/Profiletypes' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li className='MenuBarList3'>
                             <Link to='/' className='MenuBarSub'>커뮤니티</Link>
