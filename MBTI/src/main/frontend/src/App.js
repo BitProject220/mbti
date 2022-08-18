@@ -25,9 +25,8 @@ import ResultMain from './resultpage/ResultMain';
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
 
-//기진
-import Profiletypes from './Profiles/Profiletypes'
-//기진 끝
+import Profiletypes from './profiles/Profiletypes'
+
 
 const App = () => {
   return (
