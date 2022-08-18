@@ -17,7 +17,9 @@ import Mbtiworkplacehabits from './DetailApp/Mbtiworkplacehabits';
 
 import ContactMain from './Contact/ContactMain';
 import LoginPage from './Login/LoginPage';
-import Signup from './sign/Signup';
+
+import SignupSuccessMain from './sign/SignupSuccessMain'; 
+import MyPageMain from './myPage/MyPageMain';
 
 
 const App = () => {
@@ -27,7 +29,6 @@ const App = () => {
       <nav>
         <ul>
           <li><Link to="/">Main</Link></li>
-          <li><Link to="/signUp">Signup</Link></li>
         </ul>
       </nav> 
       
@@ -43,16 +44,15 @@ const App = () => {
       <Route path="/Mbtiworkplacehabits" element={<Mbtiworkplacehabits id="1" /> } />
       <Route path="/Mbticonclusion" element={<Mbticonclusion id="1" /> } />
 
-
-
-
-
   
         <Route path="/ContactMain" element={<ContactMain/>}/> 
         <Route path="/LoginPage" element={<LoginPage/>}/> 
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
 
         <Route path="/signUp" element={<SignupMain /> } />
+        <Route path="/myPage" element={<MyPageMain /> } />
+        
+        <Route path="/signUpSuccess" element={<SignupSuccessMain /> } />
         <Route path="/" element={<Main/>} />
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPage" element={<LoginPage />}/>
