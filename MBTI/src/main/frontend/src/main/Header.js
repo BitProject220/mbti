@@ -23,7 +23,11 @@ const Header = () => {
                             <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li className='MenuBarList3'>
-                            <Link to='/' className='MenuBarSub'>커뮤니티</Link>
+                            <Link to='#' className='MenuBarSub'>커뮤니티</Link>
+                            <div className='DropDown'>
+                                <Link to='/FreeBoard' className='FreeBoardList'>자유 게시판</Link>
+                                <Link to='/MbtiBoard' className='MbtiBoardList'>MBTI별 게시판</Link>
+                            </div>
                         </li>
                         <li className='MenuBarList4'>
                             <Link to='/' className='MenuBarSub'>매치하기</Link>
@@ -43,7 +47,7 @@ const Header = () => {
 
                     </div>
                     <div className='UserBtn'>
-                        <Link to='/test'><FontAwesomeIcon icon={faCircleUser} size="lg" className='UserImg'/></Link>
+                        <Link to='/MyPageMain'><FontAwesomeIcon icon={faCircleUser} size="2x" className='UserImg'/></Link>
                     </div>
                 </div>
 

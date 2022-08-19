@@ -20,6 +20,8 @@ import LoginPage from './Login/LoginPage';
 
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
+import FreeBoard from './board/FreeBoard';
+import MbtiBoard from './board/MbtiBoard';
 
 const App = () => {
   return (
@@ -50,6 +52,10 @@ const App = () => {
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>         
         <Route path="/test" element={<Test/>} />
 
+        <Route path="/MyPageMain" element={<MyPageMain />} />
+
+        <Route path="FreeBoard" element={<FreeBoard />}/>
+        <Route path="MbtiBoard" element={<MbtiBoard />}/>
 
       </Routes>
       </>
