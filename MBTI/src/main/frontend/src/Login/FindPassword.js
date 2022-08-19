@@ -4,7 +4,7 @@ import '../css/login/findPassword.css';
 import message_icon from '../image/message_icon.png';
 import bluemessage from '../image/bluemessage_icon.png';
 import redmessage from '../image/redmessage_icon.png';
-import background from '../img/backgroundColor.png';
+import background from '../img/background/backgroundColor.png';
 
 const FindPassword = () => {
     const findCheckEmail = (e) => {

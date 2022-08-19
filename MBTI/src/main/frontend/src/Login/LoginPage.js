@@ -8,7 +8,7 @@ import bluemessage from '../image/bluemessage_icon.png';
 import redmessage from '../image/redmessage_icon.png';
 import bluepassword from '../image/bluepassword_icon.png';
 import redpassword from '../image/redpassword_icon.png';
-import background from '../img/backgroundColor.png';
+import background from '../img/background/backgroundColor.png';
 
 const LoginPage = () => {
     //이메일 유효성검사
