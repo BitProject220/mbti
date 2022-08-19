@@ -1,7 +1,7 @@
 export default [
     {
         id: '1',
-        url: '/intj.svg',
+        url: '/img/1-INTJ.png',
         title: '우정',
         Greatperson: '"누구에게나 친구는 누구에게도 친구가 아니다."',
         footer: '아리스토텔레스',
@@ -29,7 +29,7 @@ export default [
     },
     {
         id: '2',
-        url: '/intj.svg',
+        url: '/img/2-INTP.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -57,7 +57,7 @@ export default [
     },
     {
         id: '3',
-        url: '/intj.svg',
+        url: '/img/3-ENTJ.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -85,7 +85,7 @@ export default [
     },
     {
         id: '4',
-        url: '/intj.svg',
+        url: '/img/4-ENTP.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -113,7 +113,7 @@ export default [
     },
     {
         id: '5',
-        url: '/intj.svg',
+        url: '/img/5-INFJ.png',
         title: '우정',
         Greatperson: '"내가 내 친구를 위해 할 수 있는 최선은 단순히 그의 친구가 되는 것입니다."',
         footer: '헨리 데이비드 소로',
@@ -141,7 +141,7 @@ export default [
     },
     {
         id: '6',
-        url: '/intj.svg',
+        url: '/img/6-INFP.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -169,7 +169,7 @@ export default [
     },
     {
         id: '7',
-        url: '/intj.svg',
+        url: '/img/7-ENFJ.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -197,7 +197,7 @@ export default [
     },
     {
         id: '8',
-        url: '/intj.svg',
+        url: '/img/8-ENFP.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -225,7 +225,7 @@ export default [
     },
     {
         id: '9',
-        url: '/intj.svg',
+        url: '/img/9-ISTJ.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -253,7 +253,7 @@ export default [
     },
     {
         id: '10',
-        url: '/intj.svg',
+        url: '/img/10-ISFJ.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -281,7 +281,7 @@ export default [
     },
     {
         id: '11',
-        url: '/intj.svg',
+        url: '/img/11-ESTJ.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -309,7 +309,7 @@ export default [
     },
     {
         id: '12',
-        url: '/intj.svg',
+        url: '/img/12-ESFJ.png',
         title: '사회성',
         Greatperson: '',
         footer: '',
@@ -337,7 +337,7 @@ export default [
     },
     {
         id: '13',
-        url: '/intj.svg',
+        url: '/img/13-ESFJ.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -365,7 +365,7 @@ export default [
     },
     {
         id: '14',
-        url: '/intj.svg',
+        url: '/img/14-ISTP.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -393,7 +393,7 @@ export default [
     },
     {
         id: '15',
-        url: '/intj.svg',
+        url: '/img/15-ESTP.png',
         title: '우정',
         Greatperson: '',
         footer: '',
@@ -421,7 +421,7 @@ export default [
     },
     {
         id: '16',
-        url: '/intj.svg',
+        url: '/img/16-ESFP.png',
         title: '우정',
         Greatperson: '',
         footer: '',

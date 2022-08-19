@@ -20,9 +20,6 @@ const Introduction = ({ id, name}) => {
                         <footer>{data.footer}</footer>
                     </div>
                     <p >{data.description}</p>
-                    <div className='imgDiv'>
-                        <img src={data.url} />
-                    </div>
                     <h2 >{data.Characteristic1}</h2>
                         <p>{data.Chdescriptsion1_1}</p>
                         <p>{data.Chdescriptsion1_2}</p>
