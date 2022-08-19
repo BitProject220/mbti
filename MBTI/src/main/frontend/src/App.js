@@ -63,7 +63,7 @@ const App = () => {
         <Route path="/LoginPageMain" element={<LoginPageMain />}/>
         <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
-        <Route index element={<Main/>} />
+        <Route index element={<LoginPageMain/>} />
         <Route path="/test" element={<Test/>} />
 
         <Route path="/MyPageMain" element={<MyPageMain />} />

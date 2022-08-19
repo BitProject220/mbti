@@ -145,6 +145,7 @@ input::placeholder{
 
 .font-size{
     font-size: 20px;
+    color: white;
 }
 .find_password_Btn{
     margin-top: 20px;
@@ -198,6 +199,7 @@ input::placeholder{
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-top: 80px;
 }
 .kakao_btn{
     background-image: url("/src/image/kakao_login_button.png");
@@ -236,3 +238,4 @@ input::placeholder{
     transition: all .2s;
     font-size: 16px; 
 }
+
