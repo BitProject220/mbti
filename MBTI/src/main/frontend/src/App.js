@@ -24,6 +24,8 @@ import ResultMain from './resultpage/ResultMain';
 
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
+import FreeBoard from './board/FreeBoard';
+import MbtiBoard from './board/MbtiBoard';
 
 import Profiletypes from './profiles/Profiletypes'
 
@@ -59,6 +61,10 @@ const App = () => {
         <Route index element={<Main/>} />
         <Route path="/test" element={<Test/>} />
 
+        <Route path="/MyPageMain" element={<MyPageMain />} />
+
+        <Route path="FreeBoard" element={<FreeBoard />}/>
+        <Route path="MbtiBoard" element={<MbtiBoard />}/>
 
       {/* 기진 시작 */}
         <Route path="/Profiletypes" element={<Profiletypes/>}/>

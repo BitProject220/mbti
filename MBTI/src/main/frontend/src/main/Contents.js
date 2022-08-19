@@ -4,7 +4,7 @@ import '../css/main/contents.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import background from '../img/backgroundColor.png';
+import background from '../img/background/backgroundColor.png';
 
 const Contents = () => {
     return (

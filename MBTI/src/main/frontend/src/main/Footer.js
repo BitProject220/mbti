@@ -32,9 +32,9 @@ const Footer = () => {
                 </nav>
 
                 <div className='FooterSocial'>
-                    <Link to='/' className='FaceBook'><img src={facebook} className='FacebookImg' /></Link>
-                    <Link to='/' className='Insta'><img src={insta} className='InstaImg' /></Link>
-                    <Link to='/' className='Twitter'><img src={twitter} className='TwitterImg' /></Link>
+                    <Link to='#' className='FaceBook'><img src={facebook} className='FacebookImg' /></Link>
+                    <Link to='#' className='Insta'><img src={insta} className='InstaImg' /></Link>
+                    <Link to='#' className='Twitter'><img src={twitter} className='TwitterImg' /></Link>
                 </div>
 
                 <div className='FooterAlert'>
