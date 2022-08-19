@@ -6,7 +6,7 @@ import ContactMain from '../Contact/ContactMain';
 import logo from '../img/logo/BWTH_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-
+import LoginPage from '../Login/LoginPage';
 const Header = () => {
 
 
@@ -20,10 +20,14 @@ const Header = () => {
                             <Link to='/test' className='MenuBarSub'>성격 유형 검사</Link>
                         </li>
                         <li className='MenuBarList2'>
-                            <Link to='/ProfilesMain' className='MenuBarSub'>성격 유형</Link>
+                            <Link to='/Profiletypes' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li className='MenuBarList3'>
-                            <Link to='/' className='MenuBarSub'>커뮤니티</Link>
+                            <Link to='#' className='MenuBarSub'>커뮤니티</Link>
+                            <div className='DropDown'>
+                                <Link to='/FreeBoard' className='FreeBoardList'>자유 게시판</Link>
+                                <Link to='/MbtiBoard' className='MbtiBoardList'>MBTI별 게시판</Link>
+                            </div>
                         </li>
                         <li className='MenuBarList4'>
                             <Link to='/' className='MenuBarSub'>매치하기</Link>
@@ -38,12 +42,12 @@ const Header = () => {
 
                 <div className='Login'>
                     <div>
-
+                        <Link to='/LoginPage'>
                         <button className='LoginBtn'>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
-
+                        </Link>
                     </div>
                     <div className='UserBtn'>
-                        <Link to='/test'><FontAwesomeIcon icon={faCircleUser} size="lg" className='UserImg'/></Link>
+                        <Link to='/MyPageMain'><FontAwesomeIcon icon={faCircleUser} size="2x" className='UserImg'/></Link>
                     </div>
                 </div>
 

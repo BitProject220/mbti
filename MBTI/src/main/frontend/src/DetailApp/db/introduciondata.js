@@ -1,7 +1,7 @@
 export default [
     {
         id: '1',
-        url: '/intj.svg',
+        url: '/img/1-INTJ.png',
         name: '소개',
         title: '성격유형: "전략가"',
         Greatperson: '“생각은 인간의 위대함을 구성한다. 인간은 갈대이며, 자연에서 가장 연약한 것이지만, 그는 생각하는 갈대이다.”',
@@ -32,7 +32,7 @@ export default [
     },
     {
         id: '2',
-        url: '/intj.svg',
+        url: '/img/2-INTP.png',
         name: '소개',
         title: '성격유형 : “논리술사”',
         Greatperson: '질문하는 일을 멈추지 않는 것이 중요하다. 호기심은 그 자체만으로 존재 이유가 있다.',
@@ -59,7 +59,7 @@ export default [
     },
     {
         id: '3',
-        url: '/intj.svg',
+        url: '/img/3-ENTJ.png',
         name: '소개',
         title: '성격유형 : “통솔자”',
         Greatperson: '당신의 시간은 유한하다. 그러니 다른 사람의 삶을 사느라 시간을 낭비하지 말라.',
@@ -82,7 +82,7 @@ export default [
     },
     {
         id: '4',
-        url: '/intj.svg',
+        url: '/img/4-ENTP.png',
         name: '소개',
         title: '성격유형 : “변론가”',
         Greatperson: '독립적이고 색다른 방식으로 생각하는 사람이 되어야 한다. 논란이 될 수 있는 아이디어도 과감히 제시하라.',
@@ -106,7 +106,7 @@ export default [
     },
     {
         id: '5',
-        url: '/intj.svg',
+        url: '/img/5-INFJ.png',
         name: '소개',
         title: '성격유형 : “옹호자”',
         Greatperson: '사람을 대할 때는 그 사람의 잠재력을 봐야 하며, 다른 사람들이 잠재력을 발휘할 수 있도록 도와야 한다.',
@@ -131,7 +131,7 @@ export default [
     },
     {
         id: '6',
-        url: '/intj.svg',
+        url: '/img/6-INFP.png',
         name: '소개',
         title: '성격유형 : "중재자"',
         Greatperson: '금이라 해서 다 반짝이는 것이 아니니, 방황하는 자가 모두 길을 잃은 것은 아니다. 오래되었어도 강한 것은 시들지 않으니, 깊은 뿌리에는 서리가 닿지 못한다.',
@@ -155,7 +155,7 @@ export default [
     },
     {
         id: '7',
-        url: '/intj.svg',
+        url: '/img/7-ENFJ.png',
         name: '소개',
         title: '성격유형 : “선도자”',
         Greatperson: '모두가 침묵하는 세상에서는 한 사람의 목소리도 강력한 힘을 발휘한다.',
@@ -179,7 +179,7 @@ export default [
     },
     {
         id: '8',
-        url: '/intj.svg',
+        url: '/img/8-ENFP.png',
         name: '소개',
         title: '성격유형 : “활동가”',
         Greatperson: '당신이 생계를 위해 어떤 일을 하는지는 관심이 없다. 당신이 추구하는 것은 무엇이고 가슴이 시키는 일을 해낼 수 있다고 생각하는지 궁금할 뿐이다.',
@@ -201,7 +201,7 @@ export default [
     },
     {
         id: '9',
-        url: '/intj.svg',
+        url: '/img/9-ISTJ.png',
         name: '소개',
         title: '성격유형 : "현실주의자"',
         Greatperson: '자신에게 주어진 능력을 활용하지 않는 것을 두려워해야 한다. 또한 할 일을 미루거나 게으름을 피우는 것을 두려워해야 한다.',
@@ -224,7 +224,7 @@ export default [
     },
     {
         id: '10',
-        url: '/intj.svg',
+        url: '/img/10-ISFJ.png',
         name: '소개',
         title: '성격유형 : “수호자”',
         Greatperson: '사랑은 남과 나눌 때 커진다. 더 많은 사랑을 받는 유일한 방법은 다른 사람에게 사랑을 베푸는 것이다.',
@@ -247,7 +247,7 @@ export default [
     },
     {
         id: '11',
-        url: '/intj.svg',
+        url: '/img/11-ESTJ.png',
         name: '소개',
         title: '성격유형 : “경영자”',
         Greatperson: '적절한 질서는 모든 것의 기초이다.',
@@ -277,7 +277,7 @@ export default [
     },
     {
         id: '12',
-        url: '/intj.svg',
+        url: '/img/12-ESFJ.png',
         name: '소개',
         title: '성격유형 : “집정관”',
         Greatperson: '서로를 응원하고 기운을 북돋아 주어라. 긍정적인 에너지가 모두에게 퍼져 나갈 것이다.',
@@ -305,7 +305,7 @@ export default [
     },
     {
         id: '13',
-        url: '/intj.svg',
+        url: '/img/13-ESFJ.png',
         name: '소개',
         title: '성격유형 : “장인”',
         Greatperson: '나는 다른 삶을 살고 싶었다. 매일 똑같은 곳에서 똑같은 사람을 만나고 똑같은 일을 하고 싶지는 않았다. 나에게는 흥미로운 도전이 필요했다.',
@@ -333,7 +333,7 @@ export default [
     },
     {
         id: '14',
-        url: '/intj.svg',
+        url: '/img/14-ISTP.png',
         name: '소개',
         title: '성격유형 : “모험가”',
         Greatperson: '나는 매일 변화한다. 잠을 자러 갈 때면 오늘 아침 일어났을 때와는 다른 사람이 되었음을 확실히 느낀다.',
@@ -360,7 +360,7 @@ export default [
         Chdescriptsion4_2: '',
     },{
         id: '15',
-        url: '/intj.svg',
+        url: '/img/15-ESTP.png',
         name: '소개',
         title: '성격유형 : "사업가”',
         Greatperson: '서로를 응원하고 기운을 북돋아 주어라. 긍정적인 에너지가 모두에게 퍼져 나갈 것이다.',
@@ -387,7 +387,7 @@ export default [
         Chdescriptsion4_2: '',
     },{
         id: '16',
-        url: '/intj.svg',
+        url: '/img/16-ESFP.png',
         name: '소개',
         title: '성격유형 : “연예인”',
         Greatperson: '주저하지 말고 매 순간을 즐겨라.',

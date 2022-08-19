@@ -227,6 +227,16 @@ const Signup = (props) => {
             }
 
             else {
+                e.preventDefault();
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:8080/login',
+                    data: {
+                        name: name,
+                        email: email,
+
+                    }
+                })
                 navigate("/SignupSuccess", { state: { name: name , email: email }});
                 console.log(email);
             };
