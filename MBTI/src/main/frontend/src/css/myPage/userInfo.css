@@ -1,0 +1,107 @@
+.userInfo{margin:0 auto;
+    max-width:1200px;
+    width:100%}
+.userInfo{margin:0 auto;  
+    max-width:1200px;
+    padding:0 15px;
+    width:100%}
+.userInfo h1{padding-left:0;
+        padding-right:0}
+.userInfo{margin:0 auto;
+    max-width:1200px;
+    width:100%}
+
+.userInfoTop {
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: 300px;
+    background-position: 0%;
+    position: relative;
+}
+
+.userInfoTop h1 {color: #51596a;
+                font-size:2.9em;
+                font-weight:600;
+                position: absolute;
+                top: 120px;
+                left: -30px;}
+
+
+
+.sp-row>div:first-of-type .row__description[data-v-cbdfd9aa] {
+    flex: 0 0 60%;
+    margin-bottom: 0;
+}
+
+.sp-row>div:first-of-type .row__description[data-v-cbdfd9aa] {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+* {
+    scrollbar-color: #f9f9f9;
+    scrollbar-width: thin;
+}
+
+.userInfo div {
+    display: block;
+}
+body {
+    color: #51596a;
+    font-family: Open Sans,Helvetica Neue,Arial;
+    margin: 0;
+    transition: padding-top .2s ease-in-out;
+}
+
+div[data-v-cbdfd9aa] {font-size: 1.125em;
+                        width: 80%;}
+
+.row__description {margin: 80px 0;}
+
+
+.row__description .row__title[data-v-cbdfd9aa] {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -.4px;
+    line-height: 1.4545;
+    margin-bottom: 10px;
+}
+
+
+
+.row__description .row__subtitle[data-v-cbdfd9aa] {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5714;
+    margin-bottom: 5px;
+}
+
+
+
+.row__description .row__text[data-v-cbdfd9aa] {
+    color: #7f7f7f;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+#userInfoBtn {
+    width: 200px;
+    height: 70px;
+    padding: 0;
+}       
+
+.userButtonText {align-items: center;
+line-height: 2;
+font-weight: 100;}
+
+                
+

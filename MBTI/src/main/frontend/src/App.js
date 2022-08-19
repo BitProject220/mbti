@@ -20,6 +20,7 @@ import LoginPage from './Login/LoginPage';
 
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
+import UserInformationMain from './myPage/UserInformationMain';
 
 const App = () => {
   return (
@@ -45,6 +46,10 @@ const App = () => {
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/> 
 
         <Route path="/signUp" element={<SignupMain /> } />
+        <Route path="/signupSuccess" element={<SignupSuccessMain /> } />
+        <Route path="/userInfo" element={ <UserInformationMain /> } />
+
+
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPage" element={<LoginPage />}/>
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>         
