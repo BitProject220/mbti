@@ -24,6 +24,7 @@ import ResultMain from './resultpage/ResultMain';
 
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
+import UserInformationMain from './myPage/UserInformationMain';
 import FreeBoard from './board/FreeBoard';
 import MbtiBoard from './board/MbtiBoard';
 
@@ -54,6 +55,10 @@ const App = () => {
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/>  
     
         <Route path="/signUp" element={<SignupMain /> } />
+        <Route path="/signupSuccess" element={<SignupSuccessMain /> } />
+        <Route path="/userInfo" element={ <UserInformationMain /> } />
+
+
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPageMain" element={<LoginPageMain />}/>
         <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>

@@ -13,9 +13,14 @@ import axios from 'axios';
 
 
 const Signup = (props) => {
+    const mailnumCheck = false;
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [gender, setGender] = useState('');
+    const [emailNum, setEmailNum] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordCheck, setPasswordCheck] = useState('');
+    const [show, setShow] = useState(false);
     const navigate = useNavigate();
 
     /* const onInputName = (e) => {
@@ -42,7 +47,7 @@ const Signup = (props) => {
         }
     }
 
-    const [Selected, setSelected] = useState("");
+    /* const [Selected, setSelected] = useState("");
 
     const handleSelect = (e) => {
         setSelected(e.target.value);
@@ -52,7 +57,7 @@ const Signup = (props) => {
 
     const handleSelect2 = (e) => {
         setSelected2(e.target.value);
-    };
+    }; */
 
    /*  const [selected3, setSelected3] = useState(''); */
 
@@ -125,6 +130,7 @@ const Signup = (props) => {
         const [modalShow, setModalShow] = React.useState(false);
 
 
+        //이메일 입력&유효성
           const [emailError, setEmailError] = useState(false);
           const onChangeEmail = (e) => {
             const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
@@ -133,6 +139,7 @@ const Signup = (props) => {
             setEmail(e.target.value);
         };
 
+        //이름입력&유효성
         const [nameError, setNameError] = useState(false);
         const onChangeName = (e) => {
             if(e.target.value.length >= 1) setNameError(false);
@@ -140,14 +147,53 @@ const Signup = (props) => {
             setName(e.target.value);
         }
 
+        //이메일 인증버튼 눌렀을때
+        /* const onEmailCheck = () => {
+            setShow(true);
+        } */
 
+        //이메일 인증번호버튼 눌렀을때
+        const onEmailNumCheck = () => {}
+
+        //이메일 인증칸 입력 & 유효성
+        const [emailCheckError, setEmailCheckError] = useState(false);
+        const onChangeEmailNumCheck = (e) => {
+            if(e.target.value.length >= 1) setEmailCheckError(false);
+            else setEmailCheckError(true);
+            setEmailNum(e.target.value);
+        }
+
+        //비밀번호 인증칸 입력 & 유효성
+        
+        const [passwordError, setPasswordError] = useState(false);
+        const onChangeSignPwd = (e) => {
+        //비밀번호
+        const passwordRegex = /[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi;
+        
+        if (!e.target.value || passwordRegex.test(e.target.value) && password.length >= 8) setPasswordError(false);
+        else setPasswordError(true);
+        setPassword(e.target.value);
+        };
+
+        //비밀번호 확인
+        const [passwordCheckError, setPasswordCheckError] = useState(false);
+
+        const onChangeSignPwdCheck = (e) => {
+            if(e.target.value === password) setPasswordCheckError(false);
+            else setPasswordCheckError(true);
+            setPasswordCheck(e.target.value);
+        }
+
+    
         /* const isValidInput = name.length >= 1 && email.length >= 1 && gender.value.length >= 1; */
         const nameCh = name.length >= 1;
         const emailCh = email.length >= 1;
         const genderCh = gender.length >= 1;
+        const passwordCh = password.length >= 1;
+        const passwordCheckCh = passwordCheck.length >= 1;
 
         const getIsActive = 
-        setEmailError && setNameError && nameCh && emailCh && genderCh === true;
+        setEmailError && setNameError && setPasswordError && nameCh && emailCh && genderCh && passwordCh && passwordCheckCh === true;
 
          const handleButtonValid = (e) => {
             
@@ -163,6 +209,18 @@ const Signup = (props) => {
             }
             else if (nameError) {
                 alert('이름 또는 별명을 입력하세요.');
+            }
+            else if (!passwordCh) {
+                alert('비밀번호를 입력하세요.');
+            }
+            else if (passwordError) {
+                alert('비밀번호는 특수문자 1자를 포함하여 8자 이상 입력하세요.');
+            }
+            else if (!passwordCheckCh) {
+                alert('비밀번호 확인을 하세요.');
+            }
+            else if(passwordCheckError) {
+                alert('비밀번호가 맞지 않습니다.');
             }
             else if(gender === '') {
                 alert('성별을 선택하세요.');
@@ -223,19 +281,59 @@ const Signup = (props) => {
                         {nameError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이름 또는 별명을 입력하세요.</p>}
                     </div>
 
-                    <div className='sp-input inputgroup has--label' data-v-4d142efa="">
+                    <div className='sp-input inputgroup has--label emailBox' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">이메일 : </label>
-                        <div className='input__row inputEmail' data-v-4d142efa="">
-                            {/* <input id='emailInputBox' type='email' value={ email } onChange={ onInputEmail } placeholder='Your E-mail'></input> */}
-                            <input id='emailInputBox' name='email' type='email' value={ email }  onChange={ onChangeEmail } placeholder='Your E-mail' />
-                            
-                            <FontAwesomeIcon icon={ faEnvelope } data-v-4d142efa="" className="sp-icon input__icon icon--md icon--inherit icon--envelope" id='icon' />
+                        <div>
+                            <div className='input__row inputEmail' data-v-4d142efa="">
+                                {/* <input id='emailInputBox' type='email' value={ email } onChange={ onInputEmail } placeholder='Your E-mail'></input> */}
+                                <input id='emailInputBox' name='email' type='email' value={ email }  onChange={ onChangeEmail } placeholder='Your E-mail' />
+                                
+                                <FontAwesomeIcon icon={ faEnvelope } data-v-4d142efa="" className="sp-icon input__icon icon--md icon--inherit icon--envelope" id='icon' />
+                            </div>
+                            <div data-v-4d142efa="">
+                                <button id='emailCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ () => { setShow(true) } }>
+                                    <span className='buttonText2'>인증</span>
+                                </button>
+                            </div>
                         </div>
-                        <p className='input__note' data-v-4d142efa="">
-                            이메일 주소를 올바르게 입력했는지 다시 확인하세요. 입력한 이메일로 임시 비밀번호를 보낼 것입니다.
+                        { show?
+                            <div>
+                                <div>
+                                    <input type='text' className='email_num_check' value={ emailNum }  onChange={ onChangeEmailNumCheck } placeholder="인증번호 6자리" maxlength="6" />
+                                </div>
+                                <div data-v-4d142efa="">
+                                    <button id='emailNumCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ onEmailNumCheck }>
+                                        <span className='buttonText3'>확인</span>
+                                    </button>
+                                </div>
+                            </div>
+                            :null
+                        }
+                        <p className='input__note' data-v-4d142efa="" style={{marginTop:'1%'}}>
+                            이메일 주소를 올바르게 입력했는지 다시 확인하세요. 입력한 이메일로 인증번호를 보낼 것입니다.
                         </p>
                        
                         {emailError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이메일 형식이 맞지 않습니다.</p>}
+                    </div>
+
+                    <div className='sp-input inputgroup has--label' data-v-4d142efa="">
+                        <label className='input__label label' data-v-4d142efa="">비밀번호 : </label>
+                        <div className='input__row' data-v-4d142efa="">
+                            <input type='password' id='signPassword' name='password' value={ password } onChange={ onChangeSignPwd } placeholder='비밀번호 8자리 이상 입력하세요.' />
+                        </div>
+                        {passwordError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>특수문자 1자 이상, 전체 8자 이상 입력하세요.</p>}
+                    </div>
+
+                   
+                    <div className='sp-input inputgroup has--label' data-v-4d142efa="" style={{marginTop:'-30px'}}>
+                        <label className='input__label label' data-v-4d142efa="">비밀번호 확인: </label>
+                        <div className='input__row' data-v-4d142efa="">
+                            <input type='password' id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' />
+                        </div>
+                        <p className='input__note' data-v-4d142efa="">
+                            비밀번호는 특수문자([`~!@@#$%^&*|₩₩₩'₩";:₩/?)를 포함하여 8자리 이상 입력하세요.
+                        </p>
+                        {passwordCheckError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다.</p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
@@ -262,10 +360,6 @@ const Signup = (props) => {
                             귀하는 귀하의 국가에서 적용되는 법률에 따라 당사의 웹 사이트 사용에 동의하기에 충분한 13세 이상이어야 합니다.
                         </p>
                     </div>
-
-                    
-
-                    
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">성별 : </label>
@@ -318,7 +412,7 @@ const Signup = (props) => {
 
     
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="" style={{marginTop:'2.5%'}}>
-                    <label className='input__label label' data-v-4d142efa="">뉴스레터를 구독하시겠습니까? </label>
+                    <label className='input__label label' data-v-4d142efa="">개인정보 수집 및 이용에 동의하시겠습니까? </label>
                         <div className='toggle' style={{marginTop:'1.5%'}}>
                             <div className='toggleDiv'>
                                 <input
@@ -339,7 +433,7 @@ const Signup = (props) => {
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <button id='conBtn' type='submit' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ handleButtonValid }>
-                            <span className='buttonText' type='submit'>회원가입</span>
+                            <span className='buttonText'>회원가입</span>
                             <FontAwesomeIcon icon={ faArrowRight } className='rightIcon' />
                         </button>
                         
