@@ -169,6 +169,16 @@ const Signup = (props) => {
             }
 
             else {
+                e.preventDefault();
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:8080/login',
+                    data: {
+                        name: name,
+                        email: email,
+
+                    }
+                })
                 navigate("/SignupSuccess", { state: { name: name , email: email }});
                 console.log(email);
             };
@@ -253,43 +263,9 @@ const Signup = (props) => {
                         </p>
                     </div>
 
-                    <div className='sp-input inputgroup has--label' data-v-4d142efa="">
-                        <label className='input__label label' data-v-4d142efa="">성격유형 : </label>
-                        <div className='select'>
-                            <select onChange={handleSelect} value={Selected} id='selectBox' name='mbtiType'>
-                                <option value="0">MBTI검사를 먼저 진행하세요.</option>
-                                <option value="1">분석가    (INTJ)</option>
-                                <option value="2">논리술사  (INTP)</option>
-                                <option value="3">통솔자    (ENTJ)</option>
-                                <option value="4">변론가    (ENTP)</option>
-                                <option value="5">옹호자    (INFJ)</option>
-                                <option value="6">중재자    (INFP)</option>
-                                <option value="7">선도자    (ENFJ)</option>
-                                <option value="8">활동가    (ENFP)</option>
-                                <option value="9">현실주의자(ISTJ)</option>
-                                <option value="10">수호자   (ISFJ)</option>
-                                <option value="11">경영자   (ESTJ)</option>
-                                <option value="12">집정관   (ESFJ)</option>
-                                <option value="13">장인     (ISTP)</option>
-                                <option value="14">모험관   (ISFP)</option>
-                                <option value="15">사업가   (ESTP)</option>
-                                <option value="16">연예인   (ESFP)</option>
-                            </select>
-                            <span id='arrowImg'><img src={ arrow } alt="" /></span>
-                        </div>
-                    </div>
+                    
 
-                    <div className='sp-input inputgroup has--label' data-v-4d142efa="">
-                        <label className='input__label label' data-v-4d142efa="">이외의 유형 : </label>
-                        <div className='select'>
-                            <select onChange={handleSelect2} value={Selected2} id='selectBox'>
-                                <option value="0">MBTI검사를 먼저 진행하세요.</option>
-                                <option value="1">A (Assertive)</option>
-                                <option value="2">T (Turbulent)</option>
-                            </select>
-                            <span id='arrowImg'><img src={ arrow } alt="" /></span>
-                        </div>
-                    </div>
+                    
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">성별 : </label>
