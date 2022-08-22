@@ -9,8 +9,8 @@ function TypeGroup() {
         <div className='profilesMain'>
             {Data.TypeGroup.map(group => (
                 <>
-                <div className='typeGroupDiv'>
-                    <h2 key={group.id}>{group.groupName}</h2>
+                <div className='typeGroupDiv' key={group.id}>
+                    <h2>{group.groupName}</h2>
                     <div className='typeDetail'>
                     {group.typeDetail.map(detail=>(
                         // <div key={detail.mbtiType} className='typeGroupComponent'>
@@ -21,12 +21,12 @@ function TypeGroup() {
                         //     <h5>{detail.mbtiType}</h5>
                         //     <div>{detail.content}</div>
                         // </div>
-                        <TypeGroupComponent key={detail.mbtiType} detail={detail} />
+                        <TypeGroupComponent key={detail.id} detail={detail} />
                     ))
                     }
                     </div>
                 </div>
-                </>
+                </> 
             ))}
         </div>
     );
