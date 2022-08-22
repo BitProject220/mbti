@@ -23,7 +23,7 @@ const Header = () => {
                             <Link to='/Profiletypes' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li className='MenuBarList3'>
-                            <Link to='/BoardMain' className='MenuBarSub'>커뮤니티</Link>
+                            <Link to='#' className='MenuBarSub'>커뮤니티</Link>
                             <div className='DropDown'>
                                 <Link to='/FreeBoard' className='FreeBoardList'>자유 게시판</Link>
                                 <Link to='/MbtiBoard' className='MbtiBoardList'>MBTI별 게시판</Link>
