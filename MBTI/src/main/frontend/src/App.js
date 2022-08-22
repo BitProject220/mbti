@@ -80,8 +80,11 @@ const App = () => {
         <Route path="FreeBoard" element={<FreeBoard />}/>
         <Route path="MbtiBoard" element={<MbtiBoard />}/>
 
-      {/* 기진 시작 */}
+
+      {/* 기진 시작 */} 
+  
         {/* 프로필 */}
+
         <Route path="/Profiletypes" element={<Profiletypes/>}/>
         {/* 보드 */}
         <Route path="/BoardMain" element={<BoardMain/>}/>
