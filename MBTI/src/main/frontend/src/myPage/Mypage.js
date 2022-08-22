@@ -1,8 +1,12 @@
 import React from 'react';
 import myPageTolp2 from '../img/myPage/myPageTolp3.png';
 import '../css/myPage/myPage.css';
+import UserEditModal from './UserEditModal';
+import UserDeleteModal from './UserDeleteModal';
 
 const Mypage = () => {
+
+
     return (
         <div style={{backgroundImage:`url(${ myPageTolp2 })`, backgroundRepeat:'no-repeat', backgroundPosition: '0% 0%', backgroundSize:'100% 300px'}}>
             <div className='myPage'>
@@ -31,7 +35,7 @@ const Mypage = () => {
                                 <div className='ContentSub_Sub2'>이름, 나이, 성격유형, 성별, 뉴스레터를 수정 하고 싶으시면 당장 클릭하세요!</div>
                             </div>
                             <div className='ContentSub_Btn'>
-                                <button className='UserEditBtn'><span>정보 수정</span></button>
+                                <UserEditModal/>
                             </div>
                         </div>
                     </div>
@@ -44,7 +48,7 @@ const Mypage = () => {
                                 <div className='ContentSub_Sub3'>회원 탈퇴를 하시면 모든 정보가 사라집니다.</div>
                             </div>
                             <div className='ContentSub_Btn'>
-                                <button className='UserDeleteBtn'><span>회원 탈퇴</span></button>
+                                <UserDeleteModal />
                             </div>
                         </div>
                     </div>

@@ -29,6 +29,10 @@ import FreeBoard from './board/FreeBoard';
 import MbtiBoard from './board/MbtiBoard';
 
 import Profiletypes from './profiles/Profiletypes'
+import UserEditModal from './myPage/UserEditModal';
+import UserDeleteModal from './myPage/UserDeleteModal';
+
+
 
 
 const App = () => {
@@ -79,7 +83,12 @@ const App = () => {
         <Route index element={<Main/>} />
         
         </Route>
-        <Route path='/resultmain' element={<ResultMain/>}/>
+        <Route path='/resultmain' element={<ResultMain />}/>
+
+        <Route path='/UserEditModal' element={<UserEditModal />}/>
+        <Route path='/UserDeleteModal' element={<UserDeleteModal/>}/>
+
+   
 
 
 
