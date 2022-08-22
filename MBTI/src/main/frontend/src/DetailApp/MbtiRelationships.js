@@ -15,8 +15,9 @@ const MbtiRelationships = ({ id }) => {
         <div>
             <Header />
             <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='연인관계에서' style={{ width: 80+'%', height: 300,}} />
+            <img src={data.url} alt='연인관계에서' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}} />
             </div>
+            <div className='body'>
             <div className='sticky' >           
                 <div className='sidediv-left' >
                         <h2>인적성 보고서</h2>
@@ -36,17 +37,18 @@ const MbtiRelationships = ({ id }) => {
                 <div className='BtnComponent'>
                 <div className='beforeBtn'>
                     <a href='/MBTIDetail'>
-                        <div className='title'>소개</div>
+                        <div className='title'>강점과 약점</div>
                         <div className='BtnCircle'>&#8592;</div>
                     </a>
                 </div>
                 <div className='nextBtn'>
                     <a href='/MbtiSW'>
-                        <div className='title'>로맨틱한 관계</div>
+                        <div className='title'>친구를 대할 때</div>
                         <div className='BtnCircle'>&#8594;</div>
                     </a>
                 </div>
                 <SocialIcons />
+                </div>
             </div>
             <Footer />
         </div>

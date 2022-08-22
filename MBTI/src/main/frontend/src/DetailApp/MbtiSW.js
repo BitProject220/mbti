@@ -7,7 +7,7 @@ import strongweakdata from './db/strongweakdata';
 import StrengthsWeaknesses from './Detailpage/StrengthsWeaknesses';
 import SocialIcons from './SocialIcons';
 
-const MbtiSW = ({ id}) => {
+const MbtiSW = ({ id }) => {
 
     const data = strongweakdata.find(data => data.id === id)
 
@@ -16,9 +16,10 @@ const MbtiSW = ({ id}) => {
         <>
             <Header />
             <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='강점과 약점' style={{ width: 80+'%', height: 300,}} />
+            <img src={data.url} alt='강점과 약점' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}}/>
             </div>
-            <div className='sticky' style={{ marginTop: 40,}}>           
+            <div className='body'>
+            <div className='sticky' >           
                 <div className='sidediv-left' style={{
                         height :  'auto' ,
                         width: 16+'%',
@@ -48,11 +49,12 @@ const MbtiSW = ({ id}) => {
                 </div>
                 <div className='nextBtn'>
                     <a href='/MbtiSW'>
-                        <div className='title'>로맨틱한 관계</div>
+                        <div className='title'>이성을 대할 때</div>
                         <div className='BtnCircle'>&#8594;</div>
                     </a>
                 </div>
                 <SocialIcons />
+                </div>
             </div>
             <Footer />
         </>

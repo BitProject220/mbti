@@ -12,9 +12,10 @@ const Mbticareerpaths = ({ id }) => {
     return (
         <div>
             <Header />
-            <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='직장에서의 모습' style={{ width: 80+'%', height: 300,}} />
-            </div>
+                <div className='titleimg' style={{ textAlign: 'center', }} >
+                <img src={data.url} alt='직장에서의 모습' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}} />
+                </div>
+            <div className='body'>    
             <div className='sticky' style={{ marginTop: 40,}}>           
                 <div className='sidediv-left' style={{
                         height :  'auto' ,
@@ -50,6 +51,7 @@ const Mbticareerpaths = ({ id }) => {
                     </a>
                 </div>
                 <SocialIcons />
+                </div>
             </div>
             <Footer />
         </div>

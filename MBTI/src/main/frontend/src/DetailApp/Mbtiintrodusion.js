@@ -7,16 +7,19 @@ import introduciondata from './db/introduciondata';
 import Introduction from './Detailpage/Introduction';
 import SocialIcons from './SocialIcons';
 
-const Mbtiintrodusion = ({ id }) => {
+const Mbtiintrodusion = ({ id } ) => {
 
-    const data = introduciondata.find(data => data.id === id)
+
+    const data = introduciondata.find(data => data.id === id )
+    
+
     return (
-        <div>
+        <div >
             <Header />
             <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='소개' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px',}} />
+            <img src={data.url} alt='소개' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}} />
             </div>
-
+            <div className='body'>
             <div className='sticky' >           
                 <div className='sidediv-left' >
                     <h2>인적성 보고서</h2>
@@ -31,7 +34,7 @@ const Mbtiintrodusion = ({ id }) => {
                         <a href='/Mbticonclusion' className='atherside'><li >결론</li></a>
                     </ul>
                 </div>
-                <Introduction id='1'/> {/*  id 값에 전달 //*/}  
+                <Introduction id={id}/> {/*  id 값에 전달 //*/}  
             </div>
             <div className='BtnComponent'>
                 <div className='nextBtn'>
@@ -41,6 +44,7 @@ const Mbtiintrodusion = ({ id }) => {
                     </a>
                 </div>
                 <SocialIcons />
+                </div>
             </div>
             <Footer />
         </div>

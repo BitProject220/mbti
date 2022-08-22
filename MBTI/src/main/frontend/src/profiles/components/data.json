@@ -9,14 +9,14 @@
                     "mbtiType" : "INTJ-A / INTJ-T",
                     "content" : "모든 일에 대해 계획을 세우며 상상력이 풍부한 전략가입니다.",
                     "imgNo" : 1,
-                    "path" : "#"
+                    "path" : "1"
                 },
                 {
                     "typeName" : "논리술사",
                     "mbtiType" : "INTP-A / INTP-T",
                     "content" : "지식을 끝없이 갈망하는 혁신적인 발명가입니다.",
                     "imgNo" : 2,
-                    "path" : "#"
+                    "path" : "2"
                 },
                 {
                     "typeName" : "통솔자",

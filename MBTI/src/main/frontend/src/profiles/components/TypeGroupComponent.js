@@ -4,7 +4,7 @@ import '../css/typeGroup.css'
 const TypeGroupComponent = (props) => {
     return (
         <div className='typeGroupComponent'>
-            <a href={props.detail.path}>
+            <a href={props.detail.path} id="">
                 <img  className='typeImage'src={require(`../img/${props.detail.imgNo}.png`) } alt={props.detail.typeName}/>
             </a>
             <h4>{props.detail.typeName}</h4>
