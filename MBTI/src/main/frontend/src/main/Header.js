@@ -6,7 +6,6 @@ import ContactMain from '../Contact/ContactMain';
 import logo from '../img/logo/BWTH_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import LoginPage from '../Login/LoginPage';
 const Header = () => {
 
 
@@ -23,7 +22,7 @@ const Header = () => {
                             <Link to='/Profiletypes' className='MenuBarSub'>성격 유형</Link>
                         </li>
                         <li className='MenuBarList3'>
-                            <Link to='#' className='MenuBarSub'>커뮤니티</Link>
+                            <Link to='/BoardMain' className='MenuBarSub'>커뮤니티</Link>
                             <div className='DropDown'>
                                 <Link to='/FreeBoard' className='FreeBoardList'>자유 게시판</Link>
                                 <Link to='/MbtiBoard' className='MbtiBoardList'>MBTI별 게시판</Link>
@@ -40,10 +39,10 @@ const Header = () => {
                     <Link to='/'><img src={logo} className='LogoImg' /></Link>
                 </div>
 
-                <div className='Login'>
+                <div className='UserMypage'>
                     <div>
-                        <Link to='/LoginPage'>
-                        <button className='LoginBtn'>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
+                        <Link to='/'>
+                        <button className='LogOutBtn'>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
                         </Link>
                     </div>
                     <div className='UserBtn'>

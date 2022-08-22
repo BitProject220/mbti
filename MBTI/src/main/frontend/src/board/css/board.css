@@ -1,0 +1,15 @@
+.freeBoardDiv, .mbtiBoardDiv {
+
+    background-color: aqua;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.BoardMainDiv{
+    margin-top: 300px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+}
