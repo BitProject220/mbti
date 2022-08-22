@@ -1,14 +1,27 @@
+.modaltest{margin:0 auto;
+    max-width:1200px;
+    width:100%}
+.modaltest{margin:0 auto;  
+    max-width:1200px;
+    padding:0 15px;
+    width:100%}
+
+.modaltest{margin:0 auto;
+    max-width:1200px;
+    width:100%;
+    padding-top: 130px;}
+    
 .modal_dialog{
     background-color: #fff;
     border-radius: 10px;
-    max-height: 90vh;
-    max-width: 540px;
+    max-height: 100%;
+    max-width: 50%;
     position: relative;
     text-align: center;
     width: 90%;
     width: calc(100% - 30px);
-    
 }
+
 .login_form{
     display: block;
     margin-top: 0em;
