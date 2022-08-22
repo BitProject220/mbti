@@ -30,7 +30,14 @@ import MbtiBoard from './board/MbtiBoard';
 
 // 기진
 import Profiletypes from './profiles/Profiletypes'
+
+import UserEditModal from './myPage/UserEditModal';
+import UserDeleteModal from './myPage/UserDeleteModal';
+
+
+
 import BoardMain from './board/BoardMain';
+
 
 
 const App = () => {
@@ -84,7 +91,12 @@ const App = () => {
           <Route index element={<Main/>} />
 
         </Route>
-        <Route path='/resultmain' element={<ResultMain/>}/>
+        <Route path='/resultmain' element={<ResultMain />}/>
+
+        <Route path='/UserEditModal' element={<UserEditModal />}/>
+        <Route path='/UserDeleteModal' element={<UserDeleteModal/>}/>
+
+   
 
 
 
