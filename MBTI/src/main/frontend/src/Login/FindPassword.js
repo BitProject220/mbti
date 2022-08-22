@@ -4,9 +4,10 @@ import '../css/login/findPassword.css';
 import message_icon from '../image/message_icon.png';
 import bluemessage from '../image/bluemessage_icon.png';
 import redmessage from '../image/redmessage_icon.png';
-import background from '../img/backgroundColor.png';
+import background from '../img/background/backgroundColor.png';
 
 const FindPassword = () => {
+    //이메일 유효성 검사
     const findCheckEmail = (e) => {
         const emailValue1 = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
         // 형식에 맞는 경우 true 리턴

@@ -83,7 +83,7 @@
     display: block;
 }
 .question .decision .captionTest.agree {
-    color: #33a474;
+    color: #2b9eb3;
 }
 .question .decision .captionTest {
     font-size: 1.3em;
@@ -110,7 +110,7 @@
     border-width: 3px;
 }
 .question .decision .options .option.agree {
-    border: 3px solid #33a474;
+    border: 3px solid #2b9eb3;
 }
 .question .decision .options .option {
     align-items: center;
@@ -186,11 +186,11 @@ a.no-color.with-border:hover {
     background-position: 50%;
 }
 .test-questions.comp .question .decision .options .option.agree {
-    border: 3px solid #33a474;
+    border: 3px solid #2b9eb3;
 }
 .test-questions.comp .question .decision .options .option.agree.active,
 .test-questions.comp .question .decision .options .option.agree:hover {
-    background-color: #33a474;
+    background-color: #2b9eb3;
 }
 .test-questions.comp .question .decision .options .option.neutral {
     border: 3px solid #9b9faa;
@@ -203,11 +203,11 @@ a.no-color.with-border:hover {
     font-size: 0.7em;
 }
 .test-questions.comp .question .decision .options .option.disagree {
-    border: 3px solid #88619a;
+    border: 3px solid #cf536d;
 }
 .test-questions.comp .question .decision .options .option.disagree.active,
 .test-questions.comp .question .decision .options .option.disagree:hover {
-    background-color: #88619a;
+    background-color: #cf536d;
 }
 .test-questions.comp .question .decision .options .option.max span {
     font-size: 1.1em;
@@ -232,7 +232,7 @@ a.no-color.with-border:hover {
     font-weight: 700;
 }
 .test-questions.comp .question .decision .captionTest.disagree {
-    color: #88619a;
+    color: #cf536d;
 }
 .action-row {
     padding-bottom: 160px;
@@ -260,9 +260,9 @@ a.no-color.with-border:hover {
     line-height: 2;
     padding: 20px 50px;
 }
-.button--purple {
-    background-color: #88619a;
-    border-color: #88619a;
+.button--purple2 {
+    background-color: #cf536d;
+    border-color: #cf536d;
     color: #fff;
 }
 .button--pill {
@@ -316,4 +316,9 @@ a.no-color.with-border:hover {
 
 .fa-check {
     content: "\f00c";
+}
+
+.button--action:hover .ArrowRightBtn{
+    transform: translateX( 10px );
+    transition: all 0.3s linear;
 }

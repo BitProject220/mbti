@@ -7,7 +7,7 @@ main.q-pt header h1 {
 }
 
 main.q-pt header {
-  background-color: #44AF69;
+  background-color: #2b9eb3;
   padding: 15px;
   position: relative;
 }
@@ -48,7 +48,7 @@ main.q-pt .tips {
 }
 main.q-pt .tips {
     align-items: center;
-    background-color: #44AF69;
+    background-color: #2b9eb3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -89,7 +89,7 @@ main.q-pt .tips .tip {
   width: calc(33.33333% - 0px);
 }
 div .title {
-  color : black;
+  color : #576071;
 }
 section {
     display: block;
@@ -108,7 +108,7 @@ main.q-pt .tips .tip-highlight.first {
   left: calc(50% - 545px);
 }
 main.q-pt .tips .tip-highlight.first {
-  background-color: #4298b4;
+  background-color: #ede3e4;
   left: calc(50% - 470px);
 }
 main.q-pt .tips .tip-highlight {
@@ -140,7 +140,7 @@ div {
 }
 
 div .tip {
-    background: #F19904;
+    background: #ede3e4;
     opacity:0.8;
     text-align: center;
     border-radius: 35px;

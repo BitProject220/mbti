@@ -121,7 +121,7 @@ p[data-v-4d142efa] {
 flex-grow: 1;
 }
 
-#signName, #emailInputBox, #ageBox, #selectBox {
+#signName, #emailInputBox, #ageBox, #selectBox, #signPassword, #signPasswordCheck {
     font-size: 1.125rem;
     line-height: 1.556;
     }
@@ -130,7 +130,7 @@ font-size: 1.125rem;
 line-height: 1.556;
 } */
 
-#signName, #emailInputBox, #ageBox, #selectBox {
+#signName, #ageBox, #selectBox, #signPassword, #signPasswordCheck {
     -webkit-appearance: none;
     background-color: #fff;
     border: 1px solid #cccfd4;
@@ -147,6 +147,42 @@ line-height: 1.556;
     margin: 15px 0;
     transition: border-color .2s ease-in-out;
     }
+
+.email_num_check {
+                -webkit-appearance: none;
+                background-color: #fff;
+                border: 1px solid #cccfd4;
+                border-radius: 5px;
+                box-shadow: inset 0 1px 0 0 rgb(81 89 106 / 5%);
+                color: #51596a;
+                font-size: 1rem;
+                height: 50px;
+                line-height: 1.5;
+                width: 20%;
+                max-width: 100%;
+                outline: 0;
+                padding: 8px 15px;
+                margin: 15px 0;
+                transition: border-color .2s ease-in-out;
+                }
+
+#emailInputBox{
+                -webkit-appearance: none;
+                background-color: #fff;
+                border: 1px solid #cccfd4;
+                border-radius: 5px;
+                box-shadow: inset 0 1px 0 0 rgb(81 89 106 / 5%);
+                color: #51596a;
+                font-size: 1rem;
+                height: 50px;
+                line-height: 1.5;
+                width: 35%;
+                max-width: 100%;
+                outline: 0;
+                padding: 8px 15px;
+                margin: 15px 0;
+                transition: border-color .2s ease-in-out;
+                }
 
 /* input:not([type=checkbox]):not([type=radio]), select {
 -webkit-appearance: none;
@@ -166,8 +202,11 @@ margin: 15px 0;
 transition: border-color .2s ease-in-out;
 } */
 
+#signPassword:focus {border: 1px solid #3ab8cf} 
+#signPasswordCheck:focus {border: 1px solid #3ab8cf} 
 #signName:focus {border: 1px solid #3ab8cf} 
 #emailInputBox:focus {border: 1px solid #3ab8cf} 
+.email_num_check:focus {border: 1px solid #3ab8cf}
 /* input:not([type=checkbox]):not([type=radio]):focus {border: 1px solid #3ab8cf} */
 
 
@@ -175,7 +214,7 @@ transition: border-color .2s ease-in-out;
 
 .input__row .input__icon[data-v-4d142efa] {
 height: 50px;
-left: 15px;
+left: 7px;
 /* pointer-events: none; */
 position: absolute;
 top: 20%;
@@ -193,7 +232,33 @@ height: 48px;
 width: 48px;
 }
 
-#emailInputBox {padding-left: 50px;}
+.emailBox {position: relative;}
+#emailInputBox {padding-left: 50px;
+                }
+
+#emailCheckBtn {
+                width: 130px;
+                height: 50px;
+                padding: 0;
+                position: absolute;
+                top: 68px;
+                right: 50%;}
+
+.buttonText2 {align-items: center;
+              line-height: 2;
+              font-weight: 100;}
+
+#emailNumCheckBtn {
+                    width: 130px;
+                    height: 50px;
+                    padding: 0;
+                    position: absolute;
+                    top: 150px;
+                    right: 50%;}       
+
+.buttonText3 {align-items: center;
+                line-height: 2;
+                font-weight: 100;}
 
 .icon--envelope {color: #ccc;
             width: 20px;

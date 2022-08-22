@@ -26,8 +26,8 @@ const SignupSuccess = () => {
             <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                 <p className='input__note' data-v-4d142efa="" style={{lineHeight:'3'}}>
                     <strong>{ state.name }</strong>님 저희와 함께해 주셔서 감사합니다!<br />
-                    입력하신 이메일로 암호를 보냈습니다.<br />
-                    받으신 비밀번호로 로그인해주세요.<br />
+                    입력하신 이메일로 로그인을 진행하세요.<br />
+                    성격유형검사는 로그인 후 가능합니다. <br />
                     <span style={{color:'#555', fontSize:'1.5em'}}> <strong>{ state.email }</strong></span>
                 </p>
             

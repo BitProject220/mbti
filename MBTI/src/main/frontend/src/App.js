@@ -24,6 +24,9 @@ import ResultMain from './resultpage/ResultMain';
 
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
+import UserInformationMain from './myPage/UserInformationMain';
+import FreeBoard from './board/FreeBoard';
+import MbtiBoard from './board/MbtiBoard';
 
 import Profiletypes from './profiles/Profiletypes'
 
@@ -52,13 +55,21 @@ const App = () => {
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/>  
     
         <Route path="/signUp" element={<SignupMain /> } />
+        <Route path="/signupSuccess" element={<SignupSuccessMain /> } />
+        <Route path="/userInfo" element={ <UserInformationMain /> } />
+
+
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPageMain" element={<LoginPageMain />}/>
         <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
-        <Route index element={<Main/>} />
+        <Route index element={<LoginPageMain/>} />
         <Route path="/test" element={<Test/>} />
 
+        <Route path="/MyPageMain" element={<MyPageMain />} />
+
+        <Route path="FreeBoard" element={<FreeBoard />}/>
+        <Route path="MbtiBoard" element={<MbtiBoard />}/>
 
       {/* 기진 시작 */}
         <Route path="/Profiletypes" element={<Profiletypes/>}/>
