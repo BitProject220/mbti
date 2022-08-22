@@ -28,10 +28,15 @@ import UserInformationMain from './myPage/UserInformationMain';
 import FreeBoard from './board/FreeBoard';
 import MbtiBoard from './board/MbtiBoard';
 
+// 기진
 import Profiletypes from './profiles/Profiletypes'
+
 import UserEditModal from './myPage/UserEditModal';
 import UserDeleteModal from './myPage/UserDeleteModal';
 
+
+
+import BoardMain from './board/BoardMain';
 
 
 
@@ -67,7 +72,7 @@ const App = () => {
         <Route path="/LoginPageMain" element={<LoginPageMain />}/>
         <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
-        <Route index element={<Main/>} />
+        <Route index element={<LoginPageMain/>} />
         <Route path="/test" element={<Test/>} />
 
         <Route path="/MyPageMain" element={<MyPageMain />} />
@@ -76,12 +81,15 @@ const App = () => {
         <Route path="MbtiBoard" element={<MbtiBoard />}/>
 
       {/* 기진 시작 */}
+        {/* 프로필 */}
         <Route path="/Profiletypes" element={<Profiletypes/>}/>
+        {/* 보드 */}
+        <Route path="/BoardMain" element={<BoardMain/>}/>
       {/* 기진 끝 */}
 
         <Route path="/Main">
-        <Route index element={<Main/>} />
-        
+          <Route index element={<Main/>} />
+
         </Route>
         <Route path='/resultmain' element={<ResultMain />}/>
 

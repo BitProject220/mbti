@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router';
 import '../css/detail/detatil.css';
 import '../css/reset.css';
 import Footer from '../main/Footer';
@@ -7,9 +8,10 @@ import introduciondata from './db/introduciondata';
 import Introduction from './Detailpage/Introduction';
 import SocialIcons from './SocialIcons';
 
-const Mbtiintrodusion = ({ id }) => {
-
-    const data = introduciondata.find(data => data.id === id)
+const Mbtiintrodusion = () => {
+    const {state} = useLocation();
+    const { id } = state;
+    const data = introduciondata.find(data => data.id === state.id)
     return (
         <div>
             <Header />
