@@ -25,8 +25,10 @@ const Mbticareerpaths = () => {
     return (
         <>
             <Header />
+
                 <div className='titleimg' >
                 <img src={data.url} alt='직장에서의 모습'  />
+
                 </div>
             <div className='body'>    
             <div className='sticky' >           
@@ -44,6 +46,7 @@ const Mbticareerpaths = () => {
                 </div>
                 <SocialIcons />
                 </div>
+            </div>
             </div>
             <Footer />
         </>

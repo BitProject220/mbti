@@ -23,8 +23,10 @@ const Mbticonclusion = ( ) => {
     return (
         <>
             <Header />
+
                 <div className='titleimg' >
                 <img src={data.url} alt='결론'  />
+
                 </div>
             <div className='body'>
                 <div className='sticky'>           
@@ -39,6 +41,7 @@ const Mbticonclusion = ( ) => {
                     
                     <SocialIcons />
                 </div>
+            </div>
             </div>
             <Footer />
         </>

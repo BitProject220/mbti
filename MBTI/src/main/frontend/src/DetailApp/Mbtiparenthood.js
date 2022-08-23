@@ -26,8 +26,10 @@ const Mbtiparenthood = () => {
     return (
         <>
             <Header />
+
             <div className='titleimg' >
             <img src={data.url} alt='자녀를 대할 때' />
+
             </div>
             <div className='body'>
             <div className='sticky' >           
@@ -45,6 +47,7 @@ const Mbtiparenthood = () => {
                 </div>
                 <SocialIcons />
                 </div>
+            </div>
             </div>
             <Footer />
         </>

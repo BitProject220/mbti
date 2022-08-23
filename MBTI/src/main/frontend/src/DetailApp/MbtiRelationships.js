@@ -29,8 +29,10 @@ const MbtiRelationships = ( ) => {
     return (
         <>
             <Header />
+
             <div className='titleimg'  >
             <img src={data.url} alt='연인관계에서' />
+
             </div>
             <div className='body'>
             <div className='sticky' >           
@@ -48,6 +50,7 @@ const MbtiRelationships = ( ) => {
                 </div>
                 <SocialIcons />
                 </div>
+            </div>
             </div>
             <Footer />
         </>

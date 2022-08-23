@@ -31,8 +31,10 @@ const MbtiSW = ( ) => {
     return (
         <>
             <Header />
+
             <div className='titleimg' >
              <img src={data.url} alt='강점과 약점' />
+
              </div>
             <div className='body'>
             <div className='sticky' >           
@@ -50,6 +52,7 @@ const MbtiSW = ( ) => {
                 </div>
                 <SocialIcons />
                 </div>
+            </div>
             </div>
             <Footer />
         </>
