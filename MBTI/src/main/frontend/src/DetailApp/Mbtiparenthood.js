@@ -27,7 +27,7 @@ const Mbtiparenthood = () => {
         <>
             <Header />
             <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='자녀를 대할 때' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}}/>
+            <img src={data.url} alt='자녀를 대할 때' style={{  marginBottom: 60+'px', paddingTop: 90+'px',}}/>
             </div>
             <div className='body'>
             <div className='sticky' >           

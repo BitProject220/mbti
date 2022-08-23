@@ -27,7 +27,7 @@ const Mbtiworkplacehabits = ( ) => {
             <Header />
             <input type="hidden" data={data.title}></input>
             <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='직장에서 보이는 습관' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}}/>
+            <img src={data.url} alt='직장에서 보이는 습관' style={{  marginBottom: 60+'px', paddingTop: 90+'px',}}/>
             </div>
             <div className='body'>
             <div className='sticky'>           

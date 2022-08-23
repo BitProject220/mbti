@@ -1,14 +1,18 @@
 
-.body{
-    width: 1920px;
+.content{
+    width: 100%;
     margin: auto;
 }
+.body{
+  
+}
 .sticky {
-    display: inline-block;
+    display: flow-root;
+    width: 1600px;
+    margin: auto;
 
 }
 .sidediv-left {
-margin-left: 3%;
 position: sticky;
 top: 88px;
 height:  auto;
@@ -46,6 +50,10 @@ color: black;
 
 .main_description {
     margin: 0 4% 60px 4%;
+    height :  auto;
+    width: 70%;
+    float: left;
+    color: black;
 
 }
 .main_description h1{
