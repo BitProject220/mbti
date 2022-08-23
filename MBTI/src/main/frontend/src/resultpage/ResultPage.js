@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/reset.css';
 import '../css/test/result.css';
 
 const svgstyle={
