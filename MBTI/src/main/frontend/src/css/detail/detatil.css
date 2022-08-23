@@ -1,18 +1,21 @@
-
+.titleimg img{
+    width: 100%;
+    margin-bottom: 60px;
+    padding-top: 90px;
+}
 .body{
-    width: 1920px;
+    width: 100%;
     margin: auto;
 }
 .sticky {
-    display: inline-block;
-
+    display: flow-root;
 }
 .sidediv-left {
-margin-left: 3%;
+margin-left: 4%;
 position: sticky;
 top: 88px;
 height:  auto;
-width: 16%;
+width: 18%;
 float: left;
 color: black;
 }
@@ -45,8 +48,11 @@ color: black;
 
 
 .main_description {
-    margin: 0 4% 60px 4%;
-
+    height: auto;
+    width: 52%;
+    float: left;
+    color: black;
+    margin-left: 2%;
 }
 .main_description h1{
     font-size:  3.5rem;
@@ -81,9 +87,7 @@ color: black;
     margin-top: -15px;
 
 }
-.main_description p strong::before{
 
-}
 .main_description strong{
     font-weight: bold;
 }
@@ -95,7 +99,7 @@ color: black;
 .main_description .Greatperson p{
     border-left: 3px solid #33a474;
     padding-left: 30px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 .main_description .Greatperson{
     margin: 30px 0 ;

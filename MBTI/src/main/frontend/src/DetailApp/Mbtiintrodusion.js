@@ -26,8 +26,8 @@ const Mbtiintrodusion = () => {
     return (
         <>
             <Header />
-            <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='소개' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}} />
+            <div className='titleimg'  >
+            <img src={data.url} alt='소개'  />
             </div>
             <div className='body'>
             <div className='sticky' >           
