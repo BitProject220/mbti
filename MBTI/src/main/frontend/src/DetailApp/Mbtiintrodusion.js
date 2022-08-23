@@ -26,14 +26,20 @@ const Mbtiintrodusion = () => {
     return (
         <>
             <Header />
-            <div className='content'>
-                <div className='titleimg' style={{ textAlign: 'center', }} >
-                <img src={data.url} alt='소개' style={{ marginBottom: 60+'px', paddingTop: 90+'px',}} />
-                </div>
-                <div className='body'>
-                <div className='sticky' >           
-                    <SidevarLeft id={state.id}/>
-                    <Introduction id={state.id}/>
+
+            <div className='titleimg'  >
+            <img src={data.url} alt='소개'  />
+            </div>
+            <div className='body'>
+            <div className='sticky' >           
+                <SidevarLeft id={state.id}/>
+                <Introduction id={state.id}/>
+            </div>
+            <div className='BtnComponent'>
+                <div className='nextBtn' onClick={ onnext }>
+                        <div className='title'>강점과 약점</div>
+                        <div className='BtnCircle'>&#8594;</div>
+
                 </div>
                 <div className='BtnComponent'>
                     <div className='nextBtn' onClick={ onnext }>

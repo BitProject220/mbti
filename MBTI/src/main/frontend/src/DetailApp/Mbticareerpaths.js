@@ -25,9 +25,10 @@ const Mbticareerpaths = () => {
     return (
         <>
             <Header />
-            <div className='content'>
-                <div className='titleimg' style={{ textAlign: 'center', }} >
-                <img src={data.url} alt='직장에서의 모습' style={{ marginBottom: 60+'px', paddingTop: 90+'px',}} />
+
+                <div className='titleimg' >
+                <img src={data.url} alt='직장에서의 모습'  />
+
                 </div>
             <div className='body'>    
             <div className='sticky' >           

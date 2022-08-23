@@ -9,12 +9,7 @@ const StrengthsWeaknesses = ({ id }) => {
 
     return (
         <>
-             <div className='main_description' style={{
-                height :  'auto' ,
-                width: 48+'%',
-                float: 'left',
-                color: 'black',
-                }}>
+             <div className='main_description'>
                 <h1>{data.h1}</h1>
                 <h2>{data.titles}</h2>
                     <p><strong>{data.strongtitle1}</strong>{data.strongsubject1}</p>

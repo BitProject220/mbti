@@ -29,9 +29,10 @@ const MbtiRelationships = ( ) => {
     return (
         <>
             <Header />
-            <div className='content'>
-            <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='연인관계에서' style={{ marginBottom: 60+'px', paddingTop: 90+'px',}} />
+
+            <div className='titleimg'  >
+            <img src={data.url} alt='연인관계에서' />
+
             </div>
             <div className='body'>
             <div className='sticky' >           
