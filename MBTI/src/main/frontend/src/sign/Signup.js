@@ -133,7 +133,7 @@ const Signup = (props) => {
         //이메일 입력&유효성
           const [emailError, setEmailError] = useState(false);
           const onChangeEmail = (e) => {
-            const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+            const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
             if (!e.target.value || emailRegex.test(e.target.value)) setEmailError(false);
             else setEmailError(true);
             setEmail(e.target.value);
@@ -168,9 +168,9 @@ const Signup = (props) => {
         const [passwordError, setPasswordError] = useState(false);
         const onChangeSignPwd = (e) => {
         //비밀번호
-        const passwordRegex = /[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi;
+        const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
         
-        if (!e.target.value || passwordRegex.test(e.target.value) && password.length >= 8) setPasswordError(false);
+        if (!e.target.value || passwordRegex.test(e.target.value) && password.length >= 8 && password.length <= 15) setPasswordError(false);
         else setPasswordError(true);
         setPassword(e.target.value);
         };
@@ -214,7 +214,7 @@ const Signup = (props) => {
                 alert('비밀번호를 입력하세요.');
             }
             else if (passwordError) {
-                alert('비밀번호는 특수문자 1자를 포함하여 8자 이상 입력하세요.');
+                alert('비밀번호는 특수문자 1자를 포함하여 8자 이상 15자 이하로 입력하세요.');
             }
             else if (!passwordCheckCh) {
                 alert('비밀번호 확인을 하세요.');
@@ -297,19 +297,19 @@ const Signup = (props) => {
                             </div>
                         </div>
                         { show?
-                            <div>
+                            <div className='email_num_check_box'>
                                 <div>
-                                    <input type='text' className='email_num_check' value={ emailNum }  onChange={ onChangeEmailNumCheck } placeholder="인증번호 6자리" maxlength="6" />
+                                    <input type='text' className='email_num_check email_num_check_box1' value={ emailNum }  onChange={ onChangeEmailNumCheck } placeholder="인증번호 6자리" maxlength="6" />
                                 </div>
                                 <div data-v-4d142efa="">
-                                    <button id='emailNumCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ onEmailNumCheck }>
+                                    <button id='emailNumCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt email_num_check_box2" onClick={ onEmailNumCheck }>
                                         <span className='buttonText3'>확인</span>
                                     </button>
                                 </div>
                             </div>
                             :null
                         }
-                        <p className='input__note' data-v-4d142efa="" style={{marginTop:'1%'}}>
+                        <p className='input__note' id='mailText1' data-v-4d142efa="" style={{marginTop:'1%'}}>
                             이메일 주소를 올바르게 입력했는지 다시 확인하세요. 입력한 이메일로 인증번호를 보낼 것입니다.
                         </p>
                        
@@ -321,7 +321,7 @@ const Signup = (props) => {
                         <div className='input__row' data-v-4d142efa="">
                             <input type='password' id='signPassword' name='password' value={ password } onChange={ onChangeSignPwd } placeholder='비밀번호 8자리 이상 입력하세요.' />
                         </div>
-                        {passwordError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>특수문자 1자 이상, 전체 8자 이상 입력하세요.</p>}
+                        {passwordError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
                     </div>
 
                    
@@ -331,9 +331,9 @@ const Signup = (props) => {
                             <input type='password' id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' />
                         </div>
                         <p className='input__note' data-v-4d142efa="">
-                            비밀번호는 특수문자([`~!@@#$%^&*|₩₩₩'₩";:₩/?)를 포함하여 8자리 이상 입력하세요.
+                            비밀번호는 특수문자(!@#$%^*+=-)와 영문자, 숫자를 포함하여 8자리 이상 15자리 이하로 입력하세요.
                         </p>
-                        {passwordCheckError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다.</p>}
+                        {passwordCheckError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다. 다시 확인하세요. </p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
