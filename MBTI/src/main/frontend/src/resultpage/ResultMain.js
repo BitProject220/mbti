@@ -11,15 +11,23 @@ import ResultPage from './ResultPage';
 const ResultMain = () => {
   const { state } = useLocation();
   const { reselt, ei, ns, tf, jp, at} = state;
-  const [mbtiresult, setMbtiresult] = useState({
+
+  console.log('렌더링');
+  const [mbti, setMbti] = useState('');
+  const [mbtiresult, setMbtiresult] = useState([
+    {
     mbti : '',
-    ei : ei,
-    ns : ns,
-    jp : tf,
-    at : jp
-  });
+    ei : 0,
+    ns : 0,
+    tf : 0,
+    jp : 0,
+    at : 0
+    }
+  ]);
+  
   useEffect(() => {
     let mymbti = '';
+    
    
     ei > 0 ? mymbti = mymbti.concat('E')  : mymbti = mymbti.concat('I')
     ns > 0 ? mymbti = mymbti.concat('N') :  mymbti = mymbti.concat('S')
@@ -27,17 +35,25 @@ const ResultMain = () => {
     tf > 0 ? mymbti = mymbti.concat('T') :  mymbti = mymbti.concat('F')
     at > 0 ? mymbti = mymbti.concat('-A') : mymbti = mymbti.concat('-T')
     
-    setMbtiresult(...mbtiresult,{mbti : mymbti});
-    console.log(mbtiresult)
+    
+    
+    var perEi = 50 + ei;
+    var perNs = 50 + ns;
+    var perJp = 50 + jp;
+    var perTf = 50 + tf;
+    var perAt = 50 + at;
 
+    setMbti(mymbti);
+    setMbtiresult([{mbti:mymbti,ei:perEi,ns:perNs,jp:perJp,tf:perTf,at:perAt}])
+    
+    //console.log('resultMain = ' +state);
   },[])
-
-  console.log('resultMain = ' +state);
+  
     return (
         <div className='Main'>
         <Header />
         
-        <ResultPage state={state}/>
+        <ResultPage mbtiresult={mbtiresult}/>
   
         <Footer />
       </div>
