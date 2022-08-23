@@ -1,7 +1,11 @@
 
+.content{
+    width: 100%;
+    margin: 0 auto;
+}
 .body{
     width: 1920px;
-    margin: auto;
+    margin: 0 auto;
 }
 .sticky {
     display: inline-block;
@@ -95,7 +99,7 @@ color: black;
 .main_description .Greatperson p{
     border-left: 3px solid #33a474;
     padding-left: 30px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 .main_description .Greatperson{
     margin: 30px 0 ;
@@ -148,7 +152,7 @@ color: black;
     background-color: white;
     border-radius: 100px;
     color: gray;
-    font-size: 3.2rem;
+    font-size: 3rem;
     align-items: center;
     
 }
@@ -166,7 +170,7 @@ color: black;
     background-color: #51596a;
     border-radius: 100px;
     color: white;
-    font-size: 3.2rem;
+    font-size: 3rem;
     align-items: center;
     
 }
