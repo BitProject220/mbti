@@ -1,0 +1,77 @@
+.BoardWriteContent {
+    padding-top:  130px;
+    text-align: center;
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+}
+
+.BoardWriteArea {
+    width: 100%;
+    position: relative;
+    padding-top: 80px;  
+
+}
+
+.BoardWriteEditor {
+    position: relative;
+    width: 90%;
+}
+
+.BoardWriteSubject {
+
+    padding: 5px 5px 5px 250px;
+    width: 100%;
+    background-color: white;
+}
+
+.writeSubject  {
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0 10px 0 10px;
+    width: 120px;
+    line-height: 30px;
+    color: #545861;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.star {
+    color: red;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.attr-subject {
+    text-align: left;
+    margin: 0 0 0 140px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+.subject-text  {
+    width: 70%;
+    display: inline;
+    margin: 0;
+    padding: 0 5px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    color: #666666;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid #dcdcdc;
+    box-shadow: none;
+    background: none;
+    background-color: transparent;
+    box-sizing: content-box;
+    vertical-align: top;
+}
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 400px;
+    margin-top: 20px;
+  }

@@ -1,0 +1,1468 @@
+element.style {
+}
+#kboard-default-list .kboard-list tbody td.kboard-list-title .kboard-comments-count {
+    color: #00a8e7;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.kboard-default-cut-strings {
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+}
+.wp_notice_area #kboard-default-list .kboard-list table a {
+    color: #222;
+    font-weight: 300;
+}
+#kboard-default-list .kboard-list table a {
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+    border: 0;
+    box-shadow: none;
+    font-size: 13px;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+사용자 에이전트 스타일시트
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+.wp_notice_area #kboard-default-list .kboard-list table tbody td {
+    font-weight: 300;
+}
+#kboard-default-list .kboard-list tbody td.kboard-list-title {
+    text-align: left;
+}
+#kboard-default-list .kboard-list tbody tr td {
+    word-break: break-all;
+    border: 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+#kboard-default-list .kboard-list table td {
+    padding: 10px 0;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+#kboard-default-list .kboard-list table {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+사용자 에이전트 스타일시트
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+
+element.style {
+}
+#kboard-default-list .kboard-list-header .kboard-sort select {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: 26px;
+    min-height: 0;
+    line-height: 26px;
+    font-size: 12px;
+    color: #666666;
+    border-radius: 0;
+    border: 1px solid #f1f1f1;
+    background: white;
+    vertical-align: middle;
+    box-shadow: none;
+    box-sizing: content-box;
+    text-indent: 0;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+input, textarea, select {
+    margin: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+사용자 에이전트 스타일시트
+select {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: field;
+    cursor: default;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 0px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+#kboard-default-list .kboard-list-header .kboard-sort {
+    *float: right;
+    display: table-cell;
+    text-align: right;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+element.style {
+}
+#kboard-default-list .kboard-list-header {
+    float: left;
+    display: table;
+    padding-bottom: 15px;
+    width: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+div {
+    display: block;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-list-header .kboard-total-count {
+    text-align: left;
+}
+#kboard-default-list .kboard-list-header .kboard-total-count {
+    *float: left;
+    display: table-cell;
+    font-size: 13px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+div {
+    display: block;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+element.style {
+}
+#kboard-default-list .kboard-list table tr {
+    border: 0;
+    background-color: transparent;
+    transition-duration: 0.3s;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+#kboard-default-list .kboard-list table {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+사용자 에이전트 스타일시트
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-list table thead td {
+    padding: 25px 0;
+    /* background: #43405D; */
+    color: #222;
+    border-bottom: 2px solid #222;
+}
+#kboard-default-list .kboard-list table td.kboard-list-uid {
+    width: 72px;
+}
+.wp_notice_area #kboard-default-list .kboard-list table td {
+    padding: 25px 0;
+}
+#kboard-default-list .kboard-list thead tr td {
+    font-weight: bold;
+    color: #545861;
+    border: 0;
+    border-bottom: 2px solid #f1f1f1;
+}
+#kboard-default-list .kboard-list table td {
+    padding: 10px 0;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+#kboard-default-list .kboard-list table {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+사용자 에이전트 스타일시트
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-list table tbody td {
+    font-weight: 300;
+}
+#kboard-default-list .kboard-list table td.kboard-list-uid {
+    width: 72px;
+}
+.wp_notice_area #kboard-default-list .kboard-list table td {
+    padding: 25px 0;
+}
+#kboard-default-list .kboard-list tbody tr td {
+    word-break: break-all;
+    border: 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+#kboard-default-list .kboard-list table td {
+    padding: 10px 0;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+#kboard-default-list .kboard-list table {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+사용자 에이전트 스타일시트
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-list table tbody td {
+    font-weight: 300;
+}
+#kboard-default-list .kboard-list table td.kboard-list-uid {
+    width: 72px;
+}
+.wp_notice_area #kboard-default-list .kboard-list table td {
+    padding: 25px 0;
+}
+#kboard-default-list .kboard-list tbody tr td {
+    word-break: break-all;
+    border: 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+#kboard-default-list .kboard-list table td {
+    padding: 10px 0;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+#kboard-default-list .kboard-list table {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+사용자 에이전트 스타일시트
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-list table tbody td {
+    font-weight: 300;
+}
+#kboard-default-list .kboard-list tbody td.kboard-list-title {
+    text-align: left;
+}
+#kboard-default-list .kboard-list table td.kboard-list-title {
+    width: auto;
+}
+.wp_notice_area #kboard-default-list .kboard-list table td {
+    padding: 25px 0;
+}
+#kboard-default-list .kboard-list tbody tr td {
+    word-break: break-all;
+    border: 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+#kboard-default-list .kboard-list table td {
+    padding: 10px 0;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+#kboard-default-list .kboard-list table {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+사용자 에이전트 스타일시트
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-pagination {
+    padding: 55px 0 35px;
+}
+#kboard-default-list .kboard-pagination {
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+div {
+    display: block;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+#kboard-default-list .kboard-list tbody tr.kboard-list-notice {
+    background-color: #f4f4f4;
+}
+
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-pagination {
+    padding: 55px 0 35px;
+}
+#kboard-default-list .kboard-pagination {
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+div {
+    display: block;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+
+
+element.style {
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    border: 0;
+}
+ol, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+
+element.style {
+}
+.wp_notice_area #kboard-default-list .kboard-pagination .kboard-pagination-pages li:hover a, .wp_notice_area #kboard-default-list .kboard-pagination .kboard-pagination-pages li.active a {
+    background: #FFF!important;
+    color: #222!important;
+    border: 2px solid #222;
+    height: 33px;
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages li:hover a, #kboard-default-list .kboard-pagination .kboard-pagination-pages li.active a {
+    border: 0;
+    color: #545861;
+    background-color: #eaeaea;
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages li a {
+    display: block;
+    margin: 0;
+    padding: 0 11px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    color: #999999;
+    text-decoration: none;
+    border: 0;
+    background-color: #f9f9f9;
+    box-shadow: none;
+    transition-duration: 0.3s;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 0;
+    padding: 0 1px;
+    background: none;
+    border: 0;
+    list-style: none;
+}
+ol, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+사용자 에이전트 스타일시트
+li {
+    text-align: -webkit-match-parent;
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    border: 0;
+}
+사용자 에이전트 스타일시트
+ul {
+    list-style-type: disc;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+
+
+element.style {
+}
+#kboard-default-list .kboard-search {
+    float: left;
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+div {
+    display: block;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+element.style {
+}
+#kboard-default-list .kboard-search select {
+    display: inline;
+    margin: 0;
+    padding: 0 5px;
+    width: 100px;
+    min-width: 0;
+    max-width: 100px;
+    height: 26px;
+    min-height: 0;
+    font-size: 13px;
+    color: #666666;
+    border-radius: 0;
+    border: 1px solid #f1f1f1;
+    background: none;
+    background-color: white;
+    line-height: 26px;
+    vertical-align: middle;
+    box-shadow: none;
+    box-sizing: content-box;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+input, textarea, select {
+    margin: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+사용자 에이전트 스타일시트
+select {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: field;
+    cursor: default;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 0px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+#kboard-default-list .kboard-search {
+    float: left;
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+element.style {
+}
+#kboard-default-list .kboard-search input {
+    display: inline;
+    margin: 0;
+    padding: 0 5px;
+    width: 200px;
+    min-width: 0;
+    max-width: 200px;
+    height: 26px;
+    min-height: 0;
+    font-size: 13px;
+    color: #666666;
+    border-radius: 0;
+    border: 1px solid #f1f1f1;
+    background: none;
+    background-color: white;
+    line-height: 26px;
+    vertical-align: middle;
+    box-shadow: none;
+    box-sizing: content-box;
+}
+input, textarea, select {
+    margin: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+input[type="text" i] {
+    padding: 1px 2px;
+}
+사용자 에이전트 스타일시트
+input {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+#kboard-default-list .kboard-search {
+    float: left;
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+
+element.style {
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages li a {
+    display: block;
+    margin: 0;
+    padding: 0 11px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    color: #999999;
+    text-decoration: none;
+    border: 0;
+    background-color: #f9f9f9;
+    box-shadow: none;
+    transition-duration: 0.3s;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 0;
+    padding: 0 1px;
+    background: none;
+    border: 0;
+    list-style: none;
+}
+ol, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+사용자 에이전트 스타일시트
+li {
+    text-align: -webkit-match-parent;
+}
+#kboard-default-list .kboard-pagination .kboard-pagination-pages {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    border: 0;
+}
+사용자 에이전트 스타일시트
+ul {
+    list-style-type: disc;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+
+.wp_notice_area a.kboard-default-button-small, .wp_notice_area input.kboard-default-button-small, .wp_notice_area button.kboard-default-button-small {
+    background: #222 !important;
+    color: #FFF !important;
+}
+a.kboard-default-button-small, input.kboard-default-button-small, button.kboard-default-button-small {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 0;
+    padding: 0 10px;
+    width: auto;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: normal;
+    color: #545861 !important;
+    background: #eaeaea !important;
+    border: none;
+    border-radius: 0;
+    text-decoration: none !important;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none;
+    box-shadow: none;
+    transition-duration: 0.3s;
+    box-sizing: content-box;
+}
+button {
+    cursor: pointer;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+사용자 에이전트 스타일시트
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+#kboard-default-list .kboard-search {
+    float: left;
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+.wp_notice_wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+body {
+    line-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    /* font-family: "Nanum Gothic", Nanum, Dotum, 돋음, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+
+element.style {
+}
+.wp_notice_area a.kboard-default-button-small, .wp_notice_area input.kboard-default-button-small, .wp_notice_area button.kboard-default-button-small {
+    background: #222 !important;
+    color: #FFF !important;
+}
+
+a.kboard-default-button-small, input.kboard-default-button-small, button.kboard-default-button-small {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin: 0;
+    padding: 0 10px;
+    width: auto;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: normal;
+    color: #545861 !important;
+    background: #eaeaea !important;
+    border: none;
+    border-radius: 0;
+    text-decoration: none !important;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none;
+    box-shadow: none;
+    transition-duration: 0.3s;
+    box-sizing: content-box;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: none;
+}
+#kboard-default-list .kboard-control {
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: right;
+}
