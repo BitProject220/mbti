@@ -8,46 +8,26 @@ import TestResult from '../test/TestResult';
 import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import TestProcress from './TestProcress';
+import { parse } from '@fortawesome/fontawesome-svg-core';
 
 
 
 
 const TestStart = () => {
-
+    console.log('렌더링함');
     
     const [page, setPage] = useState(0);
     const [list, setList] = useState([]);
     const [answer, setAnswer] = useState([]);
     const [result, setResult] = useState([]);
+    //const [mymbti, setMymbti] = useState('')
+    
+
     const navigate = useNavigate();
     
     const nextButton = () => {
-        if(page == 9) {
-            //alert(result);
-            //console.log(result);
-            return navigate('/resultmain', {state: result});
-        }
-        //const result =[]
-        /* 
-        console.log($('.option.active').attr('data-index'));
-        console.log($('.option.active').attr('tabindex'));
-        console.log($('.option .active'));
-        
-        const score = $('.option.active').map(function() {
-            return $(this).attr('data-index');
-            //return setAnswer(...answer,$(this).attr('data-index'));
-        })
-        .get()   // 반환된 값을 배열로 반환된다.
-        const mbtiType = $('.option.active').map(function() {
-            return $(this).attr('mbti');
-            //return setAnswer(...answer,$(this).attr('data-index'));
-        })
-        .get()
-        //.join(", "); // 배열의 모든 요소를 쉼표(,)로 구분하여 문자열로 반환된다.
-        */
-        
- 
-        
+        //console.log('다음페이지');
         const checkResult = $('.option.active').each(function(){
             const mbti = this.attributes.getNamedItem('mbti');
             const dataIndex = this.attributes.getNamedItem('data-index');
@@ -55,13 +35,72 @@ const TestStart = () => {
 
             result.push({mbti : mbti.value , dataIndex :dataIndex.value});
             
-            
         });
         //console.log(result);
         
-
        setPage(page + 1);
        setAnswer([...answer, result])
+
+            if(page === 9) {
+                let ei = 0;
+                let ns = 0;
+                let jp = 0;
+                let tf = 0;
+                let at = 0;
+            
+                
+
+                //console.log(result);
+                result.map((item) =>{
+                    //console.log(item.mbti + '....' + item.dataIndex);
+                    
+                     switch(item.mbti){
+                        case 'EI' : return (ei += parseInt(item.dataIndex));
+                        case 'NS' : return (ns += parseInt(item.dataIndex));
+                        case 'JP' : return (jp += parseInt(item.dataIndex));
+                        case 'TF' : return (tf += parseInt(item.dataIndex));
+                        case 'AT' : return (at += parseInt(item.dataIndex));
+                        default :  return 0;
+                    }
+                    
+                });
+                console.log(ei);
+                console.log(ns);
+                console.log(jp);
+                console.log(tf);
+                console.log(at);
+                
+               
+                
+                
+                /* 
+                { ei > 0 ? mymbti + 'E': mymbti + 'I'}
+                { ns > 0 ? mymbti + 'N': mymbti + 'S'}
+                { jp > 0 ? mymbti + 'J': mymbti + 'P'}
+                { tf > 0 ? mymbti + 'T': mymbti + 'F'}
+                { at > 0 ? mymbti + '-A' : mymbti +'-T'}
+                 */
+
+                
+                /*                 
+                  ei > 0 ? mymbti.concat('E')  : mymbti.concat('I')
+                  ns > 0 ? mymbti.concat('N') : mymbti.concat('S')
+                  jp > 0 ? mymbti.concat('J') : mymbti.concat('P')
+                  tf > 0 ? mymbti.concat('T') : mymbti.concat('F')
+                  at > 0 ? mymbti.concat('-A') : mymbti.concat('-T')
+                 */
+                
+
+
+                //alert(mymbti);
+                //console.log(mymbti);
+                
+                
+
+                navigate('/resultmain', {state : {result : result, ei : ei, ns : ns, tf : tf, jp : jp, at :at}});
+            }
+       
+
        
     }
   
@@ -74,6 +113,7 @@ const TestStart = () => {
     
     useEffect(() => {
         //window.scrollTo(0, 0);
+ 
 
     }, [page]);
 
@@ -100,8 +140,8 @@ const TestStart = () => {
 
     return (
         <>
-        
         {/*     
+        <TestProcress />
         {list.map((item) => page <10 ? <TestList key={item.id} item={item.title} mbti={item.mbti} answerClick={answerClick} /> : <TestResult result={result} />  )}
         */}         
         {list.map((item) => <TestList key={item.id} item={item.title} mbti={item.mbti} answerClick={answerClick} />)}
