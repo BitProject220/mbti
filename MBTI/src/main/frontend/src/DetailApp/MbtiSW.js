@@ -13,10 +13,20 @@ import SocialIcons from './SocialIcons';
 const MbtiSW = ( ) => {
 
     const {state} = useLocation();
-    const data = introduciondata.find(data => data.id === state.id)
-    //alert(state.id);
 
-    //console.log(data.id);
+    const data = strongweakdata.find(data => data.id === state.id)
+    const {id} = state;
+    console.log(state.id);
+
+
+    const navigate = useNavigate();
+    const onbefore = (e)=> {
+        navigate("/Mbtiintrodusion", { state: { id: id  }});
+    }
+
+    const onnext = (e)=> {
+        navigate("/MbtiRelationships", { state: { id: id  }});
+    }
 
     return (
         <>
@@ -30,17 +40,13 @@ const MbtiSW = ( ) => {
                 <StrengthsWeaknesses id={data.id} />  
             </div>
                 <div className='BtnComponent'>
-                <div className='beforeBtn'>
-                    <a href='/MBTIDetail'>
+                <div className='beforeBtn' onClick={onbefore}>
                         <div className='title'>소개</div>
                         <div className='BtnCircle'>&#8592;</div>
-                    </a>
                 </div>
-                <div className='nextBtn'>
-                    <a href='/MbtiSW'>
+                <div className='nextBtn' onClick={onnext}>
                         <div className='title'>이성을 대할 때</div>
                         <div className='BtnCircle'>&#8594;</div>
-                    </a>
                 </div>
                 <SocialIcons />
                 </div>

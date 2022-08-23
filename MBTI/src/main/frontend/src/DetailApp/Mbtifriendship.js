@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import '../css/detail/detatil.css';
 import '../css/reset.css';
 import Footer from '../main/Footer';
@@ -14,7 +14,17 @@ const Mbtifriendship = ( ) => {
 
     const {state} = useLocation();
     const data = strongweakdata.find(data => data.id === state.id)
+    const {id} = state;
 
+
+    const navigate = useNavigate();
+    const onbefore = (e)=> {
+        navigate("/MbtiRelationships", { state: { id: id  }});
+    }
+
+    const onnext = (e)=> {
+        navigate("/Mbtiparenthood", { state: { id: id  }});
+    }
 
     return (
         <>
@@ -28,17 +38,13 @@ const Mbtifriendship = ( ) => {
                 <Friendship id={data.id} />
             </div>
                 <div className='BtnComponent'>
-                <div className='beforeBtn'>
-                    <a href='/MBTIDetail'>
+                <div className='beforeBtn' onClick={onbefore}>
                         <div className='title'>이성을 대할 때</div>
                         <div className='BtnCircle'>&#8592;</div>
-                    </a>
                 </div>
-                <div className='nextBtn'>
-                    <a href='/MbtiSW'>
+                <div className='nextBtn' onClick={onnext}>
                         <div className='title'>자녀를 대할 때</div>
                         <div className='BtnCircle'>&#8594;</div>
-                    </a>
                 </div>
                 <SocialIcons />
                 </div>

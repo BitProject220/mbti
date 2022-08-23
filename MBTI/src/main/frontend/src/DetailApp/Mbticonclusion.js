@@ -6,14 +6,20 @@ import Conclusion from './Detailpage/Conclusion';
 import SocialIcons from './SocialIcons';
 import '../css/reset.css';
 import '../css/detail/detatil.css';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import SidevarLeft from './SidevarLeft';
 
 const Mbticonclusion = ( ) => {
 
     const {state} = useLocation();
     const data = conclusion.find(data => data.id === state.id)
+    const {id} = state;
 
+
+    const navigate = useNavigate();
+    const onbefore = (e)=> {
+        navigate("/Mbtiworkplacehabits", { state: { id: id  }});
+    }
     return (
         <>
             <Header />
@@ -26,11 +32,9 @@ const Mbticonclusion = ( ) => {
                     <Conclusion id={data.id} /> 
                 </div>
                 <div className='BtnComponent'>
-                    <div className='beforeBtn'>
-                        <a href='/MBTIDetail'>
+                    <div className='beforeBtn' onClick={onbefore}>
                             <div className='title'>직장에서 보이는 습관</div>
                             <div className='BtnCircle'>&#8592;</div>
-                        </a>
                     </div>
                     
                     <SocialIcons />
