@@ -40,7 +40,6 @@ import UserDeleteModal from './myPage/UserDeleteModal';
 
 
 
-import BoardMain from './board/BoardMain';
 
 
 
