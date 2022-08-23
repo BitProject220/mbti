@@ -40,8 +40,7 @@ import UserDeleteModal from './myPage/UserDeleteModal';
 
 
 
-
-import BoardWrite from './board/BoardWrite';
+import BoardWriteMain from './board/BoardWriteMain';
 
 
 
@@ -104,7 +103,8 @@ const App = () => {
         <Route path='/UserEditModal' element={<UserEditModal />}/>
         <Route path='/UserDeleteModal' element={<UserDeleteModal/>}/>
 
-        <Route path='/BoardWrite' element={<BoardWrite/>} />
+
+        <Route path='/BoardWriteMain' element={<BoardWriteMain/>} />
 
    
       </Routes>
