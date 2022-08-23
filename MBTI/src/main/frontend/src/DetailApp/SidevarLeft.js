@@ -8,43 +8,34 @@ const SidevarLeft = ({ id }) => {
     const navigate = useNavigate();
 
     const onIntrodusion = (e) =>{
-        
         navigate("/Mbtiintrodusion", { state: { id: id  }});
-                console.log(id);
                 
     }
     const onSW = (e) =>{
-        console.log(id);
         navigate("/MbtiSW", { state: { id: id  }});
                 
     }
     const onRelationships = (e) =>{
-        console.log(id);
         navigate("/MbtiRelationships", { state: { id: id  }});
                 
     }
     const onFriendship = (e) =>{
-        console.log(id);
         navigate("/Mbtifriendship", { state: { id: id  }});
                 
     }
     const onParenthoo = (e) =>{
-        console.log(id);
         navigate("/Mbtiparenthood", { state: { id: id  }});
                 
     }
     const onCareerpaths = (e) =>{
-        console.log(id);
         navigate("/Mbticareerpaths", { state: { id: id  }});
                 
     }
     const onWorkplacehabits = (e) =>{
-        console.log(id);
         navigate("/Mbtiworkplacehabits", { state: { id: id  }});
                 
     }
     const onConclusion = (e) =>{
-        console.log(id);
         navigate("/Mbticonclusion", { state: { id: id  }});                
     }
     

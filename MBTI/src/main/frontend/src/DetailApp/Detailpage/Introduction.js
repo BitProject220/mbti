@@ -46,6 +46,7 @@ const Introduction = ({ id, name}) => {
                         <p>{data.Chdescriptsion4_1}</p>
                         <p>{data.Chdescriptsion4_2}</p>
                     </div>
+                    
         </>
     );
 };

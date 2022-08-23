@@ -13,12 +13,15 @@ import SocialIcons from './SocialIcons';
 const Mbtiintrodusion = () => {
     
     const {state} = useLocation();
-    const { id } = state;
-
+    
     const data = introduciondata.find(data => data.id === state.id)
-
+    const {id} = state;
     console.log(state.id);
-   
+
+    const navigate = useNavigate();
+    const onnext = (e)=> {
+        navigate("/MbtiSW", { state: { id: id  }});
+    }
 
     return (
         <>
@@ -29,14 +32,12 @@ const Mbtiintrodusion = () => {
             <div className='body'>
             <div className='sticky' >           
                 <SidevarLeft id={state.id}/>
-                <Introduction id={state.id}/> {/*  id 값에 전달 //*/}  
+                <Introduction id={state.id}/>
             </div>
             <div className='BtnComponent'>
-                <div className='nextBtn'>
-                    <a href='/MbtiSW'>
+                <div className='nextBtn' onClick={ onnext }>
                         <div className='title'>강점과 약점</div>
                         <div className='BtnCircle'>&#8594;</div>
-                    </a>
                 </div>
                 <SocialIcons />
                 </div>

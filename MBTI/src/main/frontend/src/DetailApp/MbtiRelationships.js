@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import '../css/detail/detatil.css';
 import '../css/reset.css';
 import Footer from '../main/Footer';
@@ -12,8 +12,20 @@ import SocialIcons from './SocialIcons';
 const MbtiRelationships = ( ) => {
 
     const {state} = useLocation();
-    const data = relationshipsdata.find(data => data.id === state.id)
 
+    const data = relationshipsdata.find(data => data.id === state.id)
+    const {id} = state;
+    console.log(state.id);
+
+
+    const navigate = useNavigate();
+    const onbefore = (e)=> {
+        navigate("/MbtiSW", { state: { id: id  }});
+    }
+
+    const onnext = (e)=> {
+        navigate("/Mbtifriendship", { state: { id: id  }});
+    }
     return (
         <>
             <Header />
@@ -26,17 +38,13 @@ const MbtiRelationships = ( ) => {
                 <Relationships id={data.id}/>
             </div>
                 <div className='BtnComponent'>
-                <div className='beforeBtn'>
-                    <a href='/MBTIDetail'>
+                <div className='beforeBtn' onClick={onbefore}>
                         <div className='title'>강점과 약점</div>
                         <div className='BtnCircle'>&#8592;</div>
-                    </a>
                 </div>
-                <div className='nextBtn'>
-                    <a href='/MbtiSW'>
+                <div className='nextBtn' onClick={onnext}>
                         <div className='title'>친구를 대할 때</div>
                         <div className='BtnCircle'>&#8594;</div>
-                    </a>
                 </div>
                 <SocialIcons />
                 </div>
