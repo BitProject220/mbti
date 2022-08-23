@@ -28,7 +28,9 @@ import UserInformationMain from './myPage/UserInformationMain';
 import FreeBoard from './board/FreeBoard';
 import MbtiBoard from './board/MbtiBoard';
 
+// 기진
 import Profiletypes from './profiles/Profiletypes'
+import BoardMain from './board/BoardMain';
 
 
 const App = () => {
@@ -40,14 +42,14 @@ const App = () => {
 
       <Route path="/" element={<Main/>} />
 
-      <Route path="/Mbtiintrodusion" element={<Mbtiintrodusion id="1" /> } />
-      <Route path="/MbtiSW" element={<MbtiSW id="1" /> } />
-      <Route path="/MbtiRelationships" element={<MbtiRelationships id="1" />} />
-      <Route path="/Mbtifriendship" element={<Mbtifriendship id="1" /> } />
-      <Route path="/Mbtiparenthood" element={<Mbtiparenthood id="1" /> } />
-      <Route path="/Mbticareerpaths" element={<Mbticareerpaths id="1" /> } />
-      <Route path="/Mbtiworkplacehabits" element={<Mbtiworkplacehabits id="1" /> } />
-      <Route path="/Mbticonclusion" element={<Mbticonclusion id="1" /> } />
+      <Route exact path="/Mbtiintrodusion" element={<Mbtiintrodusion  /> } />
+      <Route exact path="/MbtiSW" element={<MbtiSW  /> } />
+      <Route exact path="/MbtiRelationships" element={<MbtiRelationships  />} />
+      <Route exact path="/Mbtifriendship" element={<Mbtifriendship  /> } />
+      <Route exact path="/Mbtiparenthood" element={<Mbtiparenthood  /> } />
+      <Route exact path="/Mbticareerpaths" element={<Mbticareerpaths  /> } />
+      <Route exact path="/Mbtiworkplacehabits" element={<Mbtiworkplacehabits /> } />
+      <Route exact path="/Mbticonclusion" element={<Mbticonclusion /> } />
 
   
         <Route path="/ContactMain" element={<ContactMain/>}/> 
@@ -72,12 +74,15 @@ const App = () => {
         <Route path="MbtiBoard" element={<MbtiBoard />}/>
 
       {/* 기진 시작 */}
+        {/* 프로필 */}
         <Route path="/Profiletypes" element={<Profiletypes/>}/>
+        {/* 보드 */}
+        <Route path="/BoardMain" element={<BoardMain/>}/>
       {/* 기진 끝 */}
 
         <Route path="/Main">
-        <Route index element={<Main/>} />
-        
+          <Route index element={<Main/>} />
+
         </Route>
         <Route path='/resultmain' element={<ResultMain/>}/>
 

@@ -6,7 +6,8 @@ const svgstyle={
     transform: 'translate3d(0px, 0px, 0px)',
     contentvisibility: 'visible'
 }
-const ResultPage = () => {
+const ResultPage = ({state}) => {
+    console.log(state);
     return (
         <>
          <section className='test-results explorer'>
@@ -14,7 +15,7 @@ const ResultPage = () => {
                 <polygon points='1920,730 1067,835 0,753.3 0,458.1 377,393 778,495 1242,333 1920,0' className='c1'></polygon>
             </svg>
             <div className='type-info'>
-                <div className='caption'>당신의 성격 유형은 :</div>
+                <div className='caption'>당신의 성격 유형은 :  </div>
                 <div className='type-name'>장인</div>
                 <div className='type-code'>ISTP-T</div>
                 <div id='anim_qne7xxs5qo' className='image' data-chunk='animation-chunk'>
