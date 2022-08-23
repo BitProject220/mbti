@@ -26,7 +26,6 @@ const Mbtiintrodusion = () => {
     return (
         <>
             <Header />
-
             <div className='titleimg'  >
             <img src={data.url} alt='소개'  />
             </div>
@@ -36,19 +35,12 @@ const Mbtiintrodusion = () => {
                 <Introduction id={state.id}/>
             </div>
             <div className='BtnComponent'>
-                <div className='nextBtn' onClick={ onnext }>
-                        <div className='title'>강점과 약점</div>
-                        <div className='BtnCircle'>&#8594;</div>
-
-                </div>
-                <div className='BtnComponent'>
-                    <div className='nextBtn' onClick={ onnext }>
-                            <div className='title'>강점과 약점</div>
-                            <div className='BtnCircle'>&#8594;</div>
-                    </div>
-                    <SocialIcons />
-                    </div>
-                </div>
+            <div className='nextBtn' onClick={ onnext }>
+                <div className='title'>강점과 약점</div>
+                <div className='BtnCircle'>&#8594;</div>
+            </div>
+            </div>
+            <SocialIcons />
             </div>
             <Footer />
         </>

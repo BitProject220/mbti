@@ -53,7 +53,6 @@ const MbtiSW = ( ) => {
                 <SocialIcons />
                 </div>
             </div>
-            </div>
             <Footer />
         </>
     );

@@ -26,28 +26,25 @@ const Mbtiparenthood = () => {
     return (
         <>
             <Header />
-
             <div className='titleimg' >
             <img src={data.url} alt='자녀를 대할 때' />
-
             </div>
-            <div className='body'>
-            <div className='sticky' >           
-                <SidevarLeft id={data.id}/>
-                <Parenthood id={data.id}/>
-            </div>
-            <div className='BtnComponent'>
+                <div className='body'>
+                <div className='sticky' >           
+                    <SidevarLeft id={data.id}/>
+                    <Parenthood id={data.id}/>
+                </div>
+                <div className='BtnComponent'>
                 <div className='beforeBtn' onClick={onbefore}>
-                        <div className='title'>친구를 대할 때</div>
-                        <div className='BtnCircle'>&#8592;</div>
+                    <div className='title'>친구를 대할 때</div>
+                    <div className='BtnCircle'>&#8592;</div>
                 </div>
                 <div className='nextBtn' onClick={onnext}>
-                        <div className='title'>직장에서 보이는 모습</div>
-                        <div className='BtnCircle'>&#8594;</div>
+                    <div className='title'>직장에서 보이는 모습</div>
+                    <div className='BtnCircle'>&#8594;</div>
                 </div>
                 <SocialIcons />
                 </div>
-            </div>
             </div>
             <Footer />
         </>
