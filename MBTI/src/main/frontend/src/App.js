@@ -37,6 +37,7 @@ import UserDeleteModal from './myPage/UserDeleteModal';
 
 
 import BoardMain from './board/BoardMain';
+import BoardWrite from './board/BoardWrite';
 
 
 
@@ -98,6 +99,8 @@ const App = () => {
 
         <Route path='/UserEditModal' element={<UserEditModal />}/>
         <Route path='/UserDeleteModal' element={<UserDeleteModal/>}/>
+
+        <Route path='/BoardWrite' element={<BoardWrite/>} />
 
    
 
