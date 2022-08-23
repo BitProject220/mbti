@@ -1,0 +1,199 @@
+.resultBg {position: relative;}
+.resultChartForm {width: 50%;
+                height: 800px;
+                background-color: #fff;
+                border-radius: 15px;
+                /* box-shadow: 0px 3px 5px 3px rgba(123, 123, 123, 0.1); */
+                border: 1px solid #ccc;
+                position: absolute;
+                top: 150px;
+                right: 5%;}
+
+.resultChart{width: 100%;
+             height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            margin-top: 15px;}
+
+.resultChartContent {width: 100%;
+                    height: 100%;
+                    padding: 0 50px;
+                }
+
+
+.trait-scales .comp {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+* {
+    scrollbar-color: #f9f9f9;
+    scrollbar-width: thin;
+}
+
+div {
+    display: block;
+}
+
+
+.trait-scales.comp .trait {
+    border-bottom: 1px solid #dddfe2;
+    padding: 10px 0;
+    width: 100%;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+/*퍼센트 가로정렬*/
+.trait-scales.comp .trait .bar-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/*바 아래 글씨 가로정렬*/
+.trait-scales.comp .trait .trait-titles {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*결과 바*/
+.trait-scales.comp .trait .bar-wrapper .bar.right-fill {
+    justify-content: flex-end;
+}
+.pb-wrp .bar[data-v-fcf8446e] {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    flex-grow: 1;
+    height: 10px;
+    margin-top: 2px;
+    overflow: hidden;
+}
+
+.trait-scales.comp .trait .bar-wrapper .bar {
+    height: 12px;
+    margin-top: 0;
+}
+
+/*결과 폰트*/
+.trait-scales.comp .trait .caption {
+    font-size: 1.4em;
+}
+.trait-scales.comp .trait .caption {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #51596a;
+}
+
+
+/*퍼센테이지 글자설정*/
+.percentage {flex: 0 0 50px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #51596a;}
+
+.trait-scales.comp .trait.mind .bar-wrapper .percentage.active {
+    color: #4298b4;
+}
+.trait-scales.comp .trait.energy .bar-wrapper .percentage.active {
+    color: #F19904;
+}
+.trait-scales.comp .trait.nature .bar-wrapper .percentage.active {
+    color: #44AF69;
+}
+.trait-scales.comp .trait.tactics .bar-wrapper .percentage.active {
+    color: #CF536D;
+}
+.trait-scales.comp .trait.identity .bar-wrapper .percentage.active {
+    color: #f84210;
+}
+
+.trait-scales.comp .trait .bar-wrapper .percentage.right {
+    text-align: right;
+}
+
+.trait-scales.comp .trait .bar-wrapper .percentage {
+    flex: 0 0 50px;
+    font-size: 1.2em;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+/*아래 외향형, 내향형 글씨*/
+.title.left {font-size: 1.1em;
+             color: #9b9faa;}
+.title.right {font-size: 1.1em;
+            color: #9b9faa;}
+
+
+/*MBTI 검사 결과*/
+.type-info {width: 500px;
+            height: 500px;
+           
+            position: absolute;
+            top: 200px;
+            right: 56%;}
+
+.type-info .caption {
+    font-size: 1.8em;
+    line-height: unset;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #51596a;
+}
+
+.type-info .type-name {
+    text-align: center;
+    font-size: 4em;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #51596a;
+}
+
+.type-info .type-code {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 50px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #F19904;
+}
+
+/*바 색상*/
+.bar.right-fill {background: #F5F5F5;}
+.bar.left-fill {background: #F5F5F5;}
+.trait.mind .filler {background: #2B9EB3;}
+.trait.energy .filler {background: #F19904;}
+.trait.nature .filler {background: #44AF69;}
+.trait.tactics .filler {background: #CF536D;}
+.trait.identity .filler {background: #f84210;}
+
+/*바 글씨 색상*/
+.trait-scales.comp .trait.mind .trait-titles .title.active {
+    color: #2B9EB3;
+}
+.trait-scales.comp .trait.energy .trait-titles .title.active {
+    color: #F19904;
+}
+.trait-scales.comp .trait.nature .trait-titles .title.active {
+    color: #44AF69;
+}
+.trait-scales.comp .trait.tactics .trait-titles .title.active {
+    color: #CF536D;
+}
+.trait-scales.comp .trait.identity .trait-titles .title.active {
+    color: #f84210;
+}

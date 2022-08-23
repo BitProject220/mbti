@@ -100,9 +100,6 @@ const App = () => {
         <Route path='/UserDeleteModal' element={<UserDeleteModal/>}/>
 
    
-
-
-
       </Routes>
       </>
     </BrowserRouter>
