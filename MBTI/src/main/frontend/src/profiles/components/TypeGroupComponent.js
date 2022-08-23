@@ -12,6 +12,7 @@ const TypeGroupComponent = (props) => {
     }
     
     return (
+
         <div className='typeGroupComponent' onClick={onNavigate} key={props.detail.id}>
             <div className='typeGroupComponent' >
                     <img  className='typeImage'src={require(`../img/${props.detail.imgNo}.png`) } alt={props.detail.typeName}/>

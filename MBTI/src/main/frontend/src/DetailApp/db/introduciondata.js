@@ -1,6 +1,6 @@
 export default [
     {
-        id: '1',
+        id: "1",
         url: '/img/1-INTJ.png',
         name: '소개',
         title: '성격유형: "전략가"',
