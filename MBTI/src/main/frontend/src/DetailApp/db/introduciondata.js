@@ -1,6 +1,7 @@
 export default [
     {
         id: "1",
+        mbti:"INTJ",
         url: '/img/1-INTJ.png',
         name: '소개',
         title: '성격유형: "전략가"',
@@ -32,6 +33,7 @@ export default [
     },
     {
         id: '2',
+        mbti:"INTP",
         url: '/img/2-INTP.png',
         name: '소개',
         title: '성격유형 : “논리술사”',
@@ -59,6 +61,7 @@ export default [
     },
     {
         id: '3',
+        mbti: "ENTJ",
         url: '/img/3-ENTJ.png',
         name: '소개',
         title: '성격유형 : “통솔자”',
@@ -82,6 +85,7 @@ export default [
     },
     {
         id: '4',
+        mbti: "ENTP",
         url: '/img/4-ENTP.png',
         name: '소개',
         title: '성격유형 : “변론가”',
@@ -106,6 +110,7 @@ export default [
     },
     {
         id: '5',
+        mbti: "INFJ",
         url: '/img/5-INFJ.png',
         name: '소개',
         title: '성격유형 : “옹호자”',
@@ -131,6 +136,7 @@ export default [
     },
     {
         id: '6',
+        mbti: 'INFP',
         url: '/img/6-INFP.png',
         name: '소개',
         title: '성격유형 : "중재자"',
@@ -155,6 +161,7 @@ export default [
     },
     {
         id: '7',
+        mbti:'ENFJ',
         url: '/img/7-ENFJ.png',
         name: '소개',
         title: '성격유형 : “선도자”',
@@ -179,6 +186,7 @@ export default [
     },
     {
         id: '8',
+        mbti:'ENFP',
         url: '/img/8-ENFP.png',
         name: '소개',
         title: '성격유형 : “활동가”',
@@ -201,6 +209,7 @@ export default [
     },
     {
         id: '9',
+        mbti:'ISTJ',
         url: '/img/9-ISTJ.png',
         name: '소개',
         title: '성격유형 : "현실주의자"',
@@ -224,6 +233,7 @@ export default [
     },
     {
         id: '10',
+        mbti: 'ISFJ',
         url: '/img/10-ISFJ.png',
         name: '소개',
         title: '성격유형 : “수호자”',
@@ -247,6 +257,7 @@ export default [
     },
     {
         id: '11',
+        mbti:'ESTJ',
         url: '/img/11-ESTJ.png',
         name: '소개',
         title: '성격유형 : “경영자”',
@@ -277,6 +288,7 @@ export default [
     },
     {
         id: '12',
+        mbti:'ESFJ',
         url: '/img/12-ESFJ.png',
         name: '소개',
         title: '성격유형 : “집정관”',
@@ -305,6 +317,7 @@ export default [
     },
     {
         id: '13',
+        mbti:'ESFJ',
         url: '/img/13-ESFJ.png',
         name: '소개',
         title: '성격유형 : “장인”',
@@ -333,7 +346,8 @@ export default [
     },
     {
         id: '14',
-        url: '/img/14-ISTP.png',
+        mbti:'ISFP',
+        url: '/img/14-ISFP.png',
         name: '소개',
         title: '성격유형 : “모험가”',
         Greatperson: '나는 매일 변화한다. 잠을 자러 갈 때면 오늘 아침 일어났을 때와는 다른 사람이 되었음을 확실히 느낀다.',
@@ -360,6 +374,7 @@ export default [
         Chdescriptsion4_2: '',
     },{
         id: '15',
+        mbti:"ESTP",
         url: '/img/15-ESTP.png',
         name: '소개',
         title: '성격유형 : "사업가”',
@@ -387,6 +402,7 @@ export default [
         Chdescriptsion4_2: '',
     },{
         id: '16',
+        mbti:"ESFP",
         url: '/img/16-ESFP.png',
         name: '소개',
         title: '성격유형 : “연예인”',

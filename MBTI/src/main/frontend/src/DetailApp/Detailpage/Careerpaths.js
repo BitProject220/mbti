@@ -7,12 +7,7 @@ const Careerpaths = ({ id }) => {
 
     return (
         <div>
-            <div className='main_description' style={{
-                    height :  'auto' ,
-                    width: 48+'%',
-                    float: 'left',
-                    color: 'black',
-                    }}>
+            <div className='main_description'>
                         
                     <h1 >{data.title}</h1>
                     <div className='Greatperson'>
