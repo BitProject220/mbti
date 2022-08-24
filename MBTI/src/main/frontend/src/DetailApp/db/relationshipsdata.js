@@ -331,7 +331,7 @@ export default [
     
     }, {
         id: '13',
-        url: '/img/13-ESFJ.png',
+        url: '/img/13-ISTP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',
@@ -358,7 +358,7 @@ export default [
     
     }, {
         id: '14',
-        url: '/img/14-ISTP.png',
+        url: '/img/14-ISFP.png',
         title: '로맨틱한 관계',
         Greatperson: '',
         footer: '',

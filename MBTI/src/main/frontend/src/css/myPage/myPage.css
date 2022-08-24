@@ -95,50 +95,65 @@
 
 
 .UserEditBtn {
-    min-width: 260px;
-    font-size: 18px;
-    height: 60px;
-    padding: 15px 40px;
-    background-color: #F19904;
-    border-color: #F19904;
-    border-radius: 40px;
-    align-items: center;
-    border: 1px solid transparent;
-    color: #fff;
-    display: inline-flex;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 2;
-    outline: 0;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    vertical-align: middle;
-    width: auto;
+    min-width: 260px !important;
+    font-size: 18px !important;
+    height: 60px !important;
+    padding: 15px 40px !important;
+    background-color: #F19904 !important;
+    border-color: #F19904 !important;
+    border-radius: 40px !important;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+    color: #fff !important;
+    display: inline-flex !important;
+    font-weight: 600 !important;
+    justify-content: center !important;
+    line-height: 2 !important;
+    outline: 0 !important;
+    text-decoration: none !important;
+    transition: all .2s ease-in-out !important;
+    vertical-align: middle !important;
+    width: auto !important;
 }
 
 .UserDeleteBtn {
-    min-width: 260px;
-    font-size: 18px;
-    height: 60px;
-    padding: 15px 40px;
-    background-color: #f64040;
-    border-color: #f64040;
-    border-radius: 40px;
-    align-items: center;
-    border: 1px solid transparent;
-    color: #fff;
-    display: inline-flex;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 2;
-    outline: 0;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    vertical-align: middle;
-    width: auto;
+    min-width: 260px !important;
+    font-size: 18px !important;
+    height: 60px !important;
+    padding: 15px 40px !important;
+    background-color: #f64040 !important;
+    border-color: #f64040 !important;
+    border-radius: 40px !important;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+    color: #fff !important;
+    display: inline-flex !important;
+    font-weight: 600 !important;
+    justify-content: center !important;
+    line-height: 2 !important;
+    outline: 0 !important;
+    text-decoration: none !important;
+    transition: all .2s ease-in-out !important;
+    vertical-align: middle !important;
+    width: auto !important;
 
 }
 
 .UserJoinTime {
     color: dimgray;
 }
+
+.SubmitBtn {
+    background-color: #F19904 !important;
+    border-color: #F19904 !important;
+}
+
+.DeleteSubmitBtn {
+    background-color: #f64040 !important;
+    border-color: #f64040 !important;
+}
+
+.ModalBox {
+    padding-top: 150px !important; 
+}
+

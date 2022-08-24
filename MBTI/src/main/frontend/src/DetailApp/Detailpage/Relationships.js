@@ -10,12 +10,7 @@ const Relationships = ({ id }) => {
     return (
         <>
            
-            <div className='main_description' style={{
-                    height :  'auto' ,
-                    width: 48+'%',
-                    float: 'left',
-                    color: 'black',
-                    }}>
+            <div className='main_description' >
                     <h1 >{data.title}</h1>
                     <div className='Greatperson'>
                         <p>{data.Greatperson}</p>

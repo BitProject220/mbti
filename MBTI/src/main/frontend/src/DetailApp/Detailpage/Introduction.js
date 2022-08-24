@@ -8,12 +8,7 @@ const Introduction = ({ id, name}) => {
 
     return (
         <>
-            <div className='main_description' style={{
-                    height :  'auto' ,
-                    width: 48+'%',
-                    float: 'left',
-                    color: 'black',
-                    }}>
+            <div className='main_description' >
                     <h1 >{data.title}</h1>
                     <div className='Greatperson'>
                         <p>{data.Greatperson}</p>
@@ -46,6 +41,7 @@ const Introduction = ({ id, name}) => {
                         <p>{data.Chdescriptsion4_1}</p>
                         <p>{data.Chdescriptsion4_2}</p>
                     </div>
+                    
         </>
     );
 };

@@ -1,3 +1,7 @@
+.contactBackground{
+    max-height: 100%;
+    max-width: 100%;
+}
 .contact_page:after{
     display: block;
     clip-path: polygon(0 0,100% 0,100% calc(100% - 30px),81% 100%,42% calc(100% - 50px),22% 100%,0 calc(100% - 30px));
@@ -12,20 +16,32 @@
 }
 .contact_page{
     background-color:lightgray;
-    padding: 30px;
+    width: 100%;
 }
-.contact_div_css {
-    color: black;
-    /*padding: 90px 100px 50px 100px;*/ 
-    padding: 90px 100px 50px;
-    left: 220px;
-    position: relative !important;
-    width: 1400px;
-    height: 600px;
-    max-width: 1400px;
-    position:relative;
-    
-    /*margin: 0px 250px; 일단 보류*/
+@media(min-width:1023px){
+    .contact_div_css {
+        color: black;
+        padding: 140px 100px 50px; 
+        left: 13%;
+        position: relative;
+        height: 650px;
+        max-width: 75%;
+        position:relative;
+        
+        /*margin: 0px 250px; 일단 보류*/
+    }
+}
+@media(max-height:767px){
+    .contact_div_css{
+        color: black;
+        padding: 120px 100px 50px 0px; 
+        position: relative;
+        height: 650px;
+        max-width: 86%;
+        position:relative;
+        
+        /*margin: 0px 250px; 일단 보류*/
+    }
 }
 
 .contact_input_tag {

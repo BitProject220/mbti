@@ -16,7 +16,7 @@
 h1.underlined{border-bottom:1px solid #dddfe2;
     font-size:2.9em;
     font-weight:600;
-    margin:0 0 30px;
+    margin-top: 75px;
     padding: 75px 30px 30px;
     margin-bottom: 45px;
     color: #51596a;}
@@ -246,7 +246,7 @@ width: 48px;
 
 .buttonText2 {align-items: center;
               line-height: 2;
-              font-weight: 100;}
+              font-weight: 200;}
 
 #emailNumCheckBtn {
                     width: 130px;
@@ -337,10 +337,6 @@ transition: .3s;
 }
 
 .select #selectBox:focus + #arrowImg img {transform: rotate(180deg);}
-
-
-
-
 
 .toggle {
 position: relative; 

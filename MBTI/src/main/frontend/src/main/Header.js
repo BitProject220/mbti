@@ -6,7 +6,6 @@ import ContactMain from '../Contact/ContactMain';
 import logo from '../img/logo/BWTH_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import LoginPage from '../Login/LoginPage';
 const Header = () => {
 
 
@@ -40,10 +39,10 @@ const Header = () => {
                     <Link to='/'><img src={logo} className='LogoImg' /></Link>
                 </div>
 
-                <div className='Login'>
+                <div className='UserMypage'>
                     <div>
-                        <Link to='/LoginPage'>
-                        <button className='LoginBtn'>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
+                        <Link to='/'>
+                        <button className='LogOutBtn'>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
                         </Link>
                     </div>
                     <div className='UserBtn'>

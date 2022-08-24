@@ -19,10 +19,10 @@ const SocialIcons = () => {
                             <div className='social-p'>SHARES</div>
                         </div>
                         <div className='social-icons'>
-                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_facebook_share.png') } alt='페이스북 공유하기'/></button></a>
-                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_twitter_share.png') } alt='트위터 공유하기'/></button></a>
-                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_pinterest_share.png') } alt='핀터레스트 공유하기'/></button></a>
-                            <a href='//naver.com' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_discode_share.png') } alt='디스코드 공유하기'/></button></a>
+                            <a href='#' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_facebook_share.png') } alt='페이스북 공유하기'/></button></a>
+                            <a href='#' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_twitter_share.png') } alt='트위터 공유하기'/></button></a>
+                            <a href='#' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_pinterest_share.png') } alt='핀터레스트 공유하기'/></button></a>
+                            <a href='#' target='_blank' rel='noreferrer'><button type="button" onClick={ onCount } className="btn_comm"><img src={require('../img/detail_discode_share.png') } alt='디스코드 공유하기'/></button></a>
                         </div>
                     </div>
                 </div>

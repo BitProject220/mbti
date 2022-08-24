@@ -3,11 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "@ckeditor/ckeditor5-build-classic": "^35.0.1",
+    "@ckeditor/ckeditor5-react": "^5.0.2",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@remirror/pm": "^1.0.22",
+    "@remirror/react": "^1.0.43",
+    "@remirror/react-editors": "^0.1.89",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,6 +24,7 @@
     "bootstrap": "^5.2.0",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
+    "express": "^4.18.1",
     "jquery": "^3.6.0",
     "nodemailer": "^6.7.8",
     "react": "^18.2.0",
@@ -27,6 +37,11 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
     "redux-devtools-extension": "^2.13.9",
+
+    "remirror": "^1.0.89",
+
+    "socket.io": "^4.5.1",
+
     "styled-components": "^5.3.5",
     "use-react-router": "^1.0.7",
     "web-vitals": "^2.1.4"
