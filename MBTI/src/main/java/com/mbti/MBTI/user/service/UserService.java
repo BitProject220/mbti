@@ -9,6 +9,8 @@ public interface UserService {
 
 	public void write(UserDTO userDTO);
 
+	public String emailCheck(String email);
+
 	
 
 }
