@@ -12,19 +12,14 @@ import SidevarLeft from './SidevarLeft';
 import SocialIcons from './SocialIcons';
 
 
-const Mbtiintrodusion = ({mbti}) => {
+const Mbtiintrodusion = () => {
 
-    console.log(mbti);
-    const MBTI = mbti.substr(0 , 4);
-    console.log(MBTI);
-    const data =  introduciondata.find(data => data.mbti == MBTI);
-    console.log(data.mbti);
-
-
-
-    const {state} = useLocation();
-    const data = strongweakdata.find(data => data.id === state.id)
+    const { state } = useLocation();
+    const data =  introduciondata.find(data => data.id === state.id)
     const {id} = state;
+    
+    // console.log(state.id);
+
 
 
     const navigate = useNavigate();
