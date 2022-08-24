@@ -9,10 +9,10 @@ const svgstyle={
     contentvisibility: 'visible',
 }
 const ResultPage = ({mbtiresult}) => {
-    console.log(mbtiresult[0]);
+    //console.log(mbtiresult[0]);
     
     const { mbti, ei, ns, jp, tf, at} = mbtiresult[0]
-    console.log(mbti);
+    //console.log(mbti);
 
     return (
         <div className='resultBg'>

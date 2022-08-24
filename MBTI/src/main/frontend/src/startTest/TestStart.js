@@ -97,7 +97,7 @@ const TestStart = () => {
                 
                 
 
-                navigate('/resultmain', {state : {result : result, ei : ei, ns : ns, tf : tf, jp : jp, at :at}});
+                navigate('/resultmain', {state : {result : result, ei : ei, ns : ns, tf : tf, jp : jp, at :at,}});
             }
        
 
