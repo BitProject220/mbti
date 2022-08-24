@@ -65,7 +65,7 @@ const ResultPage = ({mbtiresult}) => {
                                     <div data-v-fcf8446e="" className="bar right-fill">
                                         <div data-v-fcf8446e="" className="filler" style={{width: 100 - ns + "%" }}></div>
                                     </div>
-                                    <div data-v-fcf8446e="" className="percentage right active">{ 100 - ei + '%'}</div>
+                                    <div data-v-fcf8446e="" className="percentage right active">{ 100 - ns + '%'}</div>
                                 </div> 
                                 <div data-v-fcf8446e="" className="trait-titles">
                                     <div data-v-fcf8446e="" className="title left">직관형</div>
@@ -77,11 +77,11 @@ const ResultPage = ({mbtiresult}) => {
                             <div className="caption">본성</div>
                             <div data-v-fcf8446e="" className="pb-wrp">
                                 <div data-v-fcf8446e="" className="bar-wrapper">
-                                    <div data-v-fcf8446e="" className="percentage active">{ jp + '%'}</div> 
+                                    <div data-v-fcf8446e="" className="percentage active">{ tf + '%'}</div> 
                                     <div data-v-fcf8446e="" className="bar left-fill">
-                                        <div data-v-fcf8446e="" className="filler" style={{width: 100 - jp + "%" }}></div>
+                                        <div data-v-fcf8446e="" className="filler" style={{width: 100 - tf + "%" }}></div>
                                     </div> 
-                                    <div data-v-fcf8446e="" className="percentage right">{ 100 - ei + '%'}</div>
+                                    <div data-v-fcf8446e="" className="percentage right">{ 100 - tf + '%'}</div>
                                 </div> 
                                 <div data-v-fcf8446e="" className="trait-titles">
                                     <div data-v-fcf8446e="" className="title left active">사고형</div>
@@ -94,11 +94,11 @@ const ResultPage = ({mbtiresult}) => {
                             <div className="caption">전술</div>
                             <div data-v-fcf8446e="" className="pb-wrp">
                                 <div data-v-fcf8446e="" className="bar-wrapper">
-                                    <div data-v-fcf8446e="" className="percentage">{ tf + '%'}</div>
+                                    <div data-v-fcf8446e="" className="percentage">{ jp + '%'}</div>
                                     <div data-v-fcf8446e="" className="bar right-fill">
-                                        <div data-v-fcf8446e="" className="filler" style={{width: 100 - tf + "%" }}></div>
+                                        <div data-v-fcf8446e="" className="filler" style={{width: 100 - jp + "%" }}></div>
                                     </div> 
-                                    <div data-v-fcf8446e="" className="percentage right active">{ 100 - tf + '%'}</div>
+                                    <div data-v-fcf8446e="" className="percentage right active">{ 100 - jp + '%'}</div>
                                 </div> 
                                 <div data-v-fcf8446e="" className="trait-titles">
                                     <div data-v-fcf8446e="" className="title left">계획형</div>

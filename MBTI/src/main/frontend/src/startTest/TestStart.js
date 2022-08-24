@@ -112,7 +112,7 @@ const TestStart = () => {
     //console.log(test);
     
     useEffect(() => {
-        //window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
  
 
     }, [page]);
