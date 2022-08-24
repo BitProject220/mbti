@@ -16,4 +16,13 @@ public class UserController {
 	public void write() {
 		userService.write();
 	}
+	
+	//###################유진 시작#################################
+	
+	@PostMapping(value = "/user/emailCheck")
+	public String emailCheck(String email) {
+		return userService.emailCheck(email);
+	}
+	
+	//###################유진 끝#################################
 }
