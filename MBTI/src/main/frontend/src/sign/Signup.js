@@ -3,7 +3,7 @@ import '../css/signup/signup.css';
 import '../css/reset.css';
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import arrow from '../img/signup/downArrow.png';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
@@ -234,17 +234,24 @@ const Signup = (props) => {
             }
 
             else {
-                e.preventDefault();
-                axios({
-                    method: 'post',
-                    url: 'http://localhost:8080/login',
-                    data: {
-                        name: name,
-                        email: email,
+               axios({
+                method: 'POST',
+                    url:  'http://localhost:8080/user/write',
+                     data: ({
+                        'name': name,
+                        'email': email,
+                        'password': password,
+                        'age': age.default,
+                        'gender': gender,
+                    })
+                 }).then(()=>{
+                    //  navigate("/SignupSuccess", { state: { name: name , email: email }});
+                    console.log("확인!")
+                 }).catch(error =>{
+                    console.log(error)
+                 })
 
-                    }
-                })
-                navigate("/SignupSuccess", { state: { name: name , email: email }});
+                 
                 console.log(email);
             };
         }  
@@ -327,7 +334,7 @@ const Signup = (props) => {
                                 name='age'
                                 value={age.default}
                                 onChange={(e) =>
-                                    setAge({ ...age, default: e.target.value })
+                                    setAge({ default: e.target.value })
                                 }
                             >
                                 {ages.map(item => (
@@ -416,7 +423,7 @@ const Signup = (props) => {
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
-                        <button id='conBtn' type='submit' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ handleButtonValid }>
+                        <button id='conBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ handleButtonValid }>
                             <span className='buttonText'>회원가입</span>
                             <FontAwesomeIcon icon={ faArrowRight } className='rightIcon' />
                         </button>

@@ -32,7 +32,6 @@ const ResultPage = ({mbtiresult}) => {
                                     <rect width='400' height='400' x='0' y='0'></rect>
                                 </clipPath>
                             </defs>
-                            
                         </svg>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-package user.bean;
+package com.mbti.MBTI.user.bean;
 
 import java.sql.Timestamp;
 
@@ -13,30 +13,21 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Data;
 
-@Entity
-@Table(name="mbtiuser")
 @Data
 public class UserDTO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="seq")
 	private int seq;
 	
-	@Column(name="name",nullable = false,length = 30)
 	private String name;
 	
-	@Id
-	@Column(name="email", nullable = false,length = 30)
+	private String password;
+	
 	private String email;
 	
-	@Column(name="age")
 	private int age;
 	
-	@Column(name="gender")
-	private int gender;
+	private String gender;
 	
-	@CreationTimestamp
 	private Timestamp logtime;
 	
 }
