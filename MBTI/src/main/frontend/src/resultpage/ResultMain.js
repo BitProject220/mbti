@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+import Mbtiintrodusion from '../DetailApp/Mbtiintrodusion';
 import Footer from '../main/Footer';
 import Header from '../main/Header';
 import ResultPage from './ResultPage';
@@ -31,8 +32,8 @@ const ResultMain = () => {
    
     ei > 0 ? mymbti = mymbti.concat('E')  : mymbti = mymbti.concat('I')
     ns > 0 ? mymbti = mymbti.concat('N') :  mymbti = mymbti.concat('S')
-    jp > 0 ? mymbti = mymbti.concat('J') :  mymbti = mymbti.concat('P')
     tf > 0 ? mymbti = mymbti.concat('T') :  mymbti = mymbti.concat('F')
+    jp > 0 ? mymbti = mymbti.concat('J') :  mymbti = mymbti.concat('P')
     at > 0 ? mymbti = mymbti.concat('-A') : mymbti = mymbti.concat('-T')
     
     
@@ -53,8 +54,9 @@ const ResultMain = () => {
         <div className='Main'>
         <Header />
         
-        <ResultPage mbtiresult={mbtiresult}/>
-  
+        <ResultPage mbtiresult={mbtiresult} />
+
+        <Mbtiintrodusion mbti={mbti} />
         <Footer />
       </div>
     );
