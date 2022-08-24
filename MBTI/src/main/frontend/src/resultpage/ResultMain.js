@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import Introduction from '../DetailApp/Detailpage/Introduction';
 import Mbtiintrodusion from '../DetailApp/Mbtiintrodusion';
 import SidevarLeft from '../DetailApp/SidevarLeft';
+import SocialIcons from '../DetailApp/SocialIcons';
 import Footer from '../main/Footer';
 import Header from '../main/Header';
 import ResultPage from './ResultPage';
@@ -96,18 +97,29 @@ const ResultMain = () => {
   }
   
   //console.log("아이디는"+id);
-
-
-  
+  const navigate = useNavigate();
+  const onnext = (e)=> {
+    navigate("/MbtiSW", { state: { id  }});
+  }
+  console.log(id);
     return (
         <div className='Main'>
         <Header />
         
         <ResultPage mbtiresult={mbtiresult} />
-
+        <div className='body'>
+        <div className='sticky' >
         <SidevarLeft id={id} />
         <Introduction id={id} />
-
+        </div>
+        <div className='BtnComponent'>
+            <div className='nextBtn' onClick={ onnext }>
+                <div className='title'>강점과 약점</div>
+                <div className='BtnCircle'>&#8594;</div>
+            </div>
+            </div>
+        </div>
+        <SocialIcons />
         <Footer />
       </div>
     );

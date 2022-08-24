@@ -318,7 +318,7 @@ export default [
     {
         id: '13',
         mbti:'ISTP',
-        url: '/img/13-ISTP.png',
+                
         name: '소개',
         title: '성격유형 : “장인”',
         Greatperson: '나는 다른 삶을 살고 싶었다. 매일 똑같은 곳에서 똑같은 사람을 만나고 똑같은 일을 하고 싶지는 않았다. 나에게는 흥미로운 도전이 필요했다.',
