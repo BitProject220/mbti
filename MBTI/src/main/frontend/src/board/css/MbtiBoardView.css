@@ -1,0 +1,218 @@
+.MbtiBoardView_wrap {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 300px 0 100px;
+    text-align: center;
+    background: #FFF;
+    opacity: 0.9;
+}
+
+.MbtiBoardView_wrap h1 {
+    color: #fff;
+    font-size:15em;
+    font-weight:600;
+    position: absolute;
+    top: 5%;
+    left: 50px;
+    opacity: 0.5;
+}
+
+.MbtiBoardView_form {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.MbtiBoardView_document2 {
+    display: inline-block;
+    zoom: 1;
+    margin: 0;
+    width: 100%;
+}
+
+.MbtiBoardView_document_wrap {
+    float: left;
+    width: 100%;
+    background-color: white;
+}
+
+.MbtiBoardView_info {
+    background-color: #fff;
+    font-size: 16px;
+    border-top: 2px solid #222;
+    border-bottom: 1px solid #cccccc;
+    overflow: hidden;
+}
+
+.Mbti_Info_Mbti {
+    padding: 25px 35px 20px 22px;
+    font-size: 18px;
+    float: none;
+    margin: 0;
+    overflow: hidden;
+}
+.Mbti_Info_title {
+    padding: 0px 35px 10px 22px;
+    font-size: 18px;
+    float: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+.Mbti_Info_mbti_type, .Mbti_Info_title_subject ,.Mbti_Info_writer_name, .Mbti_Info_date_name, .Mbti_Info_view_name ,.Mbti_Info_good_name{
+    color: #222;
+    float: left;
+    min-width: 50px;
+    font-weight: bold;
+}
+
+.Mbti_Info_mbti_typeUser, .Mbti_Info_title_subjectUser ,.Mbti_Info_Writer_nameUser ,.Mbti_Info_date_nameUser, .Mbti_Info_view_nameUser, .Mbti_Info_good_nameUser {
+    color: #222;
+    float: left;
+    padding-left: 20px;
+}
+
+.Mbti_Info_writer ,.Mbti_Info_date ,.Mbti_Info_view, .Mbti_Info_good{
+    float: left;
+    margin: 0;
+    padding: 12px 35px 12px 22px;
+    overflow: hidden;
+}
+
+.MbtiBoardView_content {
+    clear: both;
+    float: left;
+    width: 100%;
+    min-height: 200px;
+}
+
+.Mbti_Content_View {
+    margin: 0;
+    padding: 22px;
+    word-break: break-all;
+}
+
+.MbtiBoardView_good {
+    padding: 0 22px 5px 22px;
+    overflow: hidden;
+    line-height: 1;
+}
+
+.Mbti_Good_btn {
+    position: static;
+    float: right;
+    text-align: right;
+}
+
+.MbtiBoardViewGoodBtn {
+    color: #ff5959;
+    margin: 0 0 5px 0;
+    padding: 4px 5px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 12px;
+    text-align: left;
+    border: 1px solid #ededed;
+    background: none;
+    background-color: transparent;
+    border-radius: 2px;
+    letter-spacing: normal;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.MbtiBoardView_Button {
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.Mbti_Button_left {
+    position: static;
+    float: left;
+}
+
+.Mbti_Btn_left_list {
+    padding: 10px 25px;
+    background: #000 !important;
+    color: #FFF !important;
+    font-size: 14px;   
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    margin: 0;
+    height: 28px;
+    line-height: 28px;
+    font-weight: normal;
+    letter-spacing: normal; 
+    border: none;
+    border-radius: 0;
+    text-decoration: none !important;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none;
+    box-shadow: none;
+    transition-duration: 0.3s;
+    box-sizing: content-box;
+}
+
+.Mbti_Button_right {
+    position: static;
+    float: right;
+    text-align: right;
+}
+
+.Mbti_Btn_right_list_update {
+    padding: 10px 25px;
+    background: #000 !important;
+    color: #FFF !important;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    margin: 0;
+    height: 28px;
+    line-height: 28px;
+    font-weight: normal;
+    letter-spacing: normal;
+    border: none;
+    border-radius: 0;
+    text-decoration: none !important;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none;
+    box-shadow: none;
+    transition-duration: 0.3s;
+    box-sizing: content-box;
+    text-align: right;            
+}
+
+.Mbti_Btn_right_list_delete {
+    padding: 10px 25px;
+    background: #000 !important;
+    color: #FFF !important;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    margin: 0;
+    height: 28px;
+    line-height: 28px;
+    font-weight: normal;
+    letter-spacing: normal;
+    border: none;
+    border-radius: 0;
+    text-decoration: none !important;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none;
+    box-shadow: none;
+    transition-duration: 0.3s;
+    box-sizing: content-box;
+    text-align: right;       
+    margin-left:5px;         
+}
