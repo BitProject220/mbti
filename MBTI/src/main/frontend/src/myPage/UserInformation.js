@@ -223,6 +223,14 @@ const UserInformation = () => {
                             </div>
                         </div>
                     </div>
+
+                    <div data-v-cbdfd9aa="" className="row__text">
+                        <div style={{verticalAlign: 'inherit'}}>
+                            
+                            {infoPasswordError && <p className="invalid-input pwdInput" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
+                            
+                        </div>
+                    </div>
                 </div>
 
                 <div data-v-cbdfd9aa="" className="row__description infoRePwd">
@@ -234,7 +242,7 @@ const UserInformation = () => {
                     <div data-v-cbdfd9aa="" className="row__subtitle infoRePwdBox">
                         <div style={{verticalAlign: 'inherit'}}>
                             <div className='inputInfoRePwd' style={{verticalAlign: 'inherit'}}>
-                            <input type='password' id='infoRePwdInputBox' name='infoRePassword' value={ infoRePassword } onChange={ onInfoRePwd } placeholder='비밀번호를 확인하세요.' />
+                            <input type='password' disabled={infoPasswordError ? true : false} id='infoRePwdInputBox' name='infoRePassword' value={ infoRePassword } onChange={ onInfoRePwd } placeholder='비밀번호를 확인하세요.' />
                             </div>
                         </div>
                     </div>
@@ -243,7 +251,6 @@ const UserInformation = () => {
                             <p style={{verticalAlign: 'inherit'}}>
                             비밀번호는 특수문자(!@#$%^*+=-)를 포함하여 8자리 이상 15자리 이하로 입력하세요.
                             </p>
-                            {infoPasswordError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
                             {infoRepasswordCheckError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다. 다시 확인하세요.</p>}
                             
                         </div>
