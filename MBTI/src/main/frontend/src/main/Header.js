@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/main/header.css';
 import '../css/reset.css';
-import ContactMain from '../Contact/ContactMain';
 import logo from '../img/logo/BWTH_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
@@ -28,10 +27,7 @@ const Header = () => {
                                 <Link to='/MbtiBoard' className='MbtiBoardList'>MBTI별 게시판</Link>
                             </div>
                         </li>
-                        <li className='MenuBarList4'>
-                            <Link to='/' className='MenuBarSub'>매치하기</Link>
-
-                        </li>
+                        
                     </ul>
                 </nav>
                 

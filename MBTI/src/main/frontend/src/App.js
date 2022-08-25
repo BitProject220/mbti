@@ -40,7 +40,10 @@ import UserDeleteModal from './myPage/UserDeleteModal';
 
 
 
-import BoardWriteMain from './board/BoardWriteMain';
+import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
+import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
+import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
+import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
 
 
 
@@ -104,7 +107,11 @@ const App = () => {
         <Route path='/UserDeleteModal' element={<UserDeleteModal/>}/>
 
 
-        <Route path='/BoardWriteMain' element={<BoardWriteMain/>} />
+        <Route path='/FreeBoardWriteMain' element={<FreeBoardWriteMain/>} />
+        <Route path='/MbtiBoardWriteMain' element={<MbtiBoardWriteMain/>} />
+        <Route path='/FreeBoardViewMain' element={<FreeBoardViewMain/>} />
+        <Route path='/MbtiBoardViewMain' element={<MbtiBoardViewMain/>} />
+  
 
    
       </Routes>

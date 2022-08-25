@@ -12,9 +12,8 @@
 }
 
 .LogoImg {
-    width: 45%;
+    width: 150px;
     height: 100%;
-    padding-top : 9px;
 
 }
 
@@ -94,9 +93,11 @@
 
 .UserMypage {
     display: flex;
+    width: 230px;
 }
 
 .LogOutBtn {
+    padding-left: 120px;
     font-size: 16px;
     height: 50px;
     border : none;
@@ -106,6 +107,6 @@
 
 .UserBtn {
     font-size: 16px;
-    padding: 10px 30px;
+    padding: 10px 0px 0px 20px;
 
 }
