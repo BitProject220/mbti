@@ -7,30 +7,7 @@ import arrow from '../img/signup/downArrow.png';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router';
 
-const UserInformation = () => {
-    const [age, setAge] = useState({
-        default: "나이를 입력해주세요."
-      });
-
-    const [infoName, setInfoName] = useState('박유진');
-    const [infoEmail, setInfoEmail] = useState('dbwlsdhksenz@naver.com');
-    const [infoPassword, setInfoPassword] = useState('');
-    const [infoRePassword, setInfoRePassword] = useState('');
-    const [infoGender, setInfoGender] = useState('male');
-    const navigate = useNavigate();
-
-    let ages = [];
-    for (let d = 13; d <= 100; d += 1) {
-        if (d < 100) {
-            ages.push(d.toString());
-        }
-        else {
-            ages.push(d.toString()+"+");
-        }
-        
-    }
-
-    const FormCheckText = styled.span`
+const FormCheckText = styled.span`
     font-size: 18px;
     width: 110px;
     height: 40px;
@@ -81,6 +58,29 @@ const UserInformation = () => {
     }
     display: none;
     `;
+
+const UserInformation = () => {
+    const [age, setAge] = useState({
+        default: '13'
+      });
+
+    const [infoName, setInfoName] = useState('박유진');
+    const [infoEmail, setInfoEmail] = useState('dbwlsdhksenz@naver.com');
+    const [infoPassword, setInfoPassword] = useState('');
+    const [infoRePassword, setInfoRePassword] = useState('');
+    const [infoGender, setInfoGender] = useState('male');
+    const navigate = useNavigate();
+
+    let ages = [];
+    for (let d = 13; d <= 100; d += 1) {
+        if (d < 100) {
+            ages.push(d.toString());
+        }
+        else {
+            ages.push(d.toString()+"+");
+        }
+        
+    }
 
     const handleSelect3 = (e) => {
         setInfoGender(e.target.value);
@@ -180,7 +180,7 @@ const UserInformation = () => {
                             <p style={{verticalAlign: 'inherit'}}>
                                 커뮤니티 또는 매칭 할 때 사용 되는 이름 또는 별명입니다.<br /> 프로필에도 이름이 표시됩니다. 
                             </p>
-                            {infoNameError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이름 또는 별명을 입력하세요.</p>}
+                            {infoNameError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이름 또는 별명을 입력하세요.</p>}
                         </div>
                     </div>
                 </div>
@@ -223,6 +223,14 @@ const UserInformation = () => {
                             </div>
                         </div>
                     </div>
+
+                    <div data-v-cbdfd9aa="" className="row__text">
+                        <div style={{verticalAlign: 'inherit'}}>
+                            
+                            {infoPasswordError && <p className="invalid-input pwdInput" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
+                            
+                        </div>
+                    </div>
                 </div>
 
                 <div data-v-cbdfd9aa="" className="row__description infoRePwd">
@@ -234,7 +242,7 @@ const UserInformation = () => {
                     <div data-v-cbdfd9aa="" className="row__subtitle infoRePwdBox">
                         <div style={{verticalAlign: 'inherit'}}>
                             <div className='inputInfoRePwd' style={{verticalAlign: 'inherit'}}>
-                            <input type='password' id='infoRePwdInputBox' name='infoRePassword' value={ infoRePassword } onChange={ onInfoRePwd } placeholder='비밀번호를 확인하세요.' />
+                            <input type='password' disabled={infoPasswordError ? true : false} id='infoRePwdInputBox' name='infoRePassword' value={ infoRePassword } onChange={ onInfoRePwd } placeholder='비밀번호를 확인하세요.' />
                             </div>
                         </div>
                     </div>
@@ -243,8 +251,7 @@ const UserInformation = () => {
                             <p style={{verticalAlign: 'inherit'}}>
                             비밀번호는 특수문자(!@#$%^*+=-)를 포함하여 8자리 이상 15자리 이하로 입력하세요.
                             </p>
-                            {infoPasswordError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
-                            {infoRepasswordCheckError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다. 다시 확인하세요.</p>}
+                            {infoRepasswordCheckError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다. 다시 확인하세요.</p>}
                             
                         </div>
                     </div>

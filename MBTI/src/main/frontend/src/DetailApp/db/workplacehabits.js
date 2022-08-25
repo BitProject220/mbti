@@ -326,7 +326,7 @@ export default [
     
     },{
         id: '13',
-        url: '/img/13-ESFJ.png',
+        url: '/img/13-ISTP.png',
         title: '직장습관',
         Greatperson: '',
         footer: '',
@@ -353,7 +353,7 @@ export default [
     
     },{
         id: '14',
-        url: '/img/14-ISTP.png',
+        url: '/img/14-ISFP.png',
         title: '직장습관',
         Greatperson: '',
         footer: '',

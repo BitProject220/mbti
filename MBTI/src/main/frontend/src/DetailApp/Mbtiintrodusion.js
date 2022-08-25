@@ -1,9 +1,11 @@
+import { data } from 'jquery';
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import '../css/detail/detatil.css';
 import '../css/reset.css';
 import Footer from '../main/Footer';
 import Header from '../main/Header';
+import ResultMain from '../resultpage/ResultMain';
 import introduciondata from './db/introduciondata';
 import Introduction from './Detailpage/Introduction';
 import SidevarLeft from './SidevarLeft';
@@ -11,12 +13,14 @@ import SocialIcons from './SocialIcons';
 
 
 const Mbtiintrodusion = () => {
-    
-    const {state} = useLocation();
-    
-    const data = introduciondata.find(data => data.id === state.id)
+
+    const { state } = useLocation();
+    const data =  introduciondata.find(data => data.id === state.id)
     const {id} = state;
-    console.log(state.id);
+    
+    // console.log(state.id);
+
+
 
     const navigate = useNavigate();
     const onnext = (e)=> {
