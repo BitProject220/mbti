@@ -3,7 +3,7 @@ import '../css/signup/signup.css';
 import '../css/reset.css';
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import arrow from '../img/signup/downArrow.png';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
@@ -11,70 +11,7 @@ import ModalPg from './ModalPg';
 import ModalPg2 from './ModalPg2';
 import axios from 'axios';
 
-
-const Signup = (props) => {
-    const mailnumCheck = false;
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [gender, setGender] = useState('');
-    const [emailNum, setEmailNum] = useState('');
-    const [password, setPassword] = useState('');
-    const [passwordCheck, setPasswordCheck] = useState('');
-    const [show, setShow] = useState(false);
-    const navigate = useNavigate();
-
-    /* const onInputName = (e) => {
-        const {value} = e.target
-        setName(value)
-    } */
-
-    /* const onInputEmail = (e) => {
-        const {value} = e.target
-        setEmail(value)
-    } */
-
-    const [age, setAge] = useState({
-        default: "나이를 입력해주세요."
-      });
-
-    let ages = [];
-    for (let d = 13; d <= 100; d += 1) {
-        if (d < 100) {
-            ages.push(d.toString());
-        }
-        else {
-            ages.push(d.toString()+"+");
-        }
-    }
-
-    /* const [Selected, setSelected] = useState("");
-
-    const handleSelect = (e) => {
-        setSelected(e.target.value);
-    };
-
-    const [Selected2, setSelected2] = useState("");
-
-    const handleSelect2 = (e) => {
-        setSelected2(e.target.value);
-    }; */
-
-   /*  const [selected3, setSelected3] = useState(''); */
-
-    const handleSelect3 = (e) => {
-        setGender(e.target.value);
-        console.log(e.target.value);
-    };
-
-    const [selected4, setSelected4] = useState(null);
-
-    const handleSelect4 = (e) => {
-        setSelected4(!selected4);
-        console.log(!selected4)
-    };
-    
-
-      const FormCheckText = styled.span`
+    const FormCheckText = styled.span`
         font-size: 18px;
         width: 110px;
         height: 40px;
@@ -106,7 +43,7 @@ const Signup = (props) => {
         &:checked {
             display: inline-block;
             background: none;
-            padding: 0px 10px;
+          padding: 0px 10px;
             text-align: center;
             height: 35px;
             line-height: 33px;
@@ -127,18 +64,85 @@ const Signup = (props) => {
         `;
 
 
+const Signup = (props) => {
+    const mailnumCheck = false;
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [gender, setGender] = useState('');
+    const [emailNum, setEmailNum] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordCheck, setPasswordCheck] = useState('');
+    const [show, setShow] = useState(false);
+    const navigate = useNavigate();
+    let code = "";
+
+    /* const onInputName = (e) => {
+        const {value} = e.target
+        setName(value)
+    } */
+
+    /* const onInputEmail = (e) => {
+        const {value} = e.target
+        setEmail(value)
+    } */
+
+    const [age, setAge] = useState({
+        default: '13'
+      });
+
+    let ages = [];
+    for (let d = 13; d <= 100; d += 1) {
+        if (d < 100) {
+            ages.push(d.toString());
+        }
+        else {
+            ages.push(d.toString()+"+");
+        }
+    }
+
+    /* const [Selected, setSelected] = useState("");
+
+    const handleSelect = (e) => {
+        setSelected(e.target.value);
+    };
+
+    const [Selected2, setSelected2] = useState("");
+
+    const handleSelect2 = (e) => {
+        setSelected2(e.target.value);
+    }; */
+
+   /*  const [selected3, setSelected3] = useState(''); */
+
+    const handleSelect3 = (e) => {
+        setGender(e.target.value);
+        console.log(e.target.value);
+    };
+
+    const [selected4, setSelected4] = useState(false);
+
+    const handleSelect4 = (e) => {
+        setSelected4(!selected4);
+        console.log(!selected4)
+    };
+    
         const [modalShow, setModalShow] = React.useState(false);
 
 
         //이메일 입력&유효성
           const [emailError, setEmailError] = useState(false);
+          const [emailNoneError, setEmailNoneError] = useState(false);
+
           const onChangeEmail = (e) => {
             const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            if(e.target.value.length >= 1) setEmailNoneError(false);
+            else if(e.target.value.length < 1) setEmailNoneError(true);
+            
             if (!e.target.value || emailRegex.test(e.target.value)) setEmailError(false);
             else setEmailError(true);
             setEmail(e.target.value);
         };
-
+        
         //이름입력&유효성
         const [nameError, setNameError] = useState(false);
         const onChangeName = (e) => {
@@ -148,9 +152,55 @@ const Signup = (props) => {
         }
 
         //이메일 인증버튼 눌렀을때
-        /* const onEmailCheck = () => {
-            setShow(true);
-        } */
+         const onEmailCheck = (e) => {
+             e.preventDefault();
+             
+
+            if(email === '') {
+                setEmailNoneError(true);
+                setShow(false);
+            }
+            else if(emailError) {
+                setEmailError(true);
+                setShow(false);
+            }
+            else{
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:8080/user/emailCheck',
+                    data: {
+                        email: email,
+                    }
+                }).then((res)=>{
+                    console.log(res.data)
+                    if(res.data === "exist"){
+                        alert('이미 존재하는 이메일입니다. 다시 입력하세요');
+                    }
+                    else if(res.data === "nonExist") {
+                        setShow(true);
+                        axios({
+                            method: 'get',
+                            url: `http://localhost:8080/user/emailNumCheck?email=${email}`,
+                            data: {
+                                email: email,
+                            }
+                        }).then((res)=>{
+                            console.log("data는?"+res.data);
+                            code = res.data;
+                            
+                         }).catch(error =>{
+                            console.log(error)
+                         });
+                        
+
+                    }
+                 }).catch(error =>{
+                    console.log(error)
+                 });
+
+            }
+                
+        } 
 
         //이메일 인증번호버튼 눌렀을때
         const onEmailNumCheck = () => {}
@@ -227,43 +277,27 @@ const Signup = (props) => {
             }
 
             else {
-                e.preventDefault();
-                axios({
-                    method: 'post',
-                    url: 'http://localhost:8080/login',
-                    data: {
-                        name: name,
-                        email: email,
+               axios({
+                method: 'POST',
+                    url:  'http://localhost:8080/user/write',
+                     data: ({
+                        'name': name,
+                        'email': email,
+                        'password': password,
+                        'age': age.default,
+                        'gender': gender,
+                    })
+                 }).then(()=>{
+                    navigate("/SignupSuccess", { state: { name: name , email: email }});
+                    console.log("확인!")
+                 }).catch(error =>{
+                    console.log(error)
+                 })
 
-                    }
-                })
-                navigate("/SignupSuccess", { state: { name: name , email: email }});
+                 
                 console.log(email);
             };
-        } 
-
-        /* const handleButtonValid = async (values) => {
-            const {email, name, age, gender} = values;
-            try {
-              await axios.post("/api/auth/signup", {
-                email,
-                name,
-                age,
-                gender
-              });
-              
-              
-                navigate("/SignupSuccess");
-        
-            } catch (e) {
-              
-              toast.error(e.response.data.message + "😭", {
-                position: "top-center",
-              });
-            }
-          }; */
-
-    
+        }  
     
     return (
         <div className='container'>
@@ -278,7 +312,7 @@ const Signup = (props) => {
                         <p className='input__note' data-v-4d142efa="">
                             어떻게 불러야 할지 알기 위함입니다. 당신이 원한다면 별명을 입력하셔도 됩니다.
                         </p>
-                        {nameError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이름 또는 별명을 입력하세요.</p>}
+                        {nameError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이름 또는 별명을 입력하세요.</p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label emailBox' data-v-4d142efa="">
@@ -291,7 +325,7 @@ const Signup = (props) => {
                                 <FontAwesomeIcon icon={ faEnvelope } data-v-4d142efa="" className="sp-icon input__icon icon--md icon--inherit icon--envelope" id='icon' />
                             </div>
                             <div data-v-4d142efa="">
-                                <button id='emailCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ () => { setShow(true) } }>
+                                <button id='emailCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ onEmailCheck }>
                                     <span className='buttonText2'>인증</span>
                                 </button>
                             </div>
@@ -299,7 +333,7 @@ const Signup = (props) => {
                         { show?
                             <div className='email_num_check_box'>
                                 <div>
-                                    <input type='text' className='email_num_check email_num_check_box1' value={ emailNum }  onChange={ onChangeEmailNumCheck } placeholder="인증번호 6자리" maxlength="6" />
+                                    <input type='text' className='email_num_check email_num_check_box1' value={ emailNum }  onChange={ onChangeEmailNumCheck } placeholder="인증번호 6자리" maxLength="6" />
                                 </div>
                                 <div data-v-4d142efa="">
                                     <button id='emailNumCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt email_num_check_box2" onClick={ onEmailNumCheck }>
@@ -313,7 +347,8 @@ const Signup = (props) => {
                             이메일 주소를 올바르게 입력했는지 다시 확인하세요. 입력한 이메일로 인증번호를 보낼 것입니다.
                         </p>
                        
-                        {emailError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이메일 형식이 맞지 않습니다.</p>}
+                        {emailError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이메일 형식이 맞지 않습니다.</p>}
+                        {emailNoneError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이메일을 입력하세요.</p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
@@ -321,19 +356,19 @@ const Signup = (props) => {
                         <div className='input__row' data-v-4d142efa="">
                             <input type='password' id='signPassword' name='password' value={ password } onChange={ onChangeSignPwd } placeholder='비밀번호 8자리 이상 입력하세요.' />
                         </div>
-                        {passwordError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
+                        {passwordError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
                     </div>
 
                    
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="" style={{marginTop:'-30px'}}>
                         <label className='input__label label' data-v-4d142efa="">비밀번호 확인: </label>
                         <div className='input__row' data-v-4d142efa="">
-                            <input type='password' id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' />
+                            <input type='password' disabled={passwordError ? true : false} id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' />
                         </div>
                         <p className='input__note' data-v-4d142efa="">
                             비밀번호는 특수문자(!@#$%^*+=-)와 영문자, 숫자를 포함하여 8자리 이상 15자리 이하로 입력하세요.
                         </p>
-                        {passwordCheckError && <p class="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다. 다시 확인하세요. </p>}
+                        {passwordCheckError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호가 맞지 않습니다. 다시 확인하세요. </p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
@@ -343,7 +378,7 @@ const Signup = (props) => {
                                 name='age'
                                 value={age.default}
                                 onChange={(e) =>
-                                    setAge({ ...age, default: e.target.value })
+                                    setAge({ default: e.target.value })
                                 }
                             >
                                 {ages.map(item => (
@@ -432,7 +467,7 @@ const Signup = (props) => {
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
-                        <button id='conBtn' type='submit' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ handleButtonValid }>
+                        <button id='conBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ handleButtonValid }>
                             <span className='buttonText'>회원가입</span>
                             <FontAwesomeIcon icon={ faArrowRight } className='rightIcon' />
                         </button>

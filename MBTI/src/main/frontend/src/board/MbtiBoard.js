@@ -94,7 +94,7 @@ const MbtiBoard = () => {
                     
                         <!-- 버튼 시작 --> */}
                     <div class="kboard-control">
-                        <a href="/tem_board_1/?mod=editor&pageid=1" class="kboard-default-button-small">글쓰기</a>
+                        <a href="/MbtiBoardWriteMain" class="kboard-default-button-small">글쓰기</a>
                     </div>
                     {/* <!-- 버튼 끝 -->
                         */}

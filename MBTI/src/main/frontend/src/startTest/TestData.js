@@ -6,7 +6,7 @@ export default [
   //J & P = JP
   //A & T = AT
 
-
+  
   {id: 1, mbti:'EI', title : '주기적으로 새로운 친구를 만든다.' },
   {id: 2, mbti:'NS', title : '자유 시간 중 상당 부분을 다양한 관심사를 탐구하는 데 할애한다.'},
   {id: 3, mbti:'TF', title : '다른 사람이 울고 있는 모습을 보면 자신도 울고 싶어질 때가 많다.'},

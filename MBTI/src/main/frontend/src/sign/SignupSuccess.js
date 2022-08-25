@@ -17,7 +17,7 @@ const SignupSuccess = () => {
     const handleButtonValid2 = (e) => {
         
         
-            navigate("/LoginPage");
+            navigate("/");
        
     }
     return (

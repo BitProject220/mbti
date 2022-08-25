@@ -8,7 +8,8 @@ const Mypage = () => {
 
 
     return (
-        <div style={{backgroundImage:`url(${ myPageTolp2 })`, backgroundRepeat:'no-repeat', backgroundPosition: '0% 0%', backgroundSize:'100% 300px'}}>
+        <div style={{backgroundImage:`url(${ myPageTolp2 })`, backgroundRepeat:'no-repeat', backgroundPosition: '0% 0%', backgroundSize:'100% 300px',
+    }}>
             <div className='myPage'>
                 <div className='myPageTop'>
                     <h1>마이페이지</h1>      

@@ -29,9 +29,8 @@ const Mbtifriendship = ( ) => {
     return (
         <>
             <Header />
-            <div className='content'>
-            <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='친구를 대할 때'style={{ marginBottom: 60+'px', paddingTop: 90+'px',}} />
+            <div className='titleimg'  >
+            <img src={data.url} alt='친구를 대할 때' />
             </div>
             <div className='body'>
             <div className='sticky' >           
@@ -49,7 +48,6 @@ const Mbtifriendship = ( ) => {
                 </div>
                 <SocialIcons />
                 </div>
-            </div>
             </div>
             <Footer />
         </>
