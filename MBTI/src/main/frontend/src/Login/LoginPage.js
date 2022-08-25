@@ -84,11 +84,11 @@ const LoginPage = () => {
                 </div>
 
                 <div className='login_bottom'>
-                    <button className='login_Btn'>
                         <Link to='/Main'>
-                        <span className='font-size'>로그인</span>
+                            <button className='login_Btn'>
+                                <span className='font-size'>로그인</span>
+                            </button>
                         </Link>
-                    </button>
 
                     <a href={KAKAO_AUTH_URL} className='kakaoLogin_Btn'>
                         <div className='kakao_btn'></div>
