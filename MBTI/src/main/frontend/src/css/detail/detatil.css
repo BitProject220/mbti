@@ -1,18 +1,23 @@
 
-.body{
-    width: 1920px;
-    margin: auto;
+.titleimg img{
+    width: 100%;
+    margin-bottom: 60px;
+    padding-top: 90px;
 }
-.sticky {
-    display: inline-block;
+.body{
+    width: 100%;
+    margin: auto;
 
 }
+.sticky {
+    display: flow-root;
+}
 .sidediv-left {
-margin-left: 3%;
+margin-left: 4%;
 position: sticky;
 top: 88px;
 height:  auto;
-width: 16%;
+width: 18%;
 float: left;
 color: black;
 }
@@ -27,7 +32,6 @@ color: black;
 .sidediv-left ul{
    padding: 0;
 }
-
 
 
 .sidediv-left ul li{
@@ -46,8 +50,11 @@ color: black;
 
 
 .main_description {
-    margin: 0 4% 60px 4%;
-
+    height: auto;
+    width: 52%;
+    float: left;
+    color: black;
+    margin-left: 2%;
 }
 .main_description h1{
     font-size:  3.5rem;
@@ -82,9 +89,7 @@ color: black;
     margin-top: -15px;
 
 }
-.main_description p strong::before{
 
-}
 .main_description strong{
     font-weight: bold;
 }
@@ -96,7 +101,7 @@ color: black;
 .main_description .Greatperson p{
     border-left: 3px solid #33a474;
     padding-left: 30px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 .main_description .Greatperson{
     margin: 30px 0 ;
@@ -149,7 +154,7 @@ color: black;
     background-color: white;
     border-radius: 100px;
     color: gray;
-    font-size: 3.2rem;
+    font-size: 3rem;
     align-items: center;
     
 }
@@ -167,7 +172,7 @@ color: black;
     background-color: #51596a;
     border-radius: 100px;
     color: white;
-    font-size: 3.2rem;
+    font-size: 3rem;
     align-items: center;
     
 }
@@ -190,8 +195,8 @@ color: black;
 }
 .social-count{ text-align: center;}
 .social-number{
-    line-height: 1.4rem;
-    font-size: 3erm;
+    line-height: 3.4rem;
+    font-size: 2.4rem;
     font-weight: 500;
     color: #9b9faa;
 }
@@ -216,6 +221,7 @@ color: black;
 }
 .social-icons a{
     display: inline-flex;
+    margin-right: 15px;
 }
 
 .text-box{

@@ -1,9 +1,11 @@
+import { data } from 'jquery';
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import '../css/detail/detatil.css';
 import '../css/reset.css';
 import Footer from '../main/Footer';
 import Header from '../main/Header';
+import ResultMain from '../resultpage/ResultMain';
 import introduciondata from './db/introduciondata';
 import Introduction from './Detailpage/Introduction';
 import SidevarLeft from './SidevarLeft';
@@ -11,35 +13,38 @@ import SocialIcons from './SocialIcons';
 
 
 const Mbtiintrodusion = () => {
+
+    const { state } = useLocation();
+    const data =  introduciondata.find(data => data.id === state.id)
+    const {id} = state;
     
-    const {state} = useLocation();
-    const { id } = state;
+    // console.log(state.id);
 
-    const data = introduciondata.find(data => data.id === state.id)
 
-    console.log(state.id);
-   
+
+    const navigate = useNavigate();
+    const onnext = (e)=> {
+        navigate("/MbtiSW", { state: { id: id  }});
+    }
 
     return (
         <>
             <Header />
-            <div className='titleimg' style={{ textAlign: 'center', }} >
-            <img src={data.url} alt='소개' style={{ width: 100+'%', height: 'auto', marginBottom: 60+'px', paddingTop: 90+'px',}} />
+            <div className='titleimg'  >
+            <img src={data.url} alt='소개'  />
             </div>
             <div className='body'>
             <div className='sticky' >           
                 <SidevarLeft id={state.id}/>
-                <Introduction id={state.id}/> {/*  id 값에 전달 //*/}  
+                <Introduction id={state.id}/>
             </div>
             <div className='BtnComponent'>
-                <div className='nextBtn'>
-                    <a href='/MbtiSW'>
-                        <div className='title'>강점과 약점</div>
-                        <div className='BtnCircle'>&#8594;</div>
-                    </a>
-                </div>
-                <SocialIcons />
-                </div>
+            <div className='nextBtn' onClick={ onnext }>
+                <div className='title'>강점과 약점</div>
+                <div className='BtnCircle'>&#8594;</div>
+            </div>
+            </div>
+            <SocialIcons />
             </div>
             <Footer />
         </>
