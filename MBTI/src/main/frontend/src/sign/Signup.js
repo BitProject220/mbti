@@ -74,6 +74,7 @@ const Signup = (props) => {
     const [passwordCheck, setPasswordCheck] = useState('');
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
+    let code = "";
 
     /* const onInputName = (e) => {
         const {value} = e.target
@@ -98,7 +99,6 @@ const Signup = (props) => {
             ages.push(d.toString()+"+");
         }
     }
-    console.log(age);
 
     /* const [Selected, setSelected] = useState("");
 
@@ -119,7 +119,7 @@ const Signup = (props) => {
         console.log(e.target.value);
     };
 
-    const [selected4, setSelected4] = useState(null);
+    const [selected4, setSelected4] = useState(false);
 
     const handleSelect4 = (e) => {
         setSelected4(!selected4);
@@ -131,13 +131,18 @@ const Signup = (props) => {
 
         //이메일 입력&유효성
           const [emailError, setEmailError] = useState(false);
+          const [emailNoneError, setEmailNoneError] = useState(false);
+
           const onChangeEmail = (e) => {
             const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            if(e.target.value.length >= 1) setEmailNoneError(false);
+            else if(e.target.value.length < 1) setEmailNoneError(true);
+            
             if (!e.target.value || emailRegex.test(e.target.value)) setEmailError(false);
             else setEmailError(true);
             setEmail(e.target.value);
         };
-
+        
         //이름입력&유효성
         const [nameError, setNameError] = useState(false);
         const onChangeName = (e) => {
@@ -148,15 +153,53 @@ const Signup = (props) => {
 
         //이메일 인증버튼 눌렀을때
          const onEmailCheck = (e) => {
-            e.preventDefault();
+             e.preventDefault();
+             
+
+            if(email === '') {
+                setEmailNoneError(true);
+                setShow(false);
+            }
+            else if(emailError) {
+                setEmailError(true);
+                setShow(false);
+            }
+            else{
                 axios({
                     method: 'post',
                     url: 'http://localhost:8080/user/emailCheck',
                     data: {
                         email: email,
                     }
-                })
-            setShow(true);
+                }).then((res)=>{
+                    console.log(res.data)
+                    if(res.data === "exist"){
+                        alert('이미 존재하는 이메일입니다. 다시 입력하세요');
+                    }
+                    else if(res.data === "nonExist") {
+                        setShow(true);
+                        axios({
+                            method: 'get',
+                            url: `http://localhost:8080/user/emailNumCheck?email=${email}`,
+                            data: {
+                                email: email,
+                            }
+                        }).then((res)=>{
+                            console.log("data는?"+res.data);
+                            code = res.data;
+                            
+                         }).catch(error =>{
+                            console.log(error)
+                         });
+                        
+
+                    }
+                 }).catch(error =>{
+                    console.log(error)
+                 });
+
+            }
+                
         } 
 
         //이메일 인증번호버튼 눌렀을때
@@ -305,6 +348,7 @@ const Signup = (props) => {
                         </p>
                        
                         {emailError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이메일 형식이 맞지 않습니다.</p>}
+                        {emailNoneError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>이메일을 입력하세요.</p>}
                     </div>
 
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
@@ -319,7 +363,7 @@ const Signup = (props) => {
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="" style={{marginTop:'-30px'}}>
                         <label className='input__label label' data-v-4d142efa="">비밀번호 확인: </label>
                         <div className='input__row' data-v-4d142efa="">
-                            <input type='password' id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' />
+                            <input type='password' disabled={passwordError ? true : false} id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' />
                         </div>
                         <p className='input__note' data-v-4d142efa="">
                             비밀번호는 특수문자(!@#$%^*+=-)와 영문자, 숫자를 포함하여 8자리 이상 15자리 이하로 입력하세요.

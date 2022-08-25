@@ -19,6 +19,14 @@ public class UserDAOMyBatis implements UserDAO {
 	public void write(UserDTO userDTO) {
 		sqlSession.insert("userSQL.write",userDTO);
 	}
+	
+	//#######################유진시작##########################
+	@Override
+	public UserDTO emailCheck(String email) {
+		return sqlSession.selectOne("userSQL.emailCheck",email);
+		 
+	}
+	//#######################유진끝##########################
 
 
 }
