@@ -245,7 +245,7 @@ const Signup = (props) => {
                         'gender': gender,
                     })
                  }).then(()=>{
-                    //  navigate("/SignupSuccess", { state: { name: name , email: email }});
+                    navigate("/SignupSuccess", { state: { name: name , email: email }});
                     console.log("확인!")
                  }).catch(error =>{
                     console.log(error)
