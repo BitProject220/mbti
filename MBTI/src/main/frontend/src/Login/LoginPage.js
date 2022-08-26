@@ -11,6 +11,7 @@ import redpassword from '../image/redpassword_icon.png';
 import background from '../img/background/backgroundColor.png';
 // import kakaoLoginBtn from '../image/KaKao_Login_Btn.png';
 import axios from 'axios';
+const qs = require('qs');//String 타입으로 변환
 
 const LoginPage = () => {
     //이메일 유효성검사
@@ -59,15 +60,17 @@ const LoginPage = () => {
             axios({
                 method: 'POST',
                     url:  'http://localhost:8080/user/loginCheck',
-                     data: ({
+                     data: qs.stringify({
                         'email': document.getElementById('login_input_tag').value,
                         'password': document.getElementById('login_input_password').value,  
                     })
                  }).then((res)=>{
-                    if(res === 'false'){
+                    console.log(res.data)
+                    if((res.data) == ''){
                         alert('아이디나 비밀번호가 일치하지 않습니다');
                     }else{
                         alert('로그인 되었습니다');
+                        sessionStorage.setItem("email",res.data.email)
                         window.location.href='/Main';
                     }
                     

@@ -105,9 +105,11 @@ public class UserController {
 	
 	
 	//###################유진 끝#################################
+	
+	
 	@PostMapping(value = "/user/loginCheck")
 	@ResponseBody
-	public String loginCheck(@RequestParam Map<String, String> map) {
+	public UserDTO loginCheck(@RequestParam Map<String, String> map) {
 		return userService.loginCheck(map);
 		
 		

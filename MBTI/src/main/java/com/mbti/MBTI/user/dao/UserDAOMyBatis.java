@@ -37,8 +37,7 @@ public class UserDAOMyBatis implements UserDAO {
 
 	@Override
 	public UserDTO loginCheck(Map<String, String> map) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("userSQL.loginCheck", map);
 	}
 
 }
