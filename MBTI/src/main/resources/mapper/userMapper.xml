@@ -19,5 +19,7 @@
   		select * from USER where name = #{name};
   	</select>
   	<!--########################유진시작###########################  -->
-  	
+  	<select id="login" parameterType="String" resultType="user">
+  		
+  	</select>
   </mapper>

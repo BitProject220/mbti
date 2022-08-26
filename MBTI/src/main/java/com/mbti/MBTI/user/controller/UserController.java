@@ -1,6 +1,7 @@
 package com.mbti.MBTI.user.controller;
 
 
+import java.util.Map;
 import java.nio.file.Files;
 import java.util.Properties;
 import java.util.Random;
@@ -18,10 +19,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import com.mbti.MBTI.user.bean.UserDTO;
+//import com.mbti.MBTI.user.service.BCryptPasswordEncoder;
 import com.mbti.MBTI.user.service.UserService;
 
 @RestController
@@ -101,5 +104,11 @@ public class UserController {
 	
 	
 	//###################유진 끝#################################
-	
+	@PostMapping(value = "/user/loginCheck")
+	@ResponseBody
+	public String loginCheck(@RequestParam Map<String, String> map) {
+		return userService.loginCheck(map);
+		
+		
+	}
 }

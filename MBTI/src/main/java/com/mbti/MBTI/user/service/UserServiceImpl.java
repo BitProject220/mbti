@@ -1,5 +1,9 @@
 package com.mbti.MBTI.user.service;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +15,9 @@ public class UserServiceImpl implements UserService{
 	
 	 @Autowired(required = false)
 	 private UserDAO userDAO;
-	 
+	 @Autowired
+	 private HttpSession session;
+		
 //	 @Autowired
 //	 public UserServiceImpl(UserDAO userDAO) {
 //		 this.userDAO = userDAO;
@@ -46,5 +52,17 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	//###################유진 끝#################################
+
+	@Override
+	public String loginCheck(Map<String, String> map) {
+		UserDTO userDTO = userDAO.loginCheck(map);
+		if(userDTO != null) {
+			session.setAttribute("memId", userDTO.getEmail());
+			session.setAttribute("memPassword", userDTO.getPassword());
+			return "true";
+		}else {			
+			return "false";
+		}
+	}
 
 }
