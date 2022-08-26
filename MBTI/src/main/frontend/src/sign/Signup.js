@@ -62,7 +62,7 @@ import axios from 'axios';
         }
         display: none;
         `;
-
+    const qs = require('qs');
 
 const Signup = (props) => {
     const mailnumCheck = false;
@@ -75,6 +75,9 @@ const Signup = (props) => {
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
     let [code, setCode] = useState('');
+    const [emailSet, setEmailSet] = useState(false);
+    const [emailNumSet, setEmailNumSet] = useState(false);
+    const [nameSet, setNameSet] = useState(false);
     
     /* const onInputName = (e) => {
         const {value} = e.target
@@ -134,17 +137,17 @@ const Signup = (props) => {
             axios({
                 method: 'POST',
                 url: 'http://localhost:8080/user/nameCheck',
-                        data: ({
-                            'name': name,
-                        })
+                        data: qs.stringify({'name' : name})
             }).then((res)=>{
                 console.log(name)
                 console.log(res.data) 
                 if(res.data === "exist"){
                     alert('이미 존재하는 닉네임입니다. 다시 입력하세요');
+                    setNameSet(false);
                 }
                 else if(res.data === "nonExist") {
                     alert('사용 가능한 닉네임입니다.');
+                    setNameSet(true);
                 }
             }).catch(error =>{
                 console.log(error)
@@ -153,6 +156,9 @@ const Signup = (props) => {
     }
     
         const [modalShow, setModalShow] = React.useState(false);
+        const [emailNumCheckBtnTxt, setEmailNumCheckBtnTxt] = useState(true);
+        const [emailNumCheckBtnTxt2, setEmailNumCheckBtnTxt2] = useState(false);
+        
 
 
         //이메일 입력&유효성
@@ -196,41 +202,45 @@ const Signup = (props) => {
                     
                     method: 'POST',
                     url: 'http://localhost:8080/user/emailCheck',
-                    data: ({
+                    data: qs.stringify({ 
                         'email': email,
                     })
                 }).then((res)=>{
+                    console.log("성공")
                     console.log(email)
-                    console.log(JSON.stringify(res.data)) //기본으로 json타입으로 들어온다.
+                    console.log((res.data)) //기본으로 json타입으로 들어온다.
+
                     if(res.data === "exist"){
                         alert('이미 존재하는 이메일입니다. 다시 입력하세요');
+                        setEmailSet(false);
                     }
                     else if(res.data === "nonExist") {
                         axios({
-                            method: 'get',
-                            url: `http://localhost:8080/user/emailNumCheck?email=${email}`,
+                            method: 'POST',
+                            url: 'http://localhost:8080/user/emailNumCheck',
+                            data : qs.stringify({'email' : email})
                         }).then((res)=>{
                             alert("인증번호 전송 완료!\n인증번호를 확인하세요.");
                             setShow(true);
                             console.log("data는?"+res.data);
                             code =JSON.stringify(res.data);
                             setCode(code);
-                         }).catch(error =>{
+                        }).catch(error =>{
                             console.log(error)
-                         });
-                    }
-                 }).catch(error =>{
+                        });
+                    } 
+                }).catch(error =>{
                     console.log(error)
                 });
             }
         } 
-
+        
         //이메일 인증칸 입력 & 유효성
         const [emailCheckError, setEmailCheckError] = useState(false);
         const onChangeEmailNumCheck = (e) => {
             if(e.target.value.length >= 1) setEmailCheckError(false);
             else setEmailCheckError(true);
-            setEmailCheckNum(e.target.value);
+            setEmailCheckNum(e.target.value); 
         }
         
         /* console.log(code); */
@@ -238,12 +248,16 @@ const Signup = (props) => {
         const [emailNumError, setEmailNumError] = useState(false);
         const [emailNumError2, setEmailNumError2] = useState(false);
         const [emailNumError3, setEmailNumError3] = useState(false);
+        const buttonValue = document.getElementById('emailCheckBtn');
         //이메일 인증번호버튼 눌렀을때
         const onEmailNumCheck = () => {
             if(emailCheckNum === ''){
                 setEmailNumError2(false);
                 setEmailNumError3(false);
                 setEmailNumError(true);
+                emailNumCheckBtnTxt ? buttonValue.style.cursor='text' : buttonValue.style.cursor='cursor';
+                setEmailSet(false);
+                setEmailNumSet(false);
             }
             else if(emailCheckNum !== code){
                 console.log("1.내가 치는 인증번호는  "+emailCheckNum);
@@ -251,6 +265,9 @@ const Signup = (props) => {
                 setEmailNumError(false);
                 setEmailNumError3(false);
                 setEmailNumError2(true);
+                emailNumCheckBtnTxt ? buttonValue.style.cursor='text' : buttonValue.style.cursor='cursor';
+                setEmailSet(false);
+                setEmailNumSet(false);
             }
             else if(emailCheckNum === code){
                 console.log("2.내가 치는 인증번호는  "+emailCheckNum);
@@ -258,7 +275,12 @@ const Signup = (props) => {
                 setEmailNumError(false);
                 setEmailNumError2(false);
                 setEmailNumError3(true);
+                setEmailNumCheckBtnTxt(false);
+                setEmailNumCheckBtnTxt2(true);
+                emailNumCheckBtnTxt ? buttonValue.style.cursor='text' : buttonValue.style.cursor='cursor';
                 setShow(false);
+                setEmailSet(true);
+                setEmailNumSet(true);
             }
            
         }
@@ -303,8 +325,17 @@ const Signup = (props) => {
             if (!nameCh) {
                 alert('이름 또는 별명을 입력하세요.');
             }
+            else if(nameSet === false){
+                alert('이름 또는 닉네임 중복확인을 하세요.');
+            }
             else if (!emailCh) {
                 alert('이메일을 입력하세요.');
+            }
+            else if(emailSet === false){
+                alert('이메일 인증을 진행하세요.');
+            }
+            else if(emailNumSet === false){
+                alert('인증번호가 틀립니다./n다시 입력하세요.');
             }
             else if (emailError) {
                 alert('이메일 형식이 맞지 않습니다.');
@@ -381,13 +412,15 @@ const Signup = (props) => {
                         <div>
                             <div className='input__row inputEmail' data-v-4d142efa="">
                                 {/* <input id='emailInputBox' type='email' value={ email } onChange={ onInputEmail } placeholder='Your E-mail'></input> */}
-                                <input id='emailInputBox' name='email' type='email' value={ email }  onChange={ onChangeEmail } placeholder='Your E-mail' />
+                                <input id='emailInputBox' readOnly={emailNumCheckBtnTxt ? false : true}  name='email' type='email' value={ email }  onChange={ onChangeEmail } placeholder='Your E-mail' />
                                 
                                 <FontAwesomeIcon icon={ faEnvelope } data-v-4d142efa="" className="sp-icon input__icon icon--md icon--inherit icon--envelope" id='icon' />
 
                                 <div data-v-4d142efa="">
-                                    <button id='emailCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ onEmailCheck }>
-                                        <span className='buttonText2'>인증</span>
+                                    <button id='emailCheckBtn' type='button' disabled={emailNumCheckBtnTxt ? false : true} className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ onEmailCheck }>
+                                        {emailNumCheckBtnTxt && <span className="invalid-input buttonText3" style={{alignItems: 'center', lineHeight: 2, fontWeight: 200}}>인증</span>}
+                                        {emailNumCheckBtnTxt2 && <span className="invalid-input buttonText3" style={{alignItems: 'center', lineHeight: 2, fontWeight: 200}}>인증완료</span>}
+                                        {/* <span className='buttonText2'>인증</span> */}
                                     </button>
                                 </div>
                             </div>
