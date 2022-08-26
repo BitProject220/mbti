@@ -112,7 +112,6 @@ const App = () => {
         <Route path='/FreeBoardViewMain' element={<FreeBoardViewMain/>} />
         <Route path='/MbtiBoardViewMain' element={<MbtiBoardViewMain/>} />
   
-
    
       </Routes>
       </>
