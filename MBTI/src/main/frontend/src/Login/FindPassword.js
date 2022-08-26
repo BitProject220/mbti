@@ -7,6 +7,39 @@ import redmessage from '../image/redmessage_icon.png';
 import background from '../img/background/backgroundColor.png';
 
 const FindPassword = () => {
+    //  const email_Click = () => {
+
+    //       const nodemailer = require('nodemailer');    //노드메일러 모듈을 사용할 거다!
+    //       console.log(nodemailer);
+    //      const EMAIL = 'seungchan98@gmail.com';
+    //      const EMAIL_PW = 'tmdcks9801';
+    
+    //      const receiverEmail = 'seungchan@naver.com';
+    
+    //      const transport = nodemailer.createTransport({
+    //          service: 'gmail',
+    //          auth:{
+    //              user:EMAIL,
+    //              pass:EMAIL_PW,
+    //          },
+    //      });
+    //      const mailOptions = {
+    //          from:EMAIL,
+    //          to:receiverEmail,
+    //          subject:'[nodemailer]Smaple Email',
+    //          html:'<h1>Hello, World</h1>'
+    //      };
+    //      transport.sendMail(mailOptions, (eror, info) => {
+    //          if(eror){
+    //              console.log(eror);
+    //              return;
+    //          }
+    //          console.log(info);
+    //          console.log('send mail success!')
+    //      })
+    //  }
+
+
     //이메일 유효성 검사
     const findCheckEmail = (e) => {
         const emailValue1 = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i

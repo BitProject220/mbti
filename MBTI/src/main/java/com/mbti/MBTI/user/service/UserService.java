@@ -11,6 +11,8 @@ public interface UserService {
 
 	public String emailCheck(String email);
 
+	public String nameCheck(String name);
+
 	
 
 }
