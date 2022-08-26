@@ -11,7 +11,11 @@
   	
   	<!--########################유진시작###########################  -->
   	<select id="emailCheck" parameterType="String" resultType="user">
+  		select * from USER where email = #{email};
+  	</select>
   	
+  	<select id="nameCheck" parameterType="String" resultType="user">
+  		select * from USER where name = #{name};
   	</select>
   	<!--########################유진시작###########################  -->
   	

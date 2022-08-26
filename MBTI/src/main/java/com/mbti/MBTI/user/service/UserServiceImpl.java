@@ -30,8 +30,21 @@ public class UserServiceImpl implements UserService{
 		if(userDTO == null) {
 		 return "nonExist";
 		}
-		else return "exist";
+		else {
+			return "exist";
+		}
+		
 	}
+
+	@Override
+	public String nameCheck(String name) {
+		UserDTO userDTO = userDAO.nameCheck(name);
+		if(userDTO == null) {
+			 return "nonExist";
+		}
+			else return "exist";
+	}
+	
 	//###################유진 끝#################################
 
 }
