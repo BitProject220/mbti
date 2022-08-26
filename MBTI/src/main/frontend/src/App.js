@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
 import Test from './test/Test';
 import KakaoRedirectHandler from './Login/KakaoRedirectHandler';
@@ -18,7 +18,6 @@ import Mbtiworkplacehabits from './DetailApp/Mbtiworkplacehabits';
 import ContactMain from './Contact/ContactMain';
 import LoginPageMain from './Login/LoginPageMain';
 import FindPasswordMain from './Login/FindPasswordMain';
-import Signup from './sign/Signup';
 import ResultMain from './resultpage/ResultMain';
 
 
@@ -34,8 +33,6 @@ import FreeBoard from './board/boardList/FreeBoard';
 import MbtiBoard from './board/boardList/MbtiBoard';
 // 기진 끝
 
-import UserEditModal from './myPage/UserEditModal';
-import UserDeleteModal from './myPage/UserDeleteModal';
 
 import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
 import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
@@ -97,8 +94,6 @@ const App = () => {
         </Route>
         <Route path='/resultmain' element={<ResultMain />}/>
 
-        <Route path='/UserEditModal' element={<UserEditModal />}/>
-        <Route path='/UserDeleteModal' element={<UserDeleteModal/>}/>
 
 
         <Route path='/FreeBoardWriteMain' element={<FreeBoardWriteMain/>} />
