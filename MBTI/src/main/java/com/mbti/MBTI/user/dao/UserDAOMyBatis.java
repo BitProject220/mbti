@@ -1,5 +1,7 @@
 package com.mbti.MBTI.user.dao;
 
+import java.util.Map;
+
 import javax.transaction.Transactional;
 
 import org.apache.ibatis.session.SqlSession;
@@ -28,5 +30,10 @@ public class UserDAOMyBatis implements UserDAO {
 	}
 	//#######################유진끝##########################
 
+	@Override
+	public UserDTO loginCheck(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
