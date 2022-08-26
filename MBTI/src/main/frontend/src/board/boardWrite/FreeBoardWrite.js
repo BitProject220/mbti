@@ -3,9 +3,6 @@ import '../css/FreeBoardWrite.css';
 import '../../css/reset.css';
 import {CKEditor} from 'ckeditor4-react';
 
-
-
-
 const FreeBoardWrite = () => {
 
     // 제목 유효성
@@ -17,6 +14,8 @@ const FreeBoardWrite = () => {
         setFreeBoardSubject(e.target.value);
     }
   
+    
+
     return (
 
         <div className='BoardWrite'>

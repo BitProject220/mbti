@@ -75,7 +75,7 @@ const Signup = (props) => {
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
     let code = "";
-
+    
     /* const onInputName = (e) => {
         const {value} = e.target
         setName(value)
