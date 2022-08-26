@@ -25,22 +25,27 @@ import ResultMain from './resultpage/ResultMain';
 import SignupSuccessMain from './sign/SignupSuccessMain'; 
 import MyPageMain from './myPage/MyPageMain';
 import UserInformationMain from './myPage/UserInformationMain';
+import FreeBoard from './board/FreeBoard';
+import MbtiBoard from './board/MbtiBoard';
 
 // 기진
 import Profiletypes from './profiles/Profiletypes'
-import ScrollToTop from './ScrollTop';
 
-import FreeBoard from './board/boardList/FreeBoard';
-import MbtiBoard from './board/boardList/MbtiBoard';
-// 기진 끝
+import ScrollToTop from './ScrollTop';
+// import BoardMain from './board/BoardMain';
+
 
 import UserEditModal from './myPage/UserEditModal';
 import UserDeleteModal from './myPage/UserDeleteModal';
+
+
 
 import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
 import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
 import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
+
+
 
 const App = () => {
   return (
@@ -79,16 +84,17 @@ const App = () => {
 
         <Route path="/MyPageMain" element={<MyPageMain />} />
 
+        <Route path="/FreeBoard" element={<FreeBoard />}/>
+        <Route path="/MbtiBoard" element={<MbtiBoard />}/>
 
 
       {/* 기진 시작 */} 
   
         {/* 프로필 */}
+
         <Route path="/Profiletypes" element={<Profiletypes/>}/>
         {/* 보드 */}
-        <Route path="/FreeBoard" element={<FreeBoard />}/>
-        <Route path="/MbtiBoard" element={<MbtiBoard />}/>
-
+        {/* <Route path="/BoardMain" element={<BoardMain/>}/> */}
       {/* 기진 끝 */}
 
         <Route path="/Main">
@@ -106,7 +112,6 @@ const App = () => {
         <Route path='/FreeBoardViewMain' element={<FreeBoardViewMain/>} />
         <Route path='/MbtiBoardViewMain' element={<MbtiBoardViewMain/>} />
   
-
    
       </Routes>
       </>
