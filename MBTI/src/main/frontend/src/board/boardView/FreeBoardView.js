@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/FreeBoardView.css';
 import TOPgrey from '../../img/Top/TOPgrey.png';
+import ReplyBoard from '../../replyboard/ReplyBoard';
 
 const FreeBoardView = () => {
     return (
@@ -52,8 +53,10 @@ const FreeBoardView = () => {
                                 <Link to='#' className='Btn_right_list_delete'>삭제</Link>
                             </div>
                         </div>
+                        <ReplyBoard />
                     </div>
                 </div>
+                
             </div>
         </div>
     );

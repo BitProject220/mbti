@@ -28,6 +28,11 @@ public class UserDAOMyBatis implements UserDAO {
 		return sqlSession.selectOne("userSQL.emailCheck",email);
 		 
 	}
+
+	@Override
+	public UserDTO nameCheck(String name) {
+		return sqlSession.selectOne("userSQL.nameCheck",name);
+	}
 	//#######################유진끝##########################
 
 	@Override

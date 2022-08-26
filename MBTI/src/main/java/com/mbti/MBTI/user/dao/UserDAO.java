@@ -12,4 +12,6 @@ public interface UserDAO {
 
 	public UserDTO loginCheck(Map<String, String> map);
 	
+	public UserDTO nameCheck(String name);
+	
 }
