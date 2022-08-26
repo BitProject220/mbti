@@ -1,5 +1,7 @@
 package com.mbti.MBTI.user.dao;
 
+import java.util.Map;
+
 import javax.transaction.Transactional;
 
 import org.apache.ibatis.session.SqlSession;
@@ -26,9 +28,16 @@ public class UserDAOMyBatis implements UserDAO {
 		return sqlSession.selectOne("userSQL.emailCheck",email);
 		 
 	}
+
+	@Override
+	public UserDTO nameCheck(String name) {
+		return sqlSession.selectOne("userSQL.nameCheck",name);
+	}
 	//#######################유진끝##########################
 
-	
-
+	@Override
+	public UserDTO loginCheck(Map<String, String> map) {
+		return sqlSession.selectOne("userSQL.loginCheck", map);
+	}
 
 }
