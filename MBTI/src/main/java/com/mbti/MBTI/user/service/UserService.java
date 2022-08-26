@@ -13,7 +13,7 @@ public interface UserService {
 
 	public String emailCheck(String email);
 
-	public String loginCheck(Map<String, String> map);
+	public UserDTO loginCheck(Map<String, String> map);
 
 	public String nameCheck(String name);
 
