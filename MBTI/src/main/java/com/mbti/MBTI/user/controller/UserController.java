@@ -101,8 +101,17 @@ public class UserController {
 		return userService.nameCheck(name);
 	}
 	
-
+	@PostMapping(value = "/user/userUpdate")
+	public void userUpdate(@RequestBody UserDTO userDTO) {
+		System.out.println(userDTO);
+		userService.userUpdate(userDTO);
+	}
 	
+	@PostMapping(value = "/user/userInfo")
+	public UserDTO userInfo(@RequestParam String email) {
+		UserDTO userDTO = new UserDTO();
+		return userService.userInfo(email);
+	}
 	
 	//###################유진 끝#################################
 	

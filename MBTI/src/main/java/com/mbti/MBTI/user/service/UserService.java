@@ -17,6 +17,10 @@ public interface UserService {
 
 	public String nameCheck(String name);
 
+	public void userUpdate(UserDTO userDTO);
+
+	public UserDTO userInfo(String email);
+
 	
 
 }
