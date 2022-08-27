@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.gson.Gson;
+
 import com.mbti.MBTI.user.bean.UserDTO;
 //import com.mbti.MBTI.user.service.BCryptPasswordEncoder;
 import com.mbti.MBTI.user.service.UserService;

@@ -6,7 +6,7 @@
 
 	<typeAliases>
 		<typeAlias type="com.mbti.MBTI.user.bean.UserDTO" alias="user"/>
-		<typeAlias type="com.mbti.MBTI.user.bean.FreeCommentDTO" alias="freecomment"/>
+		<typeAlias type="com.mbti.MBTI.FreeComment.bean.FreeCommentDTO" alias="freecomment"/>
 	</typeAliases>
 	
 	
