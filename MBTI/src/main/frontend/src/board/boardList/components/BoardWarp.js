@@ -54,7 +54,7 @@ const BoardWarp = (props) => {
                         <table>
                             <thead>
                                 <tr>
-                                    <td className="kboard-list-uid">번호</td>
+                                    <td className="kboard-list-uid">바보</td>
                                     <td className="kboard-list-name">타입</td>
                                     <td className="kboard-list-title">제목</td>
                                     <td className="kboard-list-user">작성자</td>
@@ -102,7 +102,7 @@ const BoardWarp = (props) => {
                         </form>
                     </div>
                     <div className="kboard-control">
-                        <a href="/BoardWriteMain" className="kboard-default-button-small">글쓰기</a>
+                        <a href="/FreeBoardWriteMain" className="kboard-default-button-small">글쓰기</a>
                     </div>
                 </div>
             </div>

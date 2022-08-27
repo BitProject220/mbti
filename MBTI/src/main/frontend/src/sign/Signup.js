@@ -74,7 +74,7 @@ const Signup = (props) => {
     const [passwordCheck, setPasswordCheck] = useState('');
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
-
+   
     let [code, setCode] = useState('');
     const [emailSet, setEmailSet] = useState(false);
     const [emailNumSet, setEmailNumSet] = useState(false);
