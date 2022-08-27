@@ -56,44 +56,60 @@ const ResultMain = () => {
 
   const MBTI = mbti.substr(0 , 4);
   let id = '13';
-  
+  let job = '';
   console.log("나의 엠비티아이는"+MBTI);
   // console.log(id);
 
   if(MBTI === 'INTJ') {
     id = "1";
+    job= "전략가";
    {/**  console.log(id+'**********************************'); */}
   }
   else if(MBTI === 'INTP'){
     id = "2";
+    job= "논리술사";
   }else if(MBTI === 'ENTJ'){
     id = "3";
+    job= "통솔자";
   }else if(MBTI === 'ENTP'){
     id = "4";
+    job= "변론가";
   }else if(MBTI === 'INFJ'){
     id = "5";
+    job= "옹호자";
   }else if(MBTI === 'INFP'){
     id = "6";
+    job= "중재자";
   }else if(MBTI === 'ENFJ'){
     id = "7";
+    job= "선도자";
   }else if(MBTI === 'ENFP'){
     id = "8";
+    job= "활동가";
   }else if(MBTI === 'ISTJ'){
     id = "9";
+    job= "현실주의자";
   }else if(MBTI === 'ISFJ'){
     id = "10";
+    job= "수호자";
   }else if(MBTI === 'ESTJ'){
     id = "11";
+    job= "경영자";
   }else if(MBTI === 'ESFJ'){
     id = "12";
+    job= "집정관";
   }else if(MBTI === 'ISTP'){
     id = "13";
+    job= "장인";
   }else if(MBTI === 'ISFP'){
     id = "14";
+    job= "모험가";
   }else if(MBTI === 'ESTP'){
     id = "15";
+    job= "사업가";
   }else if(MBTI === 'ESFP'){
     id = "16";
+    job= "연예인";
   }
   
   //console.log("아이디는"+id);
@@ -106,7 +122,7 @@ const ResultMain = () => {
         <div className='Main'>
         <Header />
         
-        <ResultPage mbtiresult={mbtiresult} />
+        <ResultPage mbtiresult={mbtiresult} job={job} />
         <div className='body'>
         <div className='sticky' >
         <SidevarLeft id={id} />
