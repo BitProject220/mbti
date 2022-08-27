@@ -48,13 +48,27 @@ public class UserServiceImpl implements UserService{
 			else return "exist";
 	}
 	
+	@Override
+	public void userUpdate(UserDTO userDTO) {
+		userDAO.userUpdate(userDTO);
+		
+	}
+	
+	@Override
+	public UserDTO userInfo(String email) {
+		UserDTO userDTO = userDAO.userInfo(email);
+		System.out.println(userDTO);
+		return userDTO;
+	}
 	//###################유진 끝#################################
 
 	@Override
 	public UserDTO loginCheck(Map<String, String> map) {
 		UserDTO userDTO = userDAO.loginCheck(map);
-		
 		return userDTO;
 	}
+
+
+	
 	
 }

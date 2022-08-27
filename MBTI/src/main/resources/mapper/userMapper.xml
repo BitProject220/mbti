@@ -17,6 +17,14 @@
   	<select id="nameCheck" parameterType="String" resultType="user">
   		select * from USER where name = #{name};
   	</select>
+  	
+  	<update id="userUpdate" parameterType="user">
+  		update USER set name=#{name}, email=#{email},password=#{password}, age=#{age}, gender=#{gender} where email=#{email};
+  	</update>
+  	
+  	<select id="userInfo" parameterType="user" resultType="user">
+  		select * from USER where email = #{email} 
+  	</select>
   	<!--########################유진시작###########################  -->
 	
   	<!-- 회원 탈퇴 -->

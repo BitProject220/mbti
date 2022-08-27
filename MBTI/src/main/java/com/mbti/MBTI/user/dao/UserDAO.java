@@ -13,5 +13,9 @@ public interface UserDAO {
 	public UserDTO loginCheck(Map<String, String> map);
 	
 	public UserDTO nameCheck(String name);
+
+	public void userUpdate(UserDTO userDTO);
+
+	public UserDTO userInfo(String email);
 	
 }
