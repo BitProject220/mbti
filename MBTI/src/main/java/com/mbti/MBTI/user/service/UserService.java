@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.mbti.MBTI.user.bean.UserDTO;
 
-@Service
 public interface UserService {
 
 	public void write(UserDTO userDTO);

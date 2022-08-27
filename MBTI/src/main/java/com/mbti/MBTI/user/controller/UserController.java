@@ -36,7 +36,8 @@ public class UserController {
 	
 	@Autowired
 	private JavaMailSender mailSender;
-
+	
+	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@PostMapping(value="/user/write")

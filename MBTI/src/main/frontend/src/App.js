@@ -40,7 +40,7 @@ import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
 
 const App = () => {
-  
+
   return (
     <BrowserRouter>
       <ScrollToTop />     
