@@ -1,5 +1,5 @@
 import React, { useState, useForm } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import '../css/login/login.css';
 import message_icon from '../image/message_icon.png';
 import password_icon from '../image/password_icon.png';
@@ -11,6 +11,7 @@ import redpassword from '../image/redpassword_icon.png';
 import background from '../img/background/backgroundColor.png';
 // import kakaoLoginBtn from '../image/KaKao_Login_Btn.png';
 import axios from 'axios';
+const qs = require('qs');//String 타입으로 변환
 
 const LoginPage = () => {
     //이메일 유효성검사
@@ -56,16 +57,27 @@ const LoginPage = () => {
             alert('비밀번호를 입력해주세요');
             document.getElementById('login_input_password').focus();
         }else {
-            // axios({
-            //     methodL'post',
-            //     url: 'http://localhost:8080/user/login',
-            //     data: ({
-            //         'email': email,
-            //         'password': password,
-            //     })
-            // }).then(() => {
+            axios({
+                method: 'POST',
+                    url:  'http://localhost:8080/user/loginCheck',
+                     data: qs.stringify({
+                        'email': document.getElementById('login_input_tag').value,
+                        'password': document.getElementById('login_input_password').value,  
+                    })
+                 }).then((res)=>{
+                    console.log(res.data)
+                    if((res.data) == ''){
+                        alert('아이디나 비밀번호가 일치하지 않습니다');
+                    }else{
+                        alert('로그인 되었습니다');
+                        sessionStorage.setItem("email",res.data.email)                        
+                        window.location.href='/';
+                    }
 
-            // })
+                 }).catch(error =>{
+                    alert('로그인실패')
+                    console.log(error);
+                 })
         }
     }
 
@@ -92,7 +104,7 @@ const LoginPage = () => {
                         </label>
                         
                         <div className='input_row'>
-                            <input type='email' placeholder='your@email.com' className='login_input_tag' id='login_input_tag' value={email} onChange={checkEmail} />
+                            <input type='email' placeholder='your@email.com' className='login_input_tag' id='login_input_tag' onChange={checkEmail} />
                             <span className='input_icon'><img src={message_icon} className='icon' id='icon_Email'/></span>
                         </div>
                     </div>
@@ -103,7 +115,7 @@ const LoginPage = () => {
                             <span></span>
                         </label>
                         <div className='input_row'>
-                            <input type='password' placeholder='********' className='login_input_tag' id='login_input_password' value={password} onChange={checkPassword}/>
+                            <input type='password' placeholder='********' className='login_input_tag' id='login_input_password' onChange={checkPassword}/>
                             <span className='input_icon'><img src={password_icon} className='icon' id='icon_Password'/></span>
                         </div>
                         <p className='input_note'>초기 비밀번호는 테스트 결과와 함께 이메일에 있습니다.</p>

@@ -1,6 +1,7 @@
 package com.mbti.MBTI.user.controller;
 
 
+import java.util.Map;
 import java.nio.file.Files;
 import java.util.Properties;
 import java.util.Random;
@@ -18,10 +19,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.google.gson.Gson;
 import com.mbti.MBTI.user.bean.UserDTO;
+//import com.mbti.MBTI.user.service.BCryptPasswordEncoder;
 import com.mbti.MBTI.user.service.UserService;
 
 @RestController
@@ -39,7 +42,6 @@ public class UserController {
 	
 	@PostMapping(value="/user/write")
 	public void write(@RequestBody UserDTO userDTO) {
-		
 		System.out.println(userDTO);
 		userService.write(userDTO);
 	}
@@ -47,13 +49,15 @@ public class UserController {
 	//###################유진 시작#################################
 	
 	@PostMapping(value = "/user/emailCheck")
-	public String emailCheck(@RequestBody String email) {
-		System.out.println(email.toString());
-		return userService.emailCheck(email.toString());
+	public String emailCheck(@RequestParam String email) {
+		  
+		System.out.println("이메일은-------------------------------"+email);
+		return userService.emailCheck(email);
+		
 	}
 	
-	@GetMapping(value = "/user/emailNumCheck")
-	public String emailNumCheck(String email) throws Exception{
+	@PostMapping(value = "/user/emailNumCheck")
+	public String emailNumCheck(@RequestParam String email) throws Exception{
 			logger.info("이메일 인증 요청이 들어옴!"+email);
 	        logger.info("인증번호 : " + email);
 			//return  mailService.joinEmail(user_email);
@@ -93,14 +97,30 @@ public class UserController {
 	}
 	
 	@PostMapping(value = "/user/nameCheck")
-	public String nameCheck(@RequestBody String name) {
+	public String nameCheck(@RequestParam String name) {
 		System.out.println("이름은"+name);
 		return userService.nameCheck(name);
 	}
 	
-
+	@PostMapping(value = "/user/userUpdate")
+	public void userUpdate(@RequestBody UserDTO userDTO) {
+		System.out.println(userDTO);
+		userService.userUpdate(userDTO);
+	}
 	
+	@PostMapping(value = "/user/userInfo")
+	public UserDTO userInfo(@RequestParam String email) {
+		UserDTO userDTO = new UserDTO();
+		return userService.userInfo(email);
+	}
 	
 	//###################유진 끝#################################
 	
+	@PostMapping(value = "/user/loginCheck")
+	@ResponseBody
+	public UserDTO loginCheck(@RequestParam Map<String, String> map) {
+		return userService.loginCheck(map);
+		
+		
+	}
 }

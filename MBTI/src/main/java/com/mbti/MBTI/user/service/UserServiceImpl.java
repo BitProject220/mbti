@@ -1,5 +1,8 @@
 package com.mbti.MBTI.user.service;
 
+import java.util.Map;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +14,7 @@ public class UserServiceImpl implements UserService{
 	
 	 @Autowired(required = false)
 	 private UserDAO userDAO;
-	 
+		
 //	 @Autowired
 //	 public UserServiceImpl(UserDAO userDAO) {
 //		 this.userDAO = userDAO;
@@ -45,6 +48,27 @@ public class UserServiceImpl implements UserService{
 			else return "exist";
 	}
 	
+	@Override
+	public void userUpdate(UserDTO userDTO) {
+		userDAO.userUpdate(userDTO);
+		
+	}
+	
+	@Override
+	public UserDTO userInfo(String email) {
+		UserDTO userDTO = userDAO.userInfo(email);
+		System.out.println(userDTO);
+		return userDTO;
+	}
 	//###################유진 끝#################################
 
+	@Override
+	public UserDTO loginCheck(Map<String, String> map) {
+		UserDTO userDTO = userDAO.loginCheck(map);
+		return userDTO;
+	}
+
+
+	
+	
 }

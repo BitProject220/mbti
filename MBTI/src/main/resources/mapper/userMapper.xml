@@ -17,6 +17,24 @@
   	<select id="nameCheck" parameterType="String" resultType="user">
   		select * from USER where name = #{name};
   	</select>
-  	<!--########################유진시작###########################  -->
   	
+  	<update id="userUpdate" parameterType="user">
+  		update USER set name=#{name}, email=#{email},password=#{password}, age=#{age}, gender=#{gender} where email=#{email};
+  	</update>
+  	
+  	<select id="userInfo" parameterType="user" resultType="user">
+  		select * from USER where email = #{email} 
+  	</select>
+  	<!--########################유진시작###########################  -->
+	
+  	<!-- 회원 탈퇴 -->
+  	<!-- 
+  	<delete id="" parameterType="String">
+  		delete USER where email = #{email}
+  	</delete>
+  	 -->
+  	
+  	<select id="loginCheck" parameterType="java.util.Map" resultType="user">
+  		select * from USER where email=#{email} and password=#{password}
+  	</select>
   </mapper>

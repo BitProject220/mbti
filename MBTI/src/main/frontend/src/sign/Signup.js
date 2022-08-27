@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../css/signup/signup.css';
 import '../css/reset.css';
 import { useNavigate } from 'react-router-dom'
@@ -62,9 +62,10 @@ import axios from 'axios';
         }
         display: none;
         `;
-
+    const qs = require('qs');
 
 const Signup = (props) => {
+
     const mailnumCheck = false;
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -74,7 +75,18 @@ const Signup = (props) => {
     const [passwordCheck, setPasswordCheck] = useState('');
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
+    
     let [code, setCode] = useState('');
+    const [emailSet, setEmailSet] = useState(false);
+    const [emailNumSet, setEmailNumSet] = useState(false);
+    const [nameSet, setNameSet] = useState(false);
+
+    const nameRef = useRef(null);
+    const emailRef = useRef(null);
+    const emailNumRef = useRef(null);
+    const pwdRef = useRef(null);
+    const rePwdRef   = useRef(null);
+    
     
     /* const onInputName = (e) => {
         const {value} = e.target
@@ -126,6 +138,15 @@ const Signup = (props) => {
         console.log(!selected4)
     };
 
+    //이름입력&유효성
+    const [nameError, setNameError] = useState(false);
+    const onChangeName = (e) => {
+        setNameSet(false);
+        if(e.target.value.length >= 1) setNameError(false);
+        else setNameError(true);
+        setName(e.target.value);
+    }
+
     const onNameCheck = () => {
         if(name === ''){
             alert("이름을 입력하세요");
@@ -134,17 +155,19 @@ const Signup = (props) => {
             axios({
                 method: 'POST',
                 url: 'http://localhost:8080/user/nameCheck',
-                        data: ({
-                            'name': name,
-                        })
+                        data: qs.stringify({'name' : name})
             }).then((res)=>{
                 console.log(name)
                 console.log(res.data) 
                 if(res.data === "exist"){
                     alert('이미 존재하는 닉네임입니다. 다시 입력하세요');
+                    setName('');
+                    nameRef.current.focus();
+                    setNameSet(false);
                 }
                 else if(res.data === "nonExist") {
                     alert('사용 가능한 닉네임입니다.');
+                    setNameSet(true);
                 }
             }).catch(error =>{
                 console.log(error)
@@ -153,11 +176,15 @@ const Signup = (props) => {
     }
     
         const [modalShow, setModalShow] = React.useState(false);
+        const [emailNumCheckBtnTxt, setEmailNumCheckBtnTxt] = useState(true);//이메일 인증버튼 dis
+        const [emailNumCheckBtnTxt1, setEmailNumCheckBtnTxt1] = useState(true);//이메일 인증버튼 text 인증
+        const [emailNumCheckBtnTxt2, setEmailNumCheckBtnTxt2] = useState(false);//이메일 인증버튼을 -> 확인완료
+        
 
 
         //이메일 입력&유효성
-          const [emailError, setEmailError] = useState(false);
-          const [emailNoneError, setEmailNoneError] = useState(false);
+          const [emailError, setEmailError] = useState(false); 
+          const [emailNoneError, setEmailNoneError] = useState(false); 
 
           const onChangeEmail = (e) => {
             const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
@@ -168,15 +195,6 @@ const Signup = (props) => {
             else setEmailError(true);
             setEmail(e.target.value);
         };
-        
-        //이름입력&유효성
-        const [nameError, setNameError] = useState(false);
-        const onChangeName = (e) => {
-            if(e.target.value.length >= 1) setNameError(false);
-            else setNameError(true);
-            setName(e.target.value);
-        }
-
         
         //이메일 인증버튼 눌렀을때
          const onEmailCheck = (e) => {
@@ -196,41 +214,50 @@ const Signup = (props) => {
                     
                     method: 'POST',
                     url: 'http://localhost:8080/user/emailCheck',
-                    data: ({
+                    data: qs.stringify({ 
                         'email': email,
                     })
                 }).then((res)=>{
+                    console.log("성공")
                     console.log(email)
-                    console.log(JSON.stringify(res.data)) //기본으로 json타입으로 들어온다.
+                    console.log((res.data)) //기본으로 json타입으로 들어온다.
+
                     if(res.data === "exist"){
                         alert('이미 존재하는 이메일입니다. 다시 입력하세요');
+                        setEmail('');
+                        emailRef.current.focus();
+                        setEmailSet(false);
                     }
                     else if(res.data === "nonExist") {
                         axios({
-                            method: 'get',
-                            url: `http://localhost:8080/user/emailNumCheck?email=${email}`,
+                            method: 'POST',
+                            url: 'http://localhost:8080/user/emailNumCheck',
+                            data : qs.stringify({'email' : email})
                         }).then((res)=>{
                             alert("인증번호 전송 완료!\n인증번호를 확인하세요.");
                             setShow(true);
                             console.log("data는?"+res.data);
                             code =JSON.stringify(res.data);
                             setCode(code);
-                         }).catch(error =>{
+                            setEmailNumCheckBtnTxt(false);
+                            setEmailNumCheckBtnTxt1(true);
+                             emailNumCheckBtnTxt ? buttonValue.style.cursor='text' : buttonValue.style.cursor='cursor';
+                        }).catch(error =>{
                             console.log(error)
-                         });
-                    }
-                 }).catch(error =>{
+                        });
+                    } 
+                }).catch(error =>{
                     console.log(error)
                 });
             }
         } 
-
+        
         //이메일 인증칸 입력 & 유효성
         const [emailCheckError, setEmailCheckError] = useState(false);
         const onChangeEmailNumCheck = (e) => {
             if(e.target.value.length >= 1) setEmailCheckError(false);
             else setEmailCheckError(true);
-            setEmailCheckNum(e.target.value);
+            setEmailCheckNum(e.target.value); 
         }
         
         /* console.log(code); */
@@ -238,12 +265,17 @@ const Signup = (props) => {
         const [emailNumError, setEmailNumError] = useState(false);
         const [emailNumError2, setEmailNumError2] = useState(false);
         const [emailNumError3, setEmailNumError3] = useState(false);
+        const buttonValue = document.getElementById('emailCheckBtn');
         //이메일 인증번호버튼 눌렀을때
         const onEmailNumCheck = () => {
             if(emailCheckNum === ''){
                 setEmailNumError2(false);
                 setEmailNumError3(false);
                 setEmailNumError(true);
+                setEmailNumCheckBtnTxt1(true);
+                emailNumCheckBtnTxt ? buttonValue.style.cursor='text' : buttonValue.style.cursor='cursor';
+                setEmailSet(false);
+                setEmailNumSet(false);
             }
             else if(emailCheckNum !== code){
                 console.log("1.내가 치는 인증번호는  "+emailCheckNum);
@@ -251,6 +283,12 @@ const Signup = (props) => {
                 setEmailNumError(false);
                 setEmailNumError3(false);
                 setEmailNumError2(true);
+                setEmailNumCheckBtnTxt1(true);
+                emailNumCheckBtnTxt ? buttonValue.style.cursor='text' : buttonValue.style.cursor='cursor';
+                setEmailCheckNum('');
+                emailNumRef.current.focus();
+                setEmailSet(false);
+                setEmailNumSet(false);
             }
             else if(emailCheckNum === code){
                 console.log("2.내가 치는 인증번호는  "+emailCheckNum);
@@ -258,7 +296,13 @@ const Signup = (props) => {
                 setEmailNumError(false);
                 setEmailNumError2(false);
                 setEmailNumError3(true);
+                setEmailNumCheckBtnTxt(false);
+                setEmailNumCheckBtnTxt1(false);
+                setEmailNumCheckBtnTxt2(true);
+                emailNumCheckBtnTxt ? buttonValue.style.cursor='text' : buttonValue.style.cursor='cursor';
                 setShow(false);
+                setEmailSet(true);
+                setEmailNumSet(true);
             }
            
         }
@@ -302,27 +346,46 @@ const Signup = (props) => {
             e.preventDefault();
             if (!nameCh) {
                 alert('이름 또는 별명을 입력하세요.');
+                window.scrollTo(0, 0);
+                nameRef.current.focus();
+            }
+            else if(nameSet === false){
+                alert('이름 또는 닉네임 중복확인을 하세요.');
             }
             else if (!emailCh) {
                 alert('이메일을 입력하세요.');
+                emailRef.current.focus()
+            }
+            else if(emailSet === false){
+                alert('이메일 인증을 진행하세요.');
+            }
+            else if(emailNumSet === false){
+                alert('인증번호가 틀립니다./n다시 입력하세요.');
+                emailNumRef.current.focus()
             }
             else if (emailError) {
                 alert('이메일 형식이 맞지 않습니다.');
+                emailRef.current.focus()
             }
             else if (nameError) {
                 alert('이름 또는 별명을 입력하세요.');
+                nameRef.current.focus()
             }
             else if (!passwordCh) {
                 alert('비밀번호를 입력하세요.');
+                pwdRef.current.focus()
             }
             else if (passwordError) {
                 alert('비밀번호는 특수문자 1자를 포함하여 8자 이상 15자 이하로 입력하세요.');
+                pwdRef.current.focus()
             }
             else if (!passwordCheckCh) {
                 alert('비밀번호 확인을 하세요.');
+                rePwdRef.current.focus()
             }
             else if(passwordCheckError) {
                 alert('비밀번호가 맞지 않습니다.');
+                rePwdRef.current.focus()
             }
             else if(gender === '') {
                 alert('성별을 선택하세요.');
@@ -362,13 +425,13 @@ const Signup = (props) => {
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">이름 : </label>
                         <div className='input__row inputName' data-v-4d142efa="">
-                            <input type='text' id='signName' name='name' value={ name } onChange={ onChangeName } placeholder='Your Name' />
+                            <input type='text' id='signName' name='name' value={ name } onChange={ onChangeName } placeholder='Your Name' ref={nameRef} />
 
                             <div data-v-4d142efa="">
-                                        <button id='nameCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt email_num_check_box2" onClick={ onNameCheck }>
-                                            <span className='buttonText4'>중복확인</span>
-                                        </button>
-                                    </div>
+                                <button id='nameCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt email_num_check_box2" onClick={ onNameCheck }>
+                                    <span className='buttonText4'>중복확인</span>
+                                </button>
+                            </div>
                         </div>
                         <p className='input__note' data-v-4d142efa="">
                             어떻게 불러야 할지 알기 위함입니다. 당신이 원한다면 별명을 입력하셔도 됩니다.
@@ -381,13 +444,15 @@ const Signup = (props) => {
                         <div>
                             <div className='input__row inputEmail' data-v-4d142efa="">
                                 {/* <input id='emailInputBox' type='email' value={ email } onChange={ onInputEmail } placeholder='Your E-mail'></input> */}
-                                <input id='emailInputBox' name='email' type='email' value={ email }  onChange={ onChangeEmail } placeholder='Your E-mail' />
+                                <input id='emailInputBox' readOnly={emailNumCheckBtnTxt ? false : true}  name='email' type='email' value={ email }  onChange={ onChangeEmail } placeholder='Your E-mail' ref={emailRef}/>
                                 
                                 <FontAwesomeIcon icon={ faEnvelope } data-v-4d142efa="" className="sp-icon input__icon icon--md icon--inherit icon--envelope" id='icon' />
 
                                 <div data-v-4d142efa="">
-                                    <button id='emailCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ onEmailCheck }>
-                                        <span className='buttonText2'>인증</span>
+                                    <button id='emailCheckBtn' type='button' disabled={emailNumCheckBtnTxt ? false : true} className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt" onClick={ onEmailCheck }>
+                                        {emailNumCheckBtnTxt1 && <span className="invalid-input buttonText3" style={{alignItems: 'center', lineHeight: 2, fontWeight: 200}}>인증</span>}
+                                        {emailNumCheckBtnTxt2 && <span className="invalid-input buttonText3" style={{alignItems: 'center', lineHeight: 2, fontWeight: 200}}>인증완료</span>}
+                                        {/* <span className='buttonText2'>인증</span> */}
                                     </button>
                                 </div>
                             </div>
@@ -396,7 +461,7 @@ const Signup = (props) => {
                         { show?
                             <div className='email_num_check_box'>
                                 <div>
-                                    <input type='text' className='email_num_check email_num_check_box1' value={ emailCheckNum }  onChange={ onChangeEmailNumCheck } placeholder="인증번호 6자리" maxLength="6" />
+                                    <input type='text' className='email_num_check email_num_check_box1' value={ emailCheckNum }  onChange={ onChangeEmailNumCheck } placeholder="인증번호 6자리" maxLength="6" ref={emailNumRef}/>
 
                                     <div data-v-4d142efa="">
                                         <button id='emailNumCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt email_num_check_box2" onClick={ onEmailNumCheck }>
@@ -422,7 +487,7 @@ const Signup = (props) => {
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="">
                         <label className='input__label label' data-v-4d142efa="">비밀번호 : </label>
                         <div className='input__row' data-v-4d142efa="">
-                            <input type='password' id='signPassword' name='password' value={ password } onChange={ onChangeSignPwd } placeholder='비밀번호 8자리 이상 입력하세요.' />
+                            <input type='password' id='signPassword' name='password' value={ password } onChange={ onChangeSignPwd } placeholder='비밀번호 8자리 이상 입력하세요.' ref={pwdRef} />
                         </div>
                         {passwordError && <p className="invalid-input" style={{fontSize:'0,9em', color:'red'}}>비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.</p>}
                     </div>
@@ -431,7 +496,7 @@ const Signup = (props) => {
                     <div className='sp-input inputgroup has--label' data-v-4d142efa="" style={{marginTop:'-30px'}}>
                         <label className='input__label label' data-v-4d142efa="">비밀번호 확인: </label>
                         <div className='input__row' data-v-4d142efa="">
-                            <input type='password' disabled={passwordError ? true : false} id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' />
+                            <input type='password' disabled={passwordError ? true : false} id='signPasswordCheck' name='passwordCheck' value={ passwordCheck } onChange={ onChangeSignPwdCheck } placeholder='비밀번호 8자리 이상 입력하세요.' ref={pwdRef} />
                         </div>
                         <p className='input__note' data-v-4d142efa="">
                             비밀번호는 특수문자(!@#$%^*+=-)와 영문자, 숫자를 포함하여 8자리 이상 15자리 이하로 입력하세요.
