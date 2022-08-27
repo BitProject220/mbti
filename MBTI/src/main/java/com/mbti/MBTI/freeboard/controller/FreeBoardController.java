@@ -1,4 +1,4 @@
-package com.mbti.MBTI.user.controller;
+package com.mbti.MBTI.freeboard.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
