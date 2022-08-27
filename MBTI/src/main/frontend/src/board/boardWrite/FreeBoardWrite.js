@@ -47,7 +47,7 @@ const FreeBoardWrite = () => {
                                 <input type='text' className='subject-text' id='freeboardsubject' name='freeboardsubject' 
                                    value={freeboardsubject} onChange={onChangeFreeBoardSubject} placeholder='제목을 입력하세요'></input>  
                             </div>
-                            {freeboardsubjectErr && <p class="freeboard_subject">제목을 입력하세요.</p>}
+                            {freeboardsubjectErr && <p className="freeboard_subject">제목을 입력하세요.</p>}
                             
                         </div> 
 

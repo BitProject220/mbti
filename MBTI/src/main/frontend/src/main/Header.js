@@ -40,7 +40,7 @@ const Header = () => {
                 </nav>
                 
                 <div className='LogoImage'>
-                    <Link to='/main'><img src={logo} className='LogoImg' /></Link>
+                    <Link to='/'><img src={logo} className='LogoImg' /></Link>
                 </div>
 
                 <div className='UserMypage'>
