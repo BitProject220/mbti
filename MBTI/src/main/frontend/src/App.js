@@ -43,6 +43,7 @@ import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
 
 const App = () => {
+  const checksession =sessionstorage.getItem("email")
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -74,7 +75,9 @@ const App = () => {
         <Route path="/LoginPageMain" element={<LoginPageMain />}/>
         <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
         <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
-        <Route index element={<LoginPageMain/>} />
+        if(sessionstorage.getItem("email" === '')){
+          <Route index element={<LoginPageMain/>} />
+        }
         <Route path="/test" element={<Test/>} />
 
         <Route path="/MyPageMain" element={<MyPageMain />} />
