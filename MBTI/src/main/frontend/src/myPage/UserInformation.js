@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import myPageTolp2 from '../img/myPage/myPageTolp3.png';
 import '../css/myPage/userInfo.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -66,7 +66,7 @@ const UserInformation = () => {
     const [age, setAge] = useState({
         default: '13'
       });
-
+      let infoName2;
     const [infoName, setInfoName] = useState('');
     const [infoEmail, setInfoEmail] = useState('');
     const [infoPassword, setInfoPassword] = useState('');
@@ -92,27 +92,37 @@ const UserInformation = () => {
     /* const [userDTO, setUserDTO] = useState({}); */
 
     const qs = require('qs');
+    useEffect( () => {
+        axios({
+            method: 'POST',
+            url: 'http://localhost:8080/user/userInfo',
+            data: qs.stringify({'email' : sessionStorage.getItem("email")})
+        }).then((res)=>{
+    
+            console.log("안녕")
+            console.log(JSON.stringify(res.data.name))
+            console.log(JSON.stringify(res.data.email))
+            console.log(JSON.stringify(res.data.gender))
+            console.log(JSON.stringify(res.data.age))
+            console.log(res.data.age)
+    /* 
+            infoName2=(res.data.name)
+            document.getElementById('infoNameInputBox').value = infoName2
+            
+            console.log("예여기역여기여기여기"+infoName2) */
+            setInfoGender(res.data.gender);
+            setAge(res.data.age);
+            setInfoEmail(res.data.email)
+            setInfoName(res.data.name)
 
-    axios({
-        method: 'POST',
-        url: 'http://localhost:8080/user/userInfo',
-        data: qs.stringify({'email' : sessionStorage.getItem("email")})
-    }).then((res)=>{
+        }).catch(error =>{
+            console.log(error)
+        });
+    }, []);
 
-        console.log("안녕")
-        console.log(JSON.stringify(res.data.name))
-        console.log(JSON.stringify(res.data.email))
-        console.log(JSON.stringify(res.data.gender))
-        console.log(JSON.stringify(res.data.age))
-        console.log(res.data.age)
+    
 
-        setInfoName(res.data.name)
-        setInfoEmail(res.data.email)
-        setInfoGender(res.data.gender)
-        setAge(res.data.age)
-    }).catch(error =>{
-        console.log(error)
-    });
+
    
     let ages = [];
     for (let d = 13; d <= 100; d += 1) {
@@ -151,11 +161,11 @@ const UserInformation = () => {
                 url: 'http://localhost:8080/user/nameCheck',
                         data: qs.stringify({'name' : infoName})
             }).then((res)=>{
-                console.log(infoName)
+                console.log(infoName2)
                 console.log(res.data) 
                 if(res.data === "exist"){
                     alert('이미 존재하는 닉네임입니다. 다시 입력하세요');
-                    setInfoName('');
+                    setInfoName('')
                     nameRef.current.focus()
                     setNameSet(false);
                 }
@@ -244,9 +254,10 @@ const UserInformation = () => {
                         'gender': infoGender,
                     })
                  }).then(()=>{
+                     sessionStorage.clear();
                      console.log("확인!");
                      alert("회원 정보를 수정했습니다.\n로그인 페이지로 이동하여 다시 로그인 하세요.");
-                     navigate("/LoginPageMain");
+                     navigate("/");
                  }).catch(error =>{
                     console.log(error)
                  })
@@ -260,7 +271,6 @@ const UserInformation = () => {
                     <h1>회원정보수정</h1>
                 </div>
 
-
                 <div data-v-cbdfd9aa="" className="row__description" style={{marginTop: '60px'}}>
                     <div data-v-cbdfd9aa="" className="row__title">
                         <div style={{verticalAlign: 'inherit'}}>
@@ -270,7 +280,7 @@ const UserInformation = () => {
                     <div data-v-cbdfd9aa="" className="row__subtitle infoNameBox">
                         <div style={{verticalAlign: 'inherit'}}>
                             <div className='inputInfoName' style={{verticalAlign: 'inherit'}}>
-                                <input type='text' id='infoNameInputBox' name='infoName' value={infoName} placeholder='이름 또는 별명을 입력하세요.' onChange={ onInfoName } ref={nameRef} />
+                                <input type='text' id='infoNameInputBox' value={infoName} name='infoName' placeholder='이름 또는 별명을 입력하세요.' onChange={ onInfoName } ref={nameRef} />
 
                                 <div data-v-4d142efa="">
                                 <button id='nameCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt email_num_check_box2" onClick={ onNameCheck }>
@@ -373,9 +383,9 @@ const UserInformation = () => {
                             <div style={{verticalAlign: 'inherit'}} className='infoAgeSelect'>
                                 <select id='infoAgeBox'
                                     name='age'
-                                    value={age}
+                                    value={age.default}
                                     onChange={(e) =>
-                                        setAge({ ...age, default: e.target.value })
+                                        setAge({ ...age, default:e.target.value })
                                     }
                                 >
                                     {ages.map(item => (
@@ -456,4 +466,4 @@ const UserInformation = () => {
     );
 };
 
-export default UserInformation;
+export default React.memo(UserInformation);
