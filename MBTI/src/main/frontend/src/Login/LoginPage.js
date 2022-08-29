@@ -66,12 +66,13 @@ const LoginPage = () => {
                         'password': document.getElementById('login_input_password').value,  
                     })
                  }).then((res)=>{
-                    console.log(res.data)
                     if((res.data) == ''){
                         alert('아이디나 비밀번호가 일치하지 않습니다');
                     }else{
                         alert('로그인 되었습니다');
-                        sessionStorage.setItem("email",res.data.email)                        
+                        
+                        sessionStorage.setItem("email",res.data.email)
+                        sessionStorage.setItem("name",res.data.name)
                         window.location.href='/';
                     }
 
