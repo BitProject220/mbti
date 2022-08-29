@@ -10,7 +10,9 @@ import com.mbti.MBTI.FreeComment.bean.FreeCommentDTO;
 @Service
 public interface FreeCommentService {
 
-	public List<FreeCommentDTO> userComment();
+	public void commentWrite(FreeCommentDTO freeCommentDTO);
+
+	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO);
 
 
 }

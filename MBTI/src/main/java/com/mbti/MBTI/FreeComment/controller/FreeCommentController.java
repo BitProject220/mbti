@@ -6,6 +6,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,10 +24,18 @@ public class FreeCommentController {
 	
 	//###################범주 시작#################################
 	
-	@GetMapping(value = "/reply/userComment")
-	@ResponseBody
-	public List<FreeCommentDTO> userComment() {
-		return freeCommentService.userComment();
+	@PostMapping(value = "/reply/commentWrite")
+	public void commentWrite(@RequestBody FreeCommentDTO freeCommentDTO) {
+		System.out.println(freeCommentDTO);
+		freeCommentService.commentWrite(freeCommentDTO);
+
+	}
+	
+	
+	@PostMapping(value = "/reply/userComment")
+	public List<FreeCommentDTO> userComment(@RequestBody FreeCommentDTO fc_FreeBoardseq) {
+		System.out.println(fc_FreeBoardseq+"fc_FreeBoardseq 확인");
+		return freeCommentService.userComment(fc_FreeBoardseq);
 	}
 	
 	//###################범주 끝#################################
