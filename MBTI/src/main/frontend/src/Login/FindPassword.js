@@ -5,41 +5,12 @@ import message_icon from '../image/message_icon.png';
 import bluemessage from '../image/bluemessage_icon.png';
 import redmessage from '../image/redmessage_icon.png';
 import background from '../img/background/backgroundColor.png';
+import axios from 'axios';
+const qs = require('qs');//String 타입으로 변환
 
-const FindPassword = () => {
-    //  const email_Click = () => {
-
-    //       const nodemailer = require('nodemailer');    //노드메일러 모듈을 사용할 거다!
-    //       console.log(nodemailer);
-    //      const EMAIL = 'seungchan98@gmail.com';
-    //      const EMAIL_PW = 'tmdcks9801';
+const FindPassword = (props) => {
+    let [code, setCode] = useState('');
     
-    //      const receiverEmail = 'seungchan@naver.com';
-    
-    //      const transport = nodemailer.createTransport({
-    //          service: 'gmail',
-    //          auth:{
-    //              user:EMAIL,
-    //              pass:EMAIL_PW,
-    //          },
-    //      });
-    //      const mailOptions = {
-    //          from:EMAIL,
-    //          to:receiverEmail,
-    //          subject:'[nodemailer]Smaple Email',
-    //          html:'<h1>Hello, World</h1>'
-    //      };
-    //      transport.sendMail(mailOptions, (eror, info) => {
-    //          if(eror){
-    //              console.log(eror);
-    //              return;
-    //          }
-    //          console.log(info);
-    //          console.log('send mail success!')
-    //      })
-    //  }
-
-
     //이메일 유효성 검사
     const findCheckEmail = (e) => {
         const emailValue1 = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
@@ -53,6 +24,47 @@ const FindPassword = () => {
        //이메일 유효성체크시 img변환
        emailValue1.test(e.target.value) ?  document.getElementById('findPassword_icon_Email').src = bluemessage :  document.getElementById('findPassword_icon_Email').src = redmessage;
 
+    }
+    const findPasswordButtonClick = (e) => {
+        e.preventDefault();
+        if(document.getElementById('findPassword_input_tag').value === ''){
+            alert('이메일을입력해주세요');
+            document.getElementById('findPassword_input_tag').focus();
+        }else if(document.getElementById('findPassword_icon_Email').src === redmessage){
+            alert('이메일 형식이 맞지 않습니다');
+            document.getElementById('findPassword_input_tag').focus();
+        }else{
+            axios({
+                method: 'POST',
+                url: 'http://localhost:8080/user/findPasswordEmailCheck',
+                data: qs.stringify({
+                    'email': document.getElementById('findPassword_input_tag').value,
+                })
+            }).then((res)=>{
+                console.log(res.data);
+                if((res.data) == ''){
+                    alert('찾고자하는 이메일이 없습니다');
+                }else{
+                    alert('이메일로 비밀번호를 보냈습니다');
+                    sessionStorage.setItem("email",res.data.email);
+                    axios({
+                        method:'POST',
+                        url: 'http://localhost:8080/user/findPasswordEmailSend',
+                        data: qs.stringify({
+                            'email': document.getElementById('findPassword_input_tag').value,
+                        })
+                    }).then((res)=>{
+                        console.log("data는?" + res.data);
+                        code = JSON.stringify(res.data);
+                        setCode(code);
+                    }).catch(error => {
+                        console.log(error);
+                    })
+                }
+            }).catch(error => {
+                alert(error);
+            })
+        }
     }
     return (
         <div className='ContentsMainTitle' style={{backgroundImage:`url(${background})`}}>
@@ -84,7 +96,7 @@ const FindPassword = () => {
                 </div>
 
                 <div className='findPassword_bottom'>
-                    <button className='findPassword_Btn'>
+                    <button className='findPassword_Btn' onClick={findPasswordButtonClick}>
                         <span className='findPassword_font-size'>링크 보내기</span>
                     </button>
 

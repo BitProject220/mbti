@@ -73,7 +73,7 @@ const App = () => {
         <Route path="/ContactMain" element={<ContactMain/>}/>
         <Route path="/LoginPageMain" element={<LoginPageMain />}/>
         <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
-        <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
+        {/* <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>  */}
         <Route index element={<LoginPageMain/>} />
         <Route path="/test" element={<Test/>} />
 

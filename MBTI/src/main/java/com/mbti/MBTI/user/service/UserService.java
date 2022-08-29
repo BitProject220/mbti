@@ -17,6 +17,12 @@ public interface UserService {
 
 	public String nameCheck(String name);
 
+	public UserDTO findPasswordEmailCheck(Map<String, String> map);
+//
+//	public String getAccessToken(String code);
+//
+//	public UserDTO getUserInfo(String access_Token);
+
 	
 
 }

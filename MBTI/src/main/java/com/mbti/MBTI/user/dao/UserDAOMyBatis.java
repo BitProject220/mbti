@@ -1,5 +1,6 @@
 package com.mbti.MBTI.user.dao;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.transaction.Transactional;
@@ -39,5 +40,29 @@ public class UserDAOMyBatis implements UserDAO {
 	public UserDTO loginCheck(Map<String, String> map) {
 		return sqlSession.selectOne("userSQL.loginCheck", map);
 	}
+
+	@Override
+	public UserDTO findPasswordEmailCheck(Map<String, String> map) {
+		return sqlSession.selectOne("userSQL.findPasswordEmailCheck", map);
+	}
+
+//	@Override
+//	public UserDTO findkakao(HashMap<String, Object> userInfo) {
+//		System.out.println("RN:"+userInfo.get("nickname"));
+//		System.out.println("RE:"+userInfo.get("email"));
+//		return sqlSession.selectOne("userSQL.findkakao", userInfo);
+//	}
+//
+//	@Override
+//	public void kakaoinsert(HashMap<String, Object> userInfo) {
+//		sqlSession.insert("userSQL.kakaoinsert",userInfo);
+//		
+//	}
+//
+//	@Override
+//	public void updateBykakao(HashMap<String, Object> userInfo) {
+//		sqlSession.update("userSQL.updateBykakao", userInfo);
+//		
+//	}
 
 }
