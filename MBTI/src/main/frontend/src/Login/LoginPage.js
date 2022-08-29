@@ -71,6 +71,7 @@ const LoginPage = () => {
                     }else{
                         alert('로그인 되었습니다');
                         sessionStorage.setItem("email",res.data.email)                        
+                        sessionStorage.setItem("name",res.data.name)
                         window.location.href='/';
                     }
 
