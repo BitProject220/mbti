@@ -14,9 +14,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.mbti.MBTI.user.bean.UserDTO;
 import com.mbti.MBTI.user.dao.UserDAO;
 

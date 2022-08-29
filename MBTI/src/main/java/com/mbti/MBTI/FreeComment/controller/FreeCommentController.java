@@ -11,21 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mbti.MBTI.FreeComment.bean.FreeCommentDTO;
 import com.mbti.MBTI.FreeComment.service.FreeCommentService;
-import com.mbti.MBTI.user.service.UserService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class FreeCommentController {
-	
-	@Autowired
-	private FreeCommentService freeCommentService;
 	
 	//###################범주 시작#################################
 	
 	@GetMapping(value = "/reply/userComment")
 	@ResponseBody
 	public List<FreeCommentDTO> userComment() {
-		return freeCommentService.userComment();
+		return null;
 	}
 	
 	//###################범주 끝#################################
