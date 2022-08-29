@@ -9,6 +9,7 @@ import redmessage from '../image/redmessage_icon.png';
 import bluepassword from '../image/bluepassword_icon.png';
 import redpassword from '../image/redpassword_icon.png';
 import background from '../img/background/backgroundColor.png';
+import KakaoRedirectHandler from './KakaoRedirectHandler';
 // import kakaoLoginBtn from '../image/KaKao_Login_Btn.png';
 import axios from 'axios';
 const qs = require('qs');//String 타입으로 변환
@@ -65,12 +66,12 @@ const LoginPage = () => {
                         'password': document.getElementById('login_input_password').value,  
                     })
                  }).then((res)=>{
-                    console.log(res.data)
                     if((res.data) == ''){
                         alert('아이디나 비밀번호가 일치하지 않습니다');
                     }else{
                         alert('로그인 되었습니다');
-                        sessionStorage.setItem("email",res.data.email)                        
+                        sessionStorage.setItem("email",res.data.email)
+                        sessionStorage.setItem("name",res.data.name)
                         window.location.href='/';
                     }
 
@@ -80,6 +81,8 @@ const LoginPage = () => {
                  })
         }
     }
+
+    
 
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
     /* REDIECT_URL은 카카오 로그인페이지에서 로그인한 후에 get방식으로 params에 인가코드를 넣어서 보낼 URL이라고 생각하면 된다. */
@@ -128,7 +131,8 @@ const LoginPage = () => {
                         <span className='font-size'>로그인</span>
                     </button>
 
-                    <a href={KAKAO_AUTH_URL} className='kakaoLogin_Btn'>
+                    <a href="https://kauth.kakao.com/oauth/authorize?client_id=d6cc8f356b4510bcb983399be19c9ec8&redirect_uri=http://localhost:8080/user/kakaoLogin&response_type=code"
+                     className='kakaoLogin_Btn'>
                          <div className='kakao_btn'></div> 
                     </a>
 
