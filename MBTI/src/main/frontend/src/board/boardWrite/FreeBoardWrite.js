@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import '../css/FreeBoardWrite.css';
 import '../../css/reset.css';
 import {CKEditor} from 'ckeditor4-react';
-
-
-
+import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const FreeBoardWrite = () => {
+    const navigate = useNavigate();
 
     // 제목 유효성
     const [freeboardsubject, setFreeBoardSubject] = useState('');
@@ -16,7 +16,22 @@ const FreeBoardWrite = () => {
         else setFreeBoardSubjectErr(true);
         setFreeBoardSubject(e.target.value);
     }
+
+    const FreeBoardList = () => {
+        navigate("/FreeBoard");
+    }
+
+    const FreeBoardSave = () => {
+
+        axios.post('/http://localhost:8080/board/freeboardwrite',{
+            subject : freeboardsubject,
+        }).then(()=>{
+           alert('등록 완료'); 
+        })
+    }
   
+    
+
     return (
 
         <div className='BoardWrite'>
@@ -32,7 +47,7 @@ const FreeBoardWrite = () => {
                                 <input type='text' className='subject-text' id='freeboardsubject' name='freeboardsubject' 
                                    value={freeboardsubject} onChange={onChangeFreeBoardSubject} placeholder='제목을 입력하세요'></input>  
                             </div>
-                            {freeboardsubjectErr && <p class="freeboard_subject">제목을 입력하세요.</p>}
+                            {freeboardsubjectErr && <p className="freeboard_subject">제목을 입력하세요.</p>}
                             
                         </div> 
 
@@ -45,8 +60,8 @@ const FreeBoardWrite = () => {
                         
                     </div>
                 </div>
-                <button className="boardWriteListBtn">목록</button>
-                <button type='submit' className="boardWriteSaveBtn">저장</button>
+                <button className="boardWriteListBtn" onClick={FreeBoardList}>목록</button>
+                <button className="boardWriteSaveBtn" onClick={FreeBoardSave}>저장</button>
             </div>
 
             

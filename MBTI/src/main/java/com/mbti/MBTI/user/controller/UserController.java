@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-//import com.google.gson.Gson;
+
 import com.mbti.MBTI.user.bean.UserDTO;
 //import com.mbti.MBTI.user.service.BCryptPasswordEncoder;
 import com.mbti.MBTI.user.service.UserService;
@@ -35,7 +35,8 @@ public class UserController {
 	
 	@Autowired
 	private JavaMailSender mailSender;
-
+	
+	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@PostMapping(value="/user/write")
@@ -99,9 +100,25 @@ public class UserController {
 		System.out.println("이름은"+name);
 		return userService.nameCheck(name);
 	}
+
 	//###################유진 끝#################################
 	
 	//로그인 아이디 비밀번호 있는지 확인
+	
+	@PostMapping(value = "/user/userUpdate")
+	public void userUpdate(@RequestBody UserDTO userDTO) {
+		System.out.println(userDTO);
+		userService.userUpdate(userDTO);
+	}
+	
+	@PostMapping(value = "/user/userInfo")
+	public UserDTO userInfo(@RequestParam String email) {
+		UserDTO userDTO = new UserDTO();
+		return userService.userInfo(email);
+	}
+	
+	//###################유진 끝#################################
+	
 	@PostMapping(value = "/user/loginCheck")
 	@ResponseBody
 	public UserDTO loginCheck(@RequestParam Map<String, String> map) {

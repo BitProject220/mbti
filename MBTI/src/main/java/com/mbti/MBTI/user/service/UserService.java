@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.mbti.MBTI.user.bean.UserDTO;
 
-@Service
 public interface UserService {
 
 	public void write(UserDTO userDTO);
@@ -22,6 +21,9 @@ public interface UserService {
 //	public String getAccessToken(String code);
 //
 //	public UserDTO getUserInfo(String access_Token);
+	public void userUpdate(UserDTO userDTO);
+
+	public UserDTO userInfo(String email);
 
 	
 

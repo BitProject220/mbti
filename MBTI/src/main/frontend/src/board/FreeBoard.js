@@ -49,7 +49,7 @@ const FreeBoard = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <td class="kboard-list-uid">번호</td>
+                                    <td class="kboard-list-uid">바보</td>
                                     <td class="kboard-list-title">제목</td>
                                     <td class="kboard-list-user">작성자</td>
                                     <td class="kboard-list-date">작성일</td>

@@ -71,10 +71,10 @@ const LoginPage = () => {
                         alert('아이디나 비밀번호가 일치하지 않습니다');
                     }else{
                         alert('로그인 되었습니다');
-                        sessionStorage.setItem("email",res.data.email)
-                        window.location.href='/Main';
+                        sessionStorage.setItem("email",res.data.email)                        
+                        window.location.href='/';
                     }
-                    
+
                  }).catch(error =>{
                     alert('로그인실패')
                     console.log(error);
