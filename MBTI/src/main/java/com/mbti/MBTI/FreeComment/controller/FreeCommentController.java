@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mbti.MBTI.FreeComment.bean.FreeCommentDTO;
 import com.mbti.MBTI.FreeComment.service.FreeCommentService;
-import com.mbti.MBTI.user.service.UserService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")

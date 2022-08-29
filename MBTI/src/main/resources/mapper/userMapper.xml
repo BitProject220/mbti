@@ -42,28 +42,16 @@
   		select * from USER where email=#{email}
   	</select>
   	
-  	<select id="findKakao" parameterType="java.util.HashMap" resultType="UserDTO">
-	select * from user2 where user_email=#{email}
+  	<select id="findkakao" parameterType="user" resultType="user">
+		select * from USER where email=#{email}
 	</select>
 	
-	<insert id="kakaoInsert" parameterType="java.util.HashMap">
-
-		insert into USER(user_id
-				, user_name
-				, user_email
-				, user_auth
-				, user_classid
-				, user_social
-				, user_logtime
-				, user_kakaoId)
-		values(USER_SEQ.nextval
-			, #{nickname}
-			, #{email}
-			, 'Y'
-			, 0
-			, 'K'
-			, sysdate
-			, #{kakaoId})	
-			
-</insert>
+	<insert id="kakaoinsert" parameterType="java.util.HashMap">
+		insert into USER(name, email) values(#{nickname}, #{email})
+	</insert>
+	
+	<select id="getpassword" parameterType="String" resultType="String">
+		select password from USER where email=#{email}
+	</select>
+	
   </mapper>
