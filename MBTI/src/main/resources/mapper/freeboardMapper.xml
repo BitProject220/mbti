@@ -11,7 +11,7 @@
   </insert>
   
 	<select id="freeboardview" parameterType="int" resultType="freeboard">
-	select * from FreeBoard where fb_seq=#{seq}
+	select * from FreeBoard where fb_seq = #{seq};
 	</select>
   
   </mapper>

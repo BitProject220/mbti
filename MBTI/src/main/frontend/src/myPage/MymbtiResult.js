@@ -27,10 +27,10 @@ const MymbtiResult = () => {
     const [mbtiTF,setMbtiTF] = useState('');
     const [mbtiJP,setMbtiJP] = useState('');
     const [mbtiAT,setMbtiAT] = useState('');
-
+    
+    useEffect(() => {
     const qs = require('qs');
 
-    useEffect( () => {
         axios({
             method: 'POST',
             url: 'http://localhost:8080/user/userInfoMain',
@@ -38,12 +38,6 @@ const MymbtiResult = () => {
         }).then((res)=>{
             console.log("안녕")
             console.log(sessionStorage.getItem("email"))
-            console.log(res.data.mbti_type+"우에에엥에에에에에에에엥에에엥")
-            console.log(res.data.mbti_EI+"우에에엥에에에에에에에엥에에엥")
-            console.log(res.data.mbti_NS+"우에에엥에에에에에에에엥에에엥")
-            console.log(res.data.mbti_TF+"우에에엥에에에에에에에엥에에엥")
-            console.log(res.data.mbti_JP+"우에에엥에에에에에에에엥에에엥")
-            console.log(res.data.mbti_AT+"우에에엥에에에에에에에엥에에엥")
             setMbtiType(res.data.mbti_type) 
             setMbtiEI(res.data.mbti_EI) 
             setMbtiNS(res.data.mbti_NS)
@@ -248,13 +242,19 @@ const MymbtiResult = () => {
     const dtailPage = () => {
         navigate("/detail");
     }
+    console.log(mbtiEI,
+    mbtiNS,
+    mbtiTF,
+    mbtiJP,
+    mbtiAT)
+
     
     return (
         <div className='MyResult' style={{backgroundImage:`url(${ myPageTolp2 })`, backgroundRepeat:'no-repeat', backgroundPosition: '0% 0%', backgroundSize:'100% 600px'}}>
             <div className='MyResultContent'>
                
                 <div className='resultTitle'>
-                    <h1>성격유형검사</h1>
+                    <h1>성격유형검사 결과</h1>
                 </div>
                 <div className='resultSubContent'>
                     <p>당신의 성격 테스트 결과를 검토하고 당신의 성격 유형과 핵심 특징에 대해 더 알아보세요.</p>
@@ -272,22 +272,22 @@ const MymbtiResult = () => {
                                 <span className="type__code">({mbtiType})</span>
                             </h4>
                         </header>
-                        <img src ={INTJPNG} alt='' className='INTJPNG' id='INTJPNG1' style={id === '1' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG2} alt='' className='INTJPNG' id='INTJPNG2' style={id === '2' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG3} alt='' className='INTJPNG' id='INTJPNG3' style={id === '3' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG4} alt='' className='INTJPNG' id='INTJPNG4' style={id === '4' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG5} alt='' className='INTJPNG' id='INTJPNG5' style={id === '5' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG6} alt='' className='INTJPNG' id='INTJPNG6' style={id === '6' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG7} alt='' className='INTJPNG' id='INTJPNG7' style={id === '7' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG8} alt='' className='INTJPNG' id='INTJPNG8' style={id === '8' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG9} alt='' className='INTJPNG' id='INTJPNG9' style={id === '9' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG10} alt='' className='INTJPNG' id='INTJPNG10' style={id === '10' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG11} alt='' className='INTJPNG' id='INTJPNG11' style={id === '11' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG12} alt='' className='INTJPNG' id='INTJPNG12' style={id === '12' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG13} alt='' className='INTJPNG' id='INTJPNG13' style={id === '13' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG14} alt='' className='INTJPNG' id='INTJPNG14' style={id === '14' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG15} alt='' className='INTJPNG' id='INTJPNG15' style={id === '15' ? { display:'block'} : {display:'none'}} />
-                        <img src ={INTJPNG16} alt='' className='INTJPNG' id='INTJPNG16' style={id === '16' ? { display:'block'} : {display:'none'}} />  
+                        <img src ={INTJPNG} alt='' className='INTJPNG1-1' id='INTJPNG1' style={id === '1' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG2} alt='' className='INTJPNG1-1' id='INTJPNG2' style={id === '2' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG3} alt='' className='INTJPNG1-1' id='INTJPNG3' style={id === '3' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG4} alt='' className='INTJPNG1-1' id='INTJPNG4' style={id === '4' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG5} alt='' className='INTJPNG1-1' id='INTJPNG5' style={id === '5' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG6} alt='' className='INTJPNG1-1' id='INTJPNG6' style={id === '6' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG7} alt='' className='INTJPNG1-1' id='INTJPNG7' style={id === '7' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG8} alt='' className='INTJPNG1-1' id='INTJPNG8' style={id === '8' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG9} alt='' className='INTJPNG1-1' id='INTJPNG9' style={id === '9' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG10} alt='' className='INTJPNG1-1' id='INTJPNG10' style={id === '10' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG11} alt='' className='INTJPNG1-1' id='INTJPNG11' style={id === '11' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG12} alt='' className='INTJPNG1-1' id='INTJPNG12' style={id === '12' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG13} alt='' className='INTJPNG1-1' id='INTJPNG13' style={id === '13' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG14} alt='' className='INTJPNG1-1' id='INTJPNG14' style={id === '14' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG15} alt='' className='INTJPNG1-1' id='INTJPNG15' style={id === '15' ? { display:'block'} : {display:'none'}} />
+                        <img src ={INTJPNG16} alt='' className='INTJPNG1-1' id='INTJPNG16' style={id === '16' ? { display:'block'} : {display:'none'}} />  
                         <p className='mbtiContent'>
                             {id === '1' ? "용의주도한 전략가는 이성적이면서도 두뇌 회전이 빠른 성격으로, 자신의 뛰어난 사고 능력을 자랑스러워하며 거짓말과 위선을 꿰뚫어 보는 능력이 있습니다." : null}
                             {id === '2' ? "논리적인 논리술사는 자신의 독특한 관점과 활기 넘치는 지성에 자부심을 느끼며, 우주의 미스터리에 대해 깊이 생각하곤 합니다. " : null}
@@ -324,16 +324,16 @@ const MymbtiResult = () => {
                             <header data-v-0046f2b4="" className="card-graph_header">
                                 <h3 data-v-0046f2b4="" className="card-graph_title">Mind</h3> 
                                 <h4 data-v-0046f2b4="" className="card-graph_subtitle">
-                                    <span className="type__full">{{mbtiEI} > 50 ? "외향성" : "내향성"}</span>
+                                    <span className="type__full">{{mbtiEI} > '50' ? "외향성" : "내향성"}</span>
                                 </h4>
                             </header>
                             <div className='circlePer'>
                                 <svg data-v-d970a024="" viewBox="0 0 36 36">
                                     <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eee" strokeWidth="1" strokeLinecap="round" strokeDasharray="100, 100" className="pct__whole">
                                     </path> 
-                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#2B9EB3" strokeWidth="1" strokeLinecap="round" strokeDasharray= {`${mbtiEI} 100`}  className="pct__percent"></path>
+                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#2B9EB3" strokeWidth="1" strokeLinecap="round" strokeDasharray= {mbtiEI > '50' ? `${mbtiEI} 100` : `${100-mbtiEI} 100`}  className="pct__percent"></path>
                                 </svg>
-                                <div className='perText'>{mbtiEI}%</div>
+                                <div className='perText'>{mbtiEI > '50' ? mbtiEI : 100-mbtiEI}%</div>
                             </div>
                             <p className='card-graph_Content'>
                                 {{mbtiEI} > 50 ? "당신은 대부분 외향적이에요. 여러분은 아마도 사회적 상호작용에 의해 힘을 얻고 여러분의 열정과 흥분을 공개적으로 표현하는 경향이 있습니다." : "당신은 대부분 내성적이에요. 당신은 적지만 깊고 의미 있는 사회적 상호 작용을 선호하고 더 차분한 환경에 끌릴 것입니다."}
@@ -346,19 +346,19 @@ const MymbtiResult = () => {
                             <header data-v-0046f2b4="" className="card-graph_header">
                                 <h3 data-v-0046f2b4="" className="card-graph_title">Energy</h3> 
                                 <h4 data-v-0046f2b4="" className="card-graph_subtitle">
-                                    <span className="type__full">{{mbtiNS} > 50 ? "직관형" : "현실주의형"}</span>
+                                    <span className="type__full">{{mbtiNS} > '50' ? "직관형" : "현실주의형"}</span>
                                 </h4>
                             </header>
                             <div className='circlePer'>
                                 <svg data-v-d970a024="" viewBox="0 0 36 36">
                                     <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eee" strokeWidth="1" strokeLinecap="round" strokeDasharray="100, 100" className="pct__whole">
                                     </path> 
-                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#F19904" strokeWidth="1" strokeLinecap="round" strokeDasharray={`${mbtiNS} 100`} className="pct__percent"></path>
+                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#F19904" strokeWidth="1" strokeLinecap="round" strokeDasharray={mbtiNS > '50' ? `${mbtiNS} 100` : `${100-mbtiNS} 100`} className="pct__percent"></path>
                                 </svg>
-                                <div className='perText'>{mbtiNS}%</div>
+                                <div className='perText'>{mbtiNS > '50' ? mbtiNS : 100-mbtiNS}%</div>
                             </div>
                             <p className='card-graph_Content'>
-                            {{mbtiNS} > 50 ? "당신은 대부분 직관적이에요. 당신은 매우 상상력이 풍부하고 개방적이며 숨겨진 의미와 먼 가능성에 초점을 맞출 것입니다." : "당신은 대부분 관찰력이 좋군요. 당신은 실제로 일어나고 있거나 일어날 가능성이 매우 높은 것에 집중하며 실용적이고 현실적일 가능성이 높습니다."}
+                            {{mbtiNS} > '50' ? "당신은 대부분 직관적이에요. 당신은 매우 상상력이 풍부하고 개방적이며 숨겨진 의미와 먼 가능성에 초점을 맞출 것입니다." : "당신은 대부분 관찰력이 좋군요. 당신은 실제로 일어나고 있거나 일어날 가능성이 매우 높은 것에 집중하며 실용적이고 현실적일 가능성이 높습니다."}
                              
                             </p>
                         </div> 
@@ -368,16 +368,16 @@ const MymbtiResult = () => {
                             <header data-v-0046f2b4="" className="card-graph_header">
                                 <h3 data-v-0046f2b4="" className="card-graph_title">Nature</h3> 
                                 <h4 data-v-0046f2b4="" className="card-graph_subtitle">
-                                    <span className="type__full">{{mbtiTF} > 50 ? "사고형" : "감정형"}</span>
+                                    <span className="type__full">{{mbtiTF} > '50' ? "사고형" : "감정형"}</span>
                                 </h4>
                             </header>
                             <div className='circlePer'>
                                 <svg data-v-d970a024="" viewBox="0 0 36 36">
                                     <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eee" strokeWidth="1" strokeLinecap="round" strokeDasharray="100, 100" className="pct__whole">
                                     </path> 
-                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#44AF69" strokeWidth="1" strokeLinecap="round" strokeDasharray={`${mbtiTF} 100`} className="pct__percent"></path>
+                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#44AF69" strokeWidth="1" strokeLinecap="round" strokeDasharray={mbtiTF > '50' ? `${mbtiTF} 100` : `${100-mbtiTF} 100`} className="pct__percent"></path>
                                 </svg>
-                                <div className='perText'>{mbtiTF}%</div>
+                                <div className='perText'>{mbtiTF > '50' ? mbtiTF : 100-mbtiTF}%</div>
                             </div>
                             <p className='card-graph_Content'>
                             {{mbtiTF} > 50 ? "당신은 대부분 이성적입니다. 당신은 객관성과 합리성에 초점을 맞추고 사회적 조화보다 효율성을 우선시할 것입니다." : "당신은 대부분 감정적입니다. 당신은 가치 정서적인 표현이나 감수성, 공감, 사회적 화합, 그리고 협력에 우선 순위를 매길 가능성이 높습니다."}
@@ -391,16 +391,16 @@ const MymbtiResult = () => {
                             <header data-v-0046f2b4="" className="card-graph_header">
                                 <h3 data-v-0046f2b4="" className="card-graph_title">Tatics</h3> 
                                 <h4 data-v-0046f2b4="" className="card-graph_subtitle">
-                                    <span className="type__full">{{mbtiJP} > 50 ? "계획형" : "탐색형"}</span>
+                                    <span className="type__full">{{mbtiJP} > '50' ? "계획형" : "탐색형"}</span>
                                 </h4>
                             </header>
                             <div className='circlePer'>
                                 <svg data-v-d970a024="" viewBox="0 0 36 36">
                                     <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eee" strokeWidth="1" strokeLinecap="round" strokeDasharray="100, 100" className="pct__whole">
                                     </path> 
-                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#CF536D" strokeWidth="1" strokeLinecap="round" strokeDasharray={`${mbtiJP} 100`} className="pct__percent"></path>
+                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#CF536D" strokeWidth="1" strokeLinecap="round" strokeDasharray={mbtiJP > '50' ? `${mbtiJP} 100` : `${100-mbtiJP} 100`} className="pct__percent"></path>
                                 </svg>
-                                <div className='perText'>{mbtiJP}%</div>
+                                <div className='perText'>{mbtiJP > '50' ? mbtiJP : 100-mbtiJP}%</div>
                             </div>
                             <p className='card-graph_Content'>
                             {{mbtiJP} > 50 ? "당신은 대부분 계획을 하고 있습니다. 당신은 결단력 있고 철저하며 조직적일 가능성이 높습니다. 당신은 명료성을 중요시하고 자발성보다 계획을 선호합니다." : "당신은 대부분 탐색을 하고 있습니다. 당신은 즉흥적이고 적응하는 데 매우 능숙할 것입니다. 그리고 유연하고 안정성보다 새로움을 중시하는 경향이 있습니다."}
@@ -412,16 +412,16 @@ const MymbtiResult = () => {
                             <header data-v-0046f2b4="" className="card-graph_header">
                                 <h3 data-v-0046f2b4="" className="card-graph_title">Identity</h3> 
                                 <h4 data-v-0046f2b4="" className="card-graph_subtitle">
-                                    <span className="type__full">{{mbtiAT} > 50 ? "자기주장형" : "신중형"}</span>
+                                    <span className="type__full">{{mbtiAT} > '50' ? "자기주장형" : "신중형"}</span>
                                 </h4>
                             </header>
                             <div className='circlePer'>
                                 <svg data-v-d970a024="" viewBox="0 0 36 36">
                                     <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eee" strokeWidth="1" strokeLinecap="round" strokeDasharray="100, 100" className="pct__whole">
                                     </path> 
-                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f84210" strokeWidth="1" strokeLinecap="round" strokeDasharray={`${mbtiAT} 100`} className="pct__percent"></path>
+                                    <path data-v-d970a024="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f84210" strokeWidth="1" strokeLinecap="round" strokeDasharray={mbtiAT > '50' ? `${mbtiAT} 100` : `${100-mbtiAT} 100`} className="pct__percent"></path>
                                 </svg>
-                                <div className='perText'>{mbtiAT}%</div>
+                                <div className='perText'>{mbtiAT > '50' ? mbtiAT : 100-mbtiAT}%</div>
                             </div>
                             <p className='card-graph_Content'>
                             {{mbtiJP} > 50 ? "당신은 대부분 자기주장이 강합니다. 당신은 자신감이 넘치고, 침착하며, 스트레스에 강하고, 너무 많은 걱정을 하지 않을 것입니다." : "당신은 대부분 신중합니다. 당신은 자의식이 강하고 스트레스에 민감하고 성공 중심적이며 완벽주의적이며 개선을 열망합니다."}

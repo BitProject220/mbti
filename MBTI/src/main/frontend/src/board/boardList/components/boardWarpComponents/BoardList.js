@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import React from 'react';
+import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
 
@@ -12,7 +12,9 @@ const BoardList = (props) => {
     //         state: {
     //             seq: props.listData.fb_seq}});
     // }
-    
+    const productId = useParams().productId;
+    const navigate = useNavigate();
+
     if(props.boardNo === '1'){
         
        return (
@@ -20,12 +22,12 @@ const BoardList = (props) => {
                 <tr>
                     <td className="kboard-list-uid">{props.listData.fb_seq}</td>
                     <td className="kboard-list-title">
-                        <a href="/FreeBoardViewMain" seq={props.listData.fb_seq}>
                             <div className="kboard-default-cut-strings">
+                                <Link to={`/FreeBoardViewMain`} state={{ seq: props.listData.fb_seq}}>
                                 {props.listData.fb_subject}
+                                </Link>                                
                                 <span className="kboard-comments-count"></span>
                             </div>
-                        </a>
                     </td>
                     <td className="kboard-list-user">{props.listData.fb_name}</td>
                     <td className="kboard-list-date">{props.listData.fb_logtime}</td>
@@ -43,12 +45,12 @@ const BoardList = (props) => {
                     <td className="kboard-list-uid">{props.listData.mb_seq}</td>
                     <td className="kboard-list-mbti">{props.listData.mb_category}</td>
                     <td className="kboard-list-title">
-                        <a  href="/MbtiBoardViewMain" seq={props.listData.mb_seq}>
                             <div className="kboard-default-cut-strings">
+                                <Link to={`/MbtiBoardViewMain`} state={{ seq: props.listData.mb_seq}}>
                                 {props.listData.mb_subject}
+                                </Link>
                                 <span className="kboard-comments-count"></span>
                             </div>
-                        </a>
                     </td>
                     <td className="kboard-list-user">{props.listData.mb_name}</td>
                     <td className="kboard-list-date">{props.listData.mb_logtime}</td>

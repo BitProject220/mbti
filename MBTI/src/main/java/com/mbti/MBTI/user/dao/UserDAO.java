@@ -36,5 +36,4 @@ public interface UserDAO {
 
 	public UserDTO loginCheck(String email, String password);
 
-
 }
