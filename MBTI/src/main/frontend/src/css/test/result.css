@@ -1,13 +1,30 @@
-.resultBg {position: relative;}
+.resultBg {position: relative;
+            overflow: hidden;}
+@media(max-height:1023px){
+    .resultBg {width: 100%;
+                height: 1000px;
+                }
+    
+}
+@media(max-height:767px){
+    .resultBg {width: 100%;
+        height: 1000px;
+        }
+    
+}
+.background {position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;}
 .resultChartForm {width: 50%;
                 height: 800px;
                 background-color: #fff;
                 border-radius: 15px;
-                /* box-shadow: 0px 3px 5px 3px rgba(123, 123, 123, 0.1); */
+                box-shadow: 0px 3px 5px 3px rgba(123, 123, 123, 0.1); 
                 border: 1px solid #ccc;
                 position: absolute;
                 top: 150px;
-                right: 5%;}
+                right: 5%;} 
 
 .resultChart{width: 100%;
              height: 100%;
@@ -173,13 +190,16 @@ div {
 }
 
 /*바 색상*/
-.bar.right-fill {background: #F5F5F5;}
-.bar.left-fill {background: #F5F5F5;}
+/* .bar.right-fill {background: #F5F5F5;}
+.bar.left-fill {background: #F5F5F5;} */
 .trait.mind .filler {background: #2B9EB3;}
 .trait.energy .filler {background: #F19904;}
 .trait.nature .filler {background: #44AF69;}
 .trait.tactics .filler {background: #CF536D;}
 .trait.identity .filler {background: #f84210;}
+
+
+
 
 /*바 글씨 색상*/
 .trait-scales.comp .trait.mind .trait-titles .title.active {
@@ -197,3 +217,9 @@ div {
 .trait-scales.comp .trait.identity .trait-titles .title.active {
     color: #f84210;
 }
+
+.INTJPNG{width: 550px;
+        position: absolute;
+        bottom: -640px;
+        left: 0;
+        z-index: 0;}

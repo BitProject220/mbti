@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.mbti.MBTI.user.bean.MbtiTypeDTO;
 import com.mbti.MBTI.user.bean.UserDTO;
 
 public interface UserService {
@@ -20,6 +21,15 @@ public interface UserService {
 
 	public UserDTO userInfo(String email);
 
-	
+	public void userMbtiTypeResult(MbtiTypeDTO mbtiTypeDTO);
 
+	public UserDTO userInfoDeleteCheck(String email);
+	
+	public void userInfoDelete(String email);
+
+	public MbtiTypeDTO userInfoMain(String mbti_email);
+
+	public String userMbtiTypeResultCheck(String mbti_email);
+
+	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO);;
 }

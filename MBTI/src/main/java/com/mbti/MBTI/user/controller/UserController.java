@@ -1,6 +1,7 @@
 package com.mbti.MBTI.user.controller;
 
 
+import java.util.HashMap;
 import java.util.Map;
 import java.nio.file.Files;
 import java.util.Properties;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.mbti.MBTI.user.bean.MbtiTypeDTO;
 import com.mbti.MBTI.user.bean.UserDTO;
 //import com.mbti.MBTI.user.service.BCryptPasswordEncoder;
 import com.mbti.MBTI.user.service.UserService;
@@ -67,7 +68,7 @@ public class UserController {
 	        int checkNum = random.nextInt(888888) + 111111;
 	        logger.info("인증번호 " + checkNum);
 	        
-	        /* 이메일 보내기 */
+	        /* 이메일 보내기 */ 
 	        String setFrom = "yujin980810@gmail.com";
 	        String toMail = email;
 	        String title = "이메일 인증 메일 입니다.";
@@ -114,13 +115,47 @@ public class UserController {
 		return userService.userInfo(email);
 	}
 	
+	@PostMapping(value = "/user/userInfoDeleteCheck")
+	public UserDTO userInfoDeleteCheck(@RequestParam String email) {
+		return userService.userInfoDeleteCheck(email);
+	}
+	
+	@PostMapping(value = "/user/userInfoDelete")
+	public void userInfoDelete(@RequestParam String email) {
+		System.out.println("탈퇴할 이메알은"+email);
+		userService.userInfoDelete(email);
+	}
+	
+	@PostMapping(value = "/user/userMbtiTypeResult")
+	public void userMbtiTypeResult(@RequestBody MbtiTypeDTO mbtiTypeDTO) {
+		System.out.println("나의 엠비티아이 결과는"+mbtiTypeDTO);
+		userService.userMbtiTypeResult(mbtiTypeDTO);
+	}
+	
+	@PostMapping(value = "/user/userInfoMain")
+	public MbtiTypeDTO userInfoMain(@RequestParam String mbti_email) {
+		return userService.userInfoMain(mbti_email);
+	}
+	
+	@PostMapping(value = "/user/userMbtiTypeResultCheck")
+	public String userMbtiTypeResultCheck(@RequestParam String mbti_email) {
+		return userService.userMbtiTypeResultCheck(mbti_email);
+	}
+	
+	@PostMapping(value = "/user/userMbtiTypeResultUpdate")
+	public void userMbtiTypeResultUpdate(@RequestBody MbtiTypeDTO mbtiTypeDTO) {
+		System.out.println("나의 엠비티아이 결과는"+mbtiTypeDTO);
+		userService.userMbtiTypeResultUpdate(mbtiTypeDTO);
+	}
+	
+	
+	
 	//###################유진 끝#################################
 	
 	@PostMapping(value = "/user/loginCheck")
 	@ResponseBody
 	public UserDTO loginCheck(@RequestParam Map<String, String> map) {
 		return userService.loginCheck(map);
-		
 		
 	}
 }

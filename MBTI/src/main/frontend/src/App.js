@@ -38,6 +38,8 @@ import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
 import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
 import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
+import MyResultPageMain from './myPage/MyResultPageMain';
+
 
 const App = () => {
 
@@ -91,6 +93,7 @@ const App = () => {
 
       {/* 유진 */}
       <Route path="/userInfo" element={ <UserInformationMain /> } />
+      <Route path="/userMbtiResult" element={ <MyResultPageMain /> } />
 
       {/* 소윤 */}
       <Route path="/">
