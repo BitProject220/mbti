@@ -5,6 +5,7 @@ import '../css/reset.css';
 import logo from '../img/logo/BWTH_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 
 
@@ -12,7 +13,15 @@ const Header = () => {
 
     const onLogOut = () => {
         sessionStorage.clear();
-        window.location.href="/"
+        axios({
+            method: 'POST',
+            url: 'http://localhost:8080/user/logout',
+        }).then((res)=>{
+            console.log("성공?" + res);
+            window.location.href="/"
+        }).catch(error => {
+            console.log(error);
+        })
     }
 
 

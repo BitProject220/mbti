@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,9 @@ public class UserServiceImpl implements UserService{
 	 @Autowired(required = false)
 	 private UserDAO userDAO;
 		
+	 @Autowired
+	private HttpSession httpSession;
+	 
 //	 @Autowired
 //	 public UserServiceImpl(UserDAO userDAO) {
 //		 this.userDAO = userDAO;
@@ -117,12 +121,7 @@ public class UserServiceImpl implements UserService{
 
 	//###################유진 끝#################################
 
-	@Override
-	public UserDTO loginCheck(Map<String, String> map) {
-		UserDTO userDTO = userDAO.loginCheck(map);
-		return userDTO;
-	}
-
+	
 	@Override
 	public UserDTO findPasswordEmailCheck(Map<String, String> map) {
 		UserDTO userDTO = userDAO.findPasswordEmailCheck(map);
@@ -133,5 +132,17 @@ public class UserServiceImpl implements UserService{
 	public String getpassword(String email) {
 		return userDAO.getpassword(email);
 	}
+
+
+	@Override
+	public UserDTO loginCheck(String email, String password, HttpSession httpSession) {
+		UserDTO userDTO = userDAO.loginCheck(email, password);
+		if(userDTO != null) {
+			httpSession.setAttribute("memEmail", email);
+		}
+		return userDTO;
+	}
+
+	
 	
 }

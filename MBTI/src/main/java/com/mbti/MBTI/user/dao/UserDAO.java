@@ -11,8 +11,6 @@ public interface UserDAO {
 	public void write(UserDTO userDTO);
 
 	public UserDTO emailCheck(String email);
-
-	public UserDTO loginCheck(Map<String, String> map);
 	
 	public UserDTO nameCheck(String name);
 
@@ -35,4 +33,7 @@ public interface UserDAO {
 	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO);
 
 	public String getpassword(String email);
+
+	public UserDTO loginCheck(String email, String password);
+
 }

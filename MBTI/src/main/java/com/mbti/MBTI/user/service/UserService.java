@@ -3,6 +3,8 @@ package com.mbti.MBTI.user.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Service;
 
 import com.mbti.MBTI.user.bean.MbtiTypeDTO;
@@ -13,8 +15,6 @@ public interface UserService {
 	public void write(UserDTO userDTO);
 
 	public String emailCheck(String email);
-
-	public UserDTO loginCheck(Map<String, String> map);
 
 	public String nameCheck(String name);
 
@@ -37,5 +37,8 @@ public interface UserService {
 	public String userMbtiTypeResultCheck(String mbti_email);
 
 	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO);
+
+	public UserDTO loginCheck(String email, String password, HttpSession httpSession);
+
 
 }
