@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.mbti.MBTI.user.bean.MbtiTypeDTO;
 import com.mbti.MBTI.user.bean.UserDTO;
 
 public interface UserService {
