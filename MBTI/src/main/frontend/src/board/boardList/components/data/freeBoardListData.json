@@ -1,7 +1,6 @@
 [
     {
         "seq": 1,
-        "type": 1,
         "title": "테스트1",
         "nickname": "홍길동",
         "date": "2020.07.30",
@@ -11,7 +10,6 @@
     },
     {
         "seq": 2,
-        "type": 2,
         "title": "테스트2",
         "nickname": "둘리",
         "date": "2020.08.21",
@@ -21,29 +19,17 @@
     },
     {
         "seq": 3,
-        "type": 3,
-        "title": "테스트3",
-        "nickname": "고길동",
-        "date": "2020.07.20",
-        "vote": 100,
-        "comments": "",
-        "view": 30
-    },
-    {
-        "seq": 4,
-        "type": 1,
-        "title": "테스트4",
-        "nickname": "호랑이",
+        "title": "테스트1",
+        "nickname": "홍길동",
         "date": "2020.07.30",
         "vote": 5,
         "comments": 20,
         "view": 30
     },
     {
-        "seq": 5,
-        "type": 2,
-        "title": "테스트5",
-        "nickname": "사자",
+        "seq": 4,
+        "title": "테스트1",
+        "nickname": "홍길동",
         "date": "2020.07.30",
         "vote": 5,
         "comments": 20,

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="boardSQL">
+<select id="getBoardSearchRangeOrder" parameterType="java.util.Map" resultType="freeBoard">
+	    	SELECT * FROM (	
+	    		SELECT ROWNUM AS RN, TT.* FROM 
+	    			(SELECT * FROM 
+	    				<if test="cateid == 1">
+						board_inform
+						</if>
+						
+						<if test="cateid == 2">
+						board_review
+						</if>
+						
+						<if test="cateid == 3">
+						board_qna
+						</if>
+							 
+						<if test="cateid == 4">
+						board_free
+						</if>
+	    				WHERE BOARD_TITLE LIKE '%'||#{keyword}||'%'
+	    				OR BOARD_CONTENT LIKE '%'||#{keyword}||'%'
+	    					<if test="sortOption == 'date'">
+			 				ORDER BY BOARD_DATE_CREATED DESC
+		 					</if>
+			 				
+			 				<if test="sortOption == 'vote'">
+			 				ORDER BY BOARD_VOTE_CNT DESC
+		 					</if>
+		 					
+			 				<if test="sortOption == 'view'">
+			 				ORDER BY BOARD_VIEW_CNT DESC
+		 					</if>
+	 				)TT
+ 			) WHERE RN &gt;=${startNum} AND RN &lt;=${endNum}
+    	</select>
+    	
+    	
+	   	<select id="allList" parameterType="java.util.Map" resultType="freeBoard">	   	
+	   	select * from FreeBoard;
+	   	</select>
+  </mapper>

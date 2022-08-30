@@ -4,11 +4,16 @@ import Header from '../../main/Header';
 import Board from './components/Board';
 import '../css/board.css';
 
+
+
 const FreeBoard = () => {
+
+    const freeSearchBy = ["전체","제목","내용","작성자"];
+
     return (
-        <div classNameName='FreeBoard'>
+        <div className='FreeBoard'>
             <Header />
-            <Board boardName='자유게시판' />
+            <Board boardNo='1' boardType='board/freeBoardList' boardName='자유게시판' searchBy={freeSearchBy}/>
             <Footer />
         </div>
     );
