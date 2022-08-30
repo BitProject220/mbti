@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import myPageTolp2 from '../img/myPage/myPageTolp3.png';
 import '../css/myPage/userInfo.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,10 +6,12 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import arrow from '../img/signup/downArrow.png';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router';
+import axios from 'axios';
+
 
 const FormCheckText = styled.span`
-    font-size: 18px;
-    width: 110px;
+font-size: 18px;
+width: 110px;
     height: 40px;
     background: #e6e6e6;
     border-radius: 40px 0px 0px 40px;
@@ -60,17 +62,68 @@ const FormCheckText = styled.span`
     `;
 
 const UserInformation = () => {
+
     const [age, setAge] = useState({
         default: '13'
       });
-
-    const [infoName, setInfoName] = useState('박유진');
-    const [infoEmail, setInfoEmail] = useState('dbwlsdhksenz@naver.com');
+      let infoName2;
+      let infoAge2;
+    const [infoName, setInfoName] = useState('');
+    const [infoEmail, setInfoEmail] = useState('');
     const [infoPassword, setInfoPassword] = useState('');
     const [infoRePassword, setInfoRePassword] = useState('');
-    const [infoGender, setInfoGender] = useState('male');
+    const [infoGender, setInfoGender] = useState('');
     const navigate = useNavigate();
+    const [nameSet, setNameSet] = useState(true);
+    const nameRef = useRef(null);
+    const pwdRef = useRef(null);
+    const rePwdRef   = useRef(null);
 
+/*   const currentEmail = localStorage.getItem('email');
+    const currentName = localStorage.getItem('name');
+    const currentGender = localStorage.getItem('gender');
+    const currentPwd = localStorage.getItem('password'); 
+     console.log(currentEmail + currentName + currentGender + currentPwd); */
+
+    const [currentEmail,setCurrentEmail] = useState('');
+    const [currentName,setCurrentName] = useState('');
+    const [currentGender,setCurrentGender] = useState('');
+    const [currentPwd,setCurrentPwd] = useState(''); 
+
+    /* const [userDTO, setUserDTO] = useState({}); */
+
+    const qs = require('qs');
+    useEffect( () => {     
+        axios({
+            method: 'POST',
+            url: 'http://localhost:8080/user/userInfo',
+            data: qs.stringify({'email' : sessionStorage.getItem("email")})
+        }).then((res)=>{
+    
+            console.log("안녕")
+            console.log(JSON.stringify(res.data.name))
+            console.log(JSON.stringify(res.data.email))
+            console.log(JSON.stringify(res.data.gender))
+            console.log(JSON.stringify(res.data.age))
+            console.log(res.data.age)
+    /* 
+            infoName2=(res.data.name)
+            
+            document.getElementById('infoNameInputBox').value = infoName2
+            
+            console.log("예여기역여기여기여기"+infoName2) */
+            infoAge2=(res.data.age)
+            document.getElementById('infoAgeBox').value = infoAge2
+            setInfoGender(res.data.gender);
+            setAge(res.data.age);
+            setInfoEmail(res.data.email)
+            setInfoName(res.data.name)
+
+        }).catch(error =>{
+            console.log(error)
+        });
+    }, []);
+   
     let ages = [];
     for (let d = 13; d <= 100; d += 1) {
         if (d < 100) {
@@ -90,9 +143,40 @@ const UserInformation = () => {
     //이름입력&유효성
     const [infoNameError, setInfoNameError] = useState(false);
     const onInfoName = (e) => {
+        setNameSet(false);
         if(e.target.value.length >= 1) setInfoNameError(false);
         else setInfoNameError(true);
         setInfoName(e.target.value);
+    }
+    
+
+    const onNameCheck = (e) => {
+        e.preventDefault();
+        if(infoName === ''){
+            alert("이름을 입력하세요");
+        }
+        else{
+            axios({
+                method: 'POST',
+                url: 'http://localhost:8080/user/nameCheck',
+                        data: qs.stringify({'name' : infoName})
+            }).then((res)=>{
+                console.log(infoName2)
+                console.log(res.data) 
+                if(res.data === "exist"){
+                    alert('이미 존재하는 닉네임입니다. 다시 입력하세요');
+                    setInfoName('')
+                    nameRef.current.focus()
+                    setNameSet(false);
+                }
+                else if(res.data === "nonExist") {
+                    alert('사용 가능한 닉네임입니다.');
+                    setNameSet(true);
+                }
+            }).catch(error =>{
+                console.log(error)
+            });
+        }
     }
 
     //비밀번호 인증칸 입력 & 유효성
@@ -129,38 +213,63 @@ const UserInformation = () => {
         e.preventDefault();
         if (!nameCh) {
             alert('이름 또는 별명을 입력하세요.');
+            nameRef.current.focus()
         }
         else if (infoNameError) {
             alert('이름 또는 별명을 입력하세요.');
+            nameRef.current.focus()
+        }
+        else if(nameSet === false){
+            alert('이름 또는 닉네임 중복확인을 하세요.');
         }
         else if (!passwordCh) {
             alert('비밀번호를 입력하세요.');
+            pwdRef.current.focus()
         }
         else if (infoPasswordError) {
             alert('비밀번호는 특수문자(!@#$%^*+=-) 1자를 포함하여 영문자와 숫자를 조합하여 8자 이상 15자 이하로 입력하세요.');
+            pwdRef.current.focus()
         }
         else if (!passwordCheckCh) {
             alert('비밀번호 확인을 하세요.');
+            rePwdRef.current.focus()
         }
         else if(infoRepasswordCheckError) {
             alert('비밀번호가 맞지 않습니다.');
+            rePwdRef.current.focus()
         }
         else if(infoGender === '') {
             alert('성별을 선택하세요.');
         }
 
         else {
-            navigate("/LoginPageMain");
+            axios({
+                method: 'POST',
+                    url:  'http://localhost:8080/user/userUpdate',
+                     data: ({
+                        'name': infoName,
+                        'email': infoEmail,
+                        'password': infoPassword,
+                        'age': age.default,
+                        'gender': infoGender,
+                    })
+                 }).then(()=>{
+                     sessionStorage.clear();
+                     console.log("확인!");
+                     alert("회원 정보를 수정했습니다.\n로그인 페이지로 이동하여 다시 로그인 하세요.");
+                     window.location.href="/"
+                 }).catch(error =>{
+                    console.log(error)
+                 })
         };
     } 
-
+    
     return (
         <div style={{backgroundImage:`url(${ myPageTolp2 })`, backgroundRepeat:'no-repeat', backgroundPosition: '0% 0%', backgroundSize:'100% 300px'}}>
             <div className='userInfo'>
                 <div className='userInfoTop'>
                     <h1>회원정보수정</h1>
                 </div>
-
 
                 <div data-v-cbdfd9aa="" className="row__description" style={{marginTop: '60px'}}>
                     <div data-v-cbdfd9aa="" className="row__title">
@@ -171,7 +280,13 @@ const UserInformation = () => {
                     <div data-v-cbdfd9aa="" className="row__subtitle infoNameBox">
                         <div style={{verticalAlign: 'inherit'}}>
                             <div className='inputInfoName' style={{verticalAlign: 'inherit'}}>
-                                <input type='text' id='infoNameInputBox' name='infoName' value={infoName} placeholder='이름 또는 별명을 입력하세요.' onChange={ onInfoName } />
+                                <input type='text' id='infoNameInputBox' value={infoName} name='infoName' placeholder='이름 또는 별명을 입력하세요.' onChange={ onInfoName } ref={nameRef} />
+
+                                <div data-v-4d142efa="">
+                                <button id='nameCheckBtn' type='button' className="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt email_num_check_box2" onClick={ onNameCheck }>
+                                    <span className='buttonText4'>중복확인</span>
+                                </button>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -219,7 +334,7 @@ const UserInformation = () => {
                     <div data-v-cbdfd9aa="" className="row__subtitle infoPwdBox">
                         <div style={{verticalAlign: 'inherit'}}>
                             <div className='inputInfoEPwd' style={{verticalAlign: 'inherit'}}>
-                            <input type='password' id='infoPwdInputBox' name='infoPassword' value={ infoPassword } onChange={ onInfoPwd } placeholder='비밀번호 8자리 이상 입력하세요.' />
+                            <input type='password' id='infoPwdInputBox' name='infoPassword' value={ infoPassword } onChange={ onInfoPwd } placeholder='비밀번호 8자리 이상 입력하세요.' ref={pwdRef}/>
                             </div>
                         </div>
                     </div>
@@ -242,7 +357,7 @@ const UserInformation = () => {
                     <div data-v-cbdfd9aa="" className="row__subtitle infoRePwdBox">
                         <div style={{verticalAlign: 'inherit'}}>
                             <div className='inputInfoRePwd' style={{verticalAlign: 'inherit'}}>
-                            <input type='password' disabled={infoPasswordError ? true : false} id='infoRePwdInputBox' name='infoRePassword' value={ infoRePassword } onChange={ onInfoRePwd } placeholder='비밀번호를 확인하세요.' />
+                            <input type='password' disabled={infoPasswordError ? true : false} id='infoRePwdInputBox' name='infoRePassword' value={ infoRePassword } onChange={ onInfoRePwd } placeholder='비밀번호를 확인하세요.' ref={rePwdRef}/>
                             </div>
                         </div>
                     </div>
@@ -268,9 +383,9 @@ const UserInformation = () => {
                             <div style={{verticalAlign: 'inherit'}} className='infoAgeSelect'>
                                 <select id='infoAgeBox'
                                     name='age'
-                                    value={age.default}
+                                   
                                     onChange={(e) =>
-                                        setAge({ ...age, default: e.target.value })
+                                        setAge({ ...age, default:e.target.value })
                                     }
                                 >
                                     {ages.map(item => (
@@ -351,4 +466,4 @@ const UserInformation = () => {
     );
 };
 
-export default UserInformation;
+export default React.memo(UserInformation);

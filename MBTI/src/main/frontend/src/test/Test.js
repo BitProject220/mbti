@@ -12,7 +12,7 @@ const Test = () => {
       
       <TestHeader />
 
-      <StartTest />
+      <StartTest />   
 
       <Footer />
     </div>

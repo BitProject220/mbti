@@ -5,7 +5,15 @@ import '../css/reset.css';
 import logo from '../img/logo/BWTH_logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
+
+
+
 const Header = () => {
+
+    const onLogOut = () => {
+        sessionStorage.clear();
+        window.location.href="/"
+    }
 
 
     return (
@@ -37,9 +45,7 @@ const Header = () => {
 
                 <div className='UserMypage'>
                     <div>
-                        <Link to='/'>
-                        <button className='LogOutBtn'>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
-                        </Link>
+                        <button className='LogOutBtn' onClick={onLogOut}>Log Out</button> {/* 메인에선 안 보이게, 로그인하면 로그아웃 뜨게 */}
                     </div>
                     <div className='UserBtn'>
                         <Link to='/MyPageMain'><FontAwesomeIcon icon={faCircleUser} size="2x" className='UserImg'/></Link>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="freeboardSQL">
+  
+  <!-- freeboard 글쓰기 -->
+  <insert id="freeboardwrite" parameterType="java.util.Map">
+  	insert into FreeBoard(fb_email,fb_name,fb_subject,fb_content,fb_freevote,fb_hit,fb_logtime)
+		values(#{fb_email},#{fb_name},#{fb_subject},#{fb_content},#{fb_freevote},#{fb_hit},now());
+  </insert>
+  
+
+  
+  </mapper>

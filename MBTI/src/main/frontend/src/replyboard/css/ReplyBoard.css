@@ -17,11 +17,6 @@
 }
 
 .comment_tab{
-    margin-top: -10px;
-}
-.comment_tab_item{
-    float: left;
-    margin-right: 15px;
 }
 
 .comment_refresh_button{
@@ -57,8 +52,17 @@
     font-size: 1.4rem;
     font-weight: bold;
 }
+
 .comment_list li{
     margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+
+    
+}
+.comment_list h3{
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-align: left;
 }
 .comment_box{
     text-align: left;
@@ -67,9 +71,36 @@
     
 }
 .comment_text_view{
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin-top: 10px;
     font-weight: normal;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+
+.comment_area{
+    border:0px;
+    width: 100%;
+    outline: 0px;
+    font-size: 1.2rem;
+
+}
+.comment_add{
+    display:flow-root;
+}
+.logtime{
+    float: left;
+    color: darkgray;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 38px;
+}
+.comment_btn{
+    float:right;
+}
+.hidden{
+     display:none; 
 }
 .comment_info_box{
     font-size: 0.9rem;
@@ -78,15 +109,7 @@
     color: gray;
     margin-bottom: 14px;
 }
-.comment_text_view{
-    margin-bottom: 8px;
-}
-.logtime{
-    display: inline;
-}
-.comment_btn{
-    float: right;
-}
+
 .replybtn{
     background: #000 !important;
     padding: 4px 10px 4px 10px;

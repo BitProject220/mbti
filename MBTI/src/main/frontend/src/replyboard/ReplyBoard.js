@@ -1,107 +1,115 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './css/ReplyBoard.css';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { data, map, now } from 'jquery';
 
 
-const ReplyBoard = () => {
 
-    let [userName] = useState('hacker');
+
+const qs = require('qs');
+const ReplyBoard = ({ freecomment }) => {
+
     let [comment, setComment] = useState('');
-    let [feedComments, setFeedComments] = useState([]);
-    let [isValid, setIsValid] = useState(false);
+    let [data, setData] = useState([0]); 
+
+    useEffect( () => {
+    axios({
+        method: 'Post',
+        url : 'http://localhost:8080/reply/userComment',
+        data:({
+            'fc_FreeBoardseq' : '1',
+        })
+    }).then((response)=>{
+        return setData(response.data);
+        
+        }).catch(error => {
+            console.error(error.response.data);
+        });
+
+    }, []);
 
     let post = e => {
-        const copyFeedComments = [...feedComments];
-        copyFeedComments.push(comment);
-        setFeedComments(copyFeedComments);
-        setComment('');
-        console.log(comment);
-        {/* if(comment==''){
+
+        if(comment==''){
             alert('내용을 입력해주세요');
+            return false;
         }else {
-            alert(comment);
             axios({
-                method: 'post',
-                url: 'http://localhost:8080/reply/write',
+                method: 'POST',
+                url: 'http://localhost:8080/reply/commentWrite',
                 data:({
-                    'name':name,
-                    'comment': comment,
+                    
+                    'fc_email' : sessionStorage.getItem("email"),
+                    'fc_name' : '조범주',
+                    'fc_commentContent': comment,
+                    'fc_FreeBoardseq' : '1',
                 })
             }).then(()=>{
+                console.log('저장성공');
+                window.location.replace("/ReplyBoard")
 
             }).catch(error => {
-                console.log(error)
+                console.error(error.response.data);
             })
-            console.log(reply);
-        };*/}
+        };
     };
+    
+    const ondelete = (fc_seq) => {
+            axios({
+                method: 'POST',
+                url: 'http://localhost:8080/reply/commentDelete',
+                data: qs.stringify({'fc_seq' : fc_seq})
+            }).then(()=>{
+                console.log('삭제완료');
+                window.location.replace("/ReplyBoard");
 
-  //  const menus = ["Menu1", "Menu2", "Menu3", "Menu4"]
- //   const CommentList = menus.map((menu) => (<li>{menu}</li>));
+            }).catch(error => {
+                console.error(error.response.data);
+                alert('에러입니다');
+            })
+    }
 
     return (
         <div className='ReplyBox'>
             <div className='CommentBox'>
-                <div class="comment_option">
-                    <h3 class="comment_title">댓글</h3>
-                   {/*  <div class="comment_tab">
-                        <button type="button" class="comment_refresh_button">
-                            <span class="blind">새로고침</span>
-                        </button>
-                    </div> */}
-                </div>
+                <div className="comment_option">
+                    <h3 className="comment_title">댓글</h3>
+                </div>  
+                
                 <ul className='comment_list'>
-                <li>
-                    <div className='comment_area'>
-                        <div className='comment_box'>
-                            <div className='comment_nick_box'>유저닉네임</div>
-                            <div className='comment_text_box'><p className='comment_text_view'>내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵</p></div>
-                            <div className='comment_info_box'>
-                                <div className='logtime'>2022/22/22</div>
-                                <div className='comment_btn'>
-                                <Link to='#' className='replybtn'>수정</Link>
-                                <Link to='#' className='replybtn'>삭제</Link>
+                    
+                    {
+                        data.map((item, index) => <li key={index}>
+                                <div className='comment_area'>
+                                <h3> {item.fc_name}</h3>
+                                <p className='inputComment'>{item.fc_commentContent}</p>
+                                <div className='comment_add'>
+                                    <p className='logtime'>{item.fc_logtime}</p>
+                                            <div id="showhide" className={ sessionStorage.getItem("email") == item.fc_email ? 'comment_btn' : 'hidden'}>
+                                                <button className='replybtn' >수정</button>
+                                                <button onClick={() =>{ondelete(item.fc_seq)}} className='replybtn'>삭제</button>
+                                            </div>      
+                                    </div>
                                 </div>
-                            </div>
-                                                   
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className='comment_area'>
-                        <div className='comment_box'>
-                            <div className='comment_nick_box'>유저닉네임</div>
-                            <div className='comment_text_box'><p className='comment_text_view'>내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵내용댓글내용주르르륵</p></div>
-                            <div className='comment_info_box'>
-                                <div className='logtime'>2022/22/22</div>
-                                <div className='comment_btn'>
-                                <Link to='#' className='replybtn'>수정</Link>
-                                <Link to='#' className='replybtn'>삭제</Link>
-                                </div>
-                            </div>
-                                                   
-                        </div>
-                    </div>
-                </li>
+                        
+                        </li>)
+                    }
+                   
                 </ul>
                 <div className='CommentWriter'>
-                    <div className='userId'> 댓글달 유저 아이디</div>
+                    <div className='userId'>{sessionStorage.getItem("email")}</div>
                     <div className='usercommend'>
                     <input type="text" className='inputComment' placeholder='댓글달기' onChange={e=> {setComment(e.target.value);}}
-                        onkeyup={e=>{
-                            e.target.value.length > 0
-                            ? setIsValid(true)
-                            : setIsValid(false);
-                        }}
+                        
                         value={comment}/>
                     </div>
                     
                     <button type='button' className='Btn_Update'
                     onClick={post}
-                    disabled={isValid ? true : false}>등록하기</button>
+                    >등록하기</button>
                 </div>
             </div>
         </div>
