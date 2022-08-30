@@ -29,4 +29,16 @@ public interface UserService {
 
 	public UserDTO getUserInfo(String access_Token);
 
+	public void userMbtiTypeResult(MbtiTypeDTO mbtiTypeDTO);
+
+	public UserDTO userInfoDeleteCheck(String email);
+
+	public void userInfoDelete(String email);
+
+	public MbtiTypeDTO userInfoMain(String mbti_email);
+
+	public String userMbtiTypeResultCheck(String mbti_email);
+
+	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO);
+
 }
