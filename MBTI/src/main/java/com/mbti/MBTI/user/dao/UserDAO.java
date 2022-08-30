@@ -37,7 +37,5 @@ public interface UserDAO {
 	public String getpassword(String email);
 
 	public UserDTO findkakao(HashMap<String, Object> userInfo);
-
-	public void kakaoinsert(HashMap<String, Object> userInfo);
 	
 }

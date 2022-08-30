@@ -94,4 +94,11 @@ public class UserDAOMyBatis implements UserDAO {
 	public String getpassword(String email) {
 		return sqlSession.selectOne("userSQL.getpassword",email);
 	}
+
+	@Override
+	public UserDTO findkakao(HashMap<String, Object> userInfo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
