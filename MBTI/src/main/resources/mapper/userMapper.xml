@@ -17,6 +17,14 @@
   	<select id="nameCheck" parameterType="String" resultType="user">
   		select * from USER where name = #{name};
   	</select>
+  	
+  	<update id="userUpdate" parameterType="user">
+  		update USER set name=#{name}, email=#{email},password=#{password}, age=#{age}, gender=#{gender} where email=#{email};
+  	</update>
+  	
+  	<select id="userInfo" parameterType="user" resultType="user">
+  		select * from USER where email = #{email} 
+  	</select>
   	<!--########################유진시작###########################  -->
 	
   	<!-- 회원 탈퇴 -->
@@ -29,4 +37,24 @@
   	<select id="loginCheck" parameterType="java.util.Map" resultType="user">
   		select * from USER where email=#{email} and password=#{password}
   	</select>
+  	
+  	<select id="findPasswordEmailCheck" parameterType="java.util.Map" resultType="user">
+  		select * from USER where email=#{email}
+  	</select>
+  	
+  	<!-- <select id="findkakao" parameterType="user" resultType="user">
+		select * from USER where email=#{email}
+	</select>
+	
+	<insert id="kakaoinsert" parameterType="java.util.HashMap">
+		insert into USER(name, email) values(#{nickname}, #{email})
+	</insert>
+	
+	<select id="getpassword" parameterType="String" resultType="String">
+		select password from USER where email=#{email} -->
+
+  	<select id="findKakao" parameterType="java.util.HashMap" resultType="user">
+	select * from user2 where user_email=#{email}
+	</select>
+	
   </mapper>

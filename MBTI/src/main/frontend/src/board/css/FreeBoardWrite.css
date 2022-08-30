@@ -76,7 +76,7 @@
 
 }
 
-.freeboard_subject {
+.freeboard_subject{
     float: left;
     font-size: 0.8em;
     color: red;
@@ -84,9 +84,17 @@
     padding-left: 21px;
 }
 
+.freeboard_contnet{
+    font-size: 0.8em;
+    color: red;
+    padding-top: 5px;
+    padding-left: 21px;
+
+}
+
 .BoardEditor {
     width: 100%;
-    height: 330px;
+    height: 350px;
 
 }
 

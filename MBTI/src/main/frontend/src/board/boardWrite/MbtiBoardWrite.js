@@ -1,29 +1,93 @@
-import React, { useState } from 'react';
+import React, { useEffect, useReducer, useRef, useState } from 'react';
 import '../css/MbtiBoardWrite.css';
 import '../../css/reset.css';
-import {CKEditor} from 'ckeditor4-react';
+import axios from 'axios';
+import { useNavigate } from 'react-router';
+import CKeditor from './CKeditor';
 
 const MbtiBoardWrite = () => {
 
+    const [editorLoaded, setEditorLoaded] = useState(false);
+    const navigate = useNavigate();
+    const qs = require('qs');
+
     // 제목 유효성
     const [mbtiboardsubject, setMbtiBoardSubject] = useState('');
-    const [mbtiboardsubjectErr, setMbtiBoardSubjectErr] = useState(false);
-    const onChangeMbtiBoardSubject = (e) => {
-        if(e.target.value.length >= 1) setMbtiBoardSubjectErr(false);
-        else setMbtiBoardSubjectErr(true);
-        setMbtiBoardSubject(e.target.value);
-    }
 
     // mbti 선택 유효성
+    const [mbtiboardcategory, setMbtiBoardCategory] = useState('');
     const [mbtinone, setMbtiNone] = useState('');
-    const [mbtiboardselectErr, setMbtiBoardSelectErr] = useState(false);
-    const onChangeMbtiBoardSelect = (e) => {
-        if(e.target.value === mbtinone ) setMbtiBoardSelectErr(true);
-        else setMbtiBoardSelectErr(false);
-        setMbtiNone(e.target.value);
-    }
+    const [INTJ , setINTJ] = useState('');
+    const [INTP , setINTP] = useState('');
+    const [ENTJ , setENTJ] = useState('');
+    const [ENTP , setENTP] = useState('');
+    const [INFJ , setINFJ] = useState('');
+    const [INFP , setINFP] = useState('');
+    const [ENFJ , setENFJ] = useState('');
+    const [ENFP , setENFP] = useState('');
+    const [ISTJ , setISTJ] = useState('');
+    const [ISFJ , setISFJ] = useState('');
+    const [ESTJ , setESTJ] = useState('');
+    const [ESFJ , setESFJ] = useState('');
+    const [ISTP , setISTP] = useState('');
+    const [ISFP , setISFP] = useState('');
+    const [ESTP , setESTP] = useState('');
+    const [ESFP , setESFP] = useState('');
+   
+
+    // 내용 유효성 
+    const [data, setData] = useState('');
     
-    
+    // 목록 이동
+    const MbtiBoardList = () => {
+       navigate("/MbtiBoard");
+   }
+
+    // 글 저장
+    const subjectCk = mbtiboardsubject.length >= 1 ;
+    const contentCk = JSON.stringify(data).length >= 3;
+    const categoryCk = document.getElementsByClassName('MbtiCategorySelect').value === mbtinone;
+    const submitOk = subjectCk && contentCk && categoryCk === true;
+    const subjectRef = useRef(null);
+   
+    const MbtiBoardSave = (e) => {
+   
+        e.preventDefault();
+   
+        if(!categoryCk) {
+               alert('카테고리를 선택하세요');
+        }  else if (!subjectCk ) {
+                 alert('제목을 입력하세요');
+                 subjectRef.current.focus();
+        } else if (!contentCk ) {
+            alert('내용을 입력하세요');
+
+        }
+        else {
+              
+               axios({
+                   method :'POST',
+                   url: 'http://localhost:8080/board/mbtiboardwrite',
+                   data: qs.stringify({
+                       'mb_email' : sessionStorage.getItem('email'),
+                       'mb_name' : sessionStorage.getItem('name'),
+                       'mb_category' : document.getElementsByClassName('Mbticategoryselect').value,
+                       'mb_subject' : document.getElementById('mbtiboardsubject').value,
+                       'mb_content' : JSON.stringify(data)
+                   })
+               }).then(()=>{
+                   alert('등록 완료');
+                   window.location.href='/MbtiBoard';
+               }).catch(err=> {
+                   alert('실패');
+               })
+           }
+       }
+   
+       useEffect(() => {
+           setEditorLoaded(true);
+         }, []);
+            
     return (
         <div className='MbtiBoardWrite'>
             <div className='MbtiBoardWriteContent'>
@@ -38,26 +102,26 @@ const MbtiBoardWrite = () => {
                                 </label>
 
                                 <div className='MbtiSelect'>
-                                    <select onChange={onChangeMbtiBoardSelect} >
-                                        <option value={mbtinone} >선택</option>
-                                        <option>INTJ</option>
-                                        <option>INTP</option>
-                                        <option>ENTJ</option>
-                                        <option>ENTP</option>
-                                        <option>INFJ</option>
-                                        <option>INFP</option>
-                                        <option>ENFJ</option>
-                                        <option>ENFP</option>
-                                        <option>ISTJ</option>
-                                        <option>ISFJ</option>
-                                        <option>ESTJ</option>
-                                        <option>ESFJ</option>
-                                        <option>ISTP</option>
-                                        <option>ISFP</option>
-                                        <option>ESTP</option>
-                                        <option>ESFP</option>                             
+                                    <select className='MbtiCategorySelect' onChange={(e) => {setMbtiBoardCategory(e.target.mbtinone)}} >
+                                        <option value={mbtinone}>선택</option>
+                                        <option value={INTJ}>INTJ</option>
+                                        <option value={INTP}>INTP</option>
+                                        <option value={ENTJ}>ENTJ</option>
+                                        <option value={ENTP}>ENTP</option>
+                                        <option value={INFJ}>INFJ</option>
+                                        <option value={INFP}>INFP</option>
+                                        <option value={ENFJ}>ENFJ</option>
+                                        <option value={ENFP}>ENFP</option>
+                                        <option value={ISTJ}>ISTJ</option>
+                                        <option value={ISFJ}>ISFJ</option>
+                                        <option value={ESTJ}>ESTJ</option>
+                                        <option value={ESFJ}>ESFJ</option>
+                                        <option value={ISTP}>ISTP</option>
+                                        <option value={ISFP}>ISFP</option>
+                                        <option value={ESTP}>ESTP</option>
+                                        <option value={ESFP}>ESFP</option>                             
                                     </select>
-                                    {mbtiboardselectErr && <p class="mbtiboard_select">MBTI를 선택하세요.</p>}
+                                    
                                     </div>
                             
                                     
@@ -69,25 +133,32 @@ const MbtiBoardWrite = () => {
                                 </label>
 
                                 <div className='Mbtiattr-subject'>
-                                    <input type='text' className='Mbtisubject-text' id='mbtiboardsubject' name='mbtiboardsubject' 
-                                    value={mbtiboardsubject} onChange={onChangeMbtiBoardSubject} placeholder='제목을 입력하세요'></input>  
+                                    <input type='text' className='Mbtisubject-text' id='mbtiboardsubject'
+                                    value={mbtiboardsubject} 
+                                    onChange={(e) => {setMbtiBoardSubject(e.target.value)}} 
+                                    placeholder='제목을 입력하세요'></input>  
                                 </div>
-                                {mbtiboardsubjectErr && <p class="mbtiboard_subject">제목을 입력하세요.</p>} 
+             
                             </div>
                         </div>
                         
 
                         <div className='MbtiBoardEditor'>
-                        <CKEditor data="This is an example CKEditor 4 WYSIWYG editor instance." type="classic"
-                        />
+                        <CKeditor
+                                name="description"
+                                onChange={(data) => {
+                                setData(data);
+                                }}
+                                editorLoaded={editorLoaded}
+                            />
                             
                         </div> 
 
                         
                     </div>
                 </div>
-                <button className="MbtiboardWriteListBtn">목록</button>
-                <button type='submit' className="MbtiboardWriteSaveBtn">저장</button>
+                <button className="MbtiboardWriteListBtn" onClick={MbtiBoardList} >목록</button>
+                <button className="MbtiboardWriteSaveBtn" onClick={MbtiBoardSave}>저장</button>
             </div>
 
             

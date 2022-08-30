@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './main/Main';
 import Test from './test/Test';
@@ -38,16 +38,43 @@ import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
 import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
 import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
+import ReplyBoard from './replyboard/ReplyBoard';
+import FreeBoardView from './board/boardView/FreeBoardView';
 
 const App = () => {
+
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <>      
+      <ScrollToTop />     
       <Routes>
 
-      <Route path="/" element={<Main/>} />
+        {
+          sessionStorage.getItem('email') === null ?
+      <> 
+      <Route path="/" element={<LoginPageMain/>} />
+        {/* 승찬 */}
+      <Route path="/LoginPageMain" element={<LoginPageMain/>}/>
+      <Route index element={<LoginPageMain/>} /> 
+      <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/>
+      <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
+      <Route path="/ContactMain" element={<ContactMain/>}/> 
 
+        {/* 유진 */}
+      <Route path="/signUp" element={<SignupMain /> } />
+      <Route path="/signupSuccess" element={<SignupSuccessMain /> } /> 
+      </>
+
+      :
+      <>
+      
+      {/* 승찬 */}
+      <Route path="/ContactMain" element={<ContactMain/>}/> 
+
+      {/* 재남 */}
+      <Route path="/test" element={<Test/>} />
+      <Route path='/resultmain' element={<ResultMain />}/>
+
+      {/* 범주 */}
       <Route exact path="/Mbtiintrodusion" element={<Mbtiintrodusion  /> } />
       <Route exact path="/MbtiSW" element={<MbtiSW  /> } />
       <Route exact path="/MbtiRelationships" element={<MbtiRelationships  />} />
@@ -56,54 +83,33 @@ const App = () => {
       <Route exact path="/Mbticareerpaths" element={<Mbticareerpaths  /> } />
       <Route exact path="/Mbtiworkplacehabits" element={<Mbtiworkplacehabits /> } />
       <Route exact path="/Mbticonclusion" element={<Mbticonclusion /> } />
+      <Route exact path="/ReplyBoard" element={<ReplyBoard /> } />
+      <Route exact path="/FreeBoardView" element={<FreeBoardView /> } />
 
-  
-        <Route path="/ContactMain" element={<ContactMain/>}/> 
-        <Route path="/LoginPageMain" element={<LoginPageMain/>}/> 
-        <Route path="/kakaoLogin" element={<KakaoRedirectHandler/>}/>  
-    
-        <Route path="/signUp" element={<SignupMain /> } />
-        <Route path="/signupSuccess" element={<SignupSuccessMain /> } />
-        <Route path="/userInfo" element={ <UserInformationMain /> } />
+      {/* 기진 */}
+              {/* 프로필 */}
+              <Route path="/Profiletypes" element={<Profiletypes/>}/>
+              {/* 보드 */}
+              <Route path="/FreeBoard" element={<FreeBoard />}/>
+              <Route path="/MbtiBoard" element={<MbtiBoard />}/>
 
+      {/* 유진 */}
+      <Route path="/userInfo" element={ <UserInformationMain /> } />
 
-        <Route path="/ContactMain" element={<ContactMain/>}/>
-        <Route path="/LoginPageMain" element={<LoginPageMain />}/>
-        <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
-        <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/> 
-        <Route index element={<LoginPageMain/>} />
-        <Route path="/test" element={<Test/>} />
+      {/* 소윤 */}
+      <Route path="/">
+      <Route index element={<Main/>} />
+      <Route path="/MyPageMain" element={<MyPageMain />} />
+      <Route path='/FreeBoardWriteMain' element={<FreeBoardWriteMain/>} />
+      <Route path='/MbtiBoardWriteMain' element={<MbtiBoardWriteMain/>} />
+      <Route path='/FreeBoardViewMain' element={<FreeBoardViewMain/>} />
+      <Route path='/MbtiBoardViewMain' element={<MbtiBoardViewMain/>} />
 
-        <Route path="/MyPageMain" element={<MyPageMain />} />
-
-
-
-      {/* 기진 시작 */} 
-  
-        {/* 프로필 */}
-        <Route path="/Profiletypes" element={<Profiletypes/>}/>
-        {/* 보드 */}
-        <Route path="/FreeBoard" element={<FreeBoard />}/>
-        <Route path="/MbtiBoard" element={<MbtiBoard />}/>
-
-      {/* 기진 끝 */}
-
-        <Route path="/Main">
-          <Route index element={<Main/>} />
-
-        </Route>
-        <Route path='/resultmain' element={<ResultMain />}/>
-
-
-
-        <Route path='/FreeBoardWriteMain' element={<FreeBoardWriteMain/>} />
-        <Route path='/MbtiBoardWriteMain' element={<MbtiBoardWriteMain/>} />
-        <Route path='/FreeBoardViewMain' element={<FreeBoardViewMain/>} />
-        <Route path='/MbtiBoardViewMain' element={<MbtiBoardViewMain/>} />
-  
-   
-      </Routes>
+      </Route>
       </>
+        }
+
+      </Routes>
     </BrowserRouter>
 
     
