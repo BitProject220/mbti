@@ -92,17 +92,6 @@ const BoardWarp = (props) => {
                     <div className="kboard-list">
                         <table>
                             <BoardListTr boardNo={props.boardNo} />
-                            <thead>
-                                <tr>
-                                    <td className="kboard-list-uid">바보</td>
-                                    <td className="kboard-list-name">타입</td>
-                                    <td className="kboard-list-title">제목</td>
-                                    <td className="kboard-list-user">작성자</td>
-                                    <td className="kboard-list-date">작성일</td>
-                                    <td className="kboard-list-vote">추천</td>
-                                    <td className="kboard-list-view">조회</td>
-                                </tr>
-                            </thead>
                             <tbody>
                                 {boardListData}
                             </tbody> 
@@ -120,9 +109,6 @@ const BoardWarp = (props) => {
                         getSearchKeyword={getSearchKeyword}                        
                     />
                     <WriteBoard boardNo={props.boardNo} />
-                    <div className="kboard-control">
-                        <a href="/FreeBoardWriteMain" className="kboard-default-button-small">글쓰기</a>
-                    </div>
                 </div>
             </div>
         </div>
