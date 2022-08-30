@@ -57,56 +57,58 @@ const ResultMain = () => {
       method: 'POST',
       url: 'http://localhost:8080/user/userMbtiTypeResultCheck',
       data: qs.stringify({'mbti_email' : sessionStorage.getItem("email")})
-  }).then((res)=>{
-    alert("갔다!");
-      console.log("데이터 잘 갔음!")
-      if(res.data === 'nonExist'){
-        alert("데이터 존재하지 않음")
-        axios({
-          method: 'POST',
-          url: 'http://localhost:8080/user/userMbtiTypeResult',
-          data: ({
+      }).then((res)=>{
+        alert("갔다!");
+        console.log("데이터 잘 갔음!")
+          if(res.data === 'nonExist'){
+            alert("데이터 존재하지 않음")
+            axios({
+              method: 'POST',
+              url: 'http://localhost:8080/user/userMbtiTypeResult',
+              data: ({
+                  'mbti_email' : sessionStorage.getItem("email"),
+                  'mbti_type' : mymbti,
+                  'mbti_EI' : perEi,
+                  'mbti_NS' : perNs,
+                  'mbti_TF' : perTf,
+                  'mbti_JP' : perJp,
+                  'mbti_AT' : perAt
+                })
+          }).then(()=>{
+            console.log("타입 저장 완료!")
+            
+          }).catch(error =>{
+            console.log(error)
+          });
+        }else if(res.data === 'exist'){
+          alert("데이터 존재함")
+          axios({
+            method: 'POST',
+            url: 'http://localhost:8080/user/userMbtiTypeResultUpdate',
+            data: ({
               'mbti_email' : sessionStorage.getItem("email"),
-              'mbti_type' : mbti,
+              'mbti_type' : mymbti,
               'mbti_EI' : perEi,
               'mbti_NS' : perNs,
               'mbti_TF' : perTf,
               'mbti_JP' : perJp,
               'mbti_AT' : perAt
-             })
-      }).then(()=>{
-        console.log("타입 저장 완료!")
+            })
+          }).then(()=>{
+            console.log(mbti+"232323222")
+            console.log("타입 저장 완료!")
+          }).catch(error =>{
+              console.log(error)
+          });
+
+          }
       }).catch(error =>{
         console.log(error)
       });
-    }else if(res.data === 'exist'){
-      alert("데이터 존재함")
-      axios({
-        method: 'POST',
-        url: 'http://localhost:8080/user/userMbtiTypeResultUpdate',
-        data: ({
-          'mbti_email' : sessionStorage.getItem("email"),
-          'mbti_type' : mbti,
-          'mbti_EI' : perEi,
-          'mbti_NS' : perNs,
-          'mbti_TF' : perTf,
-          'mbti_JP' : perJp,
-          'mbti_AT' : perAt
-        })
-      }).then(()=>{
-        console.log(mbti+"dssssdsddsdsdsdsdsdsdsdsd")
-        console.log("타입 저장 완료!")
-      }).catch(error =>{
-          console.log(error)
-      });
-
-      }
-  }).catch(error =>{
-      console.log(error)
-  });
-    
-    //console.log('resultMain = ' +state);
-  },[]);
+  
+  //console.log('resultMain = ' +state);
+},[]);
+console.log(mbti+"dssssdsddsdsdsdsdsdsdsdsd")
 
   const MBTI = mbti.substr(0 , 4);
   let id = '13';
