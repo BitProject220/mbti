@@ -5,10 +5,22 @@ import Board from './components/Board';
 import '../css/board.css';
 
 const MbtiBoard = () => {
+    // const [message, setMessage] = useState("");
+    // useEffect(() => {
+    // fetch('/freeBoard')
+    // .then(response => response.text())
+    // .then(message => {
+    // setMessage(message);
+    // });
+    // },[])
+
+    const MbtiSearchBy = ["전체","제목","내용","작성자","타입"];
+    // console.log(MbtiSearchBy);
+
     return (
-        <div className='FreeBoard'>
+        <div className='MbtiBoard'>
             <Header />
-            <Board boardName='MBTI 게시판' />
+            <Board boardNo='2' boardType='board/mbtiBoardList' boardName='MBTI 게시판' searchBy={MbtiSearchBy} />
             <Footer />
         </div>
     );

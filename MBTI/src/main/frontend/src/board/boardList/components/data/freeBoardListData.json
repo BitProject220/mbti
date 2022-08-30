@@ -1,0 +1,38 @@
+[
+    {
+        "seq": 1,
+        "title": "테스트1",
+        "nickname": "홍길동",
+        "date": "2020.07.30",
+        "vote": 5,
+        "comments": 8,
+        "view": 30
+    },
+    {
+        "seq": 2,
+        "title": "테스트2",
+        "nickname": "둘리",
+        "date": "2020.08.21",
+        "vote": 20,
+        "comments": 30,
+        "view": 100
+    },
+    {
+        "seq": 3,
+        "title": "테스트1",
+        "nickname": "홍길동",
+        "date": "2020.07.30",
+        "vote": 5,
+        "comments": 20,
+        "view": 30
+    },
+    {
+        "seq": 4,
+        "title": "테스트1",
+        "nickname": "홍길동",
+        "date": "2020.07.30",
+        "vote": 5,
+        "comments": 20,
+        "view": 30
+    }
+]

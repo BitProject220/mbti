@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +38,9 @@ public class UserController {
 	
 	@Autowired
 	private JavaMailSender mailSender;
+	
+	@Autowired
+	private HttpSession session;
 	
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -102,6 +106,10 @@ public class UserController {
 		System.out.println("이름은"+name);
 		return userService.nameCheck(name);
 	}
+
+	//###################유진 끝#################################
+	
+	//로그인 아이디 비밀번호 있는지 확인
 	
 	@PostMapping(value = "/user/userUpdate")
 	public void userUpdate(@RequestBody UserDTO userDTO) {
@@ -156,6 +164,85 @@ public class UserController {
 	@ResponseBody
 	public UserDTO loginCheck(@RequestParam Map<String, String> map) {
 		return userService.loginCheck(map);
-		
 	}
+	
+	//비밀번호 난수 발생
+	public static String tempPassword(int leng){
+		int index = 0;
+		char[] charSet = new char[] {
+				'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+                '!', '@', '#', '$', '%', '&'
+		};	//배열안의 문자 숫자는 원하는대로
+		StringBuffer password = new StringBuffer();
+		Random random = new Random();
+		for (int i = 0; i < leng ; i++) {
+			double rd = random.nextDouble();
+			index = (int) (charSet.length * rd);
+			password.append(charSet[index]);
+			System.out.println("index::" + index + "	charSet::"+ charSet[index]);
+		}
+		return password.toString();  //StringBuffer를 String으로 변환해서 return 하려면 toString()을 사용하면 된다.
+	}	
+	
+	//이메일로 비밀번호 보내기
+	@PostMapping(value = "/user/findPasswordEmailSend")
+	public String findPasswordEmailSend(@RequestParam String email) throws Exception{
+		logger.info("이메일 인증 요청이 들어옴!" + email);
+		logger.info("인증번호" + email);
+		
+		//인증번호 난수 생성
+		UserDTO userDTO = new UserDTO();
+		String pw2 = userService.getpassword(email);
+		System.out.println(pw2);
+		logger.info("인증번호 " + pw2);
+		
+		//이메일 보내기
+		String setFrom = "yujin980810@gmail.com";
+        String toMail = email;
+        String title = "BWTH 비밀번호 찾기 메일 입니다.";
+        String content = 
+		 "<div><h2 style='margin-top:10px; font-size: 24px;'>비밀번호 찾기에 대한 결과입니다.<br><br>아래에 비밀번호를 확인해주세요.</h2>"
+		+ "<p style='font-size:18px;'>비밀번호 : <span style='padding: 10px; background: #d2e9fc;'>" + pw2 + "</span> </p>"
+		+ "<div>";
+        try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+            helper.setFrom(setFrom);
+            helper.setTo(toMail);
+            helper.setSubject(title);
+            helper.setText(content,true);
+            mailSender.send(message);
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        //
+        return pw2;
+	}
+	
+	//비밀번호잃어버렸을때 이메일이 있는지 확인
+	@PostMapping(value = "/user/findPasswordEmailCheck")
+	@ResponseBody
+	public UserDTO findPasswordEmailCheck(@RequestParam Map<String, String> map) {
+		return userService.findPasswordEmailCheck(map);
+	}
+	
+	@GetMapping(value = "/user/kakaoLogin")
+	public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
+		System.out.println("######" + code);
+		String access_Token = userService.getAccessToken(code);
+		UserDTO userInfo = userService.getUserInfo(access_Token);//서비스 호출 및 사용자 정보 출력
+		System.out.println("access_Token" + access_Token);
+//		System.out.println("###nickname#### : " + userInfo.get("nickname"));
+//		System.out.println("###email#### : " + userInfo.get("email"));
+		
+		session.invalidate();
+		session.setAttribute("kakaoN", userInfo.getName());
+		session.setAttribute("kakaoE", userInfo.getEmail());
+		//위 2개의 코드는 닉네임과 이메일을 session객체에 담는 코드
+		//jsp에서 ${sessionScope.kakaoN}이런 형식으로 사용할 수 있다.
+		return "/Main";
+	}
+	
+	
 }

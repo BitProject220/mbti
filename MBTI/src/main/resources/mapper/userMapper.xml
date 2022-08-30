@@ -62,4 +62,24 @@
   	<select id="loginCheck" parameterType="java.util.Map" resultType="user">
   		select * from USER where email=#{email} and password=#{password}
   	</select>
+  	
+  	<select id="findPasswordEmailCheck" parameterType="java.util.Map" resultType="user">
+  		select * from USER where email=#{email}
+  	</select>
+  	
+  	<!-- <select id="findkakao" parameterType="user" resultType="user">
+		select * from USER where email=#{email}
+	</select>
+	
+	<insert id="kakaoinsert" parameterType="java.util.HashMap">
+		insert into USER(name, email) values(#{nickname}, #{email})
+	</insert>
+	
+	<select id="getpassword" parameterType="String" resultType="String">
+		select password from USER where email=#{email} -->
+
+  	<select id="findKakao" parameterType="java.util.HashMap" resultType="user">
+	select * from user2 where user_email=#{email}
+	</select>
+	
   </mapper>

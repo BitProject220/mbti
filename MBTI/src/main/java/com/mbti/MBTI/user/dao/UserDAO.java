@@ -1,5 +1,6 @@
 package com.mbti.MBTI.user.dao;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.mbti.MBTI.user.bean.MbtiTypeDTO;
@@ -14,6 +15,14 @@ public interface UserDAO {
 	public UserDTO loginCheck(Map<String, String> map);
 	
 	public UserDTO nameCheck(String name);
+
+	public UserDTO findPasswordEmailCheck(Map<String, String> map);
+
+//	public UserDTO findkakao(HashMap<String, Object> userInfo);
+//
+//	public void kakaoinsert(HashMap<String, Object> userInfo);
+//
+//	public void updateBykakao(HashMap<String, Object> userInfo);
 
 	public void userUpdate(UserDTO userDTO);
 
@@ -30,5 +39,11 @@ public interface UserDAO {
 	public MbtiTypeDTO userMbtiTypeResultCheck(String mbti_email);
 
 	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO);
+
+	public String getpassword(String email);
+
+	public UserDTO findkakao(HashMap<String, Object> userInfo);
+
+	public void kakaoinsert(HashMap<String, Object> userInfo);
 	
 }
