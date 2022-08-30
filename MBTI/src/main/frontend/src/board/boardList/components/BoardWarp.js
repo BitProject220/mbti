@@ -1,25 +1,136 @@
-import React, { useState } from 'react';
-import BoardList from './BoardList';
-import Data from './data/boardListData.json';
+import React, { useEffect, useState } from 'react';
+import BoardSearching from './boardWarpComponents/BoardSearching';
+import BoardListHeader from './boardWarpComponents/BoardListHeader';
+import BoardList from './boardWarpComponents/BoardList';
+import BoardListTr from './boardWarpComponents/BoardListTr';
+import BoardPaging from './boardWarpComponents/BoardPaging';
+
+import axios from 'axios';
+
+// import Data from './data/boardListData.json';
 
 const BoardWarp = (props) => {
-    const selectList = ["최신순", "추천순", "조회순", "업데이트순"];
-    const [selected, setSelected] = useState("");
-    const handleSelect = (e) => {
-        setSelected(e.target.value);
-    };
+    //검색기능
+    // const searchBy = props.searchBy;
+    // const [searchCondition, setSearchCondition] = useState({
+    //     category:"",
+    //     searchKeyword: "",
+    // });
     
-    const searchList =["전체","제목","내용","작성자","타입"];
-    const [searchSelectList, setSearchSelectList] = useState("");
-    const handleSearchSelectList =(e) =>{
-        setSearchSelectList(e.target.value);
-    };
+    // const getSearchCondition=(e)=>{
+    //     setSearchCondition(e);
+    // }
+    // // console.log("검색조건 = " + searchCondition.category + " 키워트 = " + searchCondition.searchKeyword);
+    
+    // //정렬기능
+    // const sortBy = ["최신순", "추천순", "조회순", "업데이트순"];
+    // const [sortOption, setSortOption] = useState("");
+    // // console.log("초기 sortBy = " + sortBy);
+    // const getSortOption = (e) =>{
+    //     setSortOption(e);
+    // }
 
-    const [inputText, setInputText] = useState("");
-    const holdText = (e) => {
-        setInputText(e.target.value);
-    }
+    // // 자유게시판 또는 MBTI 게시판 별 검색어 구분 리스트를 props로 받아 BoardSearching 컴포넌트에 props로 전달함
+    // // 입력 시점 FreeBoard.js 또는 MbtiBorad.js
 
+
+    // //페이징처리 
+    // const [pg, setPg] = useState(1);
+    // const getPg=(e)=>{
+    //     setPg(e);
+    // }
+    // // console.log("getPg = " + pg);
+
+    // console.log("###검색내용 = " + searchCondition.searchKeyword)
+    // console.log("###카테고리 = " + searchCondition.category)
+    // console.log("###pg = " + pg)
+    // console.log("###정렬옵션 = " + sortOption)
+
+    
+    //  useEffect(() => {
+    //     fetch('/test',
+    //         {
+    //         method: 'post',
+    //         body: ({
+    //             pg: pg,
+    //             sortOption : sortOption,
+    //             category: searchCondition.category,
+    //             searchKeyword: searchCondition.searchKeyword
+    //             })
+    //         })
+    //         .then(res => res.json())
+    //         .then(res => {
+    //             if(res.success){
+    //                 console.log(res);
+    //             }else alert("fail")
+    //         })
+    //  })
+
+    
+        const boardNo = props.boardNo;
+
+        const [pg, setPg] = useState(1);
+        const getPg = (e) =>{
+            setPg(e);
+        }
+
+        const [sortOption, setSortOption] = useState("최신순");
+        const getSortOption = (e) =>{
+            setSortOption(e);
+        }
+        console.log("변경되는 부모 정렬방식 : " + sortOption)
+
+        const [category, setCategory] = useState('전체');
+        const getCategory = (e) =>{
+            setCategory(e);
+        }
+
+
+        const [searchKeyword, setSearchKeyword] = useState('')
+        const getSearchKeyword = (e) =>{
+            setSearchKeyword(e);
+        }
+
+
+        //초기값
+        // const searchCondition = {
+        //     boardNo: boardNo,
+        //     pg: pg,
+        //     sortOption: sortOption,
+        //     category: "전체",
+        //     searchKeyword: "",
+        // }
+        console.log("검색조건 변경? :" + sortOption)
+        
+
+        const [data, setData] =useState([]);
+
+        useEffect(() => {
+           axios({
+            method: 'get',
+            url: 'http://localhost:8080/board/freeBoardList',
+            
+            // params: {
+            //     boardNo: boardNo,
+            //     pg: pg,
+            //     sortOption: sortOption,
+            //     category: category,
+            //     searchKeyword: searchKeyword,
+            // }
+           })
+           .then(res=>{
+                console.log("서버 데이터 = "+ res.data.tableList);
+                setData(res.data.tableList);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+           },[])
+
+
+           const boardListData = data.map(item => (<BoardList key={item.fb_seq} listData={item} />))
+
+    
     return (
         <div className="wp_notice_wrap">
             <div className="wp_notice_title">
@@ -27,80 +138,35 @@ const BoardWarp = (props) => {
             </div>
             <div className="wp_notice_area">
                 <div id="kboard-default-list">
-                    <div className="kboard-list-header">
-                        <div className="kboard-total-count">전체{Data.length} </div>                    
-                        <div className="kboard-sort">
-                            <form id="kboard-sort-form-1" method="get" action="/tem_board_1/" >
-                                <input type="hidden" name="mod" value="list"/>
-                                <input type="hidden" name="pageid" value="1"/>
-                                <input type="hidden" name="kboard_list_sort_remember" value="1" />		
-                                <select className="kboard_list_sort" onChange={handleSelect} value={selected}>		
-                                {selectList.map((item)=>(
-                                    <option  key={item} value={item}>
-                                        {item}
-                                    </option>
-                                ))}
-                                </select>
-                                {/* <select className="kboard_list_sort" onchange={handleSelect} value={selected}>
-                                    <option value="newest" selected>최신순</option>
-                                    <option value="best">추천순</option>
-                                    <option value="viewed">조회순</option>
-                                    <option value="updated">업데이트순</option>
-                                </select> */}
-                            </form>
-                        </div>
-                    </div>
+                    <BoardListHeader
+                        listCount={data.length} 
+                        getSortOption={getSortOption}            
+                    />
                     <div className="kboard-list">
+                    {/* <ul>
+                        <li>보드 종류 = {data.tableList.fb_seq}</li>
+                        <li>정렬방식 = {data.tableList.sortOption}</li>
+                        <li>카테고리 = {data.tableList.category}</li>
+                        <li>검색내용 = {data.tableList.searchKeyword}</li>
+                    </ul> */}
                         <table>
-                            <thead>
-                                <tr>
-                                    <td className="kboard-list-uid">번호</td>
-                                    <td className="kboard-list-name">타입</td>
-                                    <td className="kboard-list-title">제목</td>
-                                    <td className="kboard-list-user">작성자</td>
-                                    <td className="kboard-list-date">작성일</td>
-                                    <td className="kboard-list-vote">추천</td>
-                                    <td className="kboard-list-view">조회</td>
-                                </tr>
-                            </thead>
+                            <BoardListTr boardNo={props.boardNo} />
                             <tbody>
-                                {/* <NoticeBoard /> */}
-                                {Data.map(listData=>(
-                                    <BoardList key={listData.seq} listData={listData} />
-                                ))}
-                            </tbody>
+                            {boardListData}
+                            </tbody> 
                         </table>
                     </div>
-                    <div className="kboard-pagination">
-                        <ul className="kboard-pagination-pages">
-                            <li className="active"><a href="?pageid=1&mod=list" onClick="return false">1</a></li>
-                            <li><a href="?pageid=2&mod=list">2</a></li>
-                            <li className="next-page"><a href="?pageid=2&mod=list">»</a></li>
-                            <li className="last-page"><a href="?pageid=2&mod=list">마지막</a></li>		
-                        </ul>
-                    </div>
-                    <div className="kboard-search">
-                        <form id="kboard-search-form-1" method="get" action="/tem_board_1/?pageid=1">
-                            <input type="hidden" name="mod" value="list" />
-                            <input type="hidden" name="pageid" value="1" />			
-                            <select className="kboard_list_sort" onChange={handleSearchSelectList} value={searchSelectList}>
-                                {searchList.map((item)=>(
-                                    <option key={item} value={item}>
-                                        {item}
-                                    </option>
-                                ))}
-                            </select>
-                            {/* <select name="target">
-                                <option value="">전체</option>
-                                <option value="title">제목</option>
-                                <option value="content">내용</option>
-                                <option value="member_display">작성자</option>
-                                <option value="mbti-type">타입</option>
-                            </select> */}
-                            <input type="text" name="keyword" onChange={holdText} value={inputText} />
-                            <button type="submit" className="kboard-default-button-small">검색</button>
-                        </form>
-                    </div>
+                    {/* <BoardPaging 
+                    pg={pg} 
+                    getPg={getPg}
+
+                    /> */}
+
+                    <BoardSearching 
+                        searchBy={props.searchBy}
+                        getCategory={getCategory} 
+                        getSearchKeyword={getSearchKeyword}                        
+                    />
                     <div className="kboard-control">
                         <a href="/BoardWriteMain" className="kboard-default-button-small">글쓰기</a>
                     </div>
@@ -111,3 +177,23 @@ const BoardWarp = (props) => {
 };
 
 export default BoardWarp;
+
+
+    // const [message, setMessage] = useState("");
+    // useEffect(() => {
+    // fetch('/test')
+    // .then(response => response.text())
+    // .then(message => {
+    // setMessage(message);
+    // });
+    // },[])
+
+
+      // if(props.boardNo === 1){
+    //     console.log(FreeBoardListData);
+    //     setBoardListData(FreeBoardListData);
+    // }else if(props.boardNo === 2){
+    //     console.log(Data);
+    //     setBoardListData(Data);
+    // }
+ 
