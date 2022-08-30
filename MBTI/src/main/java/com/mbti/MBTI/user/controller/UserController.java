@@ -33,6 +33,9 @@ import com.mbti.MBTI.user.service.UserService;
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 	
+//	@Autowired
+//	private UserDTO userDTO;
+	
 	@Autowired
 	private UserService userService;
 	
@@ -110,7 +113,6 @@ public class UserController {
 	//###################유진 끝#################################
 	
 	//로그인 아이디 비밀번호 있는지 확인
-	
 	@PostMapping(value = "/user/userUpdate")
 	public void userUpdate(@RequestBody UserDTO userDTO) {
 		System.out.println(userDTO);
@@ -226,23 +228,5 @@ public class UserController {
 	public UserDTO findPasswordEmailCheck(@RequestParam Map<String, String> map) {
 		return userService.findPasswordEmailCheck(map);
 	}
-	
-	@GetMapping(value = "/user/kakaoLogin")
-	public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
-		System.out.println("######" + code);
-		String access_Token = userService.getAccessToken(code);
-		UserDTO userInfo = userService.getUserInfo(access_Token);//서비스 호출 및 사용자 정보 출력
-		System.out.println("access_Token" + access_Token);
-//		System.out.println("###nickname#### : " + userInfo.get("nickname"));
-//		System.out.println("###email#### : " + userInfo.get("email"));
-		
-		session.invalidate();
-		session.setAttribute("kakaoN", userInfo.getName());
-		session.setAttribute("kakaoE", userInfo.getEmail());
-		//위 2개의 코드는 닉네임과 이메일을 session객체에 담는 코드
-		//jsp에서 ${sessionScope.kakaoN}이런 형식으로 사용할 수 있다.
-		return "/Main";
-	}
-	
 	
 }
