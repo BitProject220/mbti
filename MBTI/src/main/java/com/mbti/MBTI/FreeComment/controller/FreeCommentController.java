@@ -36,7 +36,7 @@ public class FreeCommentController {
 
 	@PostMapping(value = "/reply/userComment")
 	public List<FreeCommentDTO> userComment(@RequestBody FreeCommentDTO fc_FreeBoardseq) {
-		System.out.println(fc_FreeBoardseq+"fc_FreeBoardseq 확인");
+	
 		// 1. 요청에 따른 결과값을 JSON Array의 형태를 가진 스트링으로 변환하다.
 		// 2. 현재 로그인한 유저가 누구인지를 JSON 형태로 변환한다.
 		// 3. 1번과 2번의 값을 가진 JSON 형태로 나타내서 리턴한다.
@@ -51,10 +51,10 @@ public class FreeCommentController {
 	public void commentDelete(@RequestBody String fc_seq) {
 		String str = fc_seq;
 		String intStr = str.replaceAll("[^0-9]", "");
-		System.out.println(intStr);
+
 		
 		int fc_seqi = Integer.parseInt(intStr);
-		System.out.println(fc_seqi+"숫자인가");
+		
 	
 		freeCommentService.commentDelete(fc_seqi);
 	}

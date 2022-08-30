@@ -35,9 +35,5 @@ public interface UserDAO {
 	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO);
 
 	public String getpassword(String email);
-
-	public UserDTO findkakao(HashMap<String, Object> userInfo);
-
-	public void kakaoinsert(HashMap<String, Object> userInfo);
 	
 }
