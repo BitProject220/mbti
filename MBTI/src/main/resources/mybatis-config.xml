@@ -6,8 +6,8 @@
 
 	<typeAliases>
 		<typeAlias type="com.mbti.MBTI.user.bean.UserDTO" alias="user"/>
-		<typeAlias type="com.mbti.MBTI.board.bean.FreeBoardDTO" alias="freeBoard"/>
-		<typeAlias type="com.mbti.MBTI.board.bean.MbtiBoardDTO" alias="MbtiBoard"/>
+		<typeAlias type="com.mbti.MBTI.board.bean.FreeBoardDTO" alias="freeBoard2"/>
+		<typeAlias type="com.mbti.MBTI.board.bean.MbtiBoardDTO" alias="MbtiBoard2"/>
 		<typeAlias type="com.mbti.MBTI.FreeComment.bean.FreeCommentDTO" alias="freecomment"/>
 		<typeAlias type="com.mbti.MBTI.freeboard.bean.FreeBoardDTO" alias="freeboard"/>
 		<typeAlias type="com.mbti.MBTI.mbtiboard.bean.MbtiBoardDTO" alias="mbtiboard"/>

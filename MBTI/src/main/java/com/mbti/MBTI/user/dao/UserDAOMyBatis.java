@@ -61,16 +61,4 @@ public class UserDAOMyBatis implements UserDAO {
 	public String getpassword(String email) {
 		return sqlSession.selectOne("userSQL.getpassword",email);
 	}
-
-	@Override
-	public UserDTO findkakao(HashMap<String, Object> userInfo) {
-		System.out.println("RN:" + userInfo.get("nickname"));
-		System.out.println("RE:" + userInfo.get("email"));
-		return sqlSession.selectOne("userSQL.findkakao", userInfo);
-	}
-
-	@Override
-	public void kakaoinsert(HashMap<String, Object> userInfo) {
-		sqlSession.insert("userSQL.kakaoinsert", userInfo);
-	}
 }
