@@ -80,11 +80,7 @@ public class UserDAOMyBatis implements UserDAO {
 	}
 	//#######################유진끝##########################
 
-	@Override
-	public UserDTO loginCheck(Map<String, String> map) {
-		return sqlSession.selectOne("userSQL.loginCheck", map);
-	}
-
+	
 	@Override
 	public UserDTO findPasswordEmailCheck(Map<String, String> map) {
 		return sqlSession.selectOne("userSQL.findPasswordEmailCheck", map);
@@ -95,10 +91,12 @@ public class UserDAOMyBatis implements UserDAO {
 		return sqlSession.selectOne("userSQL.getpassword",email);
 	}
 
-	@Override
-	public UserDTO findkakao(HashMap<String, Object> userInfo) {
-		// TODO Auto-generated method stub
-		return null;
+	public UserDTO loginCheck(String email, String password) {
+		UserDTO userDTO = new UserDTO();
+		userDTO.setEmail(email);
+		userDTO.setPassword(password);
+		
+		return sqlSession.selectOne("userSQL.loginCheck", userDTO);
 	}
 
 }

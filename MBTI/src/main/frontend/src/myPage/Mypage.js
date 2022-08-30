@@ -141,7 +141,7 @@ const Mypage = () => {
                             <div className='ContentSub_2'>
                                 <div className='ContentSub_Title2'>회원 정보 수정</div>
                                 <div className='ContentSub_email'>{mbti_email}</div> {/* 회원 이메일 주소 가져오기*/}
-                                <div className='ContentSub_Sub2'>이름, 나이, 성격유형, 성별, 뉴스레터를 수정 하고 싶으시면 당장 클릭하세요!</div>
+                                <div className='ContentSub_Sub2'>이름, 나이, 성격유형, 성별을 수정 하고 싶으시면 당장 클릭하세요!</div>
                             </div>
                             <div className='ContentSub_Btn'>
                                 <ModalUserInfo />
@@ -153,7 +153,7 @@ const Mypage = () => {
                         <div className='myPageContentSub3'>
                             <div className='ContentSub_3'>
                                 <div className='ContentSub_Title3'>회원 탈퇴</div>
-                                <div className='ContentSub_email'>{mbti_email}</div> {/* 회원 이메일 주소 가져오기*/}
+                                
                                 <div className='ContentSub_Sub3'>회원 탈퇴를 하시면 모든 정보가 사라집니다.</div>
                             </div>
                             <div className='ContentSub_Btn'>
@@ -163,9 +163,7 @@ const Mypage = () => {
                         </div>
                     </div>
 
-                    <div className='UserJoinTime'>
-                        You joined 1 day ago, on August 16, 2022.
-                    </div>
+                   
 
                 </div>
             </div>

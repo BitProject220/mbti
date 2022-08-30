@@ -59,7 +59,7 @@
   	</delete>
   	 -->
   	
-  	<select id="loginCheck" parameterType="java.util.Map" resultType="user">
+  	<select id="loginCheck" parameterType="String" resultType="user">
   		select * from USER where email=#{email} and password=#{password}
   	</select>
   	
