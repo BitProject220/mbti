@@ -28,4 +28,6 @@ public class FreeBoardController {
 	public FreeBoardDTO freeboardview (@RequestParam int seq) {
 		return freeBoardService.freeboardview(seq);
 	}
+	
+	
 }

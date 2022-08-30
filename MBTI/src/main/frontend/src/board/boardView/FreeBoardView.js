@@ -32,20 +32,19 @@ const FreeBoardView = (props) => {
             
         }).then((res)=>{
             
-            setEmail(res.data.email);
-            setName(res.data.name);
-            setSubject(res.data.subject);
-            setContent(res.data.content);
-            setFreevote(res.data.freevote);
-            setHit(res.data.hit);
-            setLogtime(res.data.logtime);
+             setName(res.data.name);
+             setSubject(res.data.subject);
+             setContent(res.data.content);
+             setFreevote(res.data.freevote);
+             setHit(res.data.hit);
+             setLogtime(res.data.logtime);
             
 
         }).catch(error => {
             console.log("와실패다")
             console.log(error)
         })
-    });
+    }, []);
 
     // useEffect(()=> {
     //     axios({
@@ -64,11 +63,14 @@ const FreeBoardView = (props) => {
     
     // 추천
     const FreeGood = () => {
+
+        console.log(seq,sessionStorage.getItem('email') );
+        
         axios({
             method : 'POST',
             url : 'http://localhost:8080/good/goodupdate',
-            data : ({
-                'seq' : '',
+            data : qs.stringify({
+                'seq' : seq,
                 'email' : sessionStorage.getItem('email'),
             })
         }).then((res)=>{

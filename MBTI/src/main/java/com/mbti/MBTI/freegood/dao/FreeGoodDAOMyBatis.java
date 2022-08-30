@@ -1,5 +1,7 @@
 package com.mbti.MBTI.freegood.dao;
 
+import java.util.Map;
+
 import javax.transaction.Transactional;
 
 import org.apache.ibatis.session.SqlSession;
@@ -14,9 +16,11 @@ public class FreeGoodDAOMyBatis implements FreeGoodDAO {
 	private SqlSession sqlSession = null;
 
 	@Override
-	public int goodcount(int seq) {
+	public int goodupdate(Map<String, Object> map) {
 		
-		return sqlSession.selectOne("freegoodSQL.goodcount", seq);
+		return sqlSession.selectOne("freegoodSQL.goodupdate", map);
 	}
+
+
 	
 }
