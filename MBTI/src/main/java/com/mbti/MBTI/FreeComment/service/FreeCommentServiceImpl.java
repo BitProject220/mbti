@@ -25,7 +25,6 @@ public class FreeCommentServiceImpl implements FreeCommentService {
 
 	@Override
 	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO) {
-		//System.out.println("데이더확인"+ freeCommentDTO);
 		return freeCommentDAO.userComment(freeCommentDTO);
 
 	}

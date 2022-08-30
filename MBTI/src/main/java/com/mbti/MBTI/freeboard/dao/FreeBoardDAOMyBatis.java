@@ -24,4 +24,10 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 		
 	}
 
+
+	@Override
+	public FreeBoardDTO freeboardview(int seq) {	
+		return sqlSession.selectOne("freeboardSQL.freeboardview",seq);
+	}
+
 }

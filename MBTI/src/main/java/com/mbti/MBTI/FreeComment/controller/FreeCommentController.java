@@ -30,7 +30,6 @@ public class FreeCommentController {
 	private SqlSession sqlSession = null;
 	@PostMapping(value = "/reply/commentWrite")
 	public void commentWrite(@RequestBody FreeCommentDTO freeCommentDTO) {
-		// System.out.println(freeCommentDTO);
 		freeCommentService.commentWrite(freeCommentDTO);
 
 	}
