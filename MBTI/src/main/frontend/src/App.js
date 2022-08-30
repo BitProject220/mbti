@@ -59,7 +59,7 @@ const App = () => {
 
         {/* 유진 */}
       <Route path="/signUp" element={<SignupMain /> } />
-      <Route path="/signupSuccess" element={<SignupSuccessMain /> } />
+      <Route path="/signupSuccess" element={<SignupSuccessMain /> } /> 
       </>
 
       :
@@ -91,13 +91,6 @@ const App = () => {
 
       {/* 유진 */}
       <Route path="/userInfo" element={ <UserInformationMain /> } />
-
-        <Route path="/ContactMain" element={<ContactMain/>}/>
-        <Route path="/LoginPageMain" element={<LoginPageMain />}/>
-        <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
-        {/* <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>  */}
-        <Route index element={<LoginPageMain/>} />
-        <Route path="/test" element={<Test/>} />
 
       {/* 소윤 */}
       <Route path="/">
