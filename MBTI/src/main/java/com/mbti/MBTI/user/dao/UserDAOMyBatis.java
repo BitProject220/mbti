@@ -91,7 +91,6 @@ public class UserDAOMyBatis implements UserDAO {
 		return sqlSession.selectOne("userSQL.getpassword",email);
 	}
 
-	@Override
 	public UserDTO loginCheck(String email, String password) {
 		UserDTO userDTO = new UserDTO();
 		userDTO.setEmail(email);
@@ -100,5 +99,4 @@ public class UserDAOMyBatis implements UserDAO {
 		return sqlSession.selectOne("userSQL.loginCheck", userDTO);
 	}
 
-	
 }
