@@ -9,10 +9,10 @@ import lombok.Data;
 @Data
 public class BoardPaging {
 	
-	@Autowired
-	private BoardDAO boardDAO;
-	
-	
+//	@Autowired
+//	private BoardDAO boardDAO;
+//	
+//	
 //	public String getUserPagesPaging(int pg, int userId) {
 //		BoardForUserPagePaging boardForUserPagePaging = new BoardForUserPagePaging();
 //		boardForUserPagePaging.setCurrentPage(pg);

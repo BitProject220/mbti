@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import Introduction from '../DetailApp/Detailpage/Introduction';
@@ -28,7 +29,6 @@ const ResultMain = () => {
     at : 0
     }
   ]);
-
   
   useEffect(() => {
     let mymbti = '';
@@ -50,6 +50,60 @@ const ResultMain = () => {
 
     setMbti(mymbti);
     setMbtiresult([{mbti:mymbti,ei:perEi,ns:perNs,jp:perJp,tf:perTf,at:perAt}])
+
+    const qs = require('qs');
+
+    axios({
+      method: 'POST',
+      url: 'http://localhost:8080/user/userMbtiTypeResultCheck',
+      data: qs.stringify({'mbti_email' : sessionStorage.getItem("email")})
+  }).then((res)=>{
+    alert("갔다!");
+      console.log("데이터 잘 갔음!")
+      if(res.data === 'nonExist'){
+        alert("데이터 존재하지 않음")
+        axios({
+          method: 'POST',
+          url: 'http://localhost:8080/user/userMbtiTypeResult',
+          data: ({
+              'mbti_email' : sessionStorage.getItem("email"),
+              'mbti_type' : mbti,
+              'mbti_EI' : perEi,
+              'mbti_NS' : perNs,
+              'mbti_TF' : perTf,
+              'mbti_JP' : perJp,
+              'mbti_AT' : perAt
+             })
+      }).then(()=>{
+        console.log("타입 저장 완료!")
+      }).catch(error =>{
+        console.log(error)
+      });
+    }else if(res.data === 'exist'){
+      alert("데이터 존재함")
+      axios({
+        method: 'POST',
+        url: 'http://localhost:8080/user/userMbtiTypeResultUpdate',
+        data: ({
+          'mbti_email' : sessionStorage.getItem("email"),
+          'mbti_type' : mbti,
+          'mbti_EI' : perEi,
+          'mbti_NS' : perNs,
+          'mbti_TF' : perTf,
+          'mbti_JP' : perJp,
+          'mbti_AT' : perAt
+        })
+      }).then(()=>{
+        console.log(mbti+"dssssdsddsdsdsdsdsdsdsdsd")
+        console.log("타입 저장 완료!")
+      }).catch(error =>{
+          console.log(error)
+      });
+
+      }
+  }).catch(error =>{
+      console.log(error)
+  });
     
     //console.log('resultMain = ' +state);
   },[]);
@@ -118,11 +172,12 @@ const ResultMain = () => {
     navigate("/MbtiSW", { state: { id  }});
   }
   console.log(id);
+
     return (
         <div className='Main'>
         <Header />
         
-        <ResultPage mbtiresult={mbtiresult} job={job} />
+        <ResultPage mbtiresult={mbtiresult} />
         <div className='body'>
         <div className='sticky' >
         <SidevarLeft id={id} />

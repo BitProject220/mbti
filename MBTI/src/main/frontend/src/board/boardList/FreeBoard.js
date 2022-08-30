@@ -8,12 +8,12 @@ import '../css/board.css';
 
 const FreeBoard = () => {
 
-    const freeSearchBy = ["전체","제목","내용","작성자"];
+const freeSearchBy = ["전체","제목","내용","작성자"];
 
     return (
         <div className='FreeBoard'>
             <Header />
-            <Board boardNo='1' boardType='board/freeBoardList' boardName='자유게시판' searchBy={freeSearchBy}/>
+            <Board boardNo='1' boardType='http://localhost:8080/board/freeBoardList' boardName='자유게시판' searchBy={freeSearchBy}/>
             <Footer />
         </div>
     );

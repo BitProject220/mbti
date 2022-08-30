@@ -18,16 +18,33 @@ public class FreeCommentServiceImpl implements FreeCommentService {
 
 	@Override
 	public void commentWrite(FreeCommentDTO freeCommentDTO) {
-		
+		//System.out.println("freeCommentDTO values: "+freeCommentDTO);
 		freeCommentDAO.commentWrite(freeCommentDTO);
 
 	}
 
 	@Override
 	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO) {
-		
 		return freeCommentDAO.userComment(freeCommentDTO);
 
 	}
+
+	@Override
+	public void commentDelete(int fc_seqi) {
+		freeCommentDAO.commentDelete(fc_seqi);
+		
+	}
+
+	@Override
+	public void commentRevise(String fc_commentContent) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	
+
+	
+
 
 }

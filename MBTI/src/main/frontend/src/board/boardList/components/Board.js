@@ -4,11 +4,6 @@ import BoardWarp from './BoardWarp';
 
 
 const Board = (props) => {
-    
-    // console.log("2번 props = " + props.searchBy)
-    // console.log("boardNo props = " + props.boardNo)
-    
-   
     return (
         <div id="wrap">
             <div className="board_content_wrap" id="contents">

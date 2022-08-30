@@ -14,5 +14,15 @@ public interface FreeCommentService {
 
 	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO);
 
+	public void commentDelete(int fc_seqi);
+
+	public void commentRevise(String fc_commentContent);
+
+
+
+
+
+
+
 
 }

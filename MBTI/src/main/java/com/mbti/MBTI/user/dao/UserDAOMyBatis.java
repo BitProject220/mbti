@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.mbti.MBTI.user.bean.MbtiTypeDTO;
 import com.mbti.MBTI.user.bean.UserDTO;
 
 @Repository
@@ -45,6 +46,38 @@ public class UserDAOMyBatis implements UserDAO {
 	public UserDTO userInfo(String email) {
 		return sqlSession.selectOne("userSQL.userInfo",email);
 	}
+	
+	@Override
+	public void userMbtiTypeResult(MbtiTypeDTO mbtiTypeDTO) {
+		sqlSession.insert("userSQL.userMbtiTypeResult",mbtiTypeDTO);	
+	}
+		
+	@Override
+	public UserDTO userInfoDeleteCheck(String email) {
+		return sqlSession.selectOne("userSQL.userInfoDeleteCheck",email);
+	}
+	
+	@Override
+	public void userInfoDelete(String email) {
+		sqlSession.delete("userSQL.userInfoDelete",email);
+		
+	}
+
+	@Override
+	public MbtiTypeDTO userInfoMain(String mbti_email) {
+		return sqlSession.selectOne("userSQL.userInfoMain",mbti_email);
+	}
+	
+	@Override
+	public MbtiTypeDTO userMbtiTypeResultCheck(String mbti_email) {
+		return sqlSession.selectOne("userSQL.userMbtiTypeResultCheck",mbti_email);
+	}
+	
+	@Override
+	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO) {
+		sqlSession.update("userSQL.userMbtiTypeResultUpdate",mbtiTypeDTO);
+		
+	}
 	//#######################유진끝##########################
 
 	@Override
@@ -60,17 +93,5 @@ public class UserDAOMyBatis implements UserDAO {
 	@Override
 	public String getpassword(String email) {
 		return sqlSession.selectOne("userSQL.getpassword",email);
-	}
-
-	@Override
-	public UserDTO findkakao(HashMap<String, Object> userInfo) {
-		System.out.println("RN:" + userInfo.get("nickname"));
-		System.out.println("RE:" + userInfo.get("email"));
-		return sqlSession.selectOne("userSQL.findkakao", userInfo);
-	}
-
-	@Override
-	public void kakaoinsert(HashMap<String, Object> userInfo) {
-		sqlSession.insert("userSQL.kakaoinsert", userInfo);
 	}
 }

@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import './css/ReplyBoard.css';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import { data, now } from 'jquery';
+import { data, map, now } from 'jquery';
 
 
 
 
+const qs = require('qs');
 const ReplyBoard = ({ freecomment }) => {
 
     let [comment, setComment] = useState('');
@@ -23,12 +24,12 @@ const ReplyBoard = ({ freecomment }) => {
         })
     }).then((response)=>{
         return setData(response.data);
+        
         }).catch(error => {
             console.error(error.response.data);
         });
 
     }, []);
-
 
     let post = e => {
 
@@ -48,48 +49,55 @@ const ReplyBoard = ({ freecomment }) => {
                 })
             }).then(()=>{
                 console.log('저장성공');
-
+                window.location.replace("/ReplyBoard")
 
             }).catch(error => {
                 console.error(error.response.data);
             })
         };
-        console.log(comment);
     };
-
-
     
-  //  const menus = ["Menu1", "Menu2", "Menu3", "Menu4"]
- //   const CommentList = menus.map((menu) => (<li>{menu}</li>));
+    const ondelete = (fc_seq) => {
+            axios({
+                method: 'POST',
+                url: 'http://localhost:8080/reply/commentDelete',
+                data: qs.stringify({'fc_seq' : fc_seq})
+            }).then(()=>{
+                console.log('삭제완료');
+                window.location.replace("/ReplyBoard");
+
+            }).catch(error => {
+                console.error(error.response.data);
+                alert('에러입니다');
+            })
+    }
 
     return (
         <div className='ReplyBox'>
             <div className='CommentBox'>
                 <div className="comment_option">
                     <h3 className="comment_title">댓글</h3>
-                </div>
+                </div>  
                 
                 <ul className='comment_list'>
-                    <div>
+                    
                     {
-                        data.map(data => 
-                        <li key={data.fc_seq}>
-                            
+                        data.map((item, index) => <li key={index}>
                                 <div className='comment_area'>
-                                <h3> {data.fc_name}</h3>
-                                <p className='comment_text_view'>{data.fc_commentContent}</p>
+                                <h3> {item.fc_name}</h3>
+                                <p className='inputComment'>{item.fc_commentContent}</p>
                                 <div className='comment_add'>
-                                    <p className='logtime'>{data.fc_logtime}</p>
-                                            <div className='comment_btn'>
-                                                <button className='replybtn'>수정</button>
-                                                <button className='replybtn'>삭제</button>
+                                    <p className='logtime'>{item.fc_logtime}</p>
+                                            <div id="showhide" className={ sessionStorage.getItem("email") == item.fc_email ? 'comment_btn' : 'hidden'}>
+                                                <button className='replybtn' >수정</button>
+                                                <button onClick={() =>{ondelete(item.fc_seq)}} className='replybtn'>삭제</button>
                                             </div>      
                                     </div>
                                 </div>
                         
                         </li>)
                     }
-                    </div> 
+                   
                 </ul>
                 <div className='CommentWriter'>
                     <div className='userId'>{sessionStorage.getItem("email")}</div>
