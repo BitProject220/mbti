@@ -6,67 +6,11 @@ import BoardListTr from './boardWarpComponents/BoardListTr';
 import BoardPaging from './boardWarpComponents/BoardPaging';
 
 import axios from 'axios';
+import WriteBoard from './boardWarpComponents/WriteBoard';
 
-// import Data from './data/boardListData.json';
 
 const BoardWarp = (props) => {
-    //검색기능
-    // const searchBy = props.searchBy;
-    // const [searchCondition, setSearchCondition] = useState({
-    //     category:"",
-    //     searchKeyword: "",
-    // });
-    
-    // const getSearchCondition=(e)=>{
-    //     setSearchCondition(e);
-    // }
-    // // console.log("검색조건 = " + searchCondition.category + " 키워트 = " + searchCondition.searchKeyword);
-    
-    // //정렬기능
-    // const sortBy = ["최신순", "추천순", "조회순", "업데이트순"];
-    // const [sortOption, setSortOption] = useState("");
-    // // console.log("초기 sortBy = " + sortBy);
-    // const getSortOption = (e) =>{
-    //     setSortOption(e);
-    // }
-
-    // // 자유게시판 또는 MBTI 게시판 별 검색어 구분 리스트를 props로 받아 BoardSearching 컴포넌트에 props로 전달함
-    // // 입력 시점 FreeBoard.js 또는 MbtiBorad.js
-
-
-    // //페이징처리 
-    // const [pg, setPg] = useState(1);
-    // const getPg=(e)=>{
-    //     setPg(e);
-    // }
-    // // console.log("getPg = " + pg);
-
-    // console.log("###검색내용 = " + searchCondition.searchKeyword)
-    // console.log("###카테고리 = " + searchCondition.category)
-    // console.log("###pg = " + pg)
-    // console.log("###정렬옵션 = " + sortOption)
-
-    
-    //  useEffect(() => {
-    //     fetch('/test',
-    //         {
-    //         method: 'post',
-    //         body: ({
-    //             pg: pg,
-    //             sortOption : sortOption,
-    //             category: searchCondition.category,
-    //             searchKeyword: searchCondition.searchKeyword
-    //             })
-    //         })
-    //         .then(res => res.json())
-    //         .then(res => {
-    //             if(res.success){
-    //                 console.log(res);
-    //             }else alert("fail")
-    //         })
-    //  })
-
-    
+  
         const boardNo = props.boardNo;
 
         const [pg, setPg] = useState(1);
@@ -78,6 +22,8 @@ const BoardWarp = (props) => {
         const getSortOption = (e) =>{
             setSortOption(e);
         }
+
+
         console.log("변경되는 부모 정렬방식 : " + sortOption)
 
         const [category, setCategory] = useState('전체');
@@ -89,38 +35,21 @@ const BoardWarp = (props) => {
         const [searchKeyword, setSearchKeyword] = useState('')
         const getSearchKeyword = (e) =>{
             setSearchKeyword(e);
-        }
-
-
-        //초기값
-        // const searchCondition = {
-        //     boardNo: boardNo,
-        //     pg: pg,
-        //     sortOption: sortOption,
-        //     category: "전체",
-        //     searchKeyword: "",
-        // }
-        console.log("검색조건 변경? :" + sortOption)
-        
+        }        
 
         const [data, setData] =useState([]);
+        const [searchResult, setSearchResult] = useState([])
 
         useEffect(() => {
            axios({
             method: 'get',
-            url: 'http://localhost:8080/board/freeBoardList',
-            
-            // params: {
-            //     boardNo: boardNo,
-            //     pg: pg,
-            //     sortOption: sortOption,
-            //     category: category,
-            //     searchKeyword: searchKeyword,
-            // }
+            url: props.boardType,
+            dataType: 'json',
            })
            .then(res=>{
-                console.log("서버 데이터 = "+ res.data.tableList);
+                console.log("서버 데이터 = "+ res.data);
                 setData(res.data.tableList);
+                setSearchResult(res.data.tableList);
             })
             .catch(error => {
                 console.log(error);
@@ -128,14 +57,32 @@ const BoardWarp = (props) => {
            },[])
 
 
-           const boardListData = data.map(item => (<BoardList key={item.fb_seq} listData={item} />))
+        useEffect(() => {
+            if(!searchKeyword){
+                setSearchResult(data);
+            }
+            if(searchKeyword){
+                console.log('searchKeyword 변경됨...', searchKeyword);
+                const resultTemp = data.filter((item, index) => item.fb_subject.indexOf(searchKeyword) >= 0); 
+                setSearchResult(resultTemp);
+            }
+        },[searchKeyword])
+        
+           
+        const boardListData = searchResult.map(item => (<BoardList boardNo={props.boardNo} key={item.fb_seq} listData={item} />))
 
-    
+
+        //    const [searchTerm, setSearchTerm] = useState("");
+        //    const getSearchTerm = (e) =>{}
+
+
+
     return (
         <div className="wp_notice_wrap">
             <div className="wp_notice_title">
                 <h1>{props.boardName}</h1>
             </div>
+            
             <div className="wp_notice_area">
                 <div id="kboard-default-list">
                     <BoardListHeader
@@ -143,16 +90,10 @@ const BoardWarp = (props) => {
                         getSortOption={getSortOption}            
                     />
                     <div className="kboard-list">
-                    {/* <ul>
-                        <li>보드 종류 = {data.tableList.fb_seq}</li>
-                        <li>정렬방식 = {data.tableList.sortOption}</li>
-                        <li>카테고리 = {data.tableList.category}</li>
-                        <li>검색내용 = {data.tableList.searchKeyword}</li>
-                    </ul> */}
                         <table>
                             <BoardListTr boardNo={props.boardNo} />
                             <tbody>
-                            {boardListData}
+                                {boardListData}
                             </tbody> 
                         </table>
                     </div>
@@ -161,15 +102,13 @@ const BoardWarp = (props) => {
                     getPg={getPg}
 
                     /> */}
-
+                    <div>{searchKeyword}</div>
                     <BoardSearching 
                         searchBy={props.searchBy}
                         getCategory={getCategory} 
                         getSearchKeyword={getSearchKeyword}                        
                     />
-                    <div className="kboard-control">
-                        <a href="/BoardWriteMain" className="kboard-default-button-small">글쓰기</a>
-                    </div>
+                    <WriteBoard boardNo={props.boardNo} />
                 </div>
             </div>
         </div>
@@ -177,23 +116,3 @@ const BoardWarp = (props) => {
 };
 
 export default BoardWarp;
-
-
-    // const [message, setMessage] = useState("");
-    // useEffect(() => {
-    // fetch('/test')
-    // .then(response => response.text())
-    // .then(message => {
-    // setMessage(message);
-    // });
-    // },[])
-
-
-      // if(props.boardNo === 1){
-    //     console.log(FreeBoardListData);
-    //     setBoardListData(FreeBoardListData);
-    // }else if(props.boardNo === 2){
-    //     console.log(Data);
-    //     setBoardListData(Data);
-    // }
- 
