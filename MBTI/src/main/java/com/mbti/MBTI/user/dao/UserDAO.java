@@ -34,6 +34,8 @@ public interface UserDAO {
 
 	public String getpassword(String email);
 
+	public UserDTO findkakao(HashMap<String, Object> userInfo);
+	
 	public UserDTO loginCheck(String email, String password);
 
 }
