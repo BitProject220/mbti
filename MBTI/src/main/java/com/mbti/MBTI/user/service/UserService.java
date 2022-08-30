@@ -22,13 +22,9 @@ public interface UserService {
 
 	public void userUpdate(UserDTO userDTO);
 
-	public UserDTO userInfo(String email);
-
 	public String getpassword(String email);
 
-	public String getAccessToken(String code);
-
-	public UserDTO getUserInfo(String access_Token);
+	public UserDTO userInfo(String email);
 
 	public void userMbtiTypeResult(MbtiTypeDTO mbtiTypeDTO);
 

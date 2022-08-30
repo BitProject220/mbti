@@ -21,7 +21,12 @@ public class FreeBoardController {
 
 	@PostMapping(value="/board/freeboardwrite")
 	public void freeboardwrite (@RequestParam Map<String,String> map) {
-		System.out.println(map);
 		freeBoardService.freeboardwrite(map);
+	}
+	
+	@PostMapping(value="/board/freeboardview")
+	public FreeBoardDTO freeboardview (@RequestParam int seq) {
+		FreeBoardDTO freeBoardDTO = new FreeBoardDTO();
+		return freeBoardService.freeboardview(seq);
 	}
 }

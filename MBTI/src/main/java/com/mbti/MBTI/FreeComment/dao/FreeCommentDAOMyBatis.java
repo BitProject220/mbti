@@ -25,9 +25,18 @@ public class FreeCommentDAOMyBatis implements FreeCommentDAO{
 
 	@Override
 	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO) {
-		System.out.println(freeCommentDTO+"seq확인");
 		return sqlSession.selectList("freecommentSQL.userComment", freeCommentDTO);
 	}
+
+	@Override
+	public void commentDelete(int fc_seqi) {
+		sqlSession.delete("freecommentSQL.commentDelete", fc_seqi);
+		
+	}
+
+
+
+
 
 	
 	

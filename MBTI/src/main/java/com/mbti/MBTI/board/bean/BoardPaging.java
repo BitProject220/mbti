@@ -24,5 +24,4 @@ public class BoardPaging {
 //		System.out.println("boardForUserPagePaging = " + boardForUserPagePaging.getTotalA());
 // 
 //		return boardForUserPagePaging.getPagingHTML().toString();
-//	}
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BoardListHeader = (props) => {
-    const sortBy = ["최신순", "추천순", "조회순"];
+  const sortBy = ["최신순", "추천순", "조회순"];
     
     // }
     const setSortOption =(e) => {
@@ -19,7 +19,7 @@ const BoardListHeader = (props) => {
                     <select className="kboard_list_sort" onChange={setSortOption}>		
                         {sortBy.map((item)=>(
                             <option key={item} value={item}>
-                                {item}
+                             {item}
                             </option>
                         ))}
                     </select>

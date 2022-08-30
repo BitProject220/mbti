@@ -13,7 +13,7 @@ public class MbtiBoardDTO {
 	private String name;
 	private String subject;
 	private String content;
-	private int freevote;
+	private int mbtivote;
 	private int hit;
 	private Timestamp logtime;
 }
