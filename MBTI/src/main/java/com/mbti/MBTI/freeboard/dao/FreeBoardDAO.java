@@ -6,6 +6,8 @@ import com.mbti.MBTI.freeboard.bean.FreeBoardDTO;
 
 public interface FreeBoardDAO {
 
-	void freeboardwrite(Map<String, String> map);
+	public void freeboardwrite(Map<String, String> map);
+
+	public FreeBoardDTO freeboardview(int seq);
 
 }

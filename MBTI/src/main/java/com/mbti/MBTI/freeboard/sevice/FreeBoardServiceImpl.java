@@ -20,5 +20,10 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		freeBoardDAO.freeboardwrite(map);
 		
 	}
+	
+	@Override
+	public FreeBoardDTO freeboardview(int seq) {
+		return freeBoardDAO.freeboardview(seq);
+	}
 
 }

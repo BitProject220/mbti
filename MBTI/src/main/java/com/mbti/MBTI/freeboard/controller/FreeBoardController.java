@@ -24,4 +24,9 @@ public class FreeBoardController {
 		System.out.println(map);
 		freeBoardService.freeboardwrite(map);
 	}
+	
+	@PostMapping(value="/board/freeboardview")
+	public FreeBoardDTO freeboardview (@RequestParam int seq) {
+		return freeBoardService.freeboardview(seq);
+	}
 }

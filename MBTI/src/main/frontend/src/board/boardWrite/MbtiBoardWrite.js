@@ -15,29 +15,10 @@ const MbtiBoardWrite = () => {
 
     // mbti 선택 유효성
     const selectList = ["선택", "INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP", "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"]
-    const [mbtiboardcategory, setMbtiBoardCategory] = useState('');
+    const [mbtiboardcategory, setMbtiBoardCategory] = useState('선택');
     const mbtiboardselect = (e) => {
         setMbtiBoardCategory(e.target.value);
     }
-
-    // const [mbtinone, setMbtiNone] = useState('');
-    // const [INTJ , setINTJ] = useState('');
-    // const [INTP , setINTP] = useState('');
-    // const [ENTJ , setENTJ] = useState('');
-    // const [ENTP , setENTP] = useState('');
-    // const [INFJ , setINFJ] = useState('');
-    // const [INFP , setINFP] = useState('');
-    // const [ENFJ , setENFJ] = useState('');
-    // const [ENFP , setENFP] = useState('');
-    // const [ISTJ , setISTJ] = useState('');
-    // const [ISFJ , setISFJ] = useState('');
-    // const [ESTJ , setESTJ] = useState('');
-    // const [ESFJ , setESFJ] = useState('');
-    // const [ISTP , setISTP] = useState('');
-    // const [ISFP , setISFP] = useState('');
-    // const [ESTP , setESTP] = useState('');
-    // const [ESFP , setESFP] = useState('');
-   
 
     // 내용 유효성 
     const [data, setData] = useState('');
@@ -74,11 +55,11 @@ const MbtiBoardWrite = () => {
                    method :'POST',
                    url: 'http://localhost:8080/board/mbtiboardwrite',
                    data: qs.stringify({
-                       'mb_email' : sessionStorage.getItem('email'),
-                       'mb_name' : sessionStorage.getItem('name'),
-                       'mb_category' : document.getElementById('MbtiCategorySelect').value,
-                       'mb_subject' : mbtiboardcategory,
-                       'mb_content' : JSON.stringify(data)
+                       'email' : sessionStorage.getItem('email'),
+                       'name' : sessionStorage.getItem('name'),
+                       'category' : mbtiboardcategory,
+                       'subject' : document.getElementById('mbtiboardsubject').value,
+                       'content' : JSON.stringify(data)
                    })
                }).then(()=>{
                    alert('등록 완료');

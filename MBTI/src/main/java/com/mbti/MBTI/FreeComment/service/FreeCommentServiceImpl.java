@@ -18,14 +18,14 @@ public class FreeCommentServiceImpl implements FreeCommentService {
 
 	@Override
 	public void commentWrite(FreeCommentDTO freeCommentDTO) {
-		System.out.println("freeCommentDTO values: "+freeCommentDTO);
+		
 		freeCommentDAO.commentWrite(freeCommentDTO);
 
 	}
 
 	@Override
 	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO) {
-		System.out.println("데이더확인"+ freeCommentDTO);
+		
 		return freeCommentDAO.userComment(freeCommentDTO);
 
 	}

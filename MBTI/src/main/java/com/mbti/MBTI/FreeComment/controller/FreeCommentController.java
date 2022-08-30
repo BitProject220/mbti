@@ -25,7 +25,7 @@ public class FreeCommentController {
 	
 	@PostMapping(value = "/reply/commentWrite")
 	public void commentWrite(@RequestBody FreeCommentDTO freeCommentDTO) {
-		System.out.println(freeCommentDTO);
+		
 		freeCommentService.commentWrite(freeCommentDTO);
 
 	}
@@ -33,7 +33,7 @@ public class FreeCommentController {
 	
 	@PostMapping(value = "/reply/userComment")
 	public List<FreeCommentDTO> userComment(@RequestBody FreeCommentDTO fc_FreeBoardseq) {
-		System.out.println(fc_FreeBoardseq+"fc_FreeBoardseq 확인");
+		
 		return freeCommentService.userComment(fc_FreeBoardseq);
 	}
 

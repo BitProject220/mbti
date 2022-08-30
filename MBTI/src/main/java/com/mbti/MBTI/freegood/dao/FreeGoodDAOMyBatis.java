@@ -1,6 +1,4 @@
-package com.mbti.MBTI.mbtiboard.dao;
-
-import java.util.Map;
+package com.mbti.MBTI.freegood.dao;
 
 import javax.transaction.Transactional;
 
@@ -10,16 +8,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Transactional
-public class MbtiBoardDAOMyBatis implements MbtiBoardDAO {
+public class FreeGoodDAOMyBatis implements FreeGoodDAO {
 	
 	@Autowired
 	private SqlSession sqlSession = null;
 
 	@Override
-	public void mbtiboardwrite(Map<String, String> map) {
-		System.out.println(map);
+	public int goodcount(int seq) {
 		
-		sqlSession.insert("mbSQL.mbtiboardwrite", map);
-		
+		return sqlSession.selectOne("freegoodSQL.goodcount", seq);
 	}
+	
 }

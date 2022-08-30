@@ -29,7 +29,6 @@ const ReplyBoard = ({ freecomment }) => {
 
     }, []);
 
-    console.log(data);
 
     let post = e => {
 
