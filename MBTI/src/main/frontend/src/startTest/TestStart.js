@@ -15,7 +15,6 @@ import { parse } from '@fortawesome/fontawesome-svg-core';
 
 
 const TestStart = () => {
-    console.log('렌더링함');
     
     const [page, setPage] = useState(0);
     const [list, setList] = useState([]);
