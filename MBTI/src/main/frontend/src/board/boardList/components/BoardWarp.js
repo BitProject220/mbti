@@ -68,7 +68,10 @@ const BoardWarp = (props) => {
             }
         },[searchKeyword])
         
-           
+        
+
+
+
         const boardListData = searchResult.map(item => (<BoardList boardNo={props.boardNo} key={item.fb_seq} listData={item} />))
 
 
@@ -86,7 +89,7 @@ const BoardWarp = (props) => {
             <div className="wp_notice_area">
                 <div id="kboard-default-list">
                     <BoardListHeader
-                        listCount={data.length} 
+                        listCount={searchResult.length} 
                         getSortOption={getSortOption}            
                     />
                     <div className="kboard-list">
