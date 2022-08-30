@@ -6,6 +6,6 @@
 	
 	<!-- 추천 수 -->
 	<select id="goodcount" parameterType="int" resultType="int" >
-		select goodcount from FreeGood where seq = #{seq}
+		select * from FreeGood where seq = #{seq}
 	</select>
   </mapper>

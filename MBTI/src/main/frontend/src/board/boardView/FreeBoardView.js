@@ -4,6 +4,10 @@ import '../css/FreeBoardView.css';
 import TOPgrey from '../../img/Top/TOPgrey.png';
 import ReplyBoard from '../../replyboard/ReplyBoard';
 import axios from 'axios';
+import '../../board/boardList/components/BoardWarp';
+import BoardWarp from '../../board/boardList/components/BoardWarp';
+import BoardList from '../../board/boardList/components/boardWarpComponents/BoardList';
+
 
 
 const FreeBoardView = (props) => {
@@ -22,7 +26,7 @@ const FreeBoardView = (props) => {
             method : 'POST',
             url : 'http://localhost:8080/board/freeboardview',
             data : ({
-               'seq' : seq
+               'seq' : '',
             })
             
         }).then((res)=>{
@@ -42,20 +46,20 @@ const FreeBoardView = (props) => {
         })
     });
 
-    useEffect(()=> {
-        axios({
-            method : 'POST',
-            url : 'http://localhost:8080/board/goodcount',
-            data : ({
-                'seq' : seq
-            })
-        }).then((res)=>{
+    // useEffect(()=> {
+    //     axios({
+    //         method : 'POST',
+    //         url : 'http://localhost:8080/board/goodcount',
+    //         data : ({
+    //             'seq' : ''
+    //         })
+    //     }).then((res)=>{
             
-        }).catch(error => {
-            alert('실패');
-        })
+    //     }).catch(error => {
+    //         alert('실패');
+    //     })
 
-    })
+    // })
     
     // 추천
     const FreeGood = () => {
@@ -63,7 +67,7 @@ const FreeBoardView = (props) => {
             method : 'POST',
             url : 'http://localhost:8080/good/goodupdate',
             data : ({
-                'seq' : seq,
+                'seq' : props.fb_seq,
                 'email' : sessionStorage.getItem('email'),
             })
         }).then((res)=>{
@@ -114,6 +118,7 @@ const FreeBoardView = (props) => {
                             </div>
                             <div className='FreeBoardView_content'>
                                 <div className='Content_View' >내용 들어갈 곳</div>
+                                {/* dangerouslySetInnerHTML={{__html: content}} */}
                             </div>
                             <div className='FreeBoardView_good'>
                                 <div className='Good_btn'>
