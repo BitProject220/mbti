@@ -33,8 +33,6 @@ public interface UserDAO {
 	public void userMbtiTypeResultUpdate(MbtiTypeDTO mbtiTypeDTO);
 
 	public String getpassword(String email);
-
-	public UserDTO findkakao(HashMap<String, Object> userInfo);
 	
 	public UserDTO loginCheck(String email, String password);
 
