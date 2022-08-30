@@ -76,12 +76,20 @@
 
 }
 
-.freeboard_subject {
+.freeboard_subject{
     float: left;
     font-size: 0.8em;
     color: red;
     padding-top: 5px;
     padding-left: 21px;
+}
+
+.freeboard_contnet{
+    font-size: 0.8em;
+    color: red;
+    padding-top: 5px;
+    padding-left: 21px;
+
 }
 
 .BoardEditor {

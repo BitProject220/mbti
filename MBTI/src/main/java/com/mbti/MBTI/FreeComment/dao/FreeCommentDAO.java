@@ -7,6 +7,9 @@ import com.mbti.MBTI.FreeComment.bean.FreeCommentDTO;
 
 public interface FreeCommentDAO {
 
-	public List<FreeCommentDTO> userComment();
+	public void commentWrite(FreeCommentDTO freeCommentDTO);
+
+	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO);
+	
 
 }

@@ -42,7 +42,7 @@
   		select * from USER where email=#{email}
   	</select>
   	
-  	<select id="findkakao" parameterType="user" resultType="user">
+  	<!-- <select id="findkakao" parameterType="user" resultType="user">
 		select * from USER where email=#{email}
 	</select>
 	
@@ -51,7 +51,10 @@
 	</insert>
 	
 	<select id="getpassword" parameterType="String" resultType="String">
-		select password from USER where email=#{email}
+		select password from USER where email=#{email} -->
+
+  	<select id="findKakao" parameterType="java.util.HashMap" resultType="user">
+	select * from user2 where user_email=#{email}
 	</select>
 	
   </mapper>

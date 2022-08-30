@@ -38,6 +38,8 @@ import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
 import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
 import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
+import ReplyBoard from './replyboard/ReplyBoard';
+import FreeBoardView from './board/boardView/FreeBoardView';
 
 const App = () => {
 
@@ -81,6 +83,8 @@ const App = () => {
       <Route exact path="/Mbticareerpaths" element={<Mbticareerpaths  /> } />
       <Route exact path="/Mbtiworkplacehabits" element={<Mbtiworkplacehabits /> } />
       <Route exact path="/Mbticonclusion" element={<Mbticonclusion /> } />
+      <Route exact path="/ReplyBoard" element={<ReplyBoard /> } />
+      <Route exact path="/FreeBoardView" element={<FreeBoardView /> } />
 
       {/* 기진 */}
               {/* 프로필 */}
