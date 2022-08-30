@@ -17,4 +17,7 @@
 	</select>
 
 
+	<delete id="commentDelete" parameterType="java.lang.Integer">
+		delete from FreeComment where fc_seq = #{fc_seqi};
+	</delete>
 </mapper>

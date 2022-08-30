@@ -23,8 +23,33 @@
   	</update>
   	
   	<select id="userInfo" parameterType="user" resultType="user">
-  		select * from USER where email = #{email} 
+  		select * from USER where email = #{email};
   	</select>
+  	
+  	<insert id="userMbtiTypeResult" parameterType="mbtiType">
+  		insert into MbtiType(mbti_email, mbti_type, mbti_EI, mbti_NS, mbti_TF, mbti_JP, mbti_AT, mbti_logtime)
+		values(#{mbti_email},#{mbti_type},#{mbti_EI},#{mbti_NS},#{mbti_TF},#{mbti_JP},#{mbti_AT},now());
+  	</insert>
+  	
+  	<select id="userInfoDeleteCheck" parameterType="String" resultType="user">
+  	select * from USER where email = #{email};
+  	</select>
+  	
+  	<delete id="userInfoDelete" parameterType="String">
+  		delete from USER where email = #{email};
+  	</delete>
+  	
+  	<select id="userInfoMain" parameterType="String" resultType="mbtiType">
+  		select * from MbtiType where mbti_email= #{mbti_email};
+  	</select>
+  	
+  	<select id="userMbtiTypeResultCheck" parameterType="String" resultType="mbtiType">
+  		select * from MbtiType where mbti_email= #{mbti_email};
+  	</select>
+  	
+  	<update id="userMbtiTypeResultUpdate" parameterType="mbtiType">
+  		update MbtiType set mbti_type=#{mbti_type},mbti_EI=#{mbti_EI}, mbti_NS=#{mbti_NS}, mbti_TF=#{mbti_TF}, mbti_JP=#{mbti_JP}, mbti_AT=#{mbti_AT} where mbti_email=#{mbti_email};
+  	</update>
   	<!--########################유진시작###########################  -->
 	
   	<!-- 회원 탈퇴 -->

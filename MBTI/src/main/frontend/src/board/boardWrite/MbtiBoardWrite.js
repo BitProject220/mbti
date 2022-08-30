@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router';
 import CKeditor from './CKeditor';
 
 const MbtiBoardWrite = () => {
-
     const [editorLoaded, setEditorLoaded] = useState(false);
     const navigate = useNavigate();
     const qs = require('qs');
@@ -15,28 +14,34 @@ const MbtiBoardWrite = () => {
     const [mbtiboardsubject, setMbtiBoardSubject] = useState('');
 
     // mbti 선택 유효성
+    const selectList = ["선택", "INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP", "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"]
     const [mbtiboardcategory, setMbtiBoardCategory] = useState('');
-    const [mbtinone, setMbtiNone] = useState('');
-    const [INTJ , setINTJ] = useState('');
-    const [INTP , setINTP] = useState('');
-    const [ENTJ , setENTJ] = useState('');
-    const [ENTP , setENTP] = useState('');
-    const [INFJ , setINFJ] = useState('');
-    const [INFP , setINFP] = useState('');
-    const [ENFJ , setENFJ] = useState('');
-    const [ENFP , setENFP] = useState('');
-    const [ISTJ , setISTJ] = useState('');
-    const [ISFJ , setISFJ] = useState('');
-    const [ESTJ , setESTJ] = useState('');
-    const [ESFJ , setESFJ] = useState('');
-    const [ISTP , setISTP] = useState('');
-    const [ISFP , setISFP] = useState('');
-    const [ESTP , setESTP] = useState('');
-    const [ESFP , setESFP] = useState('');
+    const mbtiboardselect = (e) => {
+        setMbtiBoardCategory(e.target.value);
+    }
+
+    // const [mbtinone, setMbtiNone] = useState('');
+    // const [INTJ , setINTJ] = useState('');
+    // const [INTP , setINTP] = useState('');
+    // const [ENTJ , setENTJ] = useState('');
+    // const [ENTP , setENTP] = useState('');
+    // const [INFJ , setINFJ] = useState('');
+    // const [INFP , setINFP] = useState('');
+    // const [ENFJ , setENFJ] = useState('');
+    // const [ENFP , setENFP] = useState('');
+    // const [ISTJ , setISTJ] = useState('');
+    // const [ISFJ , setISFJ] = useState('');
+    // const [ESTJ , setESTJ] = useState('');
+    // const [ESFJ , setESFJ] = useState('');
+    // const [ISTP , setISTP] = useState('');
+    // const [ISFP , setISFP] = useState('');
+    // const [ESTP , setESTP] = useState('');
+    // const [ESFP , setESFP] = useState('');
    
 
     // 내용 유효성 
     const [data, setData] = useState('');
+    
     
     // 목록 이동
     const MbtiBoardList = () => {
@@ -46,7 +51,7 @@ const MbtiBoardWrite = () => {
     // 글 저장
     const subjectCk = mbtiboardsubject.length >= 1 ;
     const contentCk = JSON.stringify(data).length >= 3;
-    const categoryCk = document.getElementsByClassName('MbtiCategorySelect').value === mbtinone;
+    const categoryCk = mbtiboardcategory !== '선택';
     const submitOk = subjectCk && contentCk && categoryCk === true;
     const subjectRef = useRef(null);
    
@@ -71,8 +76,8 @@ const MbtiBoardWrite = () => {
                    data: qs.stringify({
                        'mb_email' : sessionStorage.getItem('email'),
                        'mb_name' : sessionStorage.getItem('name'),
-                       'mb_category' : document.getElementsByClassName('Mbticategoryselect').value,
-                       'mb_subject' : document.getElementById('mbtiboardsubject').value,
+                       'mb_category' : document.getElementById('MbtiCategorySelect').value,
+                       'mb_subject' : mbtiboardcategory,
                        'mb_content' : JSON.stringify(data)
                    })
                }).then(()=>{
@@ -102,8 +107,10 @@ const MbtiBoardWrite = () => {
                                 </label>
 
                                 <div className='MbtiSelect'>
-                                    <select className='MbtiCategorySelect' onChange={(e) => {setMbtiBoardCategory(e.target.mbtinone)}} >
-                                        <option value={mbtinone}>선택</option>
+                                    <select value={mbtiboardcategory} onChange={mbtiboardselect}>
+                                            {selectList.map((item) => (<option value={item} key={item}>{item}</option>))}
+
+                                        {/* <option value={mbtinone}>선택</option>
                                         <option value={INTJ}>INTJ</option>
                                         <option value={INTP}>INTP</option>
                                         <option value={ENTJ}>ENTJ</option>
@@ -119,7 +126,7 @@ const MbtiBoardWrite = () => {
                                         <option value={ISTP}>ISTP</option>
                                         <option value={ISFP}>ISFP</option>
                                         <option value={ESTP}>ESTP</option>
-                                        <option value={ESFP}>ESFP</option>                             
+                                        <option value={ESFP}>ESFP</option>                              */}
                                     </select>
                                     
                                     </div>
@@ -136,7 +143,8 @@ const MbtiBoardWrite = () => {
                                     <input type='text' className='Mbtisubject-text' id='mbtiboardsubject'
                                     value={mbtiboardsubject} 
                                     onChange={(e) => {setMbtiBoardSubject(e.target.value)}} 
-                                    placeholder='제목을 입력하세요'></input>  
+                                    placeholder='제목을 입력하세요'
+                                    ref={subjectRef} ></input>  
                                 </div>
              
                             </div>

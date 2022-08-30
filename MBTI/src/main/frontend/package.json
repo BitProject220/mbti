@@ -30,7 +30,7 @@
     "react-redux": "^8.0.2",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-toastify": "^9.0.8",
     "redux-devtools-extension": "^2.13.9",
     "remirror": "^1.0.89",
@@ -42,10 +42,10 @@
   },
   "proxy": "http://localhost:8080",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "start": "react-scripts start", 
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

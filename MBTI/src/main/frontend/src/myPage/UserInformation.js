@@ -67,6 +67,7 @@ const UserInformation = () => {
         default: '13'
       });
       let infoName2;
+      let infoAge2;
     const [infoName, setInfoName] = useState('');
     const [infoEmail, setInfoEmail] = useState('');
     const [infoPassword, setInfoPassword] = useState('');
@@ -92,7 +93,7 @@ const UserInformation = () => {
     /* const [userDTO, setUserDTO] = useState({}); */
 
     const qs = require('qs');
-    useEffect( () => {
+    useEffect( () => {     
         axios({
             method: 'POST',
             url: 'http://localhost:8080/user/userInfo',
@@ -107,9 +108,12 @@ const UserInformation = () => {
             console.log(res.data.age)
     /* 
             infoName2=(res.data.name)
+            
             document.getElementById('infoNameInputBox').value = infoName2
             
             console.log("예여기역여기여기여기"+infoName2) */
+            infoAge2=(res.data.age)
+            document.getElementById('infoAgeBox').value = infoAge2
             setInfoGender(res.data.gender);
             setAge(res.data.age);
             setInfoEmail(res.data.email)
@@ -119,10 +123,6 @@ const UserInformation = () => {
             console.log(error)
         });
     }, []);
-
-    
-
-
    
     let ages = [];
     for (let d = 13; d <= 100; d += 1) {
@@ -257,7 +257,7 @@ const UserInformation = () => {
                      sessionStorage.clear();
                      console.log("확인!");
                      alert("회원 정보를 수정했습니다.\n로그인 페이지로 이동하여 다시 로그인 하세요.");
-                     navigate("/");
+                     window.location.href="/"
                  }).catch(error =>{
                     console.log(error)
                  })
@@ -383,7 +383,7 @@ const UserInformation = () => {
                             <div style={{verticalAlign: 'inherit'}} className='infoAgeSelect'>
                                 <select id='infoAgeBox'
                                     name='age'
-                                    value={age.default}
+                                   
                                     onChange={(e) =>
                                         setAge({ ...age, default:e.target.value })
                                     }

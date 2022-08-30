@@ -1,0 +1,341 @@
+.MyResultContent{
+    margin:0 auto;
+    max-width:1200px;
+    width:100%;
+    height: 100%;}
+.MyResultContent{
+    margin:0 auto;  
+    max-width:1200px;
+    padding:0 15px;
+    width:100%;
+    height: 100%;}
+.MyResultContent h1{
+    padding-left:0;
+        padding-right:0}
+.MyResultContent{
+    margin:0 auto;
+    max-width:1200px;
+    width:100%;
+    padding-top: 130px;
+    height: 100%;
+}
+.resultTitle {
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    position: relative;
+    /* background: yellow */}
+
+.resultTitle h1 {color: #51596a;
+                font-size:2.9em;
+                font-weight:600;
+                position: absolute;
+                top: 12%;
+                left: -30px;}
+
+.resultSubContent{line-height: 2;
+                font-size: 1.25rem;
+                color: #51596a;
+                font-family: Open Sans,Helvetica Neue,Arial;
+                width: 40%;
+                height: 5%;
+                /* background: red; */
+                margin-left: -20px;} 
+/* .background2 {position: absolute;
+            width: 100%;
+            height: 650px;
+            top: 0;} */
+
+         
+
+.cardBackground {width: 100%;
+                height: 100%;}
+            
+.card__body{
+            margin: -8% 69%;
+            width: 30%;
+            height: 600px;
+            background: #fff;
+            box-shadow: 0px 3px 5px 3px rgba(123, 123, 123, 0.1); 
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;}
+
+            
+
+.sp-personality-card[data-v-0046f2b4] .card__body {
+    padding-top: 20px;
+}
+
+
+.sp-card.has--group .card__body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sp-card.has--group .card__body, .sp-card.has--group .card__inner {
+    height: 100%;
+}
+
+
+.sp-card .card__body, .sp-card .card__footer {
+    padding-bottom: 30px;
+}
+
+.sp-card .card__body, .sp-card .card__footer {
+    padding-top: 30px;
+}
+
+.sp-card .card__body, .sp-card .card__footer {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.sp-card .card__body, .sp-card .card__footer {
+    padding: 20px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+* {
+    scrollbar-color: #f9f9f9;
+    scrollbar-width: thin;
+}
+
+.card__header {position: absolute;
+                top: 3%;
+                left: 0%;
+            
+                margin: 0 auto;
+                width: 100%;} 
+
+.card__body .card__text .card__title {
+    color: hsla(0,0%,100%,.7);
+    font-family: Open Sans,Helvetica Neue,Arial,sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5714;
+}
+
+.card__body .card__text .card__subtitle, .card__body .card__text .card__title {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.card__body .card__text .card__subtitle {
+    color: #fff;
+    font-size: 1.4rem;
+    letter-spacing: -.4px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.card__text {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 8%;
+    width: 100%;
+    height: 100%;
+}
+
+.INTJPNG {position: absolute; 
+        width: 35%;
+         top: 20%;
+        left: 35%;}
+        
+        
+.mbtiContent {position: absolute;
+            bottom: 3%;
+            left: 0;
+            width: 100;
+            height: 30%;
+            line-height: 1.7 ;
+            margin: 0 auto;
+            padding: 0 10%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #51596A;
+            font-weight: 600;}
+
+#moreBtn {position: absolute;
+            bottom: 4%;
+            left: 30%;
+            width: 150px;
+            height: 40px;
+            padding: 0;
+            background: #000;}
+.moreButtonText {align-items: center;
+                line-height: 2;
+                font-weight: 200;} 
+
+
+.mbtiTypeText {width: 100%;
+                height: 100%;
+               
+                margin: 0;
+                margin-top: -40%;
+                color: #44AF69;
+                font-family: Open Sans,Helvetica Neue,Arial,sans-serif;
+                font-size: 14rem;
+                font-weight: 700;
+                padding: 0;
+                margin-left: -2%;
+                }
+
+
+.card-graph {width: 100%;
+            height: 610px;
+            background: #000;
+            margin-top: 20%;
+            margin-bottom: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0px 3px 5px 3px rgba(123, 123, 123, 0.1); 
+}
+.card-graph .mind {border-top: 7px solid #2B9EB3;
+                    border-right: 1px solid rgb(230, 229, 229);}
+.card-graph .energy {border-top: 7px solid #F19904;
+                    border-right: 1px solid rgb(230, 229, 229);}
+.card-graph .nature {border-top: 7px solid #44AF69;
+                    border-right: 1px solid rgb(230, 229, 229);}
+.card-graph .tatics {border-top: 7px solid #CF536D;
+                    border-right: 1px solid rgb(230, 229, 229);}
+.card-graph .identity {border-top: 7px solid #f84210;}
+
+.card-graph .mind{float: left;
+                    display: block;
+                    width: 20%;
+                  }
+
+.card-graph .mind{width: 20%;
+                height: 100%;
+            background: #fff;}
+
+.card-graph .card-graph_title  {
+    color: #51596a;
+    font-family: Open Sans,Helvetica Neue,Arial,sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5714;
+}
+
+.card-graph .mind .card-graph_subtitle  {
+    color: #4298b4;
+    font-size: 1.4rem;
+    letter-spacing: -.4px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+.card-graph_Content {padding-top: 13%;
+                    line-height: 1.8;
+                    font-size: 1.15rem;
+                    color: #51596a;
+                    font-family: Open Sans,Helvetica Neue,Arial;
+                    }
+
+.card-graph .energy{float: left;
+    display: block;
+    width: 20%;
+    }
+    
+
+.card-graph .energy{width: 20%;
+                height: 100%;
+            background: #fff;}
+
+
+.card-graph .energy .card-graph_subtitle {
+    color: #F19904;
+    font-size: 1.4rem;
+    letter-spacing: -.4px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.card-graph .nature{float: left;
+    display: block;
+    width: 20%;
+    }
+
+.card-graph .nature{width: 20%;
+                height: 100%;
+            background: #fff;}
+
+
+.card-graph .nature .card-graph_subtitle {
+    color: #44AF69;
+    font-size: 1.4rem;
+    letter-spacing: -.4px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.card-graph .tatics{float: left;
+    display: block;
+    width: 20%;
+    }
+
+.card-graph .tatics{width: 20%;
+                height: 100%;
+            background: #fff;}
+
+
+.card-graph .tatics .card-graph_subtitle {
+    color: #CF536D;
+    font-size: 1.4rem;
+    letter-spacing: -.4px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.card-graph .identity{float: left;
+                        display: block;
+                        width: 20%;
+                        background: #fff;
+                       
+                      }        
+
+.card-graph .identity{width: 20%;
+                height: 100%;
+           }
+
+
+.card-graph .identity .card-graph_subtitle {
+    color: #f84210;
+    font-size: 1.4rem;
+    letter-spacing: -.4px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.circlePer {position: relative;
+            width: 100%;}
+.perText {  width: 100%;
+            margin: 0 auto;
+            font-size: 1.9rem;
+            line-height: 1.6;
+            font-weight: 900;
+            text-align: center;
+          
+            margin-top: -60%;
+            margin-bottom: 35%;}
+
+.mind .perText {color: #2B9EB3;}
+.energy .perText {color: #F19904;}
+.nature .perText {color: #44AF69;}
+.tatics .perText {color: #CF536D;}
+.identity .perText {color: #f84210;}
+
+.card-graph .card-graph_title {margin: 0 auto;
+                                color: #51596a;
+                                font-family: Open Sans,Helvetica Neue,Arial,sans-serif;
+                                font-size: .9rem;
+                                font-weight: 400;
+                                line-height: 1.5714;
+                                text-align: center;}
+
