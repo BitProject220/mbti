@@ -20,6 +20,7 @@ public class FreeCommentController {
 	
 	@Autowired
 	private FreeCommentService freeCommentService;
+	
 	//###################범주 시작#################################
 	
 	@PostMapping(value = "/reply/commentWrite")
@@ -35,7 +36,7 @@ public class FreeCommentController {
 		System.out.println(fc_FreeBoardseq+"fc_FreeBoardseq 확인");
 		return freeCommentService.userComment(fc_FreeBoardseq);
 	}
-	
+
 	@GetMapping(value = "/reply/userComment")
 	@ResponseBody
 	public List<FreeCommentDTO> userComment() {
