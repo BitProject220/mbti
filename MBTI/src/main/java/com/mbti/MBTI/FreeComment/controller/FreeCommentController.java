@@ -18,6 +18,8 @@ import com.mbti.MBTI.FreeComment.service.FreeCommentService;
 @CrossOrigin(origins = "http://localhost:3000")
 public class FreeCommentController {
 	
+	@Autowired
+	private FreeCommentService freeCommentService;
 	//###################범주 시작#################################
 	
 	@PostMapping(value = "/reply/commentWrite")
@@ -32,6 +34,8 @@ public class FreeCommentController {
 	public List<FreeCommentDTO> userComment(@RequestBody FreeCommentDTO fc_FreeBoardseq) {
 		System.out.println(fc_FreeBoardseq+"fc_FreeBoardseq 확인");
 		return freeCommentService.userComment(fc_FreeBoardseq);
+	}
+	
 	@GetMapping(value = "/reply/userComment")
 	@ResponseBody
 	public List<FreeCommentDTO> userComment() {
