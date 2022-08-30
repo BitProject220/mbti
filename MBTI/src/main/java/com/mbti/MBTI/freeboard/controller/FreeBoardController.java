@@ -26,7 +26,6 @@ public class FreeBoardController {
 	
 	@PostMapping(value="/board/freeboardview")
 	public FreeBoardDTO freeboardview (@RequestParam int seq) {
-		FreeBoardDTO freeBoardDTO = new FreeBoardDTO();
 		return freeBoardService.freeboardview(seq);
 	}
 }
