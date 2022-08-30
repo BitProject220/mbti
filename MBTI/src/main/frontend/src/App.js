@@ -35,9 +35,11 @@ import MbtiBoard from './board/boardList/MbtiBoard';
 
 
 import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
-import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
+import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWriteMain';
 import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
+import MyResultPageMain from './myPage/MyResultPageMain';
+
 import ReplyBoard from './replyboard/ReplyBoard';
 import FreeBoardView from './board/boardView/FreeBoardView';
 
@@ -61,7 +63,7 @@ const App = () => {
 
         {/* 유진 */}
       <Route path="/signUp" element={<SignupMain /> } />
-      <Route path="/signupSuccess" element={<SignupSuccessMain /> } />
+      <Route path="/signupSuccess" element={<SignupSuccessMain /> } /> 
       </>
 
       :
@@ -95,13 +97,7 @@ const App = () => {
 
       {/* 유진 */}
       <Route path="/userInfo" element={ <UserInformationMain /> } />
-
-        <Route path="/ContactMain" element={<ContactMain/>}/>
-        <Route path="/LoginPageMain" element={<LoginPageMain />}/>
-        <Route path="/FindPasswordMain" element={<FindPasswordMain />}/>
-        {/* <Route path="/kakaoLogin" element={<KakaoRedirectHandler />}/>  */}
-        <Route index element={<LoginPageMain/>} />
-        <Route path="/test" element={<Test/>} />
+      <Route path="/userMbtiResult" element={ <MyResultPageMain /> } />
 
       {/* 소윤 */}
       <Route path="/">

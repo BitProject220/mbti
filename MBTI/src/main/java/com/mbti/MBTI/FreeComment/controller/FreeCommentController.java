@@ -28,8 +28,6 @@ public class FreeCommentController {
 
 	@Autowired
 	private SqlSession sqlSession = null;
-	// ###################범주 시작#################################
-
 	@PostMapping(value = "/reply/commentWrite")
 	public void commentWrite(@RequestBody FreeCommentDTO freeCommentDTO) {
 		// System.out.println(freeCommentDTO);
@@ -60,7 +58,12 @@ public class FreeCommentController {
 		System.out.println(fc_seqi+"숫자인가");
 	
 		freeCommentService.commentDelete(fc_seqi);
-		
+	}
+
+	@GetMapping(value = "/reply/userComment")
+	@ResponseBody
+	public List<FreeCommentDTO> userComment() {
+		return null;
 	}
 	
 	// ###################범주 끝#################################

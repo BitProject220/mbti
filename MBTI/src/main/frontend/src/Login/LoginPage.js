@@ -73,6 +73,9 @@ const LoginPage = () => {
                         sessionStorage.setItem("email",res.data.email)
                         sessionStorage.setItem("name",res.data.name)
                         window.location.href='/';
+
+                        console.log(res.data.email);
+                        console.log(res.data.name);
                     }
 
                  }).catch(error =>{

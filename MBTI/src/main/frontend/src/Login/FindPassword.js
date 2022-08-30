@@ -6,6 +6,7 @@ import bluemessage from '../image/bluemessage_icon.png';
 import redmessage from '../image/redmessage_icon.png';
 import background from '../img/background/backgroundColor.png';
 import axios from 'axios';
+
 const qs = require('qs');//String 타입으로 변환
 
 const FindPassword = (props) => {
@@ -54,9 +55,10 @@ const FindPassword = (props) => {
                             'email': document.getElementById('findPassword_input_tag').value,
                         })
                     }).then((res)=>{
-                        console.log("data는?" + res.data);
+                       //console.log("data는?" + res.data);
                         code = JSON.stringify(res.data);
                         setCode(code);
+                        //console.log(code);
                     }).catch(error => {
                         console.log(error);
                     })

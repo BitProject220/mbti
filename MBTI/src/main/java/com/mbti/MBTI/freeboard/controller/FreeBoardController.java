@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.mbti.MBTI.freeboard.bean.FreeBoardDTO;
 import com.mbti.MBTI.freeboard.sevice.FreeBoardService;
 
@@ -22,6 +21,7 @@ public class FreeBoardController {
 
 	@PostMapping(value="/board/freeboardwrite")
 	public void freeboardwrite (@RequestParam Map<String,String> map) {
+		System.out.println(map);
 		freeBoardService.freeboardwrite(map);
 	}
 }

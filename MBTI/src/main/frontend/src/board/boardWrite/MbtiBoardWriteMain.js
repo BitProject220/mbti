@@ -3,7 +3,7 @@ import Footer from '../../main/Footer';
 import Header from '../../main/Header';
 import MbtiBoardWrite from './MbtiBoardWrite';
 
-const MbtiBoardWirteMain = () => {
+const MbtiBoardWriteMain = () => {
     return (
         <div>
             <Header />
@@ -13,4 +13,4 @@ const MbtiBoardWirteMain = () => {
     );
 };
 
-export default MbtiBoardWirteMain;
+export default MbtiBoardWriteMain;
