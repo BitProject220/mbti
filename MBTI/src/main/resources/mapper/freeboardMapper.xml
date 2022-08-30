@@ -7,11 +7,11 @@
   <!-- freeboard 글쓰기 -->
   <insert id="freeboardwrite" parameterType="java.util.Map">
   	insert into FreeBoard(fb_email,fb_name,fb_subject,fb_content,fb_freevote,fb_hit,fb_logtime)
-		values(#{fb_email},#{fb_name},#{fb_subject},#{fb_content},#{fb_freevote},#{fb_hit},now());
+		values(#{fb_email},#{fb_name},#{fb_subject},#{fb_content},#{fb_freevote},#{fb_hit},now())
   </insert>
   
 	<select id="freeboardview" parameterType="int" resultType="freeboard">
-	select * from FreeBoard where fb_seq = #{seq};
+	select * from FreeBoard where fb_seq = ${seq}
 	</select>
   
   </mapper>

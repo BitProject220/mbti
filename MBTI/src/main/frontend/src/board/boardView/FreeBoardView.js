@@ -1,47 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../css/FreeBoardView.css';
 import TOPgrey from '../../img/Top/TOPgrey.png';
 import ReplyBoard from '../../replyboard/ReplyBoard';
 import axios from 'axios';
-import '../../board/boardList/components/BoardWarp';
-import BoardWarp from '../../board/boardList/components/BoardWarp';
-import BoardList from '../../board/boardList/components/boardWarpComponents/BoardList';
-
 
 
 const FreeBoardView = (props) => {
-    const [seq, setSeq] = useState('');
-    const [subject, setSubject] = useState('');
+
+    const [email, setEmail] = useState('');
     const [name, setName] = useState('');
-    const [logtime, setLogtime] = useState('');
+    const [subject, setSubject] = useState('');
+    const [content, setContent] = useState('');
     const [freevote, setFreevote] = useState('');
     const [hit, setHit] = useState('');
-    const [content, setContent] = useState('');
+    const [logtime, setLogtime] = useState('');
 
     const qs = require('qs');
+
+    const location = useLocation();
+    const seq = location.state.seq;
+    console.log("freeBoardView의 seq는 " + seq)
 
     useEffect(()=> {
         axios({
             method : 'POST',
             url : 'http://localhost:8080/board/freeboardview',
-            data : ({
-               'seq' : '',
+            data : qs.stringify({
+               'seq' : seq
             })
             
         }).then((res)=>{
-            console.log(res.data);
-            setSeq(res.data.seq);
-            setSubject(res.data.subject);
+            
+            setEmail(res.data.email);
             setName(res.data.name);
-            setLogtime(res.data.logtime);
+            setSubject(res.data.subject);
+            setContent(res.data.content);
             setFreevote(res.data.freevote);
             setHit(res.data.hit);
-            setContent(res.data.content);
+            setLogtime(res.data.logtime);
             
 
         }).catch(error => {
-            console.log("hihihihihi실패실패실패")
+            console.log("와실패다")
             console.log(error)
         })
     });
@@ -67,7 +68,7 @@ const FreeBoardView = (props) => {
             method : 'POST',
             url : 'http://localhost:8080/good/goodupdate',
             data : ({
-                'seq' : props.fb_seq,
+                'seq' : '',
                 'email' : sessionStorage.getItem('email'),
             })
         }).then((res)=>{
@@ -91,34 +92,36 @@ const FreeBoardView = (props) => {
         style={{backgroundImage:`url(${ TOPgrey })`, backgroundRepeat:'no-repeat', backgroundPosition: '0% 0%', backgroundSize:'200% 300px',}}>
            <h1>FREE Board</h1> 
             <div className='FreeBoardView_form'>
+                <input type='hidden' name='seq' id='seq' />
+                <input type='hidden' name='email' id='email' value={email}/>
                 <div className='FreeBoardView_document'>
                     <div className='FreeBoardView_document2'>
                         <div className='FreeBoardView_document_wrap'>
                             <div className='FreeBoardView_info'>
                                 <div className='Info_title'>
                                     <div className='Info_title_subject'>제목</div>
-                                    <div className='Info_title_subjectUser' value={subject}>{subject}</div>
+                                    <div className='Info_title_subjectUser' value={subject}></div>
                                 </div>
                                 <div className='Info_writer'>
                                     <div className='Info_writer_name'>작성자</div>
-                                    <div className='Info_Writer_nameUser' value={name}>{name}</div>
+                                    <div className='Info_Writer_nameUser' value={name}></div>
                                 </div>
                                 <div className='Info_date'>
                                     <div className='Info_date_name'>작성일</div>
-                                    <div className='Info_date_nameUser' value={logtime}>{logtime}</div>
+                                    <div className='Info_date_nameUser' value={logtime}></div>
                                 </div>
                                 <div className='Info_good'>
                                     <div className='Info_good_name'>추천</div>
-                                    <div className='Info_good_nameUser' value={freevote}>{freevote}</div>
+                                    <div className='Info_good_nameUser' value={freevote}></div>
                                 </div>
                                 <div className='Info_view'>
                                     <div className='Info_view_name'>조회</div>
-                                    <div className='Info_view_nameUser' value={hit}>{hit}</div>
+                                    <div className='Info_view_nameUser' value={hit}></div>
                                 </div>
                             </div>
                             <div className='FreeBoardView_content'>
-                                <div className='Content_View' >내용 들어갈 곳</div>
-                                {/* dangerouslySetInnerHTML={{__html: content}} */}
+                                <div className='Content_View'  >내용 들어갈 곳</div>
+                                {/* dangerouslySetInnerHTML={{__html:freecontent}} */}
                             </div>
                             <div className='FreeBoardView_good'>
                                 <div className='Good_btn'>
