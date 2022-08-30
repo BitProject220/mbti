@@ -12,16 +12,22 @@ import com.mbti.MBTI.user.dao.UserDAO;
 
 @Service
 public class FreeCommentServiceImpl implements FreeCommentService {
-	
+
 	@Autowired(required = false)
-	 private FreeCommentDAO freeCommentDAO;
+	private FreeCommentDAO freeCommentDAO;
 
 	@Override
-	public List<FreeCommentDTO> userComment() {
-		return freeCommentDAO.userComment();
-		
+	public void commentWrite(FreeCommentDTO freeCommentDTO) {
+		System.out.println("freeCommentDTO values: "+freeCommentDTO);
+		freeCommentDAO.commentWrite(freeCommentDTO);
+
 	}
-	
-	
+
+	@Override
+	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO) {
+		System.out.println("데이더확인"+ freeCommentDTO);
+		return freeCommentDAO.userComment(freeCommentDTO);
+
+	}
 
 }
