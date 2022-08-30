@@ -35,7 +35,7 @@ import MbtiBoard from './board/boardList/MbtiBoard';
 
 
 import FreeBoardWriteMain from './board/boardWrite/FreeBoardWriteMain';
-import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWirteMain';
+import MbtiBoardWriteMain from './board/boardWrite/MbtiBoardWriteMain';
 import FreeBoardViewMain from './board/boardView/FreeBoardViewMain';
 import MbtiBoardViewMain from './board/boardView/MbtiBoardViewMain';
 import ReplyBoard from './replyboard/ReplyBoard';
