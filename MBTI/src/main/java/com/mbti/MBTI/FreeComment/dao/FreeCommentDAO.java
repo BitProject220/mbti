@@ -10,6 +10,14 @@ public interface FreeCommentDAO {
 	public void commentWrite(FreeCommentDTO freeCommentDTO);
 
 	public List<FreeCommentDTO> userComment(FreeCommentDTO freeCommentDTO);
+
+	public void commentDelete(int fc_seqi);
+
+
+
+
+
+
 	
 
 }
