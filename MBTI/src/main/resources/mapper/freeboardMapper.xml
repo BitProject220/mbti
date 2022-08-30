@@ -10,7 +10,7 @@
 		values(#{fb_email},#{fb_name},#{fb_subject},#{fb_content},#{fb_freevote},#{fb_hit},now())
   </insert>
   
-	<select id="freeboardview" parameterType="int" resultType="freeboard">
+	<select id="freeboardview" parameterType="String" resultType="freeboard">
 	select * from FreeBoard where fb_seq = ${seq}
 	</select>
   
