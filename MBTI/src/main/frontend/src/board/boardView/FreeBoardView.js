@@ -15,12 +15,67 @@ const FreeBoardView = (props) => {
     const [freevote, setFreevote] = useState('');
     const [hit, setHit] = useState('');
     const [logtime, setLogtime] = useState('');
+    const [likeCheck,setLikeCheck ] = useState('0');
+
 
 
     const qs = require('qs');
     const location = useLocation();
     const seq = location.state.seq;
-    console.log("freeBoardView의 seq는 " + seq)
+
+
+     useEffect(() => {
+        axios({
+            method : 'POST',
+            url : 'http://localhost:8080/board/freeboardviewLikeCheck',
+            data : qs.stringify({
+               'seq' : seq,
+               'email' : sessionStorage.getItem("email"),
+            })
+            
+        }).then((res)=>{
+            console.log(res.data);
+            if(res.data === 'nonExit'){
+                setLikeCheck(0)
+                console.log(likeCheck)
+            }else{
+                setLikeCheck(1)
+                console.log(likeCheck)
+            }
+
+            
+
+        }).catch(error => {
+            console.log(error)
+        })
+
+    },[]); 
+
+
+    const back = document.getElementById('FreeBoardViewGoodBtn');
+
+    if(likeCheck === 0){
+        back.style.background = '#fff';
+        back.style.color = '#f84210';
+    }
+    else if(likeCheck === 1){
+        back.style.background = '#f84210'
+        back.style.color = '#fff'
+    }
+
+   /*  if(likeCheck === 0){
+        back.style.background = 'none';
+        back.style.color = '#f84210';
+    }
+    if(likeCheck === 1){
+
+        back.style.background = '#f84210';
+        back.style.color = '#fff';
+    } */
+
+
+
+   
 
     useEffect(()=> {
         axios({
@@ -64,30 +119,63 @@ const FreeBoardView = (props) => {
     // })
     
     // 추천
-    const FreeGood = () => {
-
-        console.log(seq,sessionStorage.getItem('email') );
+    
+    const onFreeGood = () => {
         
-        axios({
-            method : 'POST',
-            url : 'http://localhost:8080/good/goodupdate',
-            data : qs.stringify({
-                'seq' : seq,
-                'email' : sessionStorage.getItem('email'),
-            })
-        }).then((res)=>{
-            if(res.data.freevote === 0) {
-                alert('추천 완료');
-                document.location.reload();
-            }else if (res.data.freevote === 1) {
-                alert('추천 취소');
-                document.location.reload();
-            }
+        if(likeCheck === 0){
+            back.style.background = '#fff';
+            back.style.color = '#f84210';
+            axios({
+                method : 'POST',
+                url : "http://localhost:8080/board/freeboardviewLikeplus",
+                data : qs.stringify({
+                 'seq' : seq,
+                'email' : sessionStorage.getItem("email"),
+                })
+             }).then(()=>{
+                   
+                    alert("추천을 눌렀습니다.")
+                    window.location.reload();
+                  
+                    back.style.background = '#f84210'
+                    back.style.color = '#fff'
+
+
+
+                }).catch(error => {
+    
+                   
+                    console.log(error)
+                })
             
-        }).catch(error => {
-            alert('실패');
-        })
+           
+        }
+        else if(likeCheck === 1){
+            back.style.background = '#f84210';
+            back.style.color = '#fff';
+            
+            axios({
+                method : "POST",
+                url : "http://localhost:8080/board/freeboardviewLikeMinus",
+                data : qs.stringify({
+                    'seq' : seq,
+                   'email' : sessionStorage.getItem("email"),
+                })}).then(()=>{
+                
+                    alert("추천을 취소했습니다.")
+                    window.location.reload();
+                    back.style.background = '#fff'
+                     back.style.color = '#f84210'
+                    
+                }).catch(error => {
+                  
+                    console.log(error)
+                })
+            
+        }
+        
     }
+    
 
     //삭제
     const ondelete = (seq) => {
@@ -146,7 +234,7 @@ const FreeBoardView = (props) => {
                             </div>
                             <div className='FreeBoardView_good'>
                                 <div className='Good_btn'>
-                                    <button type='button' className='FreeBoardViewGoodBtn' onClick={FreeGood}>추천</button>
+                                    <button type='button' className='FreeBoardViewGoodBtn' id='FreeBoardViewGoodBtn' style={{padding:'10px'}} onClick={onFreeGood}>추천</button>
                                 </div>
                             </div>
                         </div>

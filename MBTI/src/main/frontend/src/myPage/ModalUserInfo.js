@@ -20,7 +20,8 @@ const ModalUserInfo = () => {
         setPwd(value)
     } 
 
-    console.log(pwd+"23221213")
+  
+    
 
     const pwdCheck = (e) => {
         const qs = require('qs');
@@ -38,9 +39,9 @@ const ModalUserInfo = () => {
                 'email': sessionStorage.getItem("email")
             })
         }).then((res)=>{
-            console.log(res.data.password)
+           
             const dataPwd = res.data.password
-            console.log(dataPwd)
+           
             if(pwd !== dataPwd){
                 setPwdError2(true)
             }

@@ -43,11 +43,11 @@ public class UserController {
 	private JavaMailSender mailSender;
 	
 	
-	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
 	
 	@PostMapping(value="/user/write")
 	public void write(@RequestBody UserDTO userDTO) {
-		System.out.println(userDTO);
+		
 		userService.write(userDTO);
 	}
 	
@@ -56,21 +56,20 @@ public class UserController {
 	@PostMapping(value = "/user/emailCheck")
 	public String emailCheck(@RequestParam String email) {
 		  
-		System.out.println("이메일은-------------------------------"+email);
+	
 		return userService.emailCheck(email);
 		
 	}
 	
 	@PostMapping(value = "/user/emailNumCheck")
 	public String emailNumCheck(@RequestParam String email) throws Exception{
-			logger.info("이메일 인증 요청이 들어옴!"+email);
-	        logger.info("인증번호 : " + email);
+			
 			//return  mailService.joinEmail(user_email);
 	        
 	        /* 인증번호(난수) 생성 */
 	        Random random = new Random();
 	        int checkNum = random.nextInt(888888) + 111111;
-	        logger.info("인증번호 " + checkNum);
+	       
 	        
 	        /* 이메일 보내기 */ 
 	        String setFrom = "yujin980810@gmail.com";
@@ -112,7 +111,7 @@ public class UserController {
 	//로그인 아이디 비밀번호 있는지 확인
 	@PostMapping(value = "/user/userUpdate")
 	public void userUpdate(@RequestBody UserDTO userDTO) {
-		System.out.println(userDTO);
+		
 		userService.userUpdate(userDTO);
 	}
 	
@@ -129,13 +128,13 @@ public class UserController {
 	
 	@PostMapping(value = "/user/userInfoDelete")
 	public void userInfoDelete(@RequestParam String email) {
-		System.out.println("탈퇴할 이메알은"+email);
+	
 		userService.userInfoDelete(email);
 	}
 	
 	@PostMapping(value = "/user/userMbtiTypeResult")
 	public void userMbtiTypeResult(@RequestBody MbtiTypeDTO mbtiTypeDTO) {
-		System.out.println("나의 엠비티아이 결과는"+mbtiTypeDTO);
+		
 		userService.userMbtiTypeResult(mbtiTypeDTO);
 	}
 	
@@ -151,7 +150,7 @@ public class UserController {
 	
 	@PostMapping(value = "/user/userMbtiTypeResultUpdate")
 	public void userMbtiTypeResultUpdate(@RequestBody MbtiTypeDTO mbtiTypeDTO) {
-		System.out.println("나의 엠비티아이 결과는"+mbtiTypeDTO);
+		
 		userService.userMbtiTypeResultUpdate(mbtiTypeDTO);
 	}
 	
@@ -194,14 +193,13 @@ public class UserController {
 	//이메일로 비밀번호 보내기
 	@PostMapping(value = "/user/findPasswordEmailSend")
 	public String findPasswordEmailSend(@RequestParam String email) throws Exception{
-		logger.info("이메일 인증 요청이 들어옴!" + email);
-		logger.info("인증번호" + email);
+		
 		
 		//인증번호 난수 생성
 		UserDTO userDTO = new UserDTO();
 		String pw2 = userService.getpassword(email);
 		System.out.println(pw2);
-		logger.info("인증번호 " + pw2);
+		
 		
 		//이메일 보내기
 		String setFrom = "yujin980810@gmail.com";

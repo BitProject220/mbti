@@ -36,8 +36,7 @@ const MymbtiResult = () => {
             url: 'http://localhost:8080/user/userInfoMain',
             data: qs.stringify({'mbti_email' : sessionStorage.getItem("email")})
         }).then((res)=>{
-            console.log("안녕")
-            console.log(sessionStorage.getItem("email"))
+            
             setMbtiType(res.data.mbti_type) 
             setMbtiEI(res.data.mbti_EI) 
             setMbtiNS(res.data.mbti_NS)
@@ -242,11 +241,7 @@ const MymbtiResult = () => {
     const dtailPage = () => {
         navigate("/detail");
     }
-    console.log(mbtiEI,
-    mbtiNS,
-    mbtiTF,
-    mbtiJP,
-    mbtiAT)
+ 
 
     
     return (

@@ -135,7 +135,7 @@ const Signup = (props) => {
 
     const handleSelect4 = (e) => {
         setSelected4(!selected4);
-        console.log(!selected4)
+       
     };
 
     //이름입력&유효성
@@ -157,8 +157,7 @@ const Signup = (props) => {
                 url: 'http://localhost:8080/user/nameCheck',
                         data: qs.stringify({'name' : name})
             }).then((res)=>{
-                console.log(name)
-                console.log(res.data) 
+               
                 if(res.data === "exist"){
                     alert('이미 존재하는 닉네임입니다. 다시 입력하세요');
                     setName('');
@@ -218,9 +217,7 @@ const Signup = (props) => {
                         'email': email,
                     })
                 }).then((res)=>{
-                    console.log("성공")
-                    console.log(email)
-                    console.log((res.data)) //기본으로 json타입으로 들어온다.
+                    
 
                     if(res.data === "exist"){
                         alert('이미 존재하는 이메일입니다. 다시 입력하세요');
@@ -236,7 +233,7 @@ const Signup = (props) => {
                         }).then((res)=>{
                             alert("인증번호 전송 완료!\n인증번호를 확인하세요.");
                             setShow(true);
-                            console.log("data는?"+res.data);
+                           
                             code =JSON.stringify(res.data);
                             setCode(code);
                             setEmailNumCheckBtnTxt(false);
@@ -278,8 +275,7 @@ const Signup = (props) => {
                 setEmailNumSet(false);
             }
             else if(emailCheckNum !== code){
-                console.log("1.내가 치는 인증번호는  "+emailCheckNum);
-                console.log("인증번호는1??  "+code);
+                
                 setEmailNumError(false);
                 setEmailNumError3(false);
                 setEmailNumError2(true);
@@ -291,8 +287,7 @@ const Signup = (props) => {
                 setEmailNumSet(false);
             }
             else if(emailCheckNum === code){
-                console.log("2.내가 치는 인증번호는  "+emailCheckNum);
-                console.log("인증번호는2??  "+code);
+                
                 setEmailNumError(false);
                 setEmailNumError2(false);
                 setEmailNumError3(true);
@@ -407,13 +402,11 @@ const Signup = (props) => {
                     })
                  }).then(()=>{
                     navigate("/SignupSuccess", { state: { name: name , email: email }});
-                    console.log("확인!")
+                    
                  }).catch(error =>{
                     console.log(error)
                  })
 
-                 
-                console.log(email);
             };
         }  
     

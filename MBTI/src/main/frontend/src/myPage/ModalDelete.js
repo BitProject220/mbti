@@ -47,7 +47,7 @@ const ModalDelete = () => {
                 setPwdError2(true)
             }
             else if(pwd === dataPwd){
-                alert("성공")
+                
                 axios({
                     method: 'POST',
                     url: 'http://localhost:8080/user/userInfoDelete',
@@ -55,7 +55,7 @@ const ModalDelete = () => {
                         'email': sessionStorage.getItem("email")
                     })
                 }).then(()=>{
-                    console.log("삭제완료");
+                    
                     window.confirm("정말 틸퇴하시겠습니까?")
                     alert("탈퇴가 완료되었습니다.\n이용해주셔서 감사합니다.")
                     sessionStorage.clear();

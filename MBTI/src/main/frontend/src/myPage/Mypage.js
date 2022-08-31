@@ -19,10 +19,8 @@ const Mypage = () => {
             url: 'http://localhost:8080/user/userInfoMain',
             data: qs.stringify({'mbti_email' : sessionStorage.getItem("email")})
         }).then((res)=>{
-            console.log("안녕")
-            console.log(sessionStorage.getItem("email"))
-            console.log(res.data.mbti_type+"우에에엥에에에에에에에엥에에엥")
-            /* setMbti(res.data.mbti_type)*/
+            
+            
             setMbti_email(sessionStorage.getItem("email")) 
             setMbti(res.data.mbti_type) 
 
@@ -41,7 +39,7 @@ const Mypage = () => {
         }
     }
 
-   console.log(mbti+"나의 엠비티아이는????????????")
+   
      
 
     // 회원정보수정 모달

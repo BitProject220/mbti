@@ -27,4 +27,15 @@
   	<update id="freeboardhit" parameterType="Integer">
   		update FreeBoard set fb_hit = fb_hit + 1 where fb_seq=#{seq} 
   	</update>
+  	
+  	<select id="freeboardviewLikeCheck" parameterType="java.util.Map" resultType="freegood">
+  		 select * from FreeGood where fg_email=#{email} and fb_seq=#{seq}; 
+  	</select>
+  	
+  	<insert id="freeboardviewLikeplus" parameterType="java.util.Map">
+  		insert into FreeGood(fg_email,fb_seq)values(#{email},#{seq});
+  	</insert>
+  	<delete id="freeboardviewLikeMinus" parameterType="java.util.Map">
+  		delete from FreeGood where fg_email = #{email} and fb_seq = #{seq};
+  	</delete>
   </mapper>
