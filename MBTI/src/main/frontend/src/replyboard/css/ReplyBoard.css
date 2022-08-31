@@ -147,8 +147,12 @@
 .userId{
     text-align: left;
 }
+
+.usercommend textarea { resize: none; }
 .inputComment{
 width: 100%;
+height: 120px;
+text-align: left;
 margin-top: 10px;
 }
 .Btn_Update{

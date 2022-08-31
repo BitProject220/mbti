@@ -13,7 +13,7 @@
 
 
 	<select id="userComment" parameterType="freecomment" resultType="freecomment">
-		select * from FreeComment 
+		select * from FreeComment where fc_FreeBoardseq = #{fc_FreeBoardseq};
 	</select>
 
 

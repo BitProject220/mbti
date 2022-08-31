@@ -140,7 +140,7 @@ const FreeBoardView = (props) => {
                                 <Link to='#' className='Btn_right_list_delete'>삭제</Link>
                             </div>
                         </div>
-                        <ReplyBoard />
+                        <ReplyBoard seq={seq}/>
                     </div>
                 </div>
                 
