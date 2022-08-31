@@ -6,12 +6,12 @@ import FreeBoardView from '../boardView/FreeBoardView';
 
 const FreeBoardViewMain = () => {
     const location = useLocation();
-    const seq = location.state.seq;
+    var seq = location.state.seq;
     console.log("freeBoardView의 seq는 " + seq)
     return (
         <div>
             <Header/>
-            <FreeBoardView/>
+            <FreeBoardView freeSeq={seq}/>
             <Footer/>
         </div>
     );

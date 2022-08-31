@@ -33,5 +33,11 @@ public class BoardDAOMyBatis implements BoardDAO {
 		return sqlSession.selectList("boardSQL.allList");
 	}
 
+	@Override
+	public List<Object> getMbtiList() {
+		
+		return sqlSession.selectList("boardSQL.allMbtiList");
+	}
+
 
 }

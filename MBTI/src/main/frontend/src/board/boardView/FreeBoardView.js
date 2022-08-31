@@ -21,6 +21,8 @@ const FreeBoardView = (props) => {
 
     const qs = require('qs');
 
+    console.log("프리보드뷰로 넘어온 게시물에서 넘어온 seq는 " + props.freeSeq + "입니다");
+
     useEffect(()=> {
         axios({
             method : 'POST',
@@ -135,7 +137,7 @@ const FreeBoardView = (props) => {
                                 <Link to='#' className='Btn_right_list_delete'>삭제</Link>
                             </div>
                         </div>
-                        <ReplyBoard />
+                        <ReplyBoard seq={"여기에 props.seq를 입력하면 화면에 찍힙니다 내일 연결하면 바로 해결될듯합니다"} />
                     </div>
                 </div>
                 
