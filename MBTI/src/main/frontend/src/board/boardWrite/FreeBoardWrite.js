@@ -47,7 +47,7 @@ const FreeBoardWrite = () => {
                     'fb_email' : sessionStorage.getItem('email'),
                     'fb_name' : sessionStorage.getItem('name'),
                     'fb_subject' : document.getElementById('freeboardsubject').value,
-                    'fb_content' : JSON.stringify(data)
+                    'fb_content' : data
                 })
             }).then(()=>{
                 alert('등록 완료');

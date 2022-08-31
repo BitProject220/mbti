@@ -16,7 +16,10 @@ const FreeBoardView = (props) => {
     const [hit, setHit] = useState('');
     const [logtime, setLogtime] = useState('');
 
+
     const qs = require('qs');
+
+
 
     const location = useLocation();
     const seq = location.state.seq;
@@ -31,7 +34,9 @@ const FreeBoardView = (props) => {
             })
             
         }).then((res)=>{
-            
+            console.log(res.data.content);
+
+             setEmail(res.data.email);
              setName(res.data.name);
              setSubject(res.data.subject);
              setContent(res.data.content);
@@ -87,6 +92,23 @@ const FreeBoardView = (props) => {
         })
     }
 
+    //삭제
+    const ondelete = (seq) => {
+        axios({
+            method : 'POST',
+            url : 'http://localhost:8080/board/freeboarddelete',
+            data : qs.stringify({
+                'seq' : seq
+            })
+        }).then (()=>{
+            console.log('삭제 완료');
+            window.location.replace("/FreeBoard");
+        }).catch (error => {
+            alert('실패');
+        })
+
+    }
+
 
 
     return (
@@ -102,28 +124,28 @@ const FreeBoardView = (props) => {
                             <div className='FreeBoardView_info'>
                                 <div className='Info_title'>
                                     <div className='Info_title_subject'>제목</div>
-                                    <div className='Info_title_subjectUser' value={subject}></div>
+                                    <div className='Info_title_subjectUser' value={subject}>{subject}</div>
                                 </div>
                                 <div className='Info_writer'>
                                     <div className='Info_writer_name'>작성자</div>
-                                    <div className='Info_Writer_nameUser' value={name}></div>
+                                    <div className='Info_Writer_nameUser' value={name}>{name}</div>
                                 </div>
                                 <div className='Info_date'>
                                     <div className='Info_date_name'>작성일</div>
-                                    <div className='Info_date_nameUser' value={logtime}></div>
+                                    <div className='Info_date_nameUser' value={logtime}>{logtime}</div>
                                 </div>
                                 <div className='Info_good'>
                                     <div className='Info_good_name'>추천</div>
-                                    <div className='Info_good_nameUser' value={freevote}></div>
+                                    <div className='Info_good_nameUser' value={freevote}>{freevote}</div>
                                 </div>
                                 <div className='Info_view'>
                                     <div className='Info_view_name'>조회</div>
-                                    <div className='Info_view_nameUser' value={hit}></div>
+                                    <div className='Info_view_nameUser' value={hit}>{hit}</div>
                                 </div>
                             </div>
                             <div className='FreeBoardView_content'>
-                                <div className='Content_View'  >내용 들어갈 곳</div>
-                                {/* dangerouslySetInnerHTML={{__html:freecontent}} */}
+                                <div className='Content_View'><span dangerouslySetInnerHTML={{__html: content}}/></div>
+                                
                             </div>
                             <div className='FreeBoardView_good'>
                                 <div className='Good_btn'>
@@ -135,9 +157,9 @@ const FreeBoardView = (props) => {
                             <div className='Button_left'>
                                 <Link to='/FreeBoard' className='Btn_left_list'>목록</Link>
                             </div>
-                            <div className='Button_right'>
-                                <Link to='#' className='Btn_right_list_update'>수정</Link>
-                                <Link to='#' className='Btn_right_list_delete'>삭제</Link>
+                            <div className= {sessionStorage.getItem('email') == email ? 'Button_right' : 'hidden' }  >
+                                <button className='Btn_right_list_update' >수정</button>
+                                <button className='Btn_right_list_delete' onClick={() => {ondelete(email)}} >삭제</button>
                             </div>
                         </div>
                         <ReplyBoard />
