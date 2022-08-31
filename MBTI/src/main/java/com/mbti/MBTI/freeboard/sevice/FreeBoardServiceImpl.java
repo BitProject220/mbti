@@ -24,6 +24,7 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	@Override
 	public FreeBoardDTO freeboardview(int seq) {
 		FreeBoardDTO freeBoardDTO = freeBoardDAO.freeboardview(seq);
+		freeBoardDAO.feeboardhit(seq);
 		System.out.println(freeBoardDTO);
 		return freeBoardDTO;
 	}
