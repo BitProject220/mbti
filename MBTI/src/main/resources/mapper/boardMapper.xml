@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="boardSQL">
-<select id="getBoardSearchRangeOrder" parameterType="java.util.Map" resultType="freeBoard2">
+		<!-- <select id="getBoardSearchRangeOrder" parameterType="java.util.Map" resultType="freeBoard2">
 	    	SELECT * FROM (	
 	    		SELECT ROWNUM AS RN, TT.* FROM 
 	    			(SELECT * FROM 
@@ -37,10 +37,13 @@
 		 					</if>
 	 				)TT
  			) WHERE RN &gt;=${startNum} AND RN &lt;=${endNum}
-    	</select>
-    	
+    	</select> -->
     	
 	   	<select id="allList" parameterType="java.util.Map" resultType="freeBoard2">	   	
 	   	select * from FreeBoard;
+	   	</select>
+    	
+	   	<select id="allMbtiList" parameterType="java.util.Map" resultType="freeBoard2">	   	
+	   	select * from MbtiBoard;
 	   	</select>
   </mapper>

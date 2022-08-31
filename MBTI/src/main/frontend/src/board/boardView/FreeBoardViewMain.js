@@ -8,12 +8,11 @@ const FreeBoardViewMain = (props) => {
 
     const location = useLocation();
     const seq = location.state.seq;
-  
-
+    
     return (
         <div>
             <Header/>
-            <FreeBoardView/>
+            <FreeBoardView freeSeq={seq}/>
             <Footer/>
         </div>
     );

@@ -11,4 +11,6 @@ public interface BoardDAO {
 
 	List<Object> getList();
 
+	List<Object> getMbtiList();
+
 }

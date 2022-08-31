@@ -10,6 +10,7 @@ import { data, map, now } from 'jquery';
 
 
 const qs = require('qs');
+
 const ReplyBoard = ({ seq }) => {
 
     console.log(seq);
@@ -78,6 +79,7 @@ const ReplyBoard = ({ seq }) => {
             <div className='CommentBox'>
                 <div className="comment_option">
                     <h3 className="comment_title">댓글</h3>
+                    <div>{seq}</div>
                 </div>  
                 
                 <ul className='comment_list'>

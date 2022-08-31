@@ -18,9 +18,6 @@ const FreeBoardView = (props) => {
 
 
     const qs = require('qs');
-
-
-
     const location = useLocation();
     const seq = location.state.seq;
     console.log("freeBoardView의 seq는 " + seq)

@@ -3,10 +3,11 @@ import BoardSearching from './boardWarpComponents/BoardSearching';
 import BoardListHeader from './boardWarpComponents/BoardListHeader';
 import BoardList from './boardWarpComponents/BoardList';
 import BoardListTr from './boardWarpComponents/BoardListTr';
-import BoardPaging from './boardWarpComponents/BoardPaging';
 
 import axios from 'axios';
 import WriteBoard from './boardWarpComponents/WriteBoard';
+import Pagination from './boardWarpComponents/Pagination';
+import Post from './boardWarpComponents/Post';
 
 
 const BoardWarp = (props) => {
@@ -40,6 +41,8 @@ const BoardWarp = (props) => {
         const [data, setData] =useState([]);
         const [searchResult, setSearchResult] = useState([])
 
+        
+
         useEffect(() => {
            axios({
             method: 'get',
@@ -47,7 +50,6 @@ const BoardWarp = (props) => {
             dataType: 'json',
            })
            .then(res=>{
-                console.log("서버 데이터 = "+ res.data);
                 setData(res.data.tableList);
                 setSearchResult(res.data.tableList);
             })
@@ -56,24 +58,41 @@ const BoardWarp = (props) => {
             })
            },[])
 
-
-        useEffect(() => {
-            if(!searchKeyword){
-                setSearchResult(data);
-            }
-            if(searchKeyword){
-                console.log('searchKeyword 변경됨...', searchKeyword);
-                const resultTemp = data.filter((item, index) => item.fb_subject.indexOf(searchKeyword) >= 0); 
-                setSearchResult(resultTemp);
-            }
-        },[searchKeyword])
-        
-        
+           const [posts, setPosts] = useState([]);
+           const [currentPage, setCurrentPage] = useState(1);
+           const [postsPerPage, setPostsPerPage] = useState(10);
+           
+           const indexOfLast = currentPage * postsPerPage;
+           const indexOfFirst = indexOfLast - postsPerPage;
 
 
+           useEffect(() => {
+               if(!searchKeyword){
+                   setSearchResult(data);
+                }
+                if(searchKeyword){
+                    console.log('searchKeyword 변경됨...', searchKeyword);
+                    const resultTemp = data.filter((item, index) => item.fb_subject.indexOf(searchKeyword) >= 0); 
+                    setSearchResult(resultTemp);
+                }
+            },[searchKeyword])
+            
+            //페이징
+          
+            const currentPosts = (posts) => {
+                let currentPosts = 0;
+                currentPosts = posts.slice(indexOfFirst, indexOfLast);
+                return currentPosts;
+              };
 
-        const boardListData = searchResult.map(item => (<BoardList boardNo={props.boardNo} key={item.fb_seq} listData={item} />))
+           
+        // 최신순
+        // useEffect(() {
+        // },[sortOption])
 
+        // const boardListData = searchResult.map(item => (<BoardList boardNo={props.boardNo} key={item.fb_seq} listData={item}  />))
+        const boardListData = searchResult.map(item => (<BoardList boardNo={props.boardNo} key={item.fb_seq} listData={item}  />))
+        //posts={data} 
 
         //    const [searchTerm, setSearchTerm] = useState("");
         //    const getSearchTerm = (e) =>{}
@@ -100,12 +119,19 @@ const BoardWarp = (props) => {
                             </tbody> 
                         </table>
                     </div>
+                    {/* <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={data.length}
+                        paginate={setCurrentPage}
+                    ></Pagination> */}
                     {/* <BoardPaging 
                     pg={pg} 
                     getPg={getPg}
 
                     /> */}
-                    <div>{searchKeyword}</div>
+                    {/* <Posts posts={currentPosts(data)}></Posts> */}
+                    <br />
+                    <br />
                     <BoardSearching 
                         searchBy={props.searchBy}
                         getCategory={getCategory} 
