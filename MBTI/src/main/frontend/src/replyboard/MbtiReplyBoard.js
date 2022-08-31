@@ -19,7 +19,7 @@ const ReplyBoard = ({ seq }) => {
     useEffect( () => {
     axios({
         method: 'Post',
-        url : 'http://localhost:8080/reply/userComment',
+        url : 'http://localhost:8080/reply/userMbtiComment',
         data:({
             'fc_FreeBoardseq' : seq,
         })
@@ -103,7 +103,7 @@ const ReplyBoard = ({ seq }) => {
                 <div className='CommentWriter'>
                     <div className='userId'>{sessionStorage.getItem("name")}</div>
                     <div className='usercommend'>
-                    <textarea cols="30" rows="5"  type="text" className='inputComment' placeholder='댓글달기' onChange={e=> {setComment(e.target.value);}}
+                    <input type="text" className='inputComment' placeholder='댓글달기' onChange={e=> {setComment(e.target.value);}}
                         
                         value={comment}/>
                     </div>

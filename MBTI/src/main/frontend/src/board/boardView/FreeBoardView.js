@@ -162,7 +162,7 @@ const FreeBoardView = (props) => {
                                 <button className='Btn_right_list_delete' onClick={() => {ondelete(email)}} >삭제</button>
                             </div>
                         </div>
-                        <ReplyBoard />
+                        <ReplyBoard seq={seq}/>
                     </div>
                 </div>
                 
