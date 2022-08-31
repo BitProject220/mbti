@@ -52,7 +52,7 @@ const ResultPage = ({mbtiresult}) => {
     const result5 = document.getElementById('AtInput');
 
     
-    console.log(ei+"++++++++++외향형점수"+resultei);
+
 
     /* .addClass('active'); */
 
@@ -98,7 +98,7 @@ const ResultPage = ({mbtiresult}) => {
         color5.style.background= "#f84210";
     }
     
-    console.log(mbti+"5151151511")
+   
     let job;
     let id;
     const back = document.getElementById("c1")

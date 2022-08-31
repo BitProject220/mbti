@@ -79,11 +79,6 @@ const UserInformation = () => {
     const pwdRef = useRef(null);
     const rePwdRef   = useRef(null);
 
-/*   const currentEmail = localStorage.getItem('email');
-    const currentName = localStorage.getItem('name');
-    const currentGender = localStorage.getItem('gender');
-    const currentPwd = localStorage.getItem('password'); 
-     console.log(currentEmail + currentName + currentGender + currentPwd); */
 
     const [currentEmail,setCurrentEmail] = useState('');
     const [currentName,setCurrentName] = useState('');
@@ -100,18 +95,7 @@ const UserInformation = () => {
             data: qs.stringify({'email' : sessionStorage.getItem("email")})
         }).then((res)=>{
     
-            console.log("안녕")
-            console.log(JSON.stringify(res.data.name))
-            console.log(JSON.stringify(res.data.email))
-            console.log(JSON.stringify(res.data.gender))
-            console.log(JSON.stringify(res.data.age))
-            console.log(res.data.age)
-    /* 
-            infoName2=(res.data.name)
-            
-            document.getElementById('infoNameInputBox').value = infoName2
-            
-            console.log("예여기역여기여기여기"+infoName2) */
+
             infoAge2=(res.data.age)
             document.getElementById('infoAgeBox').value = infoAge2
             setInfoGender(res.data.gender);
@@ -137,7 +121,7 @@ const UserInformation = () => {
 
     const handleSelect3 = (e) => {
         setInfoGender(e.target.value);
-        console.log(e.target.value);
+       
     };
 
     //이름입력&유효성
@@ -161,8 +145,7 @@ const UserInformation = () => {
                 url: 'http://localhost:8080/user/nameCheck',
                         data: qs.stringify({'name' : infoName})
             }).then((res)=>{
-                console.log(infoName2)
-                console.log(res.data) 
+                
                 if(res.data === "exist"){
                     alert('이미 존재하는 닉네임입니다. 다시 입력하세요');
                     setInfoName('')
@@ -255,7 +238,7 @@ const UserInformation = () => {
                     })
                  }).then(()=>{
                      sessionStorage.clear();
-                     console.log("확인!");
+                     
                      alert("회원 정보를 수정했습니다.\n로그인 페이지로 이동하여 다시 로그인 하세요.");
                      window.location.href="/"
                  }).catch(error =>{
