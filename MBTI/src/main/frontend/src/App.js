@@ -42,6 +42,7 @@ import MyResultPageMain from './myPage/MyResultPageMain';
 
 import ReplyBoard from './replyboard/ReplyBoard';
 import FreeBoardView from './board/boardView/FreeBoardView';
+import FreeBoardUpdateMain from './board/boardUpdate/FreeBoardUpdateMain';
 
 const App = () => {
 
@@ -107,6 +108,7 @@ const App = () => {
       <Route path='/MbtiBoardWriteMain' element={<MbtiBoardWriteMain/>} />
       <Route path='/FreeBoardViewMain' element={<FreeBoardViewMain/>} />
       <Route path='/MbtiBoardViewMain' element={<MbtiBoardViewMain/>} />
+      <Route path='/FreeBoardUpdateMain' element={<FreeBoardUpdateMain/>} />
 
       </Route>
       </>

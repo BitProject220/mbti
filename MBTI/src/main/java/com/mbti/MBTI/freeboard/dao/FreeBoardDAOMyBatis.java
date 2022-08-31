@@ -39,4 +39,22 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 		
 	}
 
+
+	@Override
+	public void freeboarddelete(int seq) {
+		sqlSession.delete("freeboardSQL.freeboarddelete", seq);
+		
+	}
+
+
+	@Override
+	public void freeboardupdate(int seq) {
+		sqlSession.update("freeboardSQL.freeboardupdate", seq);
+		
+	}
+
+
+	
+	
+
 }

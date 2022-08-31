@@ -13,18 +13,32 @@
   		<result property="hit" column="fb_hit"/> <!-- 앞 DTO명 뒤 컬럼 -->
   		<result property="logtime" column="fb_logtime"/> <!-- 앞 DTO명 뒤 컬럼 -->  		
   	</resultMap>
-  <!-- freeboard 글쓰기 -->
-  <insert id="freeboardwrite" parameterType="java.util.Map">
-  	insert into FreeBoard(fb_email,fb_name,fb_subject,fb_content,fb_freevote,fb_hit,fb_logtime)
+  	
+  	<!-- freeboard 글쓰기 -->
+	<insert id="freeboardwrite" parameterType="java.util.Map">
+	  insert into FreeBoard(fb_email,fb_name,fb_subject,fb_content,fb_freevote,fb_hit,fb_logtime)
 		values(#{fb_email},#{fb_name},#{fb_subject},#{fb_content},#{fb_freevote},0,now())
-  </insert>
+	</insert>
   
-  
+  	<!-- 글 보기 -->
 	<select id="freeboardview" parameterType="Integer" resultMap="freeboard3">
 	select * from FreeBoard where fb_seq=#{seq}
 	</select>
-  	
+	
+  	<!-- 조회수  -->
   	<update id="freeboardhit" parameterType="Integer">
   		update FreeBoard set fb_hit = fb_hit + 1 where fb_seq=#{seq} 
   	</update>
+  	
+  	<!-- 글 삭제 -->
+  	<delete id="freeboarddelete" parameterType="Int"> 
+  		delete from FreeBoard where fb_seq=#{seq}
+  	</delete>
+  	
+  	<!-- 글 수정 버튼 -->
+  	<select id="freeboardupdate" parameterType="Int">
+	update FreeBoard set fb_content=#{content} ,fb_subject=#{subject} where fb_seq = #{seq}
+	</select>
+
+	
   </mapper>

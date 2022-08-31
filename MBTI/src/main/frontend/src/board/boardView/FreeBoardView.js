@@ -19,8 +19,6 @@ const FreeBoardView = (props) => {
 
     const qs = require('qs');
 
-
-
     const location = useLocation();
     const seq = location.state.seq;
     console.log("freeBoardView의 seq는 " + seq)
@@ -50,50 +48,28 @@ const FreeBoardView = (props) => {
             console.log(error)
         })
     }, []);
+    
 
-    // useEffect(()=> {
+    //수정
+
+    // const freeboardupdate = () => {
+
     //     axios({
     //         method : 'POST',
-    //         url : 'http://localhost:8080/board/goodcount',
-    //         data : ({
-    //             'seq' : ''
+    //         url : 'http://localhost:8080/board/freeboardupdate',
+    //         data : qs.stringify({
+    //             'seq' : seq
     //         })
-    //     }).then((res)=>{
-            
-    //     }).catch(error => {
+    //     }).then(() =>{
+    //         window.location.href='/FreeBoardUpdateMain';
+    //     }).catch(err => {
     //         alert('실패');
     //     })
-
-    // })
-    
-    // 추천
-    const FreeGood = () => {
-
-        console.log(seq,sessionStorage.getItem('email') );
-        
-        axios({
-            method : 'POST',
-            url : 'http://localhost:8080/good/goodupdate',
-            data : qs.stringify({
-                'seq' : seq,
-                'email' : sessionStorage.getItem('email'),
-            })
-        }).then((res)=>{
-            if(res.data.freevote === 0) {
-                alert('추천 완료');
-                document.location.reload();
-            }else if (res.data.freevote === 1) {
-                alert('추천 취소');
-                document.location.reload();
-            }
-            
-        }).catch(error => {
-            alert('실패');
-        })
-    }
+       
+    // }
 
     //삭제
-    const ondelete = (seq) => {
+    const ondelete = () => {
         axios({
             method : 'POST',
             url : 'http://localhost:8080/board/freeboarddelete',
@@ -101,7 +77,7 @@ const FreeBoardView = (props) => {
                 'seq' : seq
             })
         }).then (()=>{
-            console.log('삭제 완료');
+            alert('삭제 완료');
             window.location.replace("/FreeBoard");
         }).catch (error => {
             alert('실패');
@@ -149,7 +125,7 @@ const FreeBoardView = (props) => {
                             </div>
                             <div className='FreeBoardView_good'>
                                 <div className='Good_btn'>
-                                    <button type='button' className='FreeBoardViewGoodBtn' onClick={FreeGood}>추천</button>
+                                    <button type='button' className='FreeBoardViewGoodBtn'>추천</button>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +134,8 @@ const FreeBoardView = (props) => {
                                 <Link to='/FreeBoard' className='Btn_left_list'>목록</Link>
                             </div>
                             <div className= {sessionStorage.getItem('email') == email ? 'Button_right' : 'hidden' }  >
-                                <button className='Btn_right_list_update' >수정</button>
+                                <button className='Btn_right_list_update'>
+                                    수정</button>
                                 <button className='Btn_right_list_delete' onClick={() => {ondelete(email)}} >삭제</button>
                             </div>
                         </div>

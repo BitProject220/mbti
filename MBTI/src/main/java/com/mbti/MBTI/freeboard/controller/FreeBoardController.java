@@ -29,5 +29,20 @@ public class FreeBoardController {
 		return freeBoardService.freeboardview(seq);
 	}
 	
+	@PostMapping(value="/board/freeboarddelete")
+	public void freeboarddelete (@RequestParam int seq) {
+		
+		freeBoardService.freeboarddelete(seq);
+		
+	}
+	
+	@PostMapping(value="/board/freeboardupdate")
+	public void freeboardupdate(@RequestParam int seq) {
+	
+		freeBoardService.freeboardupdate(seq);
+		
+	}
+	
+	
 	
 }

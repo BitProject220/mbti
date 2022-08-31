@@ -29,4 +29,17 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		return freeBoardDTO;
 	}
 
+	@Override
+	public void freeboarddelete(int seq) {
+		freeBoardDAO.freeboarddelete(seq);
+	}
+
+	@Override
+	public void freeboardupdate(int seq) {
+		freeBoardDAO.freeboardupdate(seq);
+		
+	}
+
+
+
 }
