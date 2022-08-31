@@ -17,12 +17,12 @@ const FreeBoardView = (props) => {
     const [logtime, setLogtime] = useState('');
     const [likeCheck,setLikeCheck ] = useState('0');
 
-    const location = useLocation();
-    const seq = location.state.seq;
-    console.log("freeBoardView의 seq는 " + seq)
 
 
     const qs = require('qs');
+    const location = useLocation();
+    const seq = location.state.seq;
+
 
      useEffect(() => {
         axios({
@@ -247,7 +247,7 @@ const FreeBoardView = (props) => {
                                 <button className='Btn_right_list_delete' onClick={() => {ondelete(email)}} >삭제</button>
                             </div>
                         </div>
-                        <ReplyBoard />
+                        <ReplyBoard seq={seq}/>
                     </div>
                 </div>
                 

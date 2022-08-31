@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import TOPgrey from '../../img/Top/TOPgrey.png';
 import '../css/MbtiBoardView.css';
-const MbtiBoardView = () => {
+import MbtiReplyBoard from '../../replyboard/MbtiReplyBoard';
+
+
+const MbtiBoardView = (props) => {
+    const location = useLocation();
+    const seq = location.state.seq;
+
     return (
         <div className='MbtiBoardView_wrap'
         style={{backgroundImage:`url(${ TOPgrey })`, backgroundRepeat:'no-repeat', backgroundPosition: '0% 0%', backgroundSize:'200% 300px',}}>
@@ -55,6 +61,7 @@ const MbtiBoardView = () => {
                                 <Link to='#' className='Mbti_Btn_right_list_delete'>삭제</Link>
                             </div>
                         </div>
+                        <MbtiReplyBoard seq={seq}/>
                     </div>
                 </div>
             </div>

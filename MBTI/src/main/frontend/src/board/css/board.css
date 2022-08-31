@@ -1,6 +1,6 @@
 element.style {
 }
-#kboard-default-list .kboard-list tbody td.kboard-list-title .kboard-comments-count {
+#kboard-default-list .kboard-list tbody td.kboard-comments-count {
     color: #00a8e7;
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -27,6 +27,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     color: #222;
     font-weight: 300;
 }
+.td.kboard-list-title {
+    width: 1000px;
+}
 #kboard-default-list .kboard-list table a {
     color: black;
     font-weight: normal;
@@ -46,7 +49,7 @@ a:-webkit-any-link {
 .wp_notice_area #kboard-default-list .kboard-list table tbody td {
     font-weight: 300;
 }
-#kboard-default-list .kboard-list tbody td.kboard-list-title {
+#kboard-default-list .kboard-list tbody td{
     text-align: left;
 }
 #kboard-default-list .kboard-list tbody tr td {
@@ -390,7 +393,7 @@ element.style {
     color: #222;
     border-bottom: 2px solid #222;
 }
-#kboard-default-list .kboard-list table td.kboard-list-uid {
+#kboard-default-list .kboard-list table {
     width: 72px;
 }
 .wp_notice_area #kboard-default-list .kboard-list table td {
@@ -477,7 +480,7 @@ element.style {
 .wp_notice_area #kboard-default-list .kboard-list table tbody td {
     font-weight: 300;
 }
-#kboard-default-list .kboard-list table td.kboard-list-uid {
+#kboard-default-list .kboard-list table {
     width: 72px;
 }
 .wp_notice_area #kboard-default-list .kboard-list table td {
@@ -566,6 +569,9 @@ element.style {
 #kboard-default-list .kboard-list table td.kboard-list-uid {
     width: 72px;
 }
+.kboard-list-user{
+    width: 100px;
+}
 .wp_notice_area #kboard-default-list .kboard-list table td {
     padding: 25px 0;
 }
@@ -649,10 +655,10 @@ element.style {
 .wp_notice_area #kboard-default-list .kboard-list table tbody td {
     font-weight: 300;
 }
-#kboard-default-list .kboard-list tbody td.kboard-list-title {
+#kboard-default-list .kboard-list tbody td{
     text-align: left;
 }
-#kboard-default-list .kboard-list table td.kboard-list-title {
+#kboard-default-list .kboard-list table td  {
     width: auto;
 }
 .wp_notice_area #kboard-default-list .kboard-list table td {
