@@ -1,7 +1,10 @@
 package com.mbti.MBTI.freegood.dao;
 
+import java.util.Map;
+
 public interface FreeGoodDAO {
 
-	public int goodcount(int seq);
+	int goodupdate(Map<String, Object> map);
 
+	
 }

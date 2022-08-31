@@ -30,18 +30,7 @@ const ResultPage = ({mbtiresult}) => {
     //console.log(mbtiresult[0]);
     
     const { mbti, ei, ns, jp, tf, at} = mbtiresult[0]
-
-    //console.log(mbti);
-    // ei = e 
-    // i = 100=ei 
-  
-   /*  const [resultei, setresultei] = useState(true); */
-/*     const [resultns, setresultns] = useState(true);
-    const [resulttf, setresulttf] = useState(true);
-    const [resultjp, setresultjp] = useState(true);
-    const [resultat, setresultat] = useState(true); */
-    const [EIscore, setEscore] = useState(true);
-
+    
 
     const resultei = ei>50;
     const resultns = ns>50;
@@ -68,11 +57,11 @@ const ResultPage = ({mbtiresult}) => {
     /* .addClass('active'); */
 
     if(ei === true){
-        console.log(resultei+"2313213213131312312131231");
+      
         result1.style.background= "#F5F5F5";
         color.style.background= "#2B9EB3";
     }else if(ei === false){
-        console.log(resultei+"2313213213131312312131231");
+       
         result1.style.background= "#F5F5F5";
         color.style.background= "#2B9EB3";
     }
@@ -295,13 +284,78 @@ const ResultPage = ({mbtiresult}) => {
         mbtiColor.style.color = "#F19904"
         id='16'
     }
-    console.log(mbti)
-    console.log(ei)
-    console.log(ns)
-    console.log(tf)
-    console.log(jp)
-    console.log(at)
+/*     useEffect(() => {
 
+        const qs = require('qs');
+        console.log(mbtiresult.mbti)
+            console.log(mbtiresult.ei)
+            console.log(mbtiresult.ns)
+            console.log(mbtiresult.tf)
+            console.log(mbtiresult.jp)
+            console.log(mbtiresult.at) 
+  
+        axios({
+          method: 'POST',
+          url: 'http://localhost:8080/user/userMbtiTypeResultCheck',
+          data: qs.stringify({'mbti_email' : sessionStorage.getItem("email")})
+          }).then((res)=>{
+            console.log(mbtiresult.mbti)
+            console.log(mbtiresult.ei)
+            console.log(mbtiresult.ns)
+            console.log(mbtiresult.tf)
+            console.log(mbtiresult.jp)
+            console.log(mbtiresult.at)  
+            alert("갔다!");
+            console.log("데이터 잘 갔음!")
+              if(res.data === 'nonExist'){
+                alert("데이터 존재하지 않음")
+                axios({
+                  method: 'POST',
+                  url: 'http://localhost:8080/user/userMbtiTypeResult',
+                  data: ({
+                      'mbti_email' : sessionStorage.getItem("email"),
+                      'mbti_type' : mbti,
+                      'mbti_EI' : ei,
+                      'mbti_NS' : ns,
+                      'mbti_TF' : tf,
+                      'mbti_JP' : jp,
+                      'mbti_AT' : at
+                    })
+              }).then(()=>{
+                console.log("타입 저장 완료!")
+                
+              }).catch(error =>{
+                console.log(error)
+              });
+            }else if(res.data === 'exist'){
+              alert("데이터 존재함")
+               axios({
+                method: 'POST',
+                url: 'http://localhost:8080/user/userMbtiTypeResultUpdate',
+                data: ({
+                  'mbti_email' : sessionStorage.getItem("email"),
+                  'mbti_type' : mbti,
+                  'mbti_EI' : ei,
+                  'mbti_NS' : ns,
+                  'mbti_TF' : tf,
+                  'mbti_JP' : jp,
+                  'mbti_AT' : at
+                })
+              }).then(()=>{
+                console.log(mbti+"232323222")
+                console.log("타입 저장 완료!")
+              }).catch(error =>{
+                  console.log(error)
+              }); 
+    
+              }
+          }).catch(error =>{
+            console.log(error)
+          });
+
+        },[]); */
+    
+      
 
     return (
         <div className='resultBg'>

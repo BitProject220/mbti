@@ -28,41 +28,30 @@ public class FreeCommentController {
 
 	@Autowired
 	private SqlSession sqlSession = null;
+	
+	
+	
+	// ###################범주 시작#################################
 	@PostMapping(value = "/reply/commentWrite")
 	public void commentWrite(@RequestBody FreeCommentDTO freeCommentDTO) {
 		freeCommentService.commentWrite(freeCommentDTO);
-
 	}
-
 	@PostMapping(value = "/reply/userComment")
 	public List<FreeCommentDTO> userComment(@RequestBody FreeCommentDTO fc_FreeBoardseq) {
-	
 		// 1. 요청에 따른 결과값을 JSON Array의 형태를 가진 스트링으로 변환하다.
 		// 2. 현재 로그인한 유저가 누구인지를 JSON 형태로 변환한다.
 		// 3. 1번과 2번의 값을 가진 JSON 형태로 나타내서 리턴한다.
 		return freeCommentService.userComment(fc_FreeBoardseq);
-
 	}
-
 	// 이에일을 가져가서 같은 이메일 데이터를 가진 글을 삭제할수있게하기
 	// @Requestbody == JSON
-	// @RequestParam == string
+	// @RequestParam == string 
 	@PostMapping(value = "/reply/commentDelete")
 	public void commentDelete(@RequestBody String fc_seq) {
 		String str = fc_seq;
 		String intStr = str.replaceAll("[^0-9]", "");
-
-		
 		int fc_seqi = Integer.parseInt(intStr);
-		
-	
 		freeCommentService.commentDelete(fc_seqi);
-	}
-
-	@GetMapping(value = "/reply/userComment")
-	@ResponseBody
-	public List<FreeCommentDTO> userComment() {
-		return null;
 	}
 	
 	// ###################범주 끝#################################

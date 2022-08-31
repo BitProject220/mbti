@@ -15,10 +15,10 @@ public class FreeGoodController {
 	@Autowired
 	private FreeGoodService freeGoodService;
 
-	@PostMapping(value="/board/goodcount")
-	public int goodcount (@RequestParam int seq) {
+	@PostMapping(value="/good/goodupdate")
+	public int goodupdate(@RequestParam int seq, @RequestParam String email) {
 		
-		return freeGoodService.goodcount(seq);
+		return freeGoodService.goodupdate(seq,email);
 	}
 	
 }	

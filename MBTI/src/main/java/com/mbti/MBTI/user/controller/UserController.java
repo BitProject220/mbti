@@ -42,9 +42,6 @@ public class UserController {
 	@Autowired
 	private JavaMailSender mailSender;
 	
-	@Autowired
-	private HttpSession session;
-	
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
@@ -164,9 +161,16 @@ public class UserController {
 	
 	@PostMapping(value = "/user/loginCheck")
 	@ResponseBody
-	public UserDTO loginCheck(@RequestParam Map<String, String> map) {
-		return userService.loginCheck(map);
+	public UserDTO loginCheck(@RequestParam String email, String password, HttpSession httpSession) {
+		UserDTO userDTO =  userService.loginCheck(email, password, httpSession);
+		return userDTO;
 	}
+	
+	@PostMapping(value = "/user/logout")
+	public void logout(HttpSession httpSession) {
+		httpSession.removeAttribute("memEmail");
+	}
+	
 	
 	//비밀번호 난수 발생
 	public static String tempPassword(int leng){

@@ -3,15 +3,28 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="freeboardSQL">
-  
+  	<resultMap type="freeboard" id="freeboard3">
+  		<result property="seq" column="fb_seq"/> <!-- 앞 DTO명 뒤 디벨로퍼 컬럼 -->
+  		<result property="email" column="fb_email"/> <!-- 앞 DTO명 뒤 컬럼 -->
+  		<result property="name" column="fb_name"/> <!-- 앞 DTO명 뒤 컬럼 -->
+  		<result property="subject" column="fb_subject"/> <!-- 앞 DTO명 뒤 컬럼 -->
+  		<result property="content" column="fb_content"/> <!-- 앞 DTO명 뒤 컬럼 -->
+  		<result property="freevote" column="fb_freevote"/> <!-- 앞 DTO명 뒤 컬럼 -->
+  		<result property="hit" column="fb_hit"/> <!-- 앞 DTO명 뒤 컬럼 -->
+  		<result property="logtime" column="fb_logtime"/> <!-- 앞 DTO명 뒤 컬럼 -->  		
+  	</resultMap>
   <!-- freeboard 글쓰기 -->
   <insert id="freeboardwrite" parameterType="java.util.Map">
   	insert into FreeBoard(fb_email,fb_name,fb_subject,fb_content,fb_freevote,fb_hit,fb_logtime)
-		values(#{fb_email},#{fb_name},#{fb_subject},#{fb_content},#{fb_freevote},#{fb_hit},now());
+		values(#{fb_email},#{fb_name},#{fb_subject},#{fb_content},#{fb_freevote},0,now())
   </insert>
   
-	<select id="freeboardview" parameterType="int" resultType="freeboard">
-	select * from FreeBoard where fb_seq = #{seq};
-	</select>
   
+	<select id="freeboardview" parameterType="Integer" resultMap="freeboard3">
+	select * from FreeBoard where fb_seq=#{seq}
+	</select>
+  	
+  	<update id="freeboardhit" parameterType="Integer">
+  		update FreeBoard set fb_hit = fb_hit + 1 where fb_seq=#{seq} 
+  	</update>
   </mapper>

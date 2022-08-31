@@ -27,7 +27,16 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 
 	@Override
 	public FreeBoardDTO freeboardview(int seq) {	
+		System.out.println(seq);
 		return sqlSession.selectOne("freeboardSQL.freeboardview",seq);
+	}
+
+
+	@Override
+	public void feeboardhit(int seq) {
+		System.out.println("여기오냐씨바라라라랄");
+		sqlSession.update("freeboardSQL.freeboardhit",seq);
+		
 	}
 
 }

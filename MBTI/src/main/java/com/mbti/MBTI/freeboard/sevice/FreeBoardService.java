@@ -8,6 +8,7 @@ public interface FreeBoardService {
 
 	public void freeboardwrite(Map<String, String> map);
 
-	public FreeBoardDTO freeboardview(int seq);
+	public FreeBoardDTO freeboardview(int seq1);
+
 
 }
