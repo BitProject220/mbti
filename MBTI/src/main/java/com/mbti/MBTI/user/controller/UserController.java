@@ -42,9 +42,6 @@ public class UserController {
 	@Autowired
 	private JavaMailSender mailSender;
 	
-	@Autowired
-	private HttpSession session;
-	
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
@@ -172,7 +169,6 @@ public class UserController {
 	@PostMapping(value = "/user/logout")
 	public void logout(HttpSession httpSession) {
 		httpSession.removeAttribute("memEmail");
-		System.out.println("지워짐?");
 	}
 	
 	
