@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.mbti.MBTI.freeboard.bean.FreeBoardDTO;
 import com.mbti.MBTI.freeboard.dao.FreeBoardDAO;
+import com.mbti.MBTI.freegood.bean.FreeGoodDTO;
 
 @Service
 public class FreeBoardServiceImpl implements FreeBoardService {
@@ -37,9 +38,27 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 	@Override
 	public void freeboardupdate(int seq) {
 		freeBoardDAO.freeboardupdate(seq);
-		
+
+	@Override
+	public String freeboardviewLikeCheck(Map<String, Object> map) {
+
+		FreeGoodDTO freeGoodDTO = freeBoardDAO.freeboardviewLikeCheck(map);
+		if(freeGoodDTO == null) {
+			return "nonExit";
+		}else {
+			return "exit";
+		}
 	}
 
+	@Override
+	public void freeboardviewLikeplus(Map<String, Object> map) {
+		freeBoardDAO.freeboardviewLikeplus(map);
+	}
 
+	@Override
+	public void freeboardviewLikeMinus(Map<String, Object> map) {
+		freeBoardDAO.freeboardviewLikeMinus(map);
+		
+	}
 
 }

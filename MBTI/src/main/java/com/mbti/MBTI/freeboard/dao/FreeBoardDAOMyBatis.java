@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.mbti.MBTI.freeboard.bean.FreeBoardDTO;
+import com.mbti.MBTI.freegood.bean.FreeGoodDTO;
 
 @Repository
 @Transactional
@@ -34,7 +35,6 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 
 	@Override
 	public void feeboardhit(int seq) {
-		System.out.println("여기오냐씨바라라라랄");
 		sqlSession.update("freeboardSQL.freeboardhit",seq);
 		
 	}
@@ -43,6 +43,16 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 	@Override
 	public void freeboarddelete(int seq) {
 		sqlSession.delete("freeboardSQL.freeboarddelete", seq);
+	}
+
+	public FreeGoodDTO freeboardviewLikeCheck(Map<String, Object> map) {
+		return sqlSession.selectOne("freeboardSQL.freeboardviewLikeCheck",map);
+	}
+
+
+	@Override
+	public void freeboardviewLikeplus(Map<String, Object> map) {
+		sqlSession.insert("freeboardSQL.freeboardviewLikeplus",map);
 		
 	}
 
@@ -54,7 +64,8 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 	}
 
 
-	
-	
-
+	public void freeboardviewLikeMinus(Map<String, Object> map) {
+		sqlSession.delete("freeboardSQL.freeboardviewLikeMinus",map);
+		
+	}
 }

@@ -17,7 +17,7 @@ const ResultMain = () => {
   const { state } = useLocation();
   const { reselt, ei, ns, tf, jp, at} = state;
 
-  console.log('렌더링');
+  
   const [mbti, setMbti] = useState('');
   const [mbtiresult, setMbtiresult] = useState([
     {
@@ -58,10 +58,9 @@ const ResultMain = () => {
       url: 'http://localhost:8080/user/userMbtiTypeResultCheck',
       data: qs.stringify({'mbti_email' : sessionStorage.getItem("email")})
       }).then((res)=>{
-        alert("갔다!");
-        console.log("데이터 잘 갔음!")
+      
           if(res.data === 'nonExist'){
-            alert("데이터 존재하지 않음")
+            
             axios({
               method: 'POST',
               url: 'http://localhost:8080/user/userMbtiTypeResult',
@@ -75,13 +74,13 @@ const ResultMain = () => {
                   'mbti_AT' : perAt
                 })
           }).then(()=>{
-            console.log("타입 저장 완료!")
+           
             
           }).catch(error =>{
             console.log(error)
           });
         }else if(res.data === 'exist'){
-          alert("데이터 존재함")
+          
           axios({
             method: 'POST',
             url: 'http://localhost:8080/user/userMbtiTypeResultUpdate',
@@ -95,8 +94,8 @@ const ResultMain = () => {
               'mbti_AT' : perAt
             })
           }).then(()=>{
-            console.log(mbti+"232323222")
-            console.log("타입 저장 완료!")
+           
+            
           }).catch(error =>{
               console.log(error)
           });
@@ -108,12 +107,14 @@ const ResultMain = () => {
   
   //console.log('resultMain = ' +state);
 },[]);
-console.log(mbti+"dssssdsddsdsdsdsdsdsdsdsd")
+
+
 
   const MBTI = mbti.substr(0 , 4);
   let id = '13';
   let job = '';
-  console.log("나의 엠비티아이는"+MBTI);
+
+  
   // console.log(id);
 
   if(MBTI === 'INTJ') {
@@ -173,7 +174,7 @@ console.log(mbti+"dssssdsddsdsdsdsdsdsdsdsd")
   const onnext = (e)=> {
     navigate("/MbtiSW", { state: { id  }});
   }
-  console.log(id);
+  
 
     return (
         <div className='Main'>
