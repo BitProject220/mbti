@@ -9,9 +9,14 @@ public interface FreeBoardDAO {
 
 	public void freeboardwrite(Map<String, String> map);
 
-	public FreeBoardDTO freeboardview(int seq1);
+	public FreeBoardDTO freeboardview(int seq);
 
 	public void feeboardhit(int seq);
+
+	public void freeboarddelete(int seq);
+
+	public void freeboardupdate(int seq);
+
 
 	public FreeGoodDTO freeboardviewLikeCheck(Map<String, Object> map);
 

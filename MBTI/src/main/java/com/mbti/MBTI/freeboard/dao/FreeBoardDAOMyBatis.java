@@ -41,6 +41,10 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 
 
 	@Override
+	public void freeboarddelete(int seq) {
+		sqlSession.delete("freeboardSQL.freeboarddelete", seq);
+	}
+
 	public FreeGoodDTO freeboardviewLikeCheck(Map<String, Object> map) {
 		return sqlSession.selectOne("freeboardSQL.freeboardviewLikeCheck",map);
 	}
@@ -54,9 +58,14 @@ public class FreeBoardDAOMyBatis implements FreeBoardDAO {
 
 
 	@Override
+	public void freeboardupdate(int seq) {
+		sqlSession.update("freeboardSQL.freeboardupdate", seq);
+		
+	}
+
+
 	public void freeboardviewLikeMinus(Map<String, Object> map) {
 		sqlSession.delete("freeboardSQL.freeboardviewLikeMinus",map);
 		
 	}
-
 }

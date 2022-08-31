@@ -30,6 +30,14 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		return freeBoardDTO;
 	}
 
+	@Override
+	public void freeboarddelete(int seq) {
+		freeBoardDAO.freeboarddelete(seq);
+	}
+
+	@Override
+	public void freeboardupdate(int seq) {
+		freeBoardDAO.freeboardupdate(seq);
 
 	@Override
 	public String freeboardviewLikeCheck(Map<String, Object> map) {
@@ -52,6 +60,5 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		freeBoardDAO.freeboardviewLikeMinus(map);
 		
 	}
-
 
 }

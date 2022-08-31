@@ -102,17 +102,21 @@ const FreeBoardView = (props) => {
             console.log(error)
         })
     }, []);
+    
 
-    // useEffect(()=> {
+    //수정
+
+    // const freeboardupdate = () => {
+
     //     axios({
     //         method : 'POST',
-    //         url : 'http://localhost:8080/board/goodcount',
-    //         data : ({
-    //             'seq' : ''
+    //         url : 'http://localhost:8080/board/freeboardupdate',
+    //         data : qs.stringify({
+    //             'seq' : seq
     //         })
-    //     }).then((res)=>{
-            
-    //     }).catch(error => {
+    //     }).then(() =>{
+    //         window.location.href='/FreeBoardUpdateMain';
+    //     }).catch(err => {
     //         alert('실패');
     //     })
 
@@ -175,10 +179,9 @@ const FreeBoardView = (props) => {
         }
         
     }
-    
 
     //삭제
-    const ondelete = (seq) => {
+    const ondelete = () => {
         axios({
             method : 'POST',
             url : 'http://localhost:8080/board/freeboarddelete',
@@ -186,7 +189,7 @@ const FreeBoardView = (props) => {
                 'seq' : seq
             })
         }).then (()=>{
-            console.log('삭제 완료');
+            alert('삭제 완료');
             window.location.replace("/FreeBoard");
         }).catch (error => {
             alert('실패');
@@ -235,6 +238,7 @@ const FreeBoardView = (props) => {
                             <div className='FreeBoardView_good'>
                                 <div className='Good_btn'>
                                     <button type='button' className='FreeBoardViewGoodBtn' id='FreeBoardViewGoodBtn' style={{padding:'10px'}} onClick={onFreeGood}>추천</button>
+
                                 </div>
                             </div>
                         </div>
@@ -243,7 +247,8 @@ const FreeBoardView = (props) => {
                                 <Link to='/FreeBoard' className='Btn_left_list'>목록</Link>
                             </div>
                             <div className= {sessionStorage.getItem('email') == email ? 'Button_right' : 'hidden' }  >
-                                <button className='Btn_right_list_update' >수정</button>
+                                <button className='Btn_right_list_update'>
+                                    수정</button>
                                 <button className='Btn_right_list_delete' onClick={() => {ondelete(email)}} >삭제</button>
                             </div>
                         </div>
