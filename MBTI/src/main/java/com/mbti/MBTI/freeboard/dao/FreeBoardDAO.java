@@ -10,4 +10,6 @@ public interface FreeBoardDAO {
 
 	public FreeBoardDTO freeboardview(int seq1);
 
+	public void feeboardhit(int seq);
+
 }
